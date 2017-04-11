@@ -43,7 +43,7 @@
             <p class="markh2b">Bванов Иван Иванович</p>
             <p class="markh4o">Врач гкниколг </p>
             <p class="markh4b">Кандмдат мел науr</p>
-            <p class="markh4b">j</p>
+            <p class="markh4b">j</p> 
 
             <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus euismod orci eget rutrum. Integer consequat justo vehicula eleifend ullamcorper. Curabitur ornare justo eu eleifend pharetra. Pellentesque at lacus a felis tincidunt consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis fringilla erat. Nunc eget risus vel felis viverra elementum. Etiam non lectus faucibus, bibendum felis a, volutpat nisi. Aliquam fermentum turpis nulla, tempus dapibus mauris fringilla eu. Ut sed euismod massa, nec malesuada magna. Nunc fermentum est eu nunc iaculis, in vulputate nisl placerat. Aenean id ultrices dui. Aenean egestas sollicitudin auctor.
 
