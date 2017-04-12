@@ -84,9 +84,9 @@
                         <li><a href="index.php?page=blog">Блог</a></li>
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.php?page=doctor_card" class="hvr-grow-shadow">О клинике</a></li>
-                                <li><a href="index.php?page=blog" class="hvr-grow-shadow">Руководство</a></li>
-                                <li><a href="index.php?page=blog" class="hvr-grow-shadow">Раввин о нас</a></li>
+                                <li><a href="index.php?page=about"   class="hvr-grow-shadow">О клинике   </a></li>
+                                <li><a href="index.php?page=leaders"   class="hvr-grow-shadow">Руководство </a></li>
+                                <li><a href="index.php?page=ravin" class="hvr-grow-shadow">Раввин о нас</a></li>
                             </ul>
                         </li>
                     </ul>

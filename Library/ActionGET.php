@@ -88,6 +88,10 @@ class ActionGET extends DataBase
             return 'pages/leaders.php';
         }else if ($id == 'uzi') {
             return 'pages/uzi.php';
+        }else if ($id == 'about') {
+            return 'pages/about.php';
+        }else if ($id == 'ravin') {
+            return 'pages/ravin.php';
         }
 
         return FALSE;
