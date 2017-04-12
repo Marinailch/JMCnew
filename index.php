@@ -8,7 +8,7 @@ $request = new ActionGET($db);
 $directions = new Directions($db);
 
 
-$res = $directions->getDirections();
+//$res = $directions->getDirections();
 
 
 //var_dump($res);
