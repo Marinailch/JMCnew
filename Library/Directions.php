@@ -39,6 +39,35 @@ class Directions extends DataBase
             return false;
 
     }
+    public function getPricesDirectionsByID($id){
+        $query = "SELECT specialty, price_first_time, price_after FROM directions as d, specialty_price as p WHERE d.id=p.direction_id AND p.consulting_at_home IS NULL AND d.id=$id";
+        $result = $this->db->query($query);
+        if ($result) {
+            $catalogs=array();
+            while ($new_item = $result->fetch_assoc()) {
+                $catalogs[]=$new_item;
+            }
+
+            return $catalogs;
+
+        }
+        return false;
+    }
+
+    public function getPricesHomeDirectionsByID($id){
+        $query = "SELECT specialty, consulting_at_home FROM directions as d, specialty_price as p WHERE d.id=p.direction_id AND p.consulting_at_home IS NOT NULL AND d.id=$id";
+        $result = $this->db->query($query);
+        if ($result) {
+            $catalogs=array();
+            while ($new_item = $result->fetch_assoc()) {
+                $catalogs[]=$new_item;
+            }
+
+            return $catalogs;
+
+        }
+        return false;
+    }
 
 
 

@@ -3,12 +3,7 @@
 //Если его нет - возвращает массив с фото и описанием главной страницы
 //Если есть - массив с описанием искомого направления
 $id = $request->getGET();
-
-
-
-//Получаем ТРУ или ФОЛС в зависимости от наличия или отсутствия ГЕТ
-$request->getReqByGet();
-
+//var_dump($id);
 
 //Получаем все направления
 $res = $directions->getDirections();
@@ -46,91 +41,90 @@ $res = $directions->getDirections();
                     <p class="description_direction">
                             <?php
                                     echo $id['description_direction'];
-                                    $doctors = $doctors->getDoctorsByDirection($id['id']);
-//                                    var_dump($doctors);
+
                             ?>
                     </p>
 
                     <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
                     <hr>
+   <!-- Это блок с изображениями врачей, по данному направлению-->
+                    <?php   $doctors = $doctors->getDoctorsByDirection($id['id']);
+                            foreach ($doctors as $key => $value): ?>
                     <div class="media">
                         <div class="media-left">
-                            <img src="../img/vrach_card/d1.jpg" class="media-object"
+                            <img src="../img/doctors_foto/<?= $value['link_foto_doctor']?>" class="media-object"
                                  style="width:150px">
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Иванов Иван Иванович</h4>
-                            <p>Врач, высшей категории, имеет богатейший двадцатилетний опыт работы в лучших клиниках
-                                нашего города. Область его профессиональной деятельности довольно широка. В нашей
-                                клинике Игорь Васильевич проводит консультативный прием, гинекологический осмотр,
-                                цитологическое исследование, мазки и посевы на флору, обследвание на ТОРЧ инфекции,
-                                профилактические осмотры.</p>
+                            <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
+                            <p><?= $value['short_descr']?></p>
                         </div>
                     </div>
-
+                            <? endforeach; ?>
                     <hr>
-                    <div class="row diractions_service">
-                        <tbody>
+    <!-- Это конец блока с изображениями врачей, по данному направлению-->
 
-                            <div class="col-md-4 markh4o">Консультация гинеколога</div>
-                            <div class="col-md-4 markh4o">Первичный прием - 320 грн</div>
-                            <div class="col-md-4 markh4o">Вторичный прием - 220 грн</div>
+    <!-- Это начало блока с возможными консультациями врачей по направлению -->
+                     <?php
+                        $consult = $directions->getPricesDirectionsByID($id['id']);
+                        $consult_at_home = $directions->getPricesHomeDirectionsByID($id['id']);
+                     ?>
+    <table class="table_price">
+            <caption>В нашей клинике Вы можите получить консультации</caption>
+            <tr>
+                <th>Специалист</th>
+                <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>
+                <th style="padding-top: 25px;">Цена, грн<br>  <span style="font-weight: 100; font-size: 12px;">последующее посещение</span></th>
+            </tr>
 
+            <?php foreach ($consult as $key=>$value):?>
+        <tr>
+            <td><?=$value['specialty'] ?></td>
+            <td><?=$value['price_first_time'].' грн' ?></td>
+            <td><?=$value['price_after'].' грн' ?></td>
+        </tr>
+    <?php endforeach;
+            if($consult_at_home){?>
+                <?php foreach ($consult_at_home as $item2 => $value2):?>
+                    <tr>
+                        <td><?=$value2['specialty'] ?></td>
+                        <td><?=$value2['consulting_at_home'].'грн' ?></td>
+                    </tr>
+                <?php endforeach ?>
+    <?php } ?>
+    </table>
+    <!-- Это конец блока с возможными консультациями врачей по направлению -->
 
-                        </tbody>
-                    </div>
+    <!-- Это начало блока с возможными лабораторными методами по направлению -->
+    <h4 class="diractions_title"><b>Гинекологическая панель анализов</b></h4>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
+                репродуктивной системы и мониторинг беременности
+            </td>
+            <td>1-5 дней</td>
+            <td>220 грн</td>
 
+        </tr>
+        <tr>
+            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
+                репродуктивной системы и мониторинг беременности
+            </td>
+            <td>1-5 дней</td>
+            <td>220 грн</td>
+        </tr>
+        <tr>
+            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
+                репродуктивной системы и мониторинг беременности
+            </td>
+            <td>1-5 дней</td>
+            <td>220 грн</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- Это конец блока с возможными лабораторными методами по направлению -->
 
-
-                    <h4 class="diractions_title"><b>В нашей клинике Вы можите получить следующие услуги</b></h4>
-                    <table class="table ">
-                        <tbody>
-                        <tr>
-                            <td>Консультация гинеколога</td>
-                            <td></td>
-                            <td class="diractions_service_price">220 грн</td>
-
-                        </tr>
-                        <tr>
-                            <td>УЗИ молочных желез</td>
-                            <td></td>
-                            <td class="diractions_service_price">220 грн</td>
-                        </tr>
-                        <tr>
-                            <td>Кольпоскопия</td>
-                            <td></td>
-                            <td class="diractions_service_price">220 грн</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <h4 class="diractions_title"><b>Гинекологическая панель анализов</b></h4>
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                                репродуктивной системы и мониторинг беременности
-                            </td>
-                            <td>1-5 дней</td>
-                            <td>220 грн</td>
-
-                        </tr>
-                        <tr>
-                            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                                репродуктивной системы и мониторинг беременности
-                            </td>
-                            <td>1-5 дней</td>
-                            <td>220 грн</td>
-                        </tr>
-                        <tr>
-                            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                                репродуктивной системы и мониторинг беременности
-                            </td>
-                            <td>1-5 дней</td>
-                            <td>220 грн</td>
-                        </tr>
-                        </tbody>
-                    </table>
 
 
 
@@ -156,7 +150,7 @@ $res = $directions->getDirections();
     $price2 = $price->getPriceMainWithHome();
 
     ?>
-
+<!-- Вывод основного прайса-->
         <table class="table_price">
             <caption>Прайс лист на услуги</caption>
             <tr>
@@ -179,7 +173,6 @@ $res = $directions->getDirections();
 <!--                </tr>-->
 <!--            --><?php //endforeach; ?>
         </table>
-
     <!-- Конец прайса-->
 
 
