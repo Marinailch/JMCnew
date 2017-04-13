@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 02 2017 г., 22:33
--- Версия сервера: 5.6.31
--- Версия PHP: 7.0.8
+-- Время создания: Апр 13 2017 г., 16:51
+-- Версия сервера: 5.5.50
+-- Версия PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,32 @@ SET time_zone = "+00:00";
 --
 -- База данных: `jmcdatabase`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `administrators`
+--
+
+CREATE TABLE IF NOT EXISTS `administrators` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `specialty` varchar(255) DEFAULT NULL,
+  `link_foto` text,
+  `description` text
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `administrators`
+--
+
+INSERT INTO `administrators` (`id`, `name`, `specialty`, `link_foto`, `description`) VALUES
+(1, 'Пастернак Анна Викторовна', 'Администратор', '21.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(2, 'Кавурова Виктория Владиславовна', 'Администратор', '37.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(3, 'Кондратьева Екатерина Петровна', 'Администратор', '39.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(5, 'Страх Елена Валерьевна', 'Директор', '13.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(6, 'Будлянская Елена Дмитриевна', 'Бухгалтер', '15.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(7, 'Родинский Александр Георгиевич', 'Председатель правления', '18.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ');
 
 -- --------------------------------------------------------
 
@@ -106,35 +132,42 @@ CREATE TABLE IF NOT EXISTS `doctors` (
   `short_descr` varchar(255) NOT NULL,
   `full_descr` text NOT NULL,
   `direction_id` int(11) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `doctors`
 --
 
 INSERT INTO `doctors` (`id`, `name_of_doctor`, `link_foto_doctor`, `expirience_of_work`, `specialty_of_doctor`, `science_degree`, `short_descr`, `full_descr`, `direction_id`) VALUES
-(1, 'Иванов Иван Иванович', 'DSC_2790.jpg', '2 года', 'Хирург', 'дмн', 'очень хороший доктор', 'очень очень хороший доктор', 2),
-(2, 'Петрова Василиса Романовна', 'DSC_2790.jpg', '3 года', 'Педиатр', 'кмн', 'прекрасный доктор', 'прекрасный доктор очень прекрасный доктор', 3),
-(3, 'Петров Василий Иванович', 'DSC_2790.jpg', '2 года', 'Гинеколог', 'врач высшей категории', 'Хороший доктор', 'Хороший хороший доктор', 1),
-(4, 'Сидоров Петр Петрович', 'DSC_2790.jpg', '4 года', 'Терапия', 'врач высшей категории', 'Хороший доктор', 'Хороший хороший доктор', 4),
-(5, 'Сверчкова Екатерина Александровна', 'DSC_2790.jpg', '10 лет', 'Диетолог', 'Врач высшей категории', 'Хороший доктор', 'Хороший хороший доктор', 5),
-(6, 'Голота Иван Васильевич', 'DSC_2790.jpg', '7 лет', 'Травматолог', 'врач высшей категории', 'Хороший доктор', 'Хороший хороший доктор', 6),
-(7, 'Сидоров Иван Васильевич', 'DSC_2790.jpg', '10 лет', 'Мануальный терапевт', 'врач высшей категории', 'хороший специалист', 'Очень хороший специалист', 7),
-(8, 'Иванченко Андрей Николаевич', 'DSC_2790.jpg', '8 лет', 'Массажист', 'врач высшей категории', 'Хороший специалист', 'Опытный хороший специалист', 8),
-(9, 'Яцуба Георгий Иванович', 'DSC_2790.jpg', '16 лет', 'Уролог', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 9),
-(10, 'Крутой Василий Иванович', 'DSC_2790.jpg', '11 лет', 'Дерматолог', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 10),
-(11, 'Слесаренко Василиса Ивановна', 'DSC_2790.jpg', '12 лет', 'Косметолог', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 11),
-(12, 'Кривошей Владимир Петрович', 'DSC_2790.jpg', '7 лет', 'Гастроэнтеролог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 12),
-(13, 'Кротикова Лилия Андреевна', 'DSC_2790.jpg', '8 лет', 'Эндокринолог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 13),
-(14, 'Диброва Марина Сергеевна', 'DSC_2790.jpg', '8 лет', 'Невролог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 14),
-(15, 'Зайцева Наталья Викторовна', 'DSC_2790.jpg', '13 лет', 'Офтальмолог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 15),
-(16, 'Крутикова Лариса Игоревна', 'DSC_2790.jpg', '8 лет', 'Пульмонолог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 16),
-(17, 'Козакова Лариса Ивановна', 'DSC_2790.jpg', '6 лет', 'Оториноляринголог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 17),
-(18, 'Дыба Виктория Алексеевна', 'DSC_2790.jpg', '8 лет', 'Детский невролог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 18),
-(19, 'Коваль Елена Акиндиновна', 'DSC_2790.jpg', '18 лет', 'Кардиолог', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 19),
-(20, 'Сквернов Радион Альбертович', 'DSC_2790.jpg', '19 лет', 'Проктолог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 20),
-(21, 'Корсунова Инна Дмитриевна', 'DSC_2790.jpg', '15 лет', 'Ревматолог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 21),
-(22, 'Еврахов Евгений Олегович', 'DSC_2790.jpg', '13 лет', 'Сосудистый хирург', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 22);
+(1, 'Нороха Игорь Иванович', '1.jpg', '2 года', 'Дерматовенеролог', 'Врач высшей категории', 'очень хороший доктор', 'очень очень хороший доктор', 10),
+(2, 'Малосилко Таисия Григорьевна', '2.jpg', '3 года', 'Ревматолог', 'Врач высшей категории', 'прекрасный доктор', 'прекрасный доктор очень прекрасный доктор', 21),
+(3, 'Аноним', '3.jpg', '2 года', 'Не понятно', 'врач высшей категории', 'Хороший доктор', 'Хороший хороший доктор', 23),
+(4, 'Провалов Артем Евгеньевич', '4.jpg', '11 лет', 'Сосудистый хирург', 'врач второй категории', 'Хороший доктор', 'Хороший хороший доктор', 22),
+(5, 'Городецкий Сергей Георгиевич', '5.jpg', '17 лет', 'Врач УЗИ диагностики', 'Врач высшей категории', 'Хороший доктор', 'Хороший хороший доктор', 23),
+(6, 'Терещенко Иван Викторович', '7.jpg', '17 лет', 'Окулист', 'врач первой категории', 'Хороший доктор', 'Хороший хороший доктор', 15),
+(7, 'Зубко Ирина Николаевна', '8.jpg', '10 лет', 'Кардиолог', 'врач высшей категории', 'хороший специалист', 'Очень хороший специалист', 19),
+(8, 'Ягмур Борис Эммануилович', '9.jpg', '50 лет', 'Уролог', 'врач высшей категории', 'Хороший специалист', 'Опытный хороший специалист', 9),
+(9, 'Ягмур Светлана Самойловна', '10.jpg', '50 лет', 'Гастроэнтеролог', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 12),
+(10, 'Земляная Елена Николаевна', '11.jpg', '11 лет', 'ЛОР', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 17),
+(11, 'Кривошей Владимир Викторович', '12.jpg', '10 лет', 'Гастроэнтеролог', 'Врач высшей категории', 'Хороший специалист', 'Очень хороший специалист', 12),
+(12, 'Страх Елена Валериевна', '13.jpg', '7 лет', 'Терапевт', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 4),
+(15, 'Прохорова Яна Владимировна', '16.jpg', '15 лет', 'Терапевт', 'Врач первой категории', 'Хороший доктор', 'Очень хороший доктор', 4),
+(16, 'Родинская Галина Александровна', '17.jpg', '8 лет', 'Хирург', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 2),
+(18, 'Атанова Яна Олеговна', '19.jpg', '8 лет', 'Эндокринолог', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 13),
+(22, 'Шумихина Марина Евгеньевна', '23.jpg', '13 лет', 'Врач-лаборант', 'Врач высшей категории', 'Хороший доктор', 'Очень хороший доктор', 23),
+(23, 'Агафонова Елена Александровна', '24.jpg', '32 года', 'Педиатр', 'Врач высшей категории, КМН', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 3),
+(24, 'Хамонина Лилия Леонидовна', '25.jpg', '15 лет', 'ЛОР', 'Врач 1 категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 17),
+(25, 'Алексеенко Анастасия Анатольевна', '35.jpg', '10 лет', 'Врач УЗИ диагностики', 'Врач 2 категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 23),
+(30, 'Гинеколог Гинеколог Гинеколог', '3.jpg', '5', 'Гинеколог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 1),
+(31, 'Диетолог Диетолог Диетолог', '3.jpg', '5', 'Диетолог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 5),
+(32, 'Травматолог Травматолог Травматолог', '3.jpg', '5', 'Травматолог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 6),
+(33, 'Мануальный терапевт', '3.jpg', '5', 'Мануальный терапевт', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 7),
+(34, 'Массажист массажист Массажист', '3.jpg', '5', 'Массажист', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 8),
+(35, 'косметолог Косметолог Косметолог', '3.jpg', '5', 'Косметолог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 11),
+(36, 'Невролог Невролог Невролог', '3.jpg', '5', 'Невролог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 14),
+(37, 'Пульмонолог Пульмонолог Пульмонолог', '3.jpg', '5', 'Пульмонолог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 16),
+(38, 'Детский невролог Детский невролог Детский невролог', '3.jpg', '5', 'Детский невролог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 18),
+(39, 'Проктолог Проктолог Проктолог', '3.jpg', '5', 'Проктолог', 'Врач высшей категории', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ', 20);
 
 -- --------------------------------------------------------
 
@@ -310,6 +343,31 @@ INSERT INTO `methods_fd` (`id`, `name_of_method_fd`, `price`, `func_diagn_id`) V
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `nurses`
+--
+
+CREATE TABLE IF NOT EXISTS `nurses` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `specialty` varchar(255) DEFAULT NULL,
+  `link_foto` text,
+  `description` text
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `nurses`
+--
+
+INSERT INTO `nurses` (`id`, `name`, `specialty`, `link_foto`, `description`) VALUES
+(1, 'Шостак Виктория Владимировна', 'Старшая сестра', '14.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(2, 'Нестеренко Елизавета Петровна', 'Медицинская сестра', '20.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(3, 'Винник Лариса Павловна', 'Медицинская сестра', '22.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(4, 'Андриянова Ольга Владимировна', 'Младшая медицинская сестра', '36.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum '),
+(5, 'Васькина Наталья Анатольевна', 'Операционная медицинская сестра', '38.jpg', 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `specialty_price`
 --
 
@@ -365,6 +423,12 @@ INSERT INTO `specialty_price` (`id`, `specialty`, `price_first_time`, `price_aft
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `administrators`
+--
+ALTER TABLE `administrators`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `blog`
@@ -428,6 +492,12 @@ ALTER TABLE `methods_fd`
   ADD KEY `func_diagn_id` (`func_diagn_id`);
 
 --
+-- Индексы таблицы `nurses`
+--
+ALTER TABLE `nurses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `specialty_price`
 --
 ALTER TABLE `specialty_price`
@@ -437,6 +507,11 @@ ALTER TABLE `specialty_price`
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
+--
+-- AUTO_INCREMENT для таблицы `administrators`
+--
+ALTER TABLE `administrators`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `blog`
 --
@@ -456,7 +531,7 @@ ALTER TABLE `directions_fd`
 -- AUTO_INCREMENT для таблицы `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT для таблицы `functional_diagnostic`
 --
@@ -482,6 +557,11 @@ ALTER TABLE `methods`
 --
 ALTER TABLE `methods_fd`
   MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
+--
+-- AUTO_INCREMENT для таблицы `nurses`
+--
+ALTER TABLE `nurses`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `specialty_price`
 --
