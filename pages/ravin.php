@@ -3,33 +3,36 @@
 </div>
 
 <div class="container">
-    <div style="margin-top: 20px;">
-        <img src="../img/blog/blog_img1.jpg" width="300px" height="200px" style="float:left; margin-right: 20px; ">
+    <div class="container">
+        <div class="leaders_content">
+            <img src="../img/about/ravin.jpg"  style="float:left; margin: 0px 30px 15px 0px;  ">
 
-        <p class="markh2b">Название статьи</p>
-        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus euismod
-            orci eget rutrum. Integer consequat justo vehicula eleifend ullamcorper. Curabitur ornare justo eu eleifend
-            pharetra. Pellentesque at lacus a felis tincidunt consequat. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Curabitur quis fringilla erat. Nunc eget risus vel felis viverra elementum. Etiam non
-            lectus faucibus, bibendum felis a, volutpat nisi. Aliquam fermentum turpis nulla, tempus dapibus mauris
-            fringilla eu. Ut sed euismod massa, nec malesuada magna. Nunc fermentum est eu nunc iaculis, in vulputate
-            nisl placerat. Aenean id ultrices dui. Aenean egestas sollicitudin auctor.
+            <!-- <p class="markh2b">Название статьи</p> -->
+            <p>Дорогие друзья!
 
-            Nunc accumsan arcu quis nisi bibendum gravida. Vivamus convallis libero quis dapibus vestibulum. Curabitur
-            auctor ultrices diam, sed rhoncus libero rhoncus convallis. Cras dictum urna massa, ut mollis ipsum
-            tincidunt sed. In volutpat, dolor vel semper vehicula, ante magna condimentum sapien, at tempor ante nisl
-            vitae neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut commodo odio. Fusce lobortis,
-            nisi nec venenatis cursus, metus libero porttitor ante, vitae volutpat nulla mauris dapibus arcu.
+                Начинается месяц Адар. Для еврейского народа это месяц Мазаль и Броха (успеха и благословения). Сказано в Талмуде (трактат Таанит): «Мишенихнас Адар марбим бе-симха» – «С наступлением месяца Адар увеличивают радость». Это высказывание свидетельствует о внутреннем содержании месяца Адар. С первого его дня ощущается атмосфера радости, достигающая кульминации в Пурим. Обратите внимание, сказано «увеличивают Симха», это значит, что нужно быть в радости весь год, но в Адар следует увеличить ее.
 
-            Quisque eget condimentum massa. Integer et justo ullamcorper, tristique eros eu, ornare arcu. Vivamus
-            tincidunt, justo a hendrerit auctor, arcu nisl semper sem, a blandit ante lorem quis sem. Donec posuere nibh
-            et mi aliquam, quis aliquet tortor luctus. Sed tincidunt odio massa, et laoreet massa lacinia non. Curabitur
-            luctus, massa et tristique blandit, erat tellus malesuada purus, ut faucibus nulla est vitae dolor. Duis in
-            ligula gravida mauris rutrum fringilla non id ligula. Fusce ullamcorper, nibh eu vulputate dictum, mi enim
-            finibus risus, sed maximus urna tortor et purus. In hac habitasse platea dictumst. Donec non urna vel urna
-            rutrum faucibus nec non odio. Donec volutpat feugiat dui rutrum fringilla. Pellentesque vitae dictum
-            arcu.</p>
+                Мы часто говорим, что человек должен постоянно развиваться, совершенствоваться и не может довольствоваться достигнутым. Стремиться вперед к лучшим результатам, расти, учиться. Если же кто-то рад, доволен собой и спокоен, то это вроде противоречит духу самосовершенствования. На самом деле между этими двумя позициями нет противоречия.
 
+                С одной стороны, мы часто смотрим внутрь себя, требуем отчет о проделанной работе, чтобы оценить свой духовный уровень, взглянуть на то, что не было исполнено, сожалеть об ошибках, раскаяться.
 
-    </div>
+                С другой стороны, невозможно полноценное развитие, если нет здорового оптимизма и радости жизни. Ежедневно должна Симха питать наше существование. Например, проснулся утром человек, полон энергии, но затем размышляя, начинает тревожиться из-за того что его духовный уровень не достаточен, что он сам себе не нравится, и вот уже самооценка рухнула, настроения нет и руки опускаются. Так его «плохое начало» работает на то, чтобы тревожность множила сама себя, не давая выйти из этого круга. Прямой путь к депрессии.
+
+                Действительно, стоит смотреть на себя критично, но не постоянно, а в определенное время, когда человек решит, что сейчас время анализировать свое поведение и думать об этом. Желательно с конструктивным чувством, чтобы затем принять новое хорошее решение и двигаться дальше.
+
+                А вообще, жить в радости – бе Симха, значит приближаться к Вс-вышнему. Особенно в месяц Адар наше сердце хочет быть наполнено радостью до краев. И мы сами можем создавать для этого поводы.
+
+                19 февраля мы были свидетелями открытия клиники JMC в «Меноре». Прекрасный повод для радости! Проект воплощен в жизнь благодаря еврейской общине Днепра, комплексу «Менора», общине Бостона CJP «Combined Jewish Philanthropies», лично Бобу и Дорис Гордон, Александру Владимировичу Петровскому, Геннадию Борисовичу Сороке, Американскому Комитету «Джойнт» в лице Йони Лейфера, а также помощи директора БФ «Хесед» А.М. Плескачевского. На следующий день после открытия мы уже могли видеть, как лучшие доктора, оснащенные самым современным оборудованием, принимают посетителей.
+
+                К сожалению, в Украине люди живут на 10-15 лет меньше, чем в Америке, Израиле, странах Западной Европы, это недопустимо. Так не должно быть. В большинстве случаев можно продлить саму жизнь и улучшить ее качество, вовремя обратившись к доктору. Для этого нужна современная медицина и конечно доверие к ней. Многолетняя коррупция и непрофессионализм отпугивают людей, откладывающих визит к врачу вплоть до экстренной критической ситуации. Если будет возможность постоянно следить за своим здоровьем, проводить необходимые исследования вовремя, если люди будут наблюдаться профилактически, это поможет продлить жизнь.
+
+                Мы знаем, что у многих не хватает средств для обследования, для кого-то это недоступно физически (люди с проблемами опорно-двигательного аппарата, пожилые и тяжелобольные), а также, отсутствие доверия к медработникам – вот основные причины того, что своевременная помощь не оказывается. Наша община взяла на себя задачу создать клинику доступной честной профессиональной медицины. Помочь каждому, гарантируя порядочность и высокую квалификацию. Если член общины нуждается в помощи, мы сможем также оказать материальную поддержку. Мы хотим продлить жизнь людей в Украине. Подарить многие годы счастливой жизни нашим людям.
+
+                Мазаль и Броха – еврейский медицинский центр!
+                Здоровья, счастливого Адара и веселого Пурима всем!
+
+                Главный раввин Днепра и региона
+                Шмуэль Каминецкий. </p>
+
+        </div>
 </div>

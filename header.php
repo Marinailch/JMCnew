@@ -15,6 +15,7 @@
 <!--    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>-->
 <!--    <script type="text/javascript" src="js/jquery.cross-slide.js"></script>-->
     <link href="css/ninja-slider.css" rel="stylesheet" type="text/css" />
+
     <script src="js/ninja-slider.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
