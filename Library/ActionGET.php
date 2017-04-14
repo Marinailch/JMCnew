@@ -36,7 +36,7 @@ class ActionGET extends DataBase
     /**
      * @return bool|mixed
      * Проверяем GET запрос на странице направлений
-     * Возвращаем массив с нажатым направлением
+     * Возвращаем массив с выбранным направлением
      */
     public function getGET()
     {
