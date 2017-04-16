@@ -98,33 +98,22 @@ $res = $directions->getDirections();
     <!-- Это начало блока с возможными функциональными методами по направлению -->
     <?php
     $func_methods = $directions->getMethodsById($id['id']);
-    var_dump($func_methods);
+//    var_dump($func_methods);
     ?>
     <h4 class="diractions_title"><b>В нашей клинике вы можете получить следующие услуги:</b></h4>
     <table class="table">
         <tbody>
         <tr>
-            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                репродуктивной системы и мониторинг беременности
-            </td>
-            <td>1-5 дней</td>
-            <td>220 грн</td>
+            <th>Название метода</th>
+            <th>Стоимость</th>
+        </tr>
+        <?php foreach ($func_methods as $key => $value):?>
 
-        </tr>
         <tr>
-            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                репродуктивной системы и мониторинг беременности
-            </td>
-            <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td class="diractions_laboratory_name"><?=$value['name_of_method_fd'].'грн'?></td>
+            <td><?=$value['price'].'грн'?></td>
         </tr>
-        <tr>
-            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                репродуктивной системы и мониторинг беременности
-            </td>
-            <td>1-5 дней</td>
-            <td>220 грн</td>
-        </tr>
+<?php endforeach;?>
         </tbody>
     </table>
     <!-- Это конец блока с возможными функциональными методами по направлению -->
