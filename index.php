@@ -1,17 +1,10 @@
 <?php
-
+//Настройки приложения
 include_once 'Config/config.php';
-
-$price = new Price($db);
-$doctors = new Doctors($db);
-$request = new ActionGET($db);
-$directions = new Directions($db);
+//Возврат классов, подключаемых к приложению
+include_once 'Config/ConfigClasses.php';
 
 
-//$res = $directions->getDirections();
-
-
-//var_dump($res);
 
 include_once "header.php";
 
