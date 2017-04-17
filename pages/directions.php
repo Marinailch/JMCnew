@@ -8,10 +8,41 @@ $id = $request->getGET();
 //Получаем все направления
 $res = $directions->getDirections();
 
-?>
-    <div class="directions_header">
-        <p>Консультативный прием</p>
-    </div>
+ if($request->getReqByGet()):
+    switch($id['name_of_direction'])
+    {
+    case 'Гинекология':           $title_direct="Консультатация гинеколога";            break;
+    case 'Хирургия':              $title_direct="Консультатация хирурга";               break;
+    case 'Педиатрия':             $title_direct="Консультатация педиатора";             break;
+    case 'Терапия':               $title_direct="Консультатация терапевта";             break;
+    case 'Диетология':            $title_direct="Консультатация диетолога";             break;
+    case 'Травматология':         $title_direct="Консультатация травматолога";          break;
+    case 'Мануальная%20терапия':  $title_direct="Консультатация мануального терапевта"; break;
+    case 'Массаж':                $title_direct="Массаж";                               break;
+    case 'Урология':              $title_direct="Консультатация уролога";               break;
+    case 'Дерматология':          $title_direct="Консультатация дерматолога";           break;
+    case 'Косметология':          $title_direct="Консультатация косметолога";           break;
+    case 'Гастроэнтерология':     $title_direct="Консультатация гастроэнтеролога";      break;
+    case 'Эндокринология':        $title_direct="Консультатация эндокринолога";         break;
+    case 'Неврология':            $title_direct="Консультатация невролога";             break;
+    case 'Офтальмология':         $title_direct="Консультатация офтальмолога";          break;
+    case 'Пульмонология':         $title_direct="Консультатация пульмонолога";          break;
+    case 'Оторинолярингология':   $title_direct="Консультатация оториноляринголга";     break;
+    case 'Детская%20неврология':  $title_direct="Консультатация детского невролога";    break;
+    case 'Кардиология':           $title_direct="Консультатация кардиолога";            break;
+    case 'Проктология':           $title_direct="Консультатация проктолога";            break;
+    case 'Ревматология':          $title_direct="Консультатация ревматолога";           break;
+    case 'Сосудистая%20хирургия': $title_direct="Консультатация сосудистого хирурга";   break;
+    default:                      $title_direct="Консультативный приём";                break;
+    }
+//    var_dump( $title_direct);
+     ?>
+     <div class="directions_header"><p><?php echo $title_direct; ?></p></div>
+ <?php else : ?>
+    <div class="directions_header"><p>Консультативный приём</p></div>
+ <?php endif ?>
+
+
 <div class="container">
     <div class="row">
             <div class="col-sm-4">
@@ -92,7 +123,7 @@ $res = $directions->getDirections();
                         <td><?=$value2['consulting_at_home'].'грн' ?></td>
                     </tr>
                 <?php endforeach ?>
-    <?php } ?>
+    <?php }  ?>
     </table>
     <!-- Это конец блока с возможными консультациями врачей по направлению -->
 
