@@ -102,6 +102,37 @@ class Directions extends DataBase
         return false;
     }
 
+    public function getTitleDirection($name)
+    {
+        //Переделать согласно выборке
+        switch($name)
+        {
+            case 'Гинекология':           $title_direct="гинеколога";            break;
+            case 'Хирургия':              $title_direct="хирурга";               break;
+            case 'Педиатрия':             $title_direct="педиатра";              break;
+            case 'Терапия':               $title_direct="терапевта";             break;
+            case 'Диетология':            $title_direct="диетолога";             break;
+            case 'Травматология':         $title_direct="травматолога";          break;
+            case 'Мануальная%20терапия':  $title_direct="мануального терапевта"; break;
+            case 'Массаж': return $title_direct="Массаж";
+            case 'Урология':              $title_direct="уролога";               break;
+            case 'Дерматология':          $title_direct="дерматолога";           break;
+            case 'Косметология':          $title_direct="косметолога";           break;
+            case 'Гастроэнтерология':     $title_direct="гастроэнтеролога";      break;
+            case 'Эндокринология':        $title_direct="эндокринолога";         break;
+            case 'Неврология':            $title_direct="невролога";             break;
+            case 'Офтальмология':         $title_direct="офтальмолога";          break;
+            case 'Пульмонология':         $title_direct="пульмонолога";          break;
+            case 'Оторинолярингология':   $title_direct="оториноляринголога";    break;
+            case 'Детская%20неврология':  $title_direct="детского невролога";    break;
+            case 'Кардиология':           $title_direct="кардиолога";            break;
+            case 'Проктология':           $title_direct="проктолога";            break;
+            case 'Ревматология':          $title_direct="ревматолога";           break;
+            case 'Сосудистая%20хирургия': $title_direct="сосудистого хирурга";   break;
+            default: return $title_direct="Консультативный приём";
+        }
+        return 'Консультация '.$title_direct;
+    }
 
 
 }
