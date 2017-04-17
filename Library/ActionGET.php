@@ -56,6 +56,16 @@ class ActionGET extends DataBase
 
     }
 
+    /**
+     * @param $id
+     * Функция по обработке ГЕТ запроса от докторов
+     * Возвращает массив с выбранным доктором
+     */
+    public function getGetDoctors($id)
+    {
+
+    }
+
 
 
     /**

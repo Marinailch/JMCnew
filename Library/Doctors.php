@@ -22,7 +22,7 @@ class Doctors extends DataBase
     }
 
     public function getDoctorsShort(){
-        $query = "SELECT name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr  FROM doctors";
+        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr  FROM doctors";
         $result = $this->db->query($query);
         if($result){
             $doc_cat = array();

@@ -49,6 +49,7 @@ $res = $directions->getDirections();
                     <hr>
    <!-- Это блок с изображениями врачей, по данному направлению-->
                     <?php   $doctors = $doctors->getDoctorsByDirection($id['id']);
+                    var_dump($doctors);
                             foreach ($doctors as $key => $value): ?>
                     <div class="media">
                         <div class="media-left">
@@ -110,7 +111,7 @@ $res = $directions->getDirections();
         <?php foreach ($func_methods as $key => $value):?>
 
         <tr>
-            <td class="diractions_laboratory_name"><?=$value['name_of_method_fd'].'грн'?></td>
+            <td class="diractions_laboratory_name"><?=$value['name_of_method_fd']?></td>
             <td><?=$value['price'].'грн'?></td>
         </tr>
 <?php endforeach;?>
