@@ -76,7 +76,7 @@
                         <li><a href="index.php?page=directions">Услуги</a></li>
                         <li class="dropdown"> <a href="index.php?page=diagnostics" class="dropdown-toggle" data-toggle="dropdown">Диагностика <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.php?page=uzi" class="hvr-grow-shadow">УЗИ</a></li>
+                                <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a></li>
                                 <li><a href="index.php?page=laboratory" class="hvr-grow-shadow">Лабораторная</a></li>
                                 <li><a href="index.php?page=functional" class="hvr-grow-shadow">Функциональная</a></li>
                             </ul>
