@@ -4,7 +4,7 @@
     @font-face {
         font-family: 'Glyphicons Halflings';
         src: url('fonts/glyphicons-halflings-regular.eot');
-        src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); }
+        src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); }
 
 
 
@@ -613,7 +613,7 @@ navbar-nav {
 
 
 #about {
-    padding: 0px 0px 0px 75px;
+    padding: 0 0 0 75px;
     text-align: justify;
     font-family: sans-serif;
     font-size: 14px;
@@ -627,7 +627,6 @@ navbar-nav {
 
 }
 #about>h5 {
-    margin-bottom: 5px;
     margin-bottom: 5px;
     font-family: sans-serif;
     color: #f7a34a;
@@ -737,7 +736,6 @@ navbar-nav {
     text-align: center;
     margin: auto;
     margin-top: 25px;
-    text-align: center;
     background: #ffbe6b;
     padding: 0px 0px;
     -moz-border-radius: 30px;
@@ -772,12 +770,12 @@ navbar-nav {
     display: block;
     overflow: hidden;
     margin: auto;
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0 30px 0;
 }
 .order_bg {
     background: url("img/bg_consult.jpg") ;
     width: 100%;
-    padding: 50px 0px;
+    padding: 50px 0;
     margin-top: 80px;
     text-align: center;
 }
@@ -811,7 +809,7 @@ navbar-nav {
 }
 
 #team{
-    padding: 50px 0px 80px 0px;
+    padding: 50px 0 80px 0;
 }
 
 .panel-default>.panel-heading {
@@ -823,7 +821,7 @@ navbar-nav {
 }
 
 #owl-demo2{
-    margin: 50px 0px 20px 0px;
+    margin: 50px 0 20px 0;
 }
 
 
@@ -843,7 +841,7 @@ navbar-nav {
 .advantages{
     background: #c0d05b;
     text-align: center;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 0 50px 0;
     /*height: 300px;*/
 }
 
@@ -867,7 +865,7 @@ h3 {
 #blog {
     /*margin-top: 80px;*/
     /*margin-bottom: 100px;*/
-    padding: 80px 0px 80px 0px;
+    padding: 80px 0 80px 0;
     background-image: url("img/bg_2.jpg");
 
 }
@@ -919,7 +917,7 @@ h3 {
 /*блог страница*/
 #b4 img {
     width: 100%;
-    margin: 10px 20px 25px 0px;
+    margin: 10px 20px 25px 0;
 
 }
 
@@ -939,7 +937,7 @@ h3 {
 .track_record_record_in{
 width: 80%;
 margin: auto;
-padding: 80px 0px 0px 0px;
+padding: 80px 0 0 0;
 }
 #track_record .markh2b, #track_record .markh4o{
     margin-left: 20px;
@@ -995,7 +993,7 @@ min-width: 220px;
 
 .track_record_left{
     float: right;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     left: 120px;
     width: 70%;
 
@@ -1067,7 +1065,7 @@ min-width: 220px;
 }
 
 .recommend_record{
-    padding: 134px 0px 150px 0px;
+    padding: 134px 0 150px 0;
 }
 
 .recommend_record p{
@@ -1171,7 +1169,7 @@ min-width: 220px;
 
 .doctor_info h4{
     font-size: 12px;
-    margin-top: 0px;
+    margin-top: 0;
     color: #8c8884;
 
 }
@@ -1286,7 +1284,7 @@ min-width: 220px;
     width: 155px;
     height: 2px;
     /*background-color: #b3d242;*/
-    margin: 15px 0px;
+    margin: 15px 0;
 }
 
 .footer_phone {
@@ -1342,7 +1340,7 @@ min-width: 220px;
 /*footer_menu*/
 .footer_menu {
     background-color: #fff;
-    padding: 10px 0px;
+    padding: 10px 0;
     /*margin-top: 20px;*/
     display: block;
     overflow: hidden;
@@ -1352,7 +1350,7 @@ min-width: 220px;
     color: #803924;
     font-size: 14px;
     font-weight: bold;
-    margin: 12px 1% 0% 20% !important;
+    margin: 12px 1% 0 20% !important;
     display: block;
     overflow: hidden;
     width: 200px;
@@ -1453,7 +1451,7 @@ min-width: 220px;
     min-width: 170px;
     text-align: left;
     background: rgba(255, 255, 255, 0.9);
-    padding: 0px 3px;
+    padding: 0 3px;
     -moz-border-radius: 30px;
     /* -webkit-border-radius: 30px; */
     /* border-radius: 30px; */
@@ -1609,7 +1607,7 @@ background-color: #fff;
     color: #fff;
     font-size: 30px;
     font-weight: 600;
-    margin: 30px 0px 60px 0;
+    margin: 30px 0 60px 0;
 }
 
 .servise_page h5 {
@@ -1755,7 +1753,7 @@ background-color: #fff;
         margin: 26px 59px 22px -180px;
     }*/
     .text {
-        padding: 2% 5% 0% 5%;
+        padding: 2% 5% 0 5%;
     }
 
 }
@@ -1932,7 +1930,7 @@ background-color: #fff;
 
 @media (max-width: 768px) {
     .mdc-header.mdc-style-01 .header-top, .mdc-header.mdc-style-04 .header-top {
-        padding: 28px 10px 0px 11px;
+        padding: 28px 10px 0 11px;
     }
 
     .directions_button{
@@ -1947,7 +1945,7 @@ background-color: #fff;
         margin-left: 1%;
     }
     .doctor_info {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
     .glav_vrach {
         margin-right: -230px;
@@ -1991,7 +1989,7 @@ background-color: #fff;
     }
 
     .mdc-header.mdc-style-01 .header-top, .mdc-header.mdc-style-04 .header-top {
-        border-bottom: 0px;
+        border-bottom: 0;
     }
 
     .footer_menu a {
@@ -2028,7 +2026,7 @@ background-color: #fff;
     #blog {
         margin-top: 30px;
         margin-bottom: 20px;
-        padding: 0px;
+        padding: 0;
     }
 
 
@@ -2047,7 +2045,7 @@ background-color: #fff;
     .footer_slogan {
         margin-left: 5px;
         margin-bottom: 50px;
-        margin-top: 0px;
+        margin-top: 0;
         width: auto;
     }
 }
@@ -2061,7 +2059,7 @@ background-color: #fff;
 
     #about {
         font-size: 18px;
-        padding: 50px 0px 0px 20px;
+        padding: 50px 0 0 20px;
     }
 
     .why_block {
@@ -2077,12 +2075,12 @@ background-color: #fff;
 
     /* блок1*/
     .why_block {
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     div .why {
         width: 100%;
-        padding: 1px 82px 0px 80px;
+        padding: 1px 82px 0 80px;
         font-size: 0.8em;
         height: 172px;
         margin: 0;
@@ -2090,7 +2088,7 @@ background-color: #fff;
 
     #about {
         font-size: 18px;
-        padding: 50px 0px 0px 20px;
+        padding: 50px 0 0 20px;
     }
 
     .container {
@@ -2123,7 +2121,7 @@ background-color: #fff;
 
 @media (max-width: 400px) {
     div .why {
-        padding: 1px 55px 0px 60px;
+        padding: 1px 55px 0 60px;
     }
 
 

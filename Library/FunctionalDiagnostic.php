@@ -25,4 +25,17 @@ class FunctionalDiagnostic extends DataBase
         return false;
     }
 
+    public function getPriceForFD(){
+        $query = "SELECT name_of_method_fd, price FROM methods_fd WHERE func_diagn_id!=2";
+        $result = $this->db->query($query);
+        if ($result) {
+            $catalogs=array();
+            while ($new_item = $result->fetch_assoc()) {
+                $catalogs[]=$new_item;
+            }
+            return $catalogs;
+        }
+        return false;
+    }
+
 }
