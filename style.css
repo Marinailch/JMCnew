@@ -745,6 +745,7 @@ navbar-nav {
     border-radius: 30px;
     border-color: #fff;
     display: block;
+    cursor: pointer;
 
 }
 
@@ -832,7 +833,9 @@ navbar-nav {
 }
 
     /*______________*/
-
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #ddd;
+    margin-left: 32px;}
 
 /*advantages*/
 
@@ -904,6 +907,7 @@ h3 {
 
 .blog_content {
     padding: 15px 30px 40px 30px;
+    color: #414141;
 
 }
 
@@ -1128,6 +1132,8 @@ min-width: 220px;
 
 .doctor_card {
     width: 100%;
+    height: 320px;
+    overflow: hidden;
     background-color: #fff;
     margin: auto;
     overflow: hidden;
@@ -1324,6 +1330,7 @@ min-width: 220px;
     margin-left: 50px;
     color: #8ea605;
     font-weight: 600;
+
 }
 
 .timetable_time_first-child {
