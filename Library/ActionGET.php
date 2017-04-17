@@ -90,8 +90,8 @@ class ActionGET extends DataBase
             return 'pages/blog.php';
         } else if ($id == 'functional_diagnostic') {
             return 'pages/functional_diagnostic.php';
-        }else if ($id == 'laboratory') {
-            return 'pages/laboratory.php';
+        }else if ($id == 'laboratory_diagnostic') {
+            return 'pages/laboratory_diagnostic.php';
         }else if ($id == 'leaders') {
             return 'pages/leaders.php';
         }else if ($id == 'ultrasound_investigation') {
