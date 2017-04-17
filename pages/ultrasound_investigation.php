@@ -11,7 +11,7 @@
                             <ul style="list-style-type: none; padding-left: 0; margin-top: 50px; text-align: left;">
                                 <li class="hvr-grow-shadow"><a href="index.php?page=ultrasound_investigation" class="directions_button">УЗИ</a></li>
                                 <li class="hvr-grow-shadow"><a href="index.php?page=laboratory" class="directions_button">Лабораторная диагностика</a></li>
-                                <li class="hvr-grow-shadow"><a href="index.php?page=functional" class="directions_button">Функциональная диагностика</a></li>
+                                <li class="hvr-grow-shadow"><a href="index.php?page=functional_diagnostic" class="directions_button">Функциональная диагностика</a></li>
                             </ul>
                         </div>
                     </div>

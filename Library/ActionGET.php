@@ -88,8 +88,8 @@ class ActionGET extends DataBase
             return 'pages/doctors.php';
         } else if ($id == 'blog') {
             return 'pages/blog.php';
-        } else if ($id == 'functional') {
-            return 'pages/functional.php';
+        } else if ($id == 'functional_diagnostic') {
+            return 'pages/functional_diagnostic.php';
         }else if ($id == 'laboratory') {
             return 'pages/laboratory.php';
         }else if ($id == 'leaders') {

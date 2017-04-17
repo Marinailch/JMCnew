@@ -78,7 +78,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a></li>
                                 <li><a href="index.php?page=laboratory" class="hvr-grow-shadow">Лабораторная</a></li>
-                                <li><a href="index.php?page=functional" class="hvr-grow-shadow">Функциональная</a></li>
+                                <li><a href="index.php?page=functional_diagnostic" class="hvr-grow-shadow">Функциональная</a></li>
                             </ul>
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
