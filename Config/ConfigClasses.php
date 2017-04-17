@@ -5,4 +5,5 @@ return array(
     $request = new ActionGET($db),
     $directions = new Directions($db),
     $usi = new FunctionalDiagnostic($db),
+    $laboratory = new Laboratory($db),
 );
