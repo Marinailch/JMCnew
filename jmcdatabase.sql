@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 18 2017 г., 21:40
+-- Время создания: Апр 19 2017 г., 00:49
 -- Версия сервера: 5.5.50
 -- Версия PHP: 5.6.23
 
@@ -320,10 +320,16 @@ INSERT INTO `functional_diagnostic` (`id`, `name_of_fd`) VALUES
 
 CREATE TABLE IF NOT EXISTS `laboratory` (
   `id` int(10) unsigned NOT NULL,
-  `name_group_method` varchar(50) NOT NULL,
-  `direction_id` int(10) unsigned NOT NULL,
-  `price_if_alone` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `name_group_method` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `laboratory`
+--
+
+INSERT INTO `laboratory` (`id`, `name_group_method`) VALUES
+(1, 'Клинический анализ крови'),
+(2, 'Иммуногематология');
 
 -- --------------------------------------------------------
 
@@ -359,7 +365,26 @@ CREATE TABLE IF NOT EXISTS `methods` (
   `biomaterial` varchar(255) NOT NULL,
   `time_to_wait` varchar(255) NOT NULL,
   `result` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `methods`
+--
+
+INSERT INTO `methods` (`id`, `name_of_method`, `price`, `lab_id`, `biomaterial`, `time_to_wait`, `result`) VALUES
+(1, '<p>Клинический анализ крови (развернутый):</p>\n<ul>\n	<li><small>общий анализ,</small></li>\n	<li><small>лейкоформула,</small></li>\n	<li><small>СОЭ</small></li>\n</ul>', 120, 1, 'цельная кровь (ЭДТА, цитрат Na)', '1', 'кол'),
+(2, '<p>Общий анализ крови (сокращенный): <small>без лейкоцитарной формулы и СОЭ</small></p>', 70, 1, 'цельная кровь (ЭДТА)', '1', 'кол'),
+(3, '<p>Лейкоцитарная формула (<small>дифференцированный подсчет лейкоцитов</small>)</p>', 45, 1, 'цельная кровь (ЭДТА)', '1', 'кол'),
+(4, '<p>СОЭ</p>', 45, 1, 'цельная кровь (цитрат Na)', '1', 'кол'),
+(5, '<p>Ретикулоциты</p>', 105, 1, 'цельная кровь (ЭДТА)', '1', 'кол'),
+(6, '<ul>\n	<li>Клинический анализ крови&nbsp;</li>\n	<li>АсАТ&nbsp;</li>\n	<li>Билирубин общ&nbsp;</li>\n	<li>АсАТ&nbsp;</li>\n</ul>', 230, 1, 'цельная кровь (ЭДТА, цитрат Na)', '1', 'кол'),
+(7, '<ul>\n	<li>Клинический анализ крови&nbsp;</li>\n	<li>Креатинин (в крови)</li>\n	<li>Общий анализ мочи&nbsp;</li>\n	<li>Мочевина (в крови)</li>\n</ul>', 270, 1, 'цельная кровь (ЭДТА, цитрат Na)', '1', 'кол'),
+(8, '<ul>\n	<li>Клинический анализ крови</li>\n	<li>Общий анализ мочи&nbsp;</li>\n	<li>Группа крови/резус принадлежность</li>\n</ul>', 320, 1, 'цельная кровь (ЭДТА, цитрат Na)', '1', 'кол'),
+(9, '<p>ИДЕМ В ДЕТСКИЙ САД</p>\n<ul>\n	<li>Клинический анализ крови</li>\n	<li>Общий анализ мочи</li>\n	<li>Анализ на энтеробиоз (яйца остриц)</li>\n	<li>Анализ кала на яйца гельминтов/простейшие</li>\n</ul>', 365, 1, 'согл спектру', '1', 'кол'),
+(10, '<ul>\n	<li>Клинический анализ крови&nbsp;</li>\n	<li>Глюкоза (в крови)</li>\n	<li>Общий анализ мочи</li>\n</ul>', 245, 1, 'согл спектру', '1', 'кол'),
+(11, '<ul>\n	<li>Клинический анализ крови&nbsp;</li>\n	<li>Глюкоза (в крови)</li>\n	<li>Холестерол&nbsp;</li>\n</ul>', 220, 1, 'цельная кровь', '1', 'кол'),
+(12, '<p>КОНТРОЛЬ ВОСПИТАТЕЛЬСКОГО ПРОЦЕССА</p>\n<ul>\n	<li>Клинический анализ крови</li>\n	<li>С-Реактивный белок</li>\n</ul>', 170, 1, 'цельная кровь', '1', 'кол'),
+(13, '<p>ЗДОРОВЫЙ РЕБЕНОК:<strong> для детей от 0 до 14 лет </strong></p>\n<ul>\n	<li>Клинический анализ крови</li>\n	<li>Общий анализ мочи</li>\n</ul>', 185, 1, 'согл спектру', '1', 'кол');
 
 -- --------------------------------------------------------
 
@@ -585,8 +610,7 @@ ALTER TABLE `functional_diagnostic`
 -- Индексы таблицы `laboratory`
 --
 ALTER TABLE `laboratory`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `direction_id` (`direction_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `main_pages`
@@ -659,7 +683,7 @@ ALTER TABLE `functional_diagnostic`
 -- AUTO_INCREMENT для таблицы `laboratory`
 --
 ALTER TABLE `laboratory`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `main_pages`
 --
@@ -669,7 +693,7 @@ ALTER TABLE `main_pages`
 -- AUTO_INCREMENT для таблицы `methods`
 --
 ALTER TABLE `methods`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT для таблицы `methods_fd`
 --
@@ -707,12 +731,6 @@ ALTER TABLE `dir_methods_fd`
 --
 ALTER TABLE `doctors`
   ADD CONSTRAINT `doctors_ibfk_2` FOREIGN KEY (`direction_id`) REFERENCES `directions` (`id`);
-
---
--- Ограничения внешнего ключа таблицы `laboratory`
---
-ALTER TABLE `laboratory`
-  ADD CONSTRAINT `laboratory_ibfk_1` FOREIGN KEY (`direction_id`) REFERENCES `directions` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `methods`
