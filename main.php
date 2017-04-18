@@ -76,45 +76,10 @@
                             и подхода к оказанию медицинских услуг, где наилучшим образом сочетаются новейшие
                             технологии, самое современное и уникальное оборудование, высочайшая квалификация и интеллект
                             врачей всех профилей, высокий сервис.</p>
-                        <a href="" type="submit" class="btn hvr-grow-shadow diraction_form_button">Подробнее</a>
+                        <a href="index.php?page=about" type="submit" class="btn hvr-grow-shadow diraction_form_button">Подробнее</a>
                     </div>
                 </div>
 
-
-                <div class="col-sm-6 ">
-                    <div class="wrapper1">
-                        <div class="box">
-                            <p><span class="about_counter_el1">НА ВСЕ</span></p>
-                            <input type="text" value="100" class="dial" data-readOnly="true" data-thickness="0.03"
-                                   data-fgColor="#f7a34a" data-bgColor="#fff" data-width="300px" data-fontWeight="600"
-                                   data-font="">
-                            <p class="about_counter_el2">%</p>
-                            <p class="about_counter_el3">Честные</p>
-                            <p class="about_counter_el4">Взаимоотношения</p>
-                        </div>
-                    </div>
-
-                    <script>
-                        $('.dial').knob();
-                        var control = 0;
-                        $(window).scroll(function () {
-                            var offsset = $('.dial').offset().top - 600;
-                            var scroll = $(window).scrollTop();
-                            if (scroll > offsset && control === 0) {
-                                control++;
-                                $({animatedVal: 0}).animate({animatedVal: 100}, {
-                                    duration: 2000,
-                                    easing: "swing",
-                                    step: function () {
-                                        $(".dial").val(Math.ceil(this.animatedVal)).trigger("change");
-//
-                                    }
-                                });
-                            }
-                        })
-                    </script>
-                    <!--            <img src="../img/minora.png" class="solution " alt="Cinque Terre" width="304" height="236"/>-->
-                </div>
             </div>
         </div>
     </div>
@@ -127,21 +92,21 @@
                 <div class="about_item_text"><h4>Наши руководители </h4>
                     <p>Целями нашего центра являются оказание квалифицированной, качественной, адекватной состоянию
                         здоровья пациента ... </p>
-                    <div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div>
+                    <a href="index.php?page=leaders"><div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
                 </div>
             </div>
             <div class="col-sm-4"><img src="../img/about/about2.jpg">
                 <div class="about_item_text"><h4>О клинике </h4>
                     <p>С открытием нового двухэтажного офиса JMC в центре «Менора» мы расширяем деятельность, в
                         частности ... </p>
-                    <div><p class=" hvr-grow-shadow diraction_form_button">узнать больше</p></div>
+                    <a href="index.php?page=about"><div><p class=" hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
                 </div>
             </div>
             <div class="col-sm-4"><img src="../img/about/about1.jpg">
                 <div class="about_item_text"><h4>Главний раввин </h4>
                     <p>Начинается месяц Адар. Для еврейского народа это месяц Мазаль и Броха (успеха и благословения).
                         Сказано в Талмуде ...</p>
-                    <div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div>
+                    <a href="index.php?page=ravin"><div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
                 </div>
             </div>
         </div>
@@ -314,8 +279,8 @@
     <!-- блог -->
     <div id="blog">
         <div class="container">
-            <h3 style="text-align: center"><span class="markh1w">Последние статьи </span></h3>
-            <p><span class="markh4o">Наш блог</span></p>
+            <h3 style="text-align: center"><span class="markh1w">Наш блог </span></h3>
+            <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
                 <div class="col-md-4">
                     <a href="../blog.php#b1">

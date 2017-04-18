@@ -23,7 +23,7 @@ $res = $directions->getDirections();
                 <div class="directions_menu">
                     <div class="doctor_info">
 
-                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
+                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;" class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
                             <?php foreach ($res as $item => $value): ?>
                                 <li class="hvr-grow-shadow"><a
                                             href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>"
@@ -54,7 +54,7 @@ $res = $directions->getDirections();
                     <hr>
    <!-- Это блок с изображениями врачей, по данному направлению-->
                     <?php   $doctors = $doctors->getDoctorsByDirection($id['id']);
-                    var_dump($doctors);
+//                    var_dump($doctors);
                             foreach ($doctors as $key => $value): ?>
                     <div class="media">
                         <div class="media-left">
@@ -208,55 +208,55 @@ $res = $directions->getDirections();
 <?php endif ?>
 
 
-        <div class="diraction_form">
-            <p class=" markh2b">Запишитесь на приём!</p>
-            <form class="form-horizontal ">
-
-                <div class="form-group">
-<!--                    <label class="control-label col-sm-2" for="name"></label>-->
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">
-                    </div>
-                </div>
-                <div class="form-group">
-<!--                    <label class="control-label col-sm-2" for="phone"></label>-->
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
-                    </div>
-                </div>
-                <div class="form-group">
-<!--                    <label class="control-label col-sm-2" for="email"></label>-->
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">
-                    </div>
-                </div>
-                <div class="form-group">
-<!--                    <label class="control-label col-sm-2" for="data"></label>-->
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
-
-                    </div>
-                </div>
-
-                <div class="form-group">
-<!--                    <label for="diractions_select" class="col-sm-2 control-label"></label>-->
-                    <div class="col-sm-10">
-                        <select class="form-control" id="diractions_select">
-                            <option>Ваберите из списка гинеколога</option>
-                            <option>Прокофьева Анна Семеновна</option>
-                            <option>Прокофьева Анна Семеновна</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>
-                    </div>
-                </div>
-            </form>
-
-        </div>
+<!--        <div class="diraction_form">-->
+<!--            <p class=" markh2b">Запишитесь на приём!</p>-->
+<!--            <form class="form-horizontal ">-->
+<!---->
+<!--                <div class="form-group">-->
+<!---->
+<!--                    <div class="col-sm-10">-->
+<!--                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!---->
+<!--                    <div class="col-sm-10">-->
+<!--                        <input type="text" class="form-control" id="phone" placeholder="Телефон">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!---->
+<!--                    <div class="col-sm-10">-->
+<!--                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!---->
+<!--                    <div class="col-sm-10">-->
+<!--                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>-->
+<!---->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="form-group">-->
+<!---->
+<!--                    <div class="col-sm-10">-->
+<!--                        <select class="form-control" id="diractions_select">-->
+<!--                            <option>Ваберите из списка гинеколога</option>-->
+<!--                            <option>Прокофьева Анна Семеновна</option>-->
+<!--                            <option>Прокофьева Анна Семеновна</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="form-group">-->
+<!--                    <div class="col-sm-offset-2 col-sm-10">-->
+<!--                        <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </form>-->
+<!---->
+<!--        </div>-->
 
             </nav>
         </div>

@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="leaders_content" >
-        <img src="../img/Leaders/Leaders1.jpg" style="float:left; margin: 0px 30px 15px 0px; ">
+        <img src="../img/leaders/leaders1.jpg" style="float:left; margin: 0px 30px 15px 0px; ">
 
         <p class="markh3b">Родинский Александр Георгиевич</p>
         <p class="markh4b">доктор медицинских наук, профессор<br>  председатель Правления Еврейского медицинского центра «JMC»</p>
@@ -54,7 +54,7 @@
             <p>Профессор Родинский А.Г. является автором более чем 256 научных работ, которые опубликованы в ведущих мировых и украинских научных журналах; монографий, статей, патентов, словарей, тезисов, методических и научно-практических рекомендаций.</p>
     </div>
     <div class="leaders_content"">
-        <img src="../img/Leaders/Leaders3.jpg" style="float:left; margin: 0px 30px 15px 0px; width: 200px; ">
+        <img src="../img/leaders/leaders3.jpg" style="float:left; margin: 0px 30px 15px 0px; width: 200px; ">
 
         <p class="markh3b">Льюис Липшиц</p>
         <p class="markh4b">Представитель еврейской общины Большого Бостона</p>
@@ -72,7 +72,7 @@
     </div>
 
     <div class="leaders_content"">
-        <img src="../img/Leaders/Leaders2.jpg" style="float:left; margin: 0px 30px 15px 0px; ">
+        <img src="../img/leaders/leaders2.jpg" style="float:left; margin: 0px 30px 15px 0px; ">
 
         <p class="markh3b">Страх Елена Валериевна </p>
         <p class="markh4b">Директор Еврейского медицинского центра “JMC”</p>
