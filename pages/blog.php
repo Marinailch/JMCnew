@@ -2,35 +2,41 @@
     <p>Блог</p>
 </div>
 
-<div class="container">
-    <div style="margin-top: 20px;">
-        <img src="../img/blog/blog_img1.jpg" width="300px" height="200px" style="float:left; margin-right: 20px; ">
-
-        <p class="markh2b">Название статьи</p>
-        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam faucibus euismod
-            orci eget rutrum. Integer consequat justo vehicula eleifend ullamcorper. Curabitur ornare justo eu eleifend
-            pharetra. Pellentesque at lacus a felis tincidunt consequat. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Curabitur quis fringilla erat. Nunc eget risus vel felis viverra elementum. Etiam non
-            lectus faucibus, bibendum felis a, volutpat nisi. Aliquam fermentum turpis nulla, tempus dapibus mauris
-            fringilla eu. Ut sed euismod massa, nec malesuada magna. Nunc fermentum est eu nunc iaculis, in vulputate
-            nisl placerat. Aenean id ultrices dui. Aenean egestas sollicitudin auctor.
-
-            Nunc accumsan arcu quis nisi bibendum gravida. Vivamus convallis libero quis dapibus vestibulum. Curabitur
-            auctor ultrices diam, sed rhoncus libero rhoncus convallis. Cras dictum urna massa, ut mollis ipsum
-            tincidunt sed. In volutpat, dolor vel semper vehicula, ante magna condimentum sapien, at tempor ante nisl
-            vitae neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut commodo odio. Fusce lobortis,
-            nisi nec venenatis cursus, metus libero porttitor ante, vitae volutpat nulla mauris dapibus arcu.
-
-            Quisque eget condimentum massa. Integer et justo ullamcorper, tristique eros eu, ornare arcu. Vivamus
-            tincidunt, justo a hendrerit auctor, arcu nisl semper sem, a blandit ante lorem quis sem. Donec posuere nibh
-            et mi aliquam, quis aliquet tortor luctus. Sed tincidunt odio massa, et laoreet massa lacinia non. Curabitur
-            luctus, massa et tristique blandit, erat tellus malesuada purus, ut faucibus nulla est vitae dolor. Duis in
-            ligula gravida mauris rutrum fringilla non id ligula. Fusce ullamcorper, nibh eu vulputate dictum, mi enim
-            finibus risus, sed maximus urna tortor et purus. In hac habitasse platea dictumst. Donec non urna vel urna
-            rutrum faucibus nec non odio. Donec volutpat feugiat dui rutrum fringilla. Pellentesque vitae dictum
-            arcu.</p>
+<div class="container" >
+    <div style=" margin-top: 40px; margin-bottom: 40px;">
+        <img src="../img/blog/blog_img1.jpg" width="480px" height="300px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
 
 
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+
+        <p class="markh3b">Новинка в JMC: современный аппарат для комфортного бесконтактного измерения внутриглазного давления</p>
+        <!--            <p> <span class="markh4o">Врач первой катигории</span> </p>-->
+        <!--            <p  style="margin-top: -13px; margin-bottom: 28px;"> <span class="markh4o">гинеколог</span> </p>-->
+        <p style="font-weight: 600; color: dimgrey; margin-bottom: -25px;"> 25 февраля 2017г</p>
+        <p  style="margin-top: -13px; margin-bottom: 28px; font-weight: 600; color: dimgrey"> <div class="fb-share-button" data-href="http://jmcdonttouchgit.dev/index.php?page=blog" data-layout="button_count" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jmcdonttouchgit.dev/index.php?page=blog">Поделиться</a></div></p>
+
+
+
+
+
+        <div style="text-align: justify; margin-top: 30px;">
+            <p>Еврейский Медицинский Центр JMC, расположенный в центре «Менора», продолжает расширять спектр качественных и современных медицинских услуг и исследований с помощью самой качественной и современной аппаратуры.</p>
+
+           <p>С 7 марта в центре можно измерить внутриглазное давление самым комфортным и безопасным способом – с помощью бесконтактного тонометра. Это намного комфортнее и удобнее архаических методов, при которых необходимо закапывать анестетик, использовать краситель и проводить вручную манипуляции, причиняющие неприятные ощущения и дискомфорт.</p>
+
+           <p>Современный аппарат компании «Huvitz» из Южной Кореи основан на методе определения внутриглазного давления по сопротивлению роговицы воздействию воздушной струи – пациент удобно садится за аппарат, смотрит на зеленую точку и ощущает лишь несколько дуновений воздуха. Все происходит быстро и без неприятных ощущений, ибо в тонометре реализована функция автоматического поиска глаза (выполняется по трем осям координат), что в значительной степени делает процесс диагностики более легким и быстрым.</p>
+
+           <p>Высокая точность, скорость и комфорт исследования облегчают мониторинг внутриглазного давления – а эту процедуру следует довольно часто (желательно не реже раза в три месяца) проводить всем людям старше сорока лет, ибо это – самый верный и самый простой способ выявления страшной, но весьма распространенной, болезни – глаукомы, уничтожающей сетчатку и зрительный нерв. Выявить глаукому как можно раньше задача очень важная, ибо протекает она без симптомов, пациент ее не чувствует, а восстановить уничтоженное болезнью невозможно.  Однако развитие болезни можно приостановить и спасти тот уровень зрения, который будет на момент обнаружения. Ранее измерение глазного давления было неприятной процедурой и многие старались его избежать. Теперь же с помощью аппарата «Huvitz» в Еврейском Медицинском Центре каждый может быстро и без неприятных ощущений исследовать этот важнейший параметр и при необходимости получить медицинское назначение, которое спасет зрение на долгие годы.</p>
+    </div>
+         
 
     </div>
 </div>

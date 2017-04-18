@@ -23,7 +23,7 @@ $res = $directions->getDirections();
                 <div class="directions_menu">
                     <div class="doctor_info">
 
-                        <ul style="list-style-type: none;padding-left: 0;margin-top: 10px;">
+                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;">
                             <?php foreach ($res as $item => $value): ?>
                                 <li class="hvr-grow-shadow"><a
                                             href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>"
