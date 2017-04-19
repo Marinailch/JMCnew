@@ -82,7 +82,7 @@
                             </ul>
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
-                        <li><a href="index.php?page=blog">Блог</a></li>
+                        <li><a href="index.php?page=articles">Блог</a></li>
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?page=about"   class="hvr-grow-shadow">О клинике   </a></li>

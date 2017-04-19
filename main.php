@@ -88,7 +88,7 @@
         <p class="markh1b"> О нашем центре</p>
         <p class="markh4o"><span>ДАВАЙТЕ ПОЗНАКОМИМСЯ!</span></p>
         <div class="row">
-            <div class="col-sm-4"><img src="../img/about/about3.jpg">
+            <div class="col-sm-4"><img src="../img/about/about1.jpg">
                 <div class="about_item_text"><h4>Наши руководители </h4>
                     <p>Целями нашего центра являются оказание квалифицированной, качественной, адекватной состоянию
                         здоровья пациента ... </p>
@@ -102,7 +102,7 @@
                     <a href="index.php?page=about"><div><p class=" hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
                 </div>
             </div>
-            <div class="col-sm-4"><img src="../img/about/about1.jpg">
+            <div class="col-sm-4"><img src="../img/about/about3.jpg">
                 <div class="about_item_text"><h4>Главний раввин </h4>
                     <p>Начинается месяц Адар. Для еврейского народа это месяц Мазаль и Броха (успеха и благословения).
                         Сказано в Талмуде ...</p>
@@ -119,7 +119,7 @@
             <div class="order_bg_in">
                 <p><span class="markh1w">Получить консультацию врачей</span></p>
                 <p><span class="markh4g">УЗКОЙ СПЕЦИАЛИЗАЦИИ</span></p>
-                <a href="../directions.php" class="button_w hvr-grow-shadow">Записаться на приём</a>
+                <a href="index.php?page=directions" class="button_w hvr-grow-shadow">Записаться на приём</a>
             </div>
         </div>
 
@@ -283,7 +283,7 @@
             <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
                 <div class="col-md-4">
-                    <a href="../blog.php#b1">
+                    <a href="index.php?page=articles">
                         <div class="article">
                             <img src="../img/blog/blog_img1.jpg">
                             <div class="blog_content">
@@ -297,7 +297,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="../blog.php#b2">
+                    <a href="index.php?page=articles">
                         <div class="article">
                             <img src="../img/blog/blog_img2.jpg">
                             <div class="blog_content">
@@ -311,7 +311,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="../blog.php#b3">
+                    <a href="index.php?page=articles">
                         <div class="article">
                             <img src="../img/blog/blog_img3.jpg">
                             <div class="blog_content">
@@ -447,7 +447,7 @@
                 <p><span class="markh4o">Нам можно доверять! </span></p>
                 <p>Вы доверяйте нам, а мы в свою очередь предоставляем Вам максимально точную диагностику и наиболее
                     эффективные методики лечения </p>
-                <a href="../directions.php" class="button_o hvr-grow-shadow">Узнать о нас больше</a>
+                <a href="index.php?page=ultrasound_investigation" class="button_o hvr-grow-shadow">Узнать о нас больше</a>
 
             </div>
         </div>

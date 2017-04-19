@@ -23,7 +23,8 @@ $res = $directions->getDirections();
                 <div class="directions_menu">
                     <div class="doctor_info">
 
-                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px;" class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+                       <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; width: 360px;">
+                        <!-- class="" data-spy="affix" data-offset-top="205"-->
                             <?php foreach ($res as $item => $value): ?>
                                 <li class="hvr-grow-shadow"><a
                                             href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>"
@@ -86,15 +87,15 @@ $res = $directions->getDirections();
             <?php foreach ($consult as $key=>$value):?>
         <tr>
             <td><?=$value['specialty'] ?></td>
-            <td><?=$value['price_first_time'].' грн' ?></td>
-            <td><?=$value['price_after'].' грн' ?></td>
+            <td><?=$value['price_first_time'].' ' ?></td>
+            <td><?=$value['price_after'].'' ?></td>
         </tr>
     <?php endforeach;
             if($consult_at_home){?>
                 <?php foreach ($consult_at_home as $item2 => $value2):?>
                     <tr>
                         <td><?=$value2['specialty'] ?></td>
-                        <td><?=$value2['consulting_at_home'].'грн' ?></td>
+                        <td><?=$value2['consulting_at_home'].'' ?></td>
                     </tr>
                 <?php endforeach ?>
     <?php }  ?>
@@ -111,13 +112,13 @@ $res = $directions->getDirections();
         <tbody>
         <tr>
             <th>Название метода</th>
-            <th>Стоимость</th>
+            <th style="text-align: center">Стоимость, грн</th>
         </tr>
         <?php foreach ($func_methods as $key => $value):?>
 
         <tr>
             <td class="diractions_laboratory_name"><?=$value['name_of_method_fd']?></td>
-            <td><?=$value['price'].'грн'?></td>
+            <td style="text-align: center"><?=$value['price'].''?></td>
         </tr>
 <?php endforeach;?>
         </tbody>
@@ -191,8 +192,8 @@ $res = $directions->getDirections();
             <?php foreach ($price1 as $key=>$value):?>
                 <tr>
                     <td><?=$value['specialty'] ?></td>
-                    <td><?=$value['price_first_time'].' грн' ?></td>
-                    <td><?=$value['price_after'].' грн' ?></td>
+                    <td><?=$value['price_first_time'].' ' ?></td>
+                    <td><?=$value['price_after'].'' ?></td>
                 </tr>
             <?php endforeach; ?>
 <!--            --><?php //foreach ($price2 as $item=>$value):?>
