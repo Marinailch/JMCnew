@@ -42,7 +42,7 @@ include "header.php"
 
 
 
-            <p class="markh3b">Bванов Иван Иванович</p>
+            <p class="markh3b">Иванов Иван Иванович</p>
 <!--            <p> <span class="markh4o">Врач первой катигории</span> </p>-->
 <!--            <p  style="margin-top: -13px; margin-bottom: 28px;"> <span class="markh4o">гинеколог</span> </p>-->
             <p style="font-weight: 600; color: dimgrey"> Врач первой катигории</p>
