@@ -7,6 +7,8 @@
     <meta name="description" content="Еврейский Медицинский Центр">
     <meta name="author" content="">
     <meta name="keywords" content="Клиника">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link rel="stylesheet" href="css/bootstrap.min.css" media="all"/>
     <script src="js/jquery-3.1.1-jquery.min.js"></script>
     <script src="js/jquery.knob.min.js"></script>
