@@ -59,7 +59,9 @@
                             <th>Цена</th>
                         </tr>
                         <!-- олучаем выборку из массива-->
-                        <?php foreach ($laboratory->getLabMethods() as $key => $value): ?>
+                        <?php foreach ($laboratory->getLabMethods() as $key => $value):
+//                        var_dump($laboratory->getLabMethods())?>
+
                         <tr>
                             <td><?= $value['name_of_method'] ?></td>
                             <td><?= $value['biomaterial']?></td>

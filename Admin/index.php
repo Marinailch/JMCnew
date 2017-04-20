@@ -19,7 +19,7 @@ include_once '../Config/ConfigClasses.php';
     <meta name="author" content="">
     <meta name="keywords" content="Клиника">
     <link rel="stylesheet" href="../css/bootstrap.min.css" media="all"/>
-    <script src="https://cdn.ckeditor.com/4.6.2/full-all/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet'
