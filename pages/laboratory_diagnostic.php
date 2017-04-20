@@ -7,7 +7,7 @@
             <div class="col-sm-4">
                 <div class="directions_menu">
                     <div class="doctor_info">
-                        <ul style="list-style-type: none; padding-left: 0; margin-top: 50px; text-align: left;">
+                        <ul style="list-style-type: none; padding-left: 0; margin-top: 0px; text-align: left;">
                             <li class="hvr-grow-shadow"><a href="#" class="directions_button">Гематологические
                                     исследования </a></li>
                             <li class="hvr-grow-shadow"><a href="#" class="directions_button">Иммуногематологические
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-sm-8 text-doc">
-                <nav style="margin-top: 80px;">
+                <nav style="margin-top: 20px;">
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
 
 

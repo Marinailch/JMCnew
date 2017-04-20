@@ -21,7 +21,7 @@
             <div class="col-sm-8 text-doc">
                 <nav style="margin-top: 80px;">
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
-                    <img src="img/diractions/dr.jpg" class="diractions_main_img">
+<!--                    <img src="img/diractions/dr.jpg" class="" width="100%">-->
                     <!-- Это начало вывода прайса по УЗИ диагностике-->
                     <h4 class="diractions_title"><b>Функциональная диагностика в нашей клинике</b></h4>
                     <table class="table">

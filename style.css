@@ -1234,7 +1234,7 @@ min-width: 220px;
     text-align: justify;
     width: 100%;
     margin-bottom: 30px;
-    /*margin-top: 30px;*/
+    /*margin-top: 40px;*/
 }
 
 .description_direction{
@@ -1411,6 +1411,7 @@ min-width: 220px;
     background: #c0d05b;
     display: block;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 
 .directions_header p {
@@ -1419,6 +1420,21 @@ min-width: 220px;
     text-align: center;
     margin-top: 27px;
     font-weight: 600;
+
+}
+
+.directions_info {
+    text-align: center;
+    padding-bottom: 30px;
+    /*padding-top: 30px;*/
+}
+
+.diraction_form h6{
+    color: #8ea605;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+
 
 }
 
@@ -1503,15 +1519,19 @@ background-color: #fff;
 }
 
 .diractions_main_img {
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    width: 50%;
+    margin-top: 5px;
+    /*margin-bottom: 20px;*/
+    margin-right: 25px;
+    float: left;
 }
 
-.diraction_form{
-    width:100%;
-    margin: auto;
+.diraction_form {
+    width: 81%;
+    /* margin: auto; */
     margin-top: 30px;
+    text-align: left;
+    float: right;
 }
 .diraction_form h2{
     text-align: center;

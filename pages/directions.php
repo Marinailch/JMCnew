@@ -21,7 +21,7 @@ $res = $directions->getDirections();
     <div class="row">
             <div class="col-sm-4">
                 <div class="directions_menu">
-                    <div class="doctor_info">
+                    <div class="directions_info ">
 
                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; width: 360px;">
                         <!-- class="" data-spy="affix" data-offset-top="205"-->
@@ -31,6 +31,57 @@ $res = $directions->getDirections();
                                             class="directions_button"><?= $value['name_of_direction'] ?></a></li>
                             <?php endforeach; ?>
                         </ul>
+
+                        <div class="diraction_form">
+                            <h6>Запишитесь на приём!</h6>
+                            <form class="form-horizontal ">
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="diractions_select">
+                                            <option>Ваберите из списка</option>
+                                            <option>Прокофьева Анна Семеновна</option>
+                                            <option>Прокофьева Анна Семеновна</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" ">
+                                    <div class="col-sm-offset-2 col-sm-10" style="text-align: left; margin-left: 0;">
+                                        <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+<!--                    <iframe  style=" opacity: 0.7; margin-top: 30px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.7383043602792!2d35.05259248512187!3d48.463753358272605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18ebb773c0daa282!2z0JzQtdC90L7RgNCw!5e0!3m2!1sru!2sru!4v1492686565832" width="250" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>-->
 
                     </div>
                 </div>
@@ -42,7 +93,7 @@ $res = $directions->getDirections();
 <?php if($request->getReqByGet()):?>
                     <!-- Это начало-->
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
-                        <img src="img/diractions/<?= $id['link_foto_direction'] ?>" class="diractions_main_img">
+                        <img src="img/diractions/<?= $id['link_foto_direction'] ?>" class="diractions_main_img"  >
                     <!-- ЭТО ОПИСАНИЕ НАПРАВЛЕНИЯ-->
                     <p class="description_direction">
                             <?php
@@ -62,7 +113,7 @@ $res = $directions->getDirections();
                             <img src="../img/doctors_foto/<?= $value['link_foto_doctor']?>" class="media-object"
                                  style="width:150px">
                         </div>
-                        <div class="media-body">
+                        <div class="media-body" style="    padding-left: 20px;">
                             <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
                             <p><?= $value['short_descr']?></p>
                         </div>
@@ -167,10 +218,10 @@ $res = $directions->getDirections();
 
 
             <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
-            <img src="img/diractions/<?= $id[0]['foto_main'] ?>" class="diractions_main_img"><br>
+            <img src="img/diractions/<?= $id[0]['foto_main'] ?>" class="" style="width: 100%"><br>
             <!-- ЭТО ОПИСАНИЕ НАПРАВЛЕНИЯ-->
 
-            <div><?= $id[0]['descr_main'] ?></div>
+            <div style="margin-top: 20px; font-size: 16px; text-align: justify;"><?= $id[0]['descr_main'] ?></div>
 
 
     <!-- Теперь получаем прайс всех консультаций-->
@@ -209,55 +260,6 @@ $res = $directions->getDirections();
 <?php endif ?>
 
 
-<!--        <div class="diraction_form">-->
-<!--            <p class=" markh2b">Запишитесь на приём!</p>-->
-<!--            <form class="form-horizontal ">-->
-<!---->
-<!--                <div class="form-group">-->
-<!---->
-<!--                    <div class="col-sm-10">-->
-<!--                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!---->
-<!--                    <div class="col-sm-10">-->
-<!--                        <input type="text" class="form-control" id="phone" placeholder="Телефон">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!---->
-<!--                    <div class="col-sm-10">-->
-<!--                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="form-group">-->
-<!---->
-<!--                    <div class="col-sm-10">-->
-<!--                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>-->
-<!---->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="form-group">-->
-<!---->
-<!--                    <div class="col-sm-10">-->
-<!--                        <select class="form-control" id="diractions_select">-->
-<!--                            <option>Ваберите из списка гинеколога</option>-->
-<!--                            <option>Прокофьева Анна Семеновна</option>-->
-<!--                            <option>Прокофьева Анна Семеновна</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--                <div class="form-group">-->
-<!--                    <div class="col-sm-offset-2 col-sm-10">-->
-<!--                        <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </form>-->
-<!---->
-<!--        </div>-->
 
             </nav>
         </div>
