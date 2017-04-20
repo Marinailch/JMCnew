@@ -37,5 +37,15 @@ class Laboratory extends DataBase
         }
         return FALSE;
     }
+
+    public function insertIntoLabFull($name, $descr)
+    {
+        $descr = $this->db->real_escape_string($descr);
+        $query = "INSERT INTO lab_full_methods VALUES(NULL, '$name', '$descr')";
+        $result = $this->db->query($query);
+        if ($result){
+            return TRUE;
+        }
+        return FALSE;
+    }
 }
-//INSERT INTO methods VALUES(NULL, 'bio', 120, 1, 'asdf', 1, 'kol');

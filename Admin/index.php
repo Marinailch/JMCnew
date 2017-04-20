@@ -32,42 +32,56 @@ include_once '../Config/ConfigClasses.php';
     <form class="form-horizontal" method="POST" action="index.php">
 
 
+<!--        <textarea name="test"></textarea>-->
+<!---->
+<!--        <div class="form-group">-->
+<!--            <label for="inputSuccess3">Биоматериал</label>-->
+<!--            <div class="col-sm-4">-->
+<!--                <input type="text" name="bio" class="form-control">-->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="inputSuccess3">Результат</label>-->
+<!--            <div class="col-sm-4">-->
+<!--                <input type="text" name="result" class="form-control">-->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="form-group">-->
+<!--            <label for="inputSuccess3">Срок</label>-->
+<!--            <div class="col-sm-4">-->
+<!--                <input type="text" name="term" class="form-control">-->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="form-group">-->
+<!--            <label for="inputSuccess3">Цена</label>-->
+<!--            <div class="col-sm-4">-->
+<!--                <input type="text" name="price" class="form-control">-->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
+
+
+        <!-- Trying new action-->
+
+                <div class="form-group">
+                    <label for="inputSuccess3">Название модуля лаб исследований</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                </div>
+
         <textarea name="test"></textarea>
+        <!-- Trying new action-->
 
-        <div class="form-group">
-            <label for="inputSuccess3">Биоматериал</label>
-            <div class="col-sm-4">
-                <input type="text" name="bio" class="form-control">
-
-
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputSuccess3">Результат</label>
-            <div class="col-sm-4">
-                <input type="text" name="result" class="form-control">
-
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="inputSuccess3">Срок</label>
-            <div class="col-sm-4">
-                <input type="text" name="term" class="form-control">
-
-
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="inputSuccess3">Цена</label>
-            <div class="col-sm-4">
-                <input type="text" name="price" class="form-control">
-
-
-            </div>
-        </div>
         <input type="submit" class="form-horizontal" name="submit">
     </form>
 
@@ -79,26 +93,36 @@ include_once '../Config/ConfigClasses.php';
 </body>
 </html>
 <?php
+//$x = filter_input(INPUT_POST, 'submit');
+//$bio = filter_input(INPUT_POST, 'bio');
+//$test = filter_input(INPUT_POST, 'test');
+//$result = filter_input(INPUT_POST, 'result');
+//$term = filter_input(INPUT_POST, 'term');
+//$price = filter_input(INPUT_POST, 'price');
+//
+//
+//if($x){
+////    echo $bio.'<br>'.$test.'<br>'.$result.'<br>'.$term.'<br>'.$price;
+//    if($laboratory->insertIntoLab($test, $bio, $result, $term, $price)){
+//        echo 'OK';
+//    }else{
+//        echo "NO";
+//    }
+//}
+
 $x = filter_input(INPUT_POST, 'submit');
-$bio = filter_input(INPUT_POST, 'bio');
-$test = filter_input(INPUT_POST, 'test');
-$result = filter_input(INPUT_POST, 'result');
-$term = filter_input(INPUT_POST, 'term');
-$price = filter_input(INPUT_POST, 'price');
+
+$name = filter_input(INPUT_POST, 'name');
+$descr = filter_input(INPUT_POST, 'test');
 
 
 if($x){
-//    echo $bio.'<br>'.$test.'<br>'.$result.'<br>'.$term.'<br>'.$price;
-    if($laboratory->insertIntoLab($test, $bio, $result, $term, $price)){
+    if ($laboratory->insertIntoLabFull($name, $descr)) {
         echo 'OK';
-    }else{
+    } else {
         echo "NO";
     }
 }
-
-
-
-
 
 
 
