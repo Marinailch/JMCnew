@@ -85,7 +85,7 @@
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
 <!--                    <img src="img/diractions/dr.jpg" class="" width="100%">-->
                     <?php
-                    include "slider2.php"
+                    include "slider2.php";
                     ?>
                     <!-- Это начало вывода прайса по УЗИ диагностике-->
                     <h4 class="diractions_title"><b>Прайс на услуги УЗИ в нашей клинике</b></h4>
