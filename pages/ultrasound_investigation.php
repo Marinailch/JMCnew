@@ -9,8 +9,9 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="directions_menu">
+
                     <div class="doctor_info">
-                        <ul style="list-style-type: none; padding-left: 0; margin-top: 50px; text-align: left;">
+                        <ul style="list-style-type: none; padding-left: 0; text-align: left;">
                             <li class="hvr-grow-shadow"><a href="index.php?page=ultrasound_investigation"
                                                            class="directions_button">УЗИ</a></li>
                             <li class="hvr-grow-shadow"><a href="index.php?page=laboratory_diagnostic"
@@ -18,14 +19,74 @@
                             <li class="hvr-grow-shadow"><a href="index.php?page=functional_diagnostic"
                                                            class="directions_button">Функциональная диагностика</a></li>
                         </ul>
+
+
+
+
+                        <div class="diraction_form" style="float:left;">
+                            <h6>Запишитесь на приём!</h6>
+                            <form class="form-horizontal ">
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="diractions_select">
+                                            <option>Ваберите из списка</option>
+                                            <option>Прокофьева Анна Семеновна</option>
+                                            <option>Прокофьева Анна Семеновна</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" ">
+                                <div class="col-sm-offset-2 col-sm-10" style="text-align: left; margin-left: 0;">
+                                    <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>
+                                </div>
+                        </div>
+                        </form>
+
+                    </div>
+                    <iframe  style="float: left; opacity: 0.7; margin-top: 30px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.7383043602792!2d35.05259248512187!3d48.463753358272605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18ebb773c0daa282!2z0JzQtdC90L7RgNCw!5e0!3m2!1sru!2sru!4v1492686565832" width="250" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+
                     </div>
                 </div>
             </div>
 
             <div class="col-sm-8 text-doc">
-                <nav style="margin-top: 80px;">
+                <nav>
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
-                    <img src="img/diractions/dr.jpg" class="diractions_main_img">
+<!--                    <img src="img/diractions/dr.jpg" class="" width="100%">-->
+                    <?php
+                    include "slider2.php"
+                    ?>
                     <!-- Это начало вывода прайса по УЗИ диагностике-->
                     <h4 class="diractions_title"><b>Прайс на услуги УЗИ в нашей клинике</b></h4>
                     <table class="table">
