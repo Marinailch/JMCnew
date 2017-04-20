@@ -72,6 +72,7 @@
                         </tbody>
                         <?php endforeach; ?>
                     </table>
+                    
 
 
                 </nav>
