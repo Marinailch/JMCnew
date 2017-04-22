@@ -32,7 +32,7 @@ $res = $directions->getDirections();
                             <?php endforeach; ?>
                         </ul>
 
-                        <div class="diraction_form">
+                        <div class="diraction_form" id="appointment" style="margin-top: -300px; padding-top: 320px;">
                             <h6>Запишитесь на приём!</h6>
                             <form class="form-horizontal ">
 

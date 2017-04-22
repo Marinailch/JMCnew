@@ -76,7 +76,7 @@
                     <ul class="nav navbar-nav">
                         <li ><a href="/index.php">Главная</a></li>
                         <li><a href="index.php?page=directions">Услуги</a></li>
-                        <li class="dropdown"> <a href="index.php?page=diagnostics" class="dropdown-toggle" data-toggle="dropdown">Диагностика <b class="caret"></b></a>
+                        <li class="dropdown"><a href="index.php?page=ultrasound_investigation" class="dropdown-toggle" data-toggle="dropdown">Диагностика <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a></li>
                                 <li><a href="index.php?page=laboratory_diagnostic" class="hvr-grow-shadow">Лабораторная</a></li>
@@ -85,7 +85,7 @@
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
                         <li><a href="index.php?page=articles">Блог</a></li>
-                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
+                        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?page=about"   class="hvr-grow-shadow">О клинике   </a></li>
                                 <li><a href="index.php?page=leaders"   class="hvr-grow-shadow">Руководство </a></li>

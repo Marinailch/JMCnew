@@ -119,7 +119,7 @@
             <div class="order_bg_in">
                 <p><span class="markh1w">Получить консультацию врачей</span></p>
                 <p><span class="markh4g">УЗКОЙ СПЕЦИАЛИЗАЦИИ</span></p>
-                <a href="index.php?page=directions" class="button_w hvr-grow-shadow">Записаться на приём</a>
+                <a href="index.php?page=directions#appointment" class="button_w hvr-grow-shadow">Записаться на приём</a>
             </div>
         </div>
 
@@ -127,7 +127,7 @@
 
 
     <!--  наша команда -->
-    <div id="team" style="background-image: url(img/bg_doc.jpg);">
+    <div id="team" style="">
         <div class="container ">
             <div class="row">
                 <div class="col-md-3" style="float: right; "></div>

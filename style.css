@@ -778,6 +778,9 @@ navbar-nav {
 }
 .order_bg {
     background: url("img/bg_consult.jpg") ;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-color: #b8c655;
     width: 100%;
     padding: 50px 0;
     margin-top: 80px;
@@ -814,6 +817,9 @@ navbar-nav {
 
 #team{
     padding: 50px 0 80px 0;
+    background-image: url(img/bg_doc.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
 }
 
 .panel-default>.panel-heading {
