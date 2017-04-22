@@ -811,6 +811,11 @@ navbar-nav {
 }
 
 
+#lab>th:child-ntd(2){
+
+}
+
+
 .tema_ul *{
     border: none!important;
 }

@@ -48,4 +48,20 @@ class Laboratory extends DataBase
         }
         return FALSE;
     }
+
+    public function getAllMethods()
+    {
+        $query = "SELECT name, description FROM lab_full_methods";
+        $result = $this->db->query($query);
+        if ($result) {
+            $catalogs=array();
+            while ($new_item = $result->fetch_assoc()) {
+                $catalogs[]=$new_item;
+            }
+
+            return $catalogs;
+
+        }
+        return false;
+    }
 }

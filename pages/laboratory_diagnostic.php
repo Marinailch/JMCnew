@@ -47,7 +47,6 @@
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
 
 
-
                     <h4 class="diractions_title"><b>Лабораторные методы в нашей клинике</b></h4>
                     <table class="table">
                         <tbody>
@@ -59,21 +58,34 @@
                             <th>Цена</th>
                         </tr>
                         <!-- олучаем выборку из массива-->
-                        <?php foreach ($laboratory->getLabMethods() as $key => $value):
-//                        var_dump($laboratory->getLabMethods())?>
+<!--                        --><?php //foreach ($laboratory->getLabMethods() as $key => $value):
+//                        //                        var_dump($laboratory->getLabMethods()) ?>
+<!---->
+<!--                        <tr>-->
+<!--                            <td>--><?//= $value['name_of_method'] ?><!--</td>-->
+<!--                            <td>--><?//= $value['biomaterial'] ?><!--</td>-->
+<!--                            <td>--><?//= $value['result'] ?><!--</td>-->
+<!--                            <td>--><?//= $value['time_to_wait'] ?><!--</td>-->
+<!--                            <td>--><?//= $value['price'] ?><!--</td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                        --><?php //endforeach; ?>
 
-                        <tr>
-                            <td><?= $value['name_of_method'] ?></td>
-                            <td><?= $value['biomaterial']?></td>
-                            <td><?= $value['result']?></td>
-                            <td><?= $value['time_to_wait']?></td>
-                            <td><?= $value['price']?></td>
-                        </tr>
-                        </tbody>
-                        <?php endforeach; ?>
-                    </table>
 
+                        <!-- Here we try to do it-->
 
+<div id="lab">
+                        <h4 class="diractions_title"><b>Лабораторные методы в нашей клинике</b></h4>
+                        <?php $res2 = $laboratory->getAllMethods();
+//                        var_dump($res2);
+                        ?>
+<!--                        <h4 class="diractions_title"><b>--><?//= $res2[0]['name']?><!--</b></h4>-->
+<!--                        --><?php //echo $res2[0]['description']?>
+
+                        <h4 class="diractions_title"><b><?= $res2[7]['name']?></b></h4>
+                        <?php echo $res2[7]['description']?>
+                        <!-- Here we try to do it-->
+            </div>
 
                 </nav>
             </div>
