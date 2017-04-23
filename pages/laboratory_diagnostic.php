@@ -77,13 +77,13 @@
 <div id="lab">
                         <h4 class="diractions_title"><b>Лабораторные методы в нашей клинике</b></h4>
                         <?php $res2 = $laboratory->getAllMethods();
-//                        var_dump($res2);
+                        var_dump($res2);
                         ?>
 <!--                        <h4 class="diractions_title"><b>--><?//= $res2[0]['name']?><!--</b></h4>-->
 <!--                        --><?php //echo $res2[0]['description']?>
 
-                        <h4 class="diractions_title"><b><?= $res2[7]['name']?></b></h4>
-                        <?php echo $res2[7]['description']?>
+                        <h4 class="diractions_title"><b><?= $res2[1]['name']?></b></h4>
+                        <?php echo $res2[1]['description']?>
                         <!-- Here we try to do it-->
             </div>
 
