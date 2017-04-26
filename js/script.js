@@ -1605,20 +1605,6 @@
   }
 
 
-
-  // ________track_record end
-
-
-<<<<<<< HEAD
-
-  // menu lab scroll//
-
-
-
-=======
- //menu lab scroll
->>>>>>> 3e3e3dfcd1b6505dd51d3c4a172902b2c989bd8a
-
   jQuery(function ($) {
       var footer = $('.footer');
       var offset1 = footer.offset().top;
@@ -1638,18 +1624,7 @@
       });
   });
 
-
-  //menu lab scroll end//
-
-  //menu lab correct tab//
-
-  // function title_correct() {
-  //     var title = $('#lab p')
-  // }
-
-
-  //menu lab tab end//
-
+  
 
 
 
