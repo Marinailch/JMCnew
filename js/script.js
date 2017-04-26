@@ -1604,7 +1604,7 @@
   // ________track_record end
 
 
-  menu lab scroll//
+ // menu lab scroll
 
   jQuery(function ($) {
       var footer = $('.footer');
