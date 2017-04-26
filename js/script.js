@@ -1609,11 +1609,11 @@
   // ________track_record end
 
 
-<<<<<<< HEAD
+
   // menu lab scroll//
-=======
- //menu lab scroll
->>>>>>> 3e3e3dfcd1b6505dd51d3c4a172902b2c989bd8a
+
+
+
 
   jQuery(function ($) {
       var footer = $('.footer');
