@@ -42,6 +42,7 @@
                                     <div class="col-sm-10">
                                         <input type="date" class="form-control" id="date" name="personDate" placeholder="Дата"
                                                required>
+                                        <input type="hidden" name="personGET" value="<?= $_GET['page']?>">
 
                                     </div>
                                 </div>

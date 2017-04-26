@@ -11,10 +11,11 @@ class Form
     public function getForm()
     {
         $data = array(
-            filter_input(INPUT_POST, 'personName'),
-            filter_input(INPUT_POST, 'personPhone'),
-            filter_input(INPUT_POST, 'personDate'),
-            filter_input(INPUT_POST, 'personDoctor'),
+            'name' => filter_input(INPUT_POST, 'personName'),
+            'phone' => filter_input(INPUT_POST, 'personPhone'),
+            'date' => filter_input(INPUT_POST, 'personDate'),
+            'doctor' => filter_input(INPUT_POST, 'personDoctor'),
+            'get' => filter_input(INPUT_POST, 'personGET'),
         );
         return $data;
     }
