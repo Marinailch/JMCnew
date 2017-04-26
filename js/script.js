@@ -1584,27 +1584,32 @@
 
 // ____track_record_
 
-  //  function run_line(){
-  //     $(window).scroll(function() {
-  //         var offsset = $('.line').offset().top - 500;
-  //         var scroll = $(window).scrollTop();
-  //         if (scroll > offsset) {
-  //             $('.l1').css({width: '59%'})
-  //             $('.l2').css({width: '20%'})
-  //             $('.l3').css({width: '100%'})
-  //             $('.l4').css({width: '30%'})
-  //         }
-  //
-  //
-  //     })
-  // }
-  //
-  // run_line();
+   function run_line(){
+      $(window).scroll(function() {
+          var offsset = $('.line').offset().top - 500;
+
+              var scroll = $(window).scrollTop();
+              if (scroll > offsset) {
+                  $('.l1').css({width: '59%'});
+                  $('.l2').css({width: '20%'});
+                  $('.l3').css({width: '100%'});
+                  $('.l4').css({width: '30%'});
+              }
+
+      })
+  }
+  var offsset = $('.line').offset().top;
+  if(offsset)
+  {
+      run_line();
+  }
+
+
 
   // ________track_record end
 
 
- // menu lab scroll
+ //menu lab scroll
 
   jQuery(function ($) {
       var footer = $('.footer');

@@ -102,7 +102,12 @@ class ActionGET extends DataBase
             return 'pages/ravin.php';
         }else if ($id == 'articles') {
             return 'pages/articles.php';
-            }
+        }else if($id == 'callform'){
+            //Обработка формы
+            return 'main.php';
+
+        }
+
 
 
         return FALSE;
