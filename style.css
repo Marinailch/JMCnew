@@ -811,9 +811,9 @@ navbar-nav {
 }
 
 
-#lab>th:child-ntd(2){
+/*#lab>th:child-ntd(2){*/
 
-}
+/*}*/
 
 
 .tema_ul *{
@@ -1496,10 +1496,13 @@ background-color: #fff;
     content: "";
     position: absolute;
     left: -7px;
-    bottom: 11px;
+    /*bottom: 11px;*/
+    top: 5px;
     border: 8px solid transparent;
     border-left: 8px solid #c0d05b;
 }
+
+
 /*____________*/
 
 /*td.diractions_service_price{*/
@@ -1620,6 +1623,46 @@ background-color: #fff;
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+
+
+#menu_lub{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: 150px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0px;
+    text-align: left;
+    position: absolute;
+
+}
+
+
+#menu_lub.fixed{
+    position: fixed;
+    /*position: absolute;*/
+    top: 130px;
+    /*width: 100%;*/
+    /*background: rgba(239, 5, 5, 0.95);*/
+}
+
+
+
+
+#menu_lub .directions_button{
+    font-size: 11px;
+    line-height: 16px !important;
+
+    padding: 0 3px;
+    -moz-border-radius: 30px;
+    /* -webkit-border-radius: 30px; */
+    /* border-radius: 30px; */
+    margin: 5px;
+}
+
+
 /*-------------------------------------------*/
 
 /*.servise_page {*/

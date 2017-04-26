@@ -2,47 +2,73 @@
     <div class="directions_header">
         <p>Лабораторная диагностика</p>
     </div>
+
+
+
+
     <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="directions_menu">
-                        <div class="doctor_info">
-                            <ul style="list-style-type: none; padding-left: 0; margin-top: 0px; text-align: left;">
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Гематологические
-                                        исследования </a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Иммуногематологические
-                                        исследования</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Коагулологические
-                                        исследования</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Биохимические
-                                        исследования </a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Гормональные
-                                        исследования</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Иммунологические
-                                        исследования</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Исследование мочи </a>
-                                </li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Исследование кала </a>
-                                </li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Микроскопические
-                                        исследования</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Цитологические
-                                        исследования</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Дисбиотические
-                                        состояния</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Диагностика инфекционных
-                                        заболеваний </a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Паразитарные инфекции</a>
-                                </li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Урогенитальные
-                                        инфекции</a></li>
-                                <li class="hvr-grow-shadow"><a href="#" class="directions_button">Генетическая
-                                        предрасположенность</a></li>
-                            </ul>
-                        </div>
+                <div class="col-sm-2" >
+<!--                    <div class="directions_menu">-->
+                        <div id="menu_lub">
+<!--                            <ul style="">-->
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Гематологические
+                                        исследования </a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Иммуногематологические
+                                        исследования</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Коагулологические
+                                        исследования</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Биохимические
+                                        исследования </a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Гормональные
+                                        исследования</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Иммунологические
+                                        исследования</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Исследование мочи </a>
+                                </div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Исследование кала </a>
+                                </div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Микроскопические
+                                        исследования</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Цитологические
+                                        исследования</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Дисбиотические
+                                        состояния</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Диагностика инфекционных
+                                        заболеваний </a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Паразитарные инфекции</a>
+                                </div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Урогенитальные
+                                        инфекции</a></div>
+                                <div class="hvr-grow-shadow"><a href="#" class="directions_button">Генетическая
+                                        предрасположенность</a></div>
+<!--                            </ul>-->
+<!--                        </div>-->
                     </div>
                 </div>
-            <div class="col-sm-8 text-doc">
+
+                    <script>
+                        jQuery(function ($) {
+                            var footer = $('.footer');
+                            var offset = footer.offset().top;
+                            // alert (offset);
+                            var lub_lenth = offset - 800;
+                            // var lub_lenth = 44000;
+                            $(window).scroll(function  () {
+                                if ($(this).scrollTop() > 200) {
+                                    $('#menu_lub').addClass('fixed');
+                                    if ($(this).scrollTop() > lub_lenth) {
+                                        $('#menu_lub').removeClass('fixed');
+                                    }
+                                }
+                                else if ($(this).scrollTop() < 200) {
+                                    $('#menu_lub').removeClass('fixed');
+                                }
+                            });
+                        });
+                    </script>
+
+            <div class="col-sm-10 ">
                 <nav style="margin-top: 20px;">
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
 
@@ -72,36 +98,19 @@
                     <!--                        --><?php //endforeach; ?>
 
 
-                    <!-- Here we try to do it-->
 
 
-<div id="lab">
-                        <h4 class="diractions_title"><b>Лабораторные методы в нашей клинике</b></h4>
-                        <?php $res2 = $laboratory->getAllMethods();
-                        //var_dump($res2);
-                        ?>
-<!--                        <h4 class="diractions_title"><b>--><?//= $res2[0]['name']?><!--</b></h4>-->
-<!--                        --><?php //echo $res2[0]['description']?>
 
-                        <h4 class="diractions_title"><b><?= $res2[1]['name']?></b></h4>
-                        <?php echo $res2[1]['description']?>
-                        <!-- Here we try to do it-->
-            </div>
+<div id="lab">      <!-- Here we try to do it-->
 
-
-                    <!--                        <h4 class="diractions_title"><b>Лабораторные методы в нашей клинике</b></h4>-->
-                    <?php $res2 = $laboratory->getAllMethods();
-                    //                        var_dump($res2);
-                    ?>
-                    <!--                        <h4 class="diractions_title"><b>-->
-                    <? //= $res2[0]['name']?><!--</b></h4>-->
-                    <!--                        --><?php //echo $res2[0]['description']?>
+                    <?php $res2 = $laboratory->getAllMethods(); //  var_dump($res2);?>
 <?php foreach ($res2 as $key=>$value):?>
-                    <h4 class="diractions_title"><b><?= $value['name'] ?></b></h4>
+<!--                    <h4 class="diractions_title"><b>--><?//= $value['name'] ?><!--</b></h4>-->
                     <?php echo $value['description'] ?>
                     <!-- Here we try to do it-->
 <?php endforeach; ?>
 
+</div>
 
                 </nav>
             </div>
