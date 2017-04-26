@@ -877,8 +877,4 @@ ALTER TABLE `specialty_price`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-<<<<<<< HEAD
-выа
-=======
-ссс
->>>>>>> 1fc61a2e2447f24cc1470b16cfefd0527d748bf8
+ввввввв и ничего и все норм теперь отметила и получим это в итоге
