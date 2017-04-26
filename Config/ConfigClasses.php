@@ -6,4 +6,5 @@ return array(
     $directions = new Directions($db),
     $usi = new FunctionalDiagnostic($db),
     $laboratory = new Laboratory($db),
+    $form = new Form(),
 );
