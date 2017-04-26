@@ -878,3 +878,4 @@ ALTER TABLE `specialty_price`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 ввввввв и ничего и все норм теперь отметила и получим это в итоге
+ 
