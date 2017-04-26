@@ -13,12 +13,14 @@ class ActionGET extends DataBase
     protected $doctors;
     protected $functional_diagn;
     protected $lab_meth;
+    protected $form;
 
     public function __construct($db)
     {
         parent::__construct($db);
         $this->directions = new Directions($db);
         $this->doctors = new Doctors($db);
+        $this->form = new Form();
     }
 
     /**
@@ -104,7 +106,9 @@ class ActionGET extends DataBase
             return 'pages/articles.php';
         }else if($id == 'callform'){
             //Обработка формы
-            return 'main.php';
+            $res = $this->form->getForm();
+            var_dump($res);
+
 
         }
 

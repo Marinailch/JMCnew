@@ -13,7 +13,7 @@ class Form
         $data = array(
             filter_input(INPUT_POST, 'personName'),
             filter_input(INPUT_POST, 'personPhone'),
-            filter_input(INPUT_POST, 'personData'),
+            filter_input(INPUT_POST, 'personDate'),
             filter_input(INPUT_POST, 'personDoctor'),
         );
         return $data;
