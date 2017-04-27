@@ -35,6 +35,12 @@
 
   }
 
+  function visible_search(block){
+      document.getElementById('search').style.visibility = "visible";
+
+  }
+
+
 
 
   //
@@ -1539,7 +1545,7 @@
           startDragging : false,
           afterLazyLoad: false
       };
-  }(jQuery, window, document));
+
 
 
 
@@ -1547,7 +1553,7 @@
   //OWL Carousel//
 
 
-  $(document).ready(function() {
+
 
       $("#owl-demo").owlCarousel({
 
@@ -1559,9 +1565,8 @@
 
       });
 
-  });
 
-  $(document).ready(function() {
+
 
       $("#owl-demo2").owlCarousel({
 
@@ -1573,7 +1578,7 @@
 
       });
 
-  });
+
 
 
 
@@ -1605,27 +1610,45 @@
   }
 
 
-  jQuery(function ($) {
-      var footer = $('.footer');
-      var offset1 = footer.offset().top;
-      // alert (offset);
-      var lub_lenth = offset1 - 800;
-      // var lub_lenth = 44000;
-      $(window).scroll(function  () {
-          if ($(this).scrollTop() > 200) {
-              $('#menu_lub').addClass('fixed');
-              if ($(this).scrollTop() > lub_lenth) {
-                  $('#menu_lub').removeClass('fixed');
-              }
-          }
-          else if ($(this).scrollTop() < 200) {
-              $('#menu_lub').removeClass('fixed');
-          }
-      });
-  });
+  // jQuery(function ($) {
+  //     var footer = $('.footer');
+  //     var offset1 = footer.offset().top;
+  //     // alert (offset);
+  //     var lub_lenth = offset1 - 800;
+  //     // var lub_lenth = 44000;
+  //     $(window).scroll(function  () {
+  //         if ($(this).scrollTop() > 200) {
+  //             $('#menu_lub').addClass('fixed');
+  //             if ($(this).scrollTop() > lub_lenth) {
+  //                 $('#menu_lub').removeClass('fixed');
+  //             }
+  //         }
+  //         else if ($(this).scrollTop() < 200) {
+  //             $('#menu_lub').removeClass('fixed');
+  //         }
+  //     });
+  // });
+
+// ------------------------------------
+
+  //     $(function(){
+  //     var d = $('#lab span') {
+  //         if ($(this).css('color') == 'rgb(0, 0, 0)') {
+  //             return this;
+  //         }
+  //     });
+  //     console.log(d);
+  //     d.css('color', 'green');
+  // });
+
+
+   // ------------------------------/
+
+
+// -------------------search
 
 
 
 
 
-
+  }(jQuery, window, document));

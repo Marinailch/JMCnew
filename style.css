@@ -1,14 +1,7 @@
-/*@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,300);*/
-/*@import url(https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700);*/
-
     @font-face {
         font-family: 'Glyphicons Halflings';
         src: url('fonts/glyphicons-halflings-regular.eot');
         src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); }
-
-
-
-
 body  {
     /*font-family: 'Playfair Display', serif;*/
     /*color: #451410;*/
@@ -18,7 +11,6 @@ body  {
 .no-js #loader-wrapper {
     display: none;
 }
-
 h3 {
     font-size: 43px;
     font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
@@ -27,27 +19,11 @@ h3 {
 a {
     text-decoration: none !important;
 }
-
 a:hover {
     color: #9faf24 ;
 }
 /*____________*/
-/*.circle_button{*/
-    /*border-radius:50px !important;*/
-    /*background-color:#ffbe6b !important;*/
-/*}*/
 
-/*.btn:after {*/
-    /*font-family: "Glyphicons Halflings";*/
-    /*content: "\e114";*/
-    /*float: right;*/
-    /*margin-left: 10px;*/
-
-/*}*/
-/*!* Icon when the collapsible content is hidden *!*/
-/*.btn.collapsed:after {*/
-    /*content: "\e080";*/
-/*}*/
 /*______*/
 
 .hvr-radial-in {
@@ -67,12 +43,8 @@ a:hover {
 }
 
 .hvr-radial-in:before {
-
      background:#ffbe6b !important;
 }
-
-
-
 .button_o{
     font-size: 16px;
     color: #ffffff;
@@ -87,14 +59,10 @@ a:hover {
     -webkit-border-radius: 30px;
     border-radius: 30px;
 }
-
-
 .button_o:hover{
         background: #c5c5c5;
         color: #fff !important;
 }
-
-
 .button_w{
     font-size: 16px;
     color: #99b100;
@@ -356,9 +324,6 @@ navbar-nav {
     padding: 20px 20px;
     left: -30px !important;
 }
-
-
-
 /*end menu*/
 
 /*slider*/
@@ -377,22 +342,14 @@ navbar-nav {
     overflow: hidden !important;
     margin-top: -220px;
 }
-
-
 /*end slider*/
 
-
-
-
 /*блок1*/
-
-
 .why_block {
     background: #c0d05b;
     height: 325px;
     margin-top: -32px;
 }
-
 .circle {
     width: 130px;
     height: 130px;
@@ -608,13 +565,7 @@ navbar-nav {
 .box input{
     float: left;
 }
-
-
-
 /*анимация круга со счетчиком*/
-
-
-
 #about {
     padding: 0 0 0 75px;
     text-align: justify;
@@ -646,9 +597,6 @@ navbar-nav {
     background-position: 50% 0;
     padding-top: 20px;
 }
-
-
-
 .about_counter_el1{
     color: #919191;
     font-weight: 600;
@@ -689,9 +637,6 @@ navbar-nav {
     height: 300px;
     /* float: right; */
 }
-
-
-
 .dial{
     margin-top: -142px !important;
     margin-left: 42px !important;
@@ -750,9 +695,6 @@ navbar-nav {
     cursor: pointer;
 
 }
-
-
-
 .about_item h4{
     font-size: 20px;
     margin: 25px 10px 25px 10px;
@@ -764,10 +706,6 @@ navbar-nav {
     text-align: center;
     color: #989898;
 }
-
-
-
-
 /*Запись на прием*/
 
 .order_bg_in{
@@ -801,21 +739,12 @@ navbar-nav {
     background: #ffffff !important;
 }
 /*______________*/
-
-
 .tema_ul {
     width: 300px;
     border: none!important;
     margin-top: 40px;
     margin-bottom: 40px
 }
-
-
-/*#lab>th:child-ntd(2){*/
-
-/*}*/
-
-
 .tema_ul *{
     border: none!important;
 }
@@ -826,7 +755,6 @@ navbar-nav {
     background-repeat: no-repeat;
     background-position: 100% 50%;
 }
-
 .panel-default>.panel-heading {
     background-color: rgba(255, 255, 255, 0)!important;
 }
@@ -844,7 +772,6 @@ navbar-nav {
     text-transform: none;
     margin-bottom: 10px;
 }
-
     /*______________*/
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
     border-top-color: #ddd;
@@ -859,10 +786,7 @@ navbar-nav {
     padding: 50px 0 50px 0;
     /*height: 300px;*/
 }
-
 /*advantages end*/
-
-
 
 /*блог главная*/
 h5 {
@@ -884,13 +808,6 @@ h3 {
     background: url("img/bg_3.jpg") top right no-repeat;
 
 }
-
-/*#blog hr {*/
-    /*border: 2px solid;;*/
-    /*color: #0ba5a3;*/
-    /*margin-top: 10px;*/
-/*}*/
-
 #blog p:only-of-type {
     font-size: 1.7em;
     font-family: serif;
@@ -973,11 +890,6 @@ padding: 80px 0 0 0;
     margin-top: 10px;
 }
 
-
-/*.track_record_record_in:first-child{*/
-   /*float: right;*/
-/*}*/
-
 .track_record_record_text{
     width: 80%;
     color: #fff;
@@ -1003,9 +915,6 @@ min-width: 220px;
 .doctor_card1 img{
     width: 100%;
 }
-
-
-
 .track_record_left{
     float: right;
     margin-bottom: 0;
@@ -1013,13 +922,9 @@ min-width: 220px;
     width: 70%;
 
 }
-
 .track_record_right{
     margin-bottom: 100px;
 }
-
-
-
 .line{
     position: relative;
     width: 80%;
@@ -1058,8 +963,6 @@ min-width: 220px;
 .l4{
     width: 10%;
 }
-
-
 
 /*_end____#track_record_____*/
 
@@ -1128,21 +1031,13 @@ min-width: 220px;
     margin-left: 349px;
 }
 
-
-
 #recommend canvas{
     margin-left: 100%;
     margin-top: 41px;
 }
-
-
 /*recommend end*/
 
-
-
-
 /*Доктор*/
-
 .doctor_card {
     width: 100%;
     height: 320px;
@@ -1203,9 +1098,6 @@ min-width: 220px;
     letter-spacing: 0.7px;
     text-transform: uppercase;
 }
-
-
-
 
 .doctor_info p {
     font-size: 14.5px;
@@ -1408,11 +1300,6 @@ min-width: 220px;
     margin: 2px;
     width: auto;
 }
-
-/*.f_menu{*/
-/*margin-left: 5px;*/
-/*}*/
-
 /*----------------end--------------footer*/
 
 /*______________________pages_______________*/
@@ -1451,33 +1338,12 @@ min-width: 220px;
 
 /*side bar diracton*/
 
-/*.directions_button {*/
-    /*font-size: 19px;*/
-    /*color: #ffffff;*/
-    /*font-weight: 500;*/
-    /*line-height: 33px !important;*/
-    /*display: inline-block;*/
-    /*min-width: 292px;*/
-    /*text-align: center;*/
-    /*background: rgba(255, 190, 107, 0.9);*/
-    /*padding: 3px 7px;*/
-    /*-moz-border-radius: 30px;*/
-    /*-webkit-border-radius: 30px;*/
-    /*border-radius: 30px;*/
-    /*margin: 5px;*/
-/*}*/
-
-/*.directions_button:hover {*/
-    /*color: #fff !important;*/
-    /*background-color: #c0d05b;*/
-/*}*/
-
 .directions_button {
     font-size: 12px;
     color: #414141;
     text-transform: uppercase;
     font-weight: 600;
-    line-height: 26px !important;
+    line-height: 19px !important;
     display: inline-block;
     min-width: 170px;
     text-align: left;
@@ -1505,12 +1371,6 @@ background-color: #fff;
 
 /*____________*/
 
-/*td.diractions_service_price{*/
-    /*!*text-align: right;*!*/
-    /*float: right;*/
-/*}*/
-
-
 .diractions_laboratory_name {
     width: 75%;
 }
@@ -1518,10 +1378,7 @@ background-color: #fff;
 .diractions_service{
     width: 100%;
     margin-bottom: 35px;
-    /*border-top: 1px solid #dcdcdc;*/
-    /*color: #fff;*/
-    /*background-color: #99b100;*/
-    /*padding: 20px;*/
+
 }
 
 
@@ -1624,10 +1481,11 @@ background-color: #fff;
     margin-bottom: 50px;
 }
 
-
-
+#lab span{
+color: red;
+}
 #menu_lub{
-    text-align: center;
+    /*text-align: center;*/
     padding-bottom: 30px;
     padding-top: 30px;
     width: 150px;
@@ -1638,19 +1496,12 @@ background-color: #fff;
     position: absolute;
 
 }
-
-
 #menu_lub.fixed{
     position: fixed;
     /*position: absolute;*/
     top: 130px;
-    /*width: 100%;*/
-    /*background: rgba(239, 5, 5, 0.95);*/
+
 }
-
-
-
-
 #menu_lub .directions_button{
     font-size: 11px;
     line-height: 16px !important;
@@ -1661,59 +1512,51 @@ background-color: #fff;
     /* border-radius: 30px; */
     margin: 5px;
 }
-
-
 /*-------------------------------------------*/
-
-/*.servise_page {*/
-    /*background-image: url(img/vrach_card/bg_doc1.jpg);*/
-    /*background-repeat: no-repeat;*/
-    /*background-color: #f9f9f9;*/
-    /*padding-bottom: 30px;*/
-    /*text-align: justify;*/
-
-/*}*/
-
-/*.servise_page p, .servise_page span {*/
-    /*width: 95%;*/
-
-/*}*/
-
-/*.servise_page li {*/
-    /*width: 95%;*/
-/*}*/
-
-/*.servise_page h4 {*/
-    /*color: #fff;*/
-    /*font-size: 30px;*/
-    /*font-weight: 600;*/
-    /*margin: 30px 0 60px 0;*/
-/*}*/
-
-/*.servise_page h5 {*/
-    /*font-size: 21px;*/
-    /*font-weight: 600;*/
-    /*margin-bottom: 30px;*/
-    /*color: #f09538;*/
-/*}*/
-
-/*.servise_page h6 {*/
-    /*font-size: 18px;*/
-    /*margin-top: 40px;*/
-    /*width: 95%;*/
-/*}*/
-
-
-/*____________blog__________________*/
-
 .leaders_content{
     margin-top: 20px;
     margin-bottom: 50px;
     text-align: justify;
-    font-size: 16px
-}
+    font-size: 16px}
+
+/*____________blog__________________*/
+
+    .article_text_short{
+        text-align: justify; margin-top: 30px; overflow: hidden; height: 110px; color: #414141;
+    }
+    .article_data_short{font-weight: 600; color: dimgrey; margin-bottom: -25px;
+    }
+    .article_title_short{float:left;  margin-right: 35px; margin-bottom: 30px; font-size: 16px!important;
+    }
+    .article_short{
+        margin-top: 40px; margin-bottom: 40px; display: block; cursor: pointer;
+    }
 
 /*_________blog end--------------------*/
+
+    #search {
+        width: 100px;
+        /* height: 10px; */
+        float: right;
+        margin-top: 6px;
+        margin-right: 20px;
+        display: block;
+        overflow: hidden;
+        visibility: hidden;
+    }
+
+    #search input {
+        width: 100px;
+
+    }
+
+    .search{
+        clear: both;
+width: 100%;
+    }
+
+
+
 
 /*---------media--------------------------------------*/
 
@@ -1725,8 +1568,6 @@ background-color: #fff;
     .why_block {
         margin-top: -20px !important;
     }
-
-
 }
 
 @media (min-width: 991px) and (max-width: 1200px) {
@@ -1809,10 +1650,6 @@ background-color: #fff;
         height: 700px;
     }
 
-    /*  #b4 img{
-            width: 266%;
-        margin: 26px 59px 22px -180px;
-    }*/
     .text {
         padding: 2% 5% 0 5%;
     }
@@ -1827,8 +1664,7 @@ background-color: #fff;
     }
 
     .head_logo {
-        /*margin-right: 180px;*/
-        /*font-size: 10px;*/
+
     }
 
     /*Врачи*/
@@ -1891,6 +1727,7 @@ background-color: #fff;
         display: block;
     }
 }
+
 
 @media (min-width: 500px) and (max-width: 1200px) {
     /*Запись на прием*/

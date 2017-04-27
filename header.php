@@ -76,7 +76,7 @@
 
 
 
-                <div id="slidemenu">
+                <span id="slidemenu">
 
 <!--                    <form class="navbar-form navbar-right" role="form">-->
 <!--                        <div class="form-group">-->
@@ -96,7 +96,7 @@
                             </ul>
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
-                        <li><a href="index.php?page=articles">Блог</a></li>
+                        <li><a href="index.php?page=blog">Блог</a></li>
                         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?page=about"   class="hvr-grow-shadow">О клинике   </a></li>
@@ -105,7 +105,6 @@
                             </ul>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </div>

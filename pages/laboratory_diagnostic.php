@@ -111,6 +111,19 @@
 <?php endforeach; ?>
 
 </div>
+<!--                    ну почему он опять не работает? ((((-->
+<!--                    <script>-->
+<!--                        $(function(){-->
+<!--                            var d = $('#lab span') {-->
+<!--                                if ($(this).css('color') == 'rgb(0, 0, 0)') {-->
+<!--                                    return this;-->
+<!--                                }-->
+<!--                            });-->
+<!--                        console.log(d);-->
+<!--                        d.css('color', 'green!important');-->
+<!--                        });-->
+<!---->
+<!--                    </script>-->
 
                 </nav>
             </div>

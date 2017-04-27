@@ -14,7 +14,8 @@
                 js = d.createElement(s); js.id = id;
                 js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8";
                 fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
 
         <p class="markh3b">Новинка в JMC: современный аппарат для комфортного бесконтактного измерения внутриглазного давления</p>
