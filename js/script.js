@@ -35,10 +35,10 @@
 
   }
 
-  function visible_search(block){
-      document.getElementById('search').style.visibility = "visible";
-
-  }
+  // function visible_search(block){
+  //     document.getElementById('search').style.visibility = "visible";
+  //
+  // }
 
 
 

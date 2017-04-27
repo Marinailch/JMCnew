@@ -1542,7 +1542,7 @@ color: red;
         margin-right: 20px;
         display: block;
         overflow: hidden;
-        visibility: hidden;
+        /*visibility: hidden;*/
     }
 
     #search input {
@@ -1554,6 +1554,35 @@ color: red;
         clear: both;
 width: 100%;
     }
+
+    .lub_search_button{
+        font-size: 15px !important;
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 45px !important;
+        display: inline-block;
+        min-width: 130px;
+        text-align: center;
+        /*background: #9c7e75;*/
+        background-color: #c0d05b;
+        padding: 1px 4px;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        border-radius: 30px;
+        border-color: #fff;
+    }
+
+
+    .lub_search_button:hover{
+        /*background-color: #c0d05b;*/
+        background: #c5c5c5;
+        border-color: #fff;
+        color: #fff;
+
+    }
+
+
+
 
 
 

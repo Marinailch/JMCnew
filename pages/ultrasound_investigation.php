@@ -72,52 +72,7 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.7383043602792!2d35.05259248512187!3d48.463753358272605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18ebb773c0daa282!2z0JzQtdC90L7RgNCw!5e0!3m2!1sru!2sru!4v1492686565832"
                             width="250" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-                        <div class="search">
-                            <img onclick="visible_search();" src="img/search.png" style="background: #000;">
-                            <div id="search">
-                                <!-- <input type="text" name="search" placeholder="найти" /> -->
-                                <input type="text" id="text-to-find" value="" title=""/>
-                                <input type="button" onclick="javascript: FindOnPage('text-to-find'); return false;"
-                                       value="Искать"/>
-                            </div>
-                        </div>
-                            <script>
 
-                            var lastResFind=""; // последний удачный результат
-                            var copy_page=""; // копия страницы в ихсодном виде
-                            function TrimStr(s) {
-                                s = s.replace( /^\s+/g, '');
-                                return s.replace( /\s+$/g, '');
-                            }
-                            function FindOnPage(inputId) {//ищет текст на странице, в параметр передается ID поля для ввода
-                                var obj = window.document.getElementById(inputId);
-                                var textToFind;
-
-                                if (obj) {
-                                    textToFind = TrimStr(obj.value);//обрезаем пробелы
-                                } else {
-                                    alert("Введенная фраза не найдена");
-                                    return;
-                                }
-                                if (textToFind == "") {
-                                    alert("Вы ничего не ввели");
-                                    return;
-                                }
-
-                                if(document.body.innerHTML.indexOf(textToFind)=="-1")
-                                    alert("Ничего не найдено, проверьте правильность ввода!");
-
-                                if(copy_page.length>0)
-                                    document.body.innerHTML=copy_page;
-                                else copy_page=document.body.innerHTML;
-
-
-                                document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," ");//стираем предыдущие якори для скрола
-                                document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:#64c3f3'>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
-                                lastResFind=textToFind; // сохраняем фразу для поиска, чтобы в дальнейшем по ней стереть все ссылки
-                                window.location = '#'+textToFind;//перемещаем скрол к последнему найденному совпадению
-                            }
-                        </script>
                 </div>
             </div>
         </div>
