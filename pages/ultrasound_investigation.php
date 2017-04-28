@@ -28,46 +28,36 @@
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" name="personName" placeholder="Ваше Имя" required>
+                                        <input type="text" class="form-control" id="name" name="personName"
+                                               placeholder="Ваше Имя" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" name="personPhone" placeholder="Телефон" required>
+                                        <input type="text" class="form-control" id="phone" name="personPhone"
+                                               placeholder="Телефон" required>
                                     </div>
                                 </div>
+                                <div class="col-sm-10">
                                 <div class="form-group">
+<!--                                    <label for="comment">Comment:</label>-->
+                                    <textarea class="form-control" rows="5" id="comment"  placeholder="Сообщение" required></textarea>
+                                </div>
+                                    </div>
 
-                                    <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="date" name="personDate" placeholder="Дата"
-                                               required>
-                                        <input type="hidden" name="personGET" value="<?= $_GET['page']?>">
 
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10" style="text-align: left; margin-left: 0;">
+                                        <button type="submit" class="btn btn-default diraction_form_button">Записаться
+                                        </button>
                                     </div>
                                 </div>
+                            </form>
 
-                                <div class="form-group">
-
-                                    <div class="col-sm-10">
-<!--                                        <select class="form-control" id="diractions_select" name="personDoctor" size="6">-->
-                                        <select class="form-control" id="diractions_select" name="personDoctor"    onmousedown="if(this.options.length>10){this.size=10;}" onchange="this.blur()"  onblur="this.size=0;" >
-                                            <?php $res = $directions->getDirections();
-                                            foreach ($res as $key => $value):?>
-                                            <option value="<?=$value['id'] ?>"><?=$value['name_of_direction'] ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10" style="text-align: left; margin-left: 0;"><button type="submit" class="btn btn-default diraction_form_button">Записаться
-                                    </button>
-                                </div>
                         </div>
-                        </form>
 
-                    </div>
+
                     <iframe style="float: left; opacity: 0.7; margin-top: 30px"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.7383043602792!2d35.05259248512187!3d48.463753358272605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18ebb773c0daa282!2z0JzQtdC90L7RgNCw!5e0!3m2!1sru!2sru!4v1492686565832"
                             width="250" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>

@@ -14,7 +14,7 @@
 <!--                            <ul style="">-->
                                 <div class="hvr-grow-shadow"><a href="index.php?page=laboratory_diagnostic#gematology" class="directions_button">Гематологические
                                         исследования </a></div>
-                                <div class="hvr-grow-shadow"><a href="index.php?page=laboratory_diagnostic#lab" class="directions_button">Иммуногематологические
+                                <div class="hvr-grow-shadow"><a href="index.php?page=laboratory_diagnostic#lab" class="directions_button">Иммуногематологи- ческие
                                         исследования</a></div>
                                 <div class="hvr-grow-shadow"><a href="#" class="directions_button">Коагулологические
                                         исследования</a></div>
@@ -43,15 +43,10 @@
                                 <div class="hvr-grow-shadow"><a href="#" class="directions_button">Генетическая
                                         предрасположенность</a></div>
 
-
-
-
-
-
-                            <form class="form-horizontal" style="margin-top: 30px;">
+                  <form class="form-horizontal" style="margin-top: 30px;  margin-left: -16px;">
                                 <div class="form-group">
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="text-to-find" name="search" placeholder="Введите текст" required>
+                                        <input type="text" class="form-control lab_form" id="text-to-find" name="search" placeholder="Введите текст" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -97,7 +92,7 @@
 
 
                                     document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," ");//стираем предыдущие якори для скрола
-                                    document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:#99b000;'>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
+                                    document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='   color: #899442;'>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
                                     lastResFind=textToFind; // сохраняем фразу для поиска, чтобы в дальнейшем по ней стереть все ссылки
                                     window.location = '#'+textToFind;//перемещаем скрол к последнему найденному совпадению
                                 }

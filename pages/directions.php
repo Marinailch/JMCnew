@@ -32,32 +32,32 @@ $res = $directions->getDirections();
                             <?php endforeach; ?>
                         </ul>
 
-                        <div class="diraction_form" id="appointment" style="margin-top: -300px; padding-top: 320px;">
+                        <div class="diraction_form">
                             <h6>Запишитесь на приём!</h6>
-                            <form class="form-horizontal ">
+                            <form class="form-horizontal" method="post"
+                                  action="<?= $_SERVER['PHP_SELF'] ?>?page=callform">
 
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">
+                                        <input type="text" class="form-control" id="name" name="personName"
+                                               placeholder="Ваше Имя" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
+                                        <input type="text" class="form-control" id="phone" name="personPhone"
+                                               placeholder="Телефон" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+                                        <input type="date" class="form-control" id="date" name="personDate"
+                                               placeholder="Дата"
+                                               required>
+                                        <input type="hidden" name="personGET" value="<?= $_GET['page'] ?>">
 
                                     </div>
                                 </div>
@@ -65,17 +65,24 @@ $res = $directions->getDirections();
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="diractions_select">
-                                            <option>Ваберите из списка</option>
-                                            <option>Прокофьева Анна Семеновна</option>
-                                            <option>Прокофьева Анна Семеновна</option>
+                                        <!--  <select class="form-control" id="diractions_select" name="personDoctor" size="6">-->
+                                        <select class="form-control" id="diractions_select" name="personDoctor"
+                                                onmousedown="if(this.options.length>10){this.size=10;}"
+                                                onchange="this.blur()" onblur="this.size=0;">
+                                            <option style="color: lightgray">Выберите врача</option>
+                                            <?php $res = $directions->getDirections();
+                                            foreach ($res as $key => $value):?>
+                                                <option class="nnn"
+                                                        value="<?= $value['id'] ?>"><?= $value['name_of_direction'] ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="form-group" ">
+                                <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10" style="text-align: left; margin-left: 0;">
-                                        <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>
+                                        <button type="submit" class="btn btn-default diraction_form_button">Записаться
+                                        </button>
                                     </div>
                                 </div>
                             </form>
