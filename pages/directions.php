@@ -32,7 +32,7 @@ $res = $directions->getDirections();
                             <?php endforeach; ?>
                         </ul>
 
-                        <div class="diraction_form">
+                        <div class="diraction_form" id="appointment">
                             <h6>Запишитесь на приём!</h6>
                             <form class="form-horizontal" method="post"
                                   action="<?= $_SERVER['PHP_SELF'] ?>?page=callform">
@@ -135,7 +135,7 @@ $res = $directions->getDirections();
                         $consult_at_home = $directions->getPricesHomeDirectionsByID($id['id']);
                      ?>
     <table class="table_price">
-            <caption>В нашей клинике Вы можите получить консультации</caption>
+        <h4 class="diractions_title"><b>В нашей клинике Вы можите получить консультации</b></h4>
             <tr>
                 <th>Специалист</th>
                 <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>
@@ -169,14 +169,14 @@ $res = $directions->getDirections();
     <table class="table">
         <tbody>
         <tr>
-            <th>Название метода</th>
-            <th style="text-align: center">Стоимость, грн</th>
+            <th  style="text-align: center">Название</th>
+            <th style="text-align: right; padding-right: 10px;">цена,  грн</th>
         </tr>
         <?php foreach ($func_methods as $key => $value):?>
 
         <tr>
             <td class="diractions_laboratory_name"><?=$value['name_of_method_fd']?></td>
-            <td style="text-align: center"><?=$value['price'].''?></td>
+            <td style="text-align: right; padding-right: 40px;"><?=$value['price'].''?></td>
         </tr>
 <?php endforeach;?>
         </tbody>
@@ -193,7 +193,7 @@ $res = $directions->getDirections();
                 репродуктивной системы и мониторинг беременности
             </td>
             <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td>220</td>
 
         </tr>
         <tr>
@@ -201,14 +201,14 @@ $res = $directions->getDirections();
                 репродуктивной системы и мониторинг беременности
             </td>
             <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td>220</td>
         </tr>
         <tr>
             <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
                 репродуктивной системы и мониторинг беременности
             </td>
             <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td>220</td>
         </tr>
         </tbody>
     </table>
@@ -228,8 +228,24 @@ $res = $directions->getDirections();
             <img src="img/diractions/<?= $id[0]['foto_main'] ?>" class="" style="width: 100%"><br>
             <!-- ЭТО ОПИСАНИЕ НАПРАВЛЕНИЯ-->
 
-            <div style="margin-top: 20px; font-size: 16px; text-align: justify;"><?= $id[0]['descr_main'] ?></div>
+<!--            <div style="margin-top: 20px; font-size: 16px; text-align: justify;">--><?//= $id[0]['descr_main'] ?><!--</div>-->
 
+                <div style="margin-top: 20px; font-size: 16px; text-align: justify;"> <p>&laquo;JMC&raquo; - это многопрофильная высококлассная клиника, где наилучшим образом сочетаются новейшие технологии, самое современное и уникальное оборудование, высочайшая квалификация и интеллект врачей всех профилей, высокий сервис<br>
+         К Вашим услуга представлены - все виды УЗИ; Суточный мониторинг ЭКГ по Холтеру; Суточный мониторинг артериального давления; Гастроскопия (ВГДС);
+       Колоноскопия (ВКС) с возможностью общей анестезии;
+       Видеоэндоскопическая диагностика и лечение заболеваний ЛОР-органов, физиотерапия;
+       Спирография;
+       Бесконтактная диагностика внутриглазного давления;
+       Лабораторная диагностика (более 350 показателей);
+       Дневной стационар;
+       Хирургия &laquo;одного дня&raquo; для взрослых и детей;
+       Диспансеризация для детей с выдачей справок-заключений для школ и дошкольных учреждений;
+       Диспансеризация для взрослых;
+       Детоксикационная терапия;
+       Аппаратная медицинская косметология;
+       Вертеброневрология, мануальная терапия;
+       Массаж.</p>
+    </div>
 
     <!-- Теперь получаем прайс всех консультаций-->
     <?php
@@ -240,7 +256,7 @@ $res = $directions->getDirections();
     ?>
 <!-- Вывод основного прайса-->
         <table class="table_price">
-            <caption>Прайс лист на услуги</caption>
+            <caption>Консультаивный приёмов врачей нашей клиники</caption>
             <tr>
                 <th>Направление</th>
                 <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>

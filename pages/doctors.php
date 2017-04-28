@@ -20,7 +20,7 @@ $doctors = $doctors->getDoctorsShort();
         <div class="col-sm-3 ">
             <div class="doctor_card hvr-grow-shadow">
                 <img class="" src="img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
-                <div class="doctor_info">
+                <div class="doctor_info" style="margin-bottom: 20px">
                     <?php
                     // не удаляй этот код он мне нужен
                     $fio = $value['name_of_doctor'];

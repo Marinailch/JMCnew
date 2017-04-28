@@ -107,16 +107,16 @@
                             var footer = $('.footer');
                             var offset = footer.offset().top;
                             // alert (offset);
-                            var lub_lenth = offset - 800;
+                            var lub_lenth = offset - 900;
                             // var lub_lenth = 44000;
                             $(window).scroll(function  () {
-                                if ($(this).scrollTop() > 200) {
+                                if ($(this).scrollTop() > 150) {
                                     $('#menu_lub').addClass('fixed');
                                     if ($(this).scrollTop() > lub_lenth) {
                                         $('#menu_lub').removeClass('fixed');
                                     }
                                 }
-                                else if ($(this).scrollTop() < 200) {
+                                else if ($(this).scrollTop() < 150) {
                                     $('#menu_lub').removeClass('fixed');
                                 }
                             });

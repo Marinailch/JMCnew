@@ -14,7 +14,7 @@
     <div class="carousel-inner" role="listbox">
 
         <div class="item active">
-            <img src="img/slider/12.jpg" alt="Chania" width="460" height="345">
+             <a href="index.php?page=equipment"><img src="img/slider/12.jpg" alt="Chania" width="460" height="345"></a>
             <div class="carousel-caption">
                 <h3>реклама процедуры</h3>
                 <p>Название оборудования </p>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="item">
-            <img src="img/slider/16.jpg" alt="Chania" width="460" height="345">
+             <a href="index.php?page=equipment"><img src="img/slider/16.jpg" alt="Chania" width="460" height="345"></a>
             <div class="carousel-caption">
                 <h3>реклама процедуры</h3>
                 <p>Название оборудования </p>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="item">
-            <img src="img/slider/7.jpg" alt="Flower" width="460" height="345">
+             <a href="index.php?page=equipment"><img src="img/slider/7.jpg" alt="Flower" width="460" height="345"></a>
             <div class="carousel-caption">
                 <h3>реклама процедуры</h3>
                 <p>Название оборудования </p>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="item">
-            <img src="img/slider/20.jpg" alt="Flower" width="460" height="345" class="img_slid">
+             <a href="index.php?page=equipment"><img src="img/slider/20.jpg" alt="Flower" width="460" height="345" class="img_slid"></a>
             <div class="carousel-caption">
                 <h3>реклама процедуры</h3>
                 <p>Название оборудования </p>
@@ -46,13 +46,13 @@
         </div>
 
         <div class="item">
-            <img src="img/slider/19.jpg" alt="Flower" width="460" height="345" class="img_slid">
+            <a href="index.php?page=equipment"><img src="img/slider/19.jpg" alt="Flower" width="460" height="345" class="img_slid"></a>
+
             <div class="carousel-caption">
                 <h3>реклама процедуры</h3>
                 <p>Название оборудования </p>
             </div>
         </div>
-
 
     </div>
 

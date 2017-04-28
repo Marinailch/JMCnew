@@ -10,9 +10,9 @@
     <div class="why_block">
         <div class="container">
 
-            <div id="owl-demo">
+            <a href="index.php?page=directions" id="owl-demo">
                 <div class="item">
-                    <div class="circle"><img src="../img/icon_diractions/hirurg.png" alt="Owl Image"></div>
+                   <div class="circle"><img src="../img/icon_diractions/hirurg.png" alt="Owl Image"></div>
                     <p>Хирургия</p></div>
                 <div class="item">
                     <div class="circle"><img src="../img/icon_diractions/terapevt.png" alt="Owl Image"></div>
@@ -59,7 +59,7 @@
                 <div class="item">
                     <div class="circle"><img src="../img/icon_diractions/gastro.png" alt="Owl Image"></div>
                     <p>Эндоскопия</p></div>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -340,23 +340,24 @@
                 <p><span class="markh4o">НАШИ СОТРУДНИКИ</span></p>
                 <div class="col-sm-5">
                     <div class="doctor_card1">
-                        <img class="" src="../img/vrach_card/avatar.png">
+                        <img class="" src="../img/vrach_card/doc1.jpg">
                         <div class="doctor_info1">
-                            <h5>Гениколог</h5>
-                            <h4>Иванов Иван Иванович</h4>
+                            <h5>Прохорова</h5>
+                            <h4> Яна Владимировна</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-5">
                     <div class="doctor_card1">
-                        <img class="" src="../img/vrach_card/avatar.png">
+                        <img class="" src="../img/vrach_card/doc2.jpg">
                         <div class="doctor_info1">
-                            <h5>Гениколог</h5>
-                            <h4>Иванов Иван Иванович</h4>
+                            <h5>Шумихина</h5>
+                            <h4> Марина Евгеньевна</h4>
                         </div>
                     </div>
                 </div>
-                <!--            <a href="../directions.php" class="button_o hvr-grow-shadow">Записаться на приём</a>-->
+                            <a href="../directions.php" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;     margin-left: 25%;
+">узнать больше</a>
             </div>
 
         </div>

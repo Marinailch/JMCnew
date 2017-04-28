@@ -172,7 +172,10 @@ a {
     margin-top: -3px;
 }
 
-
+    #appointment{
+        margin-top: -120px;
+        padding-top: 150px;
+    }
 
 /*______headers___h1 h2 h3 h4________*/
 
@@ -880,7 +883,7 @@ padding: 80px 0 0 0;
 
 #track_record h4{
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     color: #5e5e5e;
     margin-bottom: 25px;
 }
@@ -1108,6 +1111,10 @@ min-width: 220px;
     padding-left: 18px
 }
 
+    #doctors{
+        margin-bottom: 20px;
+    }
+
 /**/
 .text-doc {
     padding-left: 20px;
@@ -1132,7 +1139,7 @@ min-width: 220px;
     color: #424242;
     text-align: justify;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     /*margin-top: 40px;*/
 }
 
@@ -1249,25 +1256,57 @@ min-width: 220px;
     overflow: hidden;
 }
 
-.Copiright {
-    color: #803924;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 12px 1% 0 20% !important;
-    display: block;
-    overflow: hidden;
-    width: 200px;
-}
+    .Copiright {
+        color: #803924;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 12px 1% 0 0 !important;
+        /* display: block; */
+        /* overflow: hidden; */
+        /* width: 200px; */
+    }
 
-.footer_menu a {
+.footer_menu  {
     text-decoration: none;
     font-size: 16px;
     color: #323232;
     font-weight: bold;
+    width: 80%;
+    float: left;
+    display: block;
 
 }
 
-.sosial_fb {
+    .footer_menu_button{
+
+        font-size: 15px !important;
+        margin-top: 14px;
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 35px !important;
+        display: inline-block;
+        min-width: 132px;
+        width: 200px;
+        text-align: center;
+    /* background: #9c7e75; */
+        background-color: #b3d242;
+        padding: 1px 4px;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        border-radius: 30px;
+        border-color: #fff;
+        float: right;
+    }
+
+
+    .footer_menu_button:hover {
+        background: #c5c5c5;
+        color: #fff !important;
+    }
+
+
+
+    .sosial_fb {
     display: block;
     overflow: hidden;
     width: 40px;
@@ -1483,24 +1522,26 @@ background-color: #fff;
     line-height: 1em;
 }
     #lab td{
-        border: 0px solid #ccc;
-        color: #717171 !important;
+        border: 1px solid #e8e8e8;
+        /*color: #717171 !important;*/
 
     }
 
     #lab p{
-        color: #717171 !important;
+        /*color: #717171 !important;*/
         margin-top: 10px;
         line-height: 1em;
     }
 
-    #lab tab
+    #lab table{
+        border: 1px solid #ccc!important;
+    }
 
 
-#menu_lub{
+    #menu_lub{
     /*text-align: center;*/
     padding-bottom: 30px;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
     width: 170px;
     list-style-type: none;
     padding-left: 0;
@@ -1512,9 +1553,28 @@ background-color: #fff;
 #menu_lub.fixed{
     position: fixed;
     /*position: absolute;*/
-    top: 130px;
+    top: 170px;
+    width: 170px;
 
 }
+
+
+    #func_menu.fixed{
+        position: fixed;
+        /*position: absolute;*/
+        top: 170px;
+        width: 360px;
+
+    }
+    #uzi.fixed{
+        position: fixed;
+        /*position: absolute;*/
+        top: 170px;
+        width: 360px;
+
+    }
+
+
 #menu_lub .directions_button{
     font-size: 11px;
     line-height: 16px !important;
@@ -1649,11 +1709,13 @@ background-color: #fff;
     }
 
 
-
+   #gematology{
+       margin-top: -20px;
+   }
     .lab_form{
         padding: 21px 12px;
         border: 1px solid #dadada;
-        border-radius: 20px;
+        border-radius: 35px;
         width: 170px;
         text-align: center;
     }
@@ -1758,8 +1820,10 @@ background-color: #fff;
 
     /*footer*/
     .footer_menu a {
-        margin-right: 41px;
+        /*margin-right: 41px;*/
     }
+
+
 
     #b4 img {
         width: 130%;
@@ -2175,7 +2239,7 @@ background-color: #fff;
     font-weight: 600;
     text-align: center;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 20px;
     line-height: 1.0em;
     border-bottom: 1px solid #d4d4d4;
 }

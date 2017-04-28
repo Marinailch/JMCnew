@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <div class="directions_menu">
+                <div class="directions_menu" id="func_menu">
                     <div class="doctor_info">
-                        <ul style="list-style-type: none; padding-left: 0; margin-top: 50px; text-align: left;">
+                        <ul style="list-style-type: none; padding-left: 0;  text-align: left;">
                             <li class="hvr-grow-shadow"><a href="index.php?page=ultrasound_investigation"
                                                            class="directions_button">УЗИ</a></li>
                             <li class="hvr-grow-shadow"><a href="index.php?page=laboratory_diagnostic"
@@ -51,15 +51,40 @@
                             </form>
 
                         </div>
+
+
+                        <script>
+                            jQuery(function ($) {
+                                var footer = $('.footer');
+                                var offset = footer.offset().top;
+                                // alert (offset);
+                                var lub_lenth = offset - 800;
+                                // var lub_lenth = 44000;
+                                $(window).scroll(function  () {
+                                    if ($(this).scrollTop() > 150) {
+                                        $('#func_menu').addClass('fixed');
+                                        if ($(this).scrollTop() > lub_lenth) {
+                                            $('#func_menu').removeClass('fixed');
+                                        }
+                                    }
+                                    else if ($(this).scrollTop() < 150) {
+                                        $('#func_menu').removeClass('fixed');
+                                    }
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
             <div class="col-sm-8 text-doc">
-                <nav style="margin-top: 80px;">
+                <nav>
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
 <!--                    <img src="img/diractions/dr.jpg" class="" width="100%">-->
                     <!-- Это начало вывода прайса по УЗИ диагностике-->
 <!--                    <h4 class="diractions_title"><b>Функциональная диагностика в нашей клинике</b></h4>-->
+                    <?php
+                    include "slider3.php";
+                    ?>
                     <table class="table table_price">
                         <tbody>
 
