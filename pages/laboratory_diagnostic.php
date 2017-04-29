@@ -108,7 +108,7 @@
                             $i=1;
                             foreach ($res2 as $key => $value): ?>
                                 <!--                    <h4 class="diractions_title"><b>--><? //= $value['name'] ?><!--</b></h4>-->
-                                <div id="n<?= $i ?>"></div>
+                                <div id="n<?= $i ?>" style ="margin-top:-150px;   padding-top: 150px;"></div>
                                 <?= $value['description'] ?>
                                 <!-- Here we try to do it-->
                             <?php
