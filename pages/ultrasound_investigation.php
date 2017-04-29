@@ -56,29 +56,6 @@
                             </form>
 
                         </div>
-
-                        <script>
-                            jQuery(function ($) {
-                                var footer = $('.footer');
-                                var offset = footer.offset().top;
-                                // alert (offset);
-                                var lub_lenth = offset - 650;
-                                // var lub_lenth = 44000;
-                                $(window).scroll(function  () {
-                                    if ($(this).scrollTop() > 150) {
-                                        $('#uzi').addClass('fixed');
-                                        if ($(this).scrollTop() > lub_lenth) {
-                                            $('#uzi').removeClass('fixed');
-                                        }
-                                    }
-                                    else if ($(this).scrollTop() < 150) {
-                                        $('#uzi').removeClass('fixed');
-                                    }
-                                });
-                            });
-                        </script>
-
-
 <!--                    <iframe style="float: left; opacity: 0.7; margin-top: 30px"-->
 <!--                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.7383043602792!2d35.05259248512187!3d48.463753358272605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18ebb773c0daa282!2z0JzQtdC90L7RgNCw!5e0!3m2!1sru!2sru!4v1492686565832"-->
 <!--                            width="250" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>-->
