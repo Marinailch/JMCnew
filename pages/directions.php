@@ -135,7 +135,7 @@ $res = $directions->getDirections();
                         $consult_at_home = $directions->getPricesHomeDirectionsByID($id['id']);
                      ?>
     <table class="table_price">
-        <h4 class="diractions_title"><b>В нашей клинике Вы можите получить консультации</b></h4>
+        <h4 class="diractions_title"><b>В нашей клинике Вы можете получить консультации</b></h4>
             <tr>
                 <th>Специалист</th>
                 <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>

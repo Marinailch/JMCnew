@@ -78,13 +78,14 @@
                     <tbody>
                     <tr>
                         <th>Название метода</th>
-                        <th style="width: 80px;">Цена</th>
+                        <th style="width: 80px;">Цена, грн</th>
                     </tr>
                     <!-- олучаем выборку из массива-->
                     <?php foreach ($usi->getPriceForUSI() as $key => $value): ?>
                     <tr>
                         <td><?= $value['name_of_method_fd'] ?></td>
-                        <td><?= $value['price'] . ' грн' ?></td>
+<!--                        <td>--><?//= $value['price'] . ' грн' ?><!--</td>-->
+                        <td><?= $value['price']?></td>
                     </tr>
                     </tbody>
                     <?php endforeach; ?>
