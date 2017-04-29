@@ -17,6 +17,8 @@ class Form
             'doctor' => filter_input(INPUT_POST, 'personDoctor'),
             'get' => filter_input(INPUT_POST, 'personGET'),
         );
+        mail('s7eell@gmail.com', 'CallDoctor', $data['name']);
         return $data;
+
     }
 }
