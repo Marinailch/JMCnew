@@ -107,7 +107,7 @@ class ActionGET extends DataBase
         }else if($id == 'callform'){
             //Обработка формы
             $res = $this->form->getForm();
-            return $res['get'];
+            return 'pages/'.$res['get'].'.php';
 //            var_dump($res);
 
 
