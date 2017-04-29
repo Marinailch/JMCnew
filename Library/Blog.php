@@ -10,7 +10,7 @@ class Blog extends DataBase
 {
     public function getFullBlogItems()
     {
-        $query = "SELECT * FROM blog ORDER BY created_at ASC LIMIT 3";
+        $query = "SELECT * FROM blog ORDER BY created_at ASC LIMIT 5";
         if($result = parent::arrayRes($query)){
         return $result;
         }else{
