@@ -7,4 +7,5 @@ return array(
     $usi = new FunctionalDiagnostic($db),
     $laboratory = new Laboratory($db),
     $form = new Form(),
+    $blog = new Blog($db),
 );

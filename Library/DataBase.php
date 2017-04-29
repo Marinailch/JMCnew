@@ -20,6 +20,19 @@ class DataBase
         );
 
     }
+    public function arrayRes($query)
+    {
+        $result = $this->db->query($query);
+        if($result){
+            $catalog = array();
+            while($new_item = $result->fetch_assoc()){
+                $catalog[] = $new_item;
+            }
+            return $catalog;
+        }
+        return FALSE;
+
+    }
 }
 
 

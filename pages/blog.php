@@ -1,7 +1,8 @@
 <div class="directions_header">
     <p>Блог</p>
 </div>
-
+<?php $res = $blog->getFullBlogItems();
+var_dump($res);?>
 <div class="container">
     <a href="index.php?page=articles" class="article_short">
         <img class="article_title_short" src="../img/blog/blog_img1.jpg" width="300px" height="200px">
