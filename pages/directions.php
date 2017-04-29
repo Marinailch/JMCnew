@@ -32,32 +32,32 @@ $res = $directions->getDirections();
                             <?php endforeach; ?>
                         </ul>
 
-                        <div class="diraction_form" id="appointment" style="margin-top: -300px; padding-top: 320px;">
+                        <div class="diraction_form" id="appointment">
                             <h6>Запишитесь на приём!</h6>
-                            <form class="form-horizontal ">
+                            <form class="form-horizontal" method="post"
+                                  action="<?= $_SERVER['PHP_SELF'] ?>?page=callform">
 
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="name" placeholder="Ваше Имя">
+                                        <input type="text" class="form-control" id="name" name="personName"
+                                               placeholder="Ваше Имя" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" placeholder="Телефон">
+                                        <input type="text" class="form-control" id="phone" name="personPhone"
+                                               placeholder="Телефон" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Электронный адрес">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+                                        <input type="date" class="form-control" id="date" name="personDate"
+                                               placeholder="Дата"
+                                               required>
+                                        <input type="hidden" name="personGET" value="<?= $_GET['page'] ?>">
 
                                     </div>
                                 </div>
@@ -65,17 +65,24 @@ $res = $directions->getDirections();
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="diractions_select">
-                                            <option>Ваберите из списка</option>
-                                            <option>Прокофьева Анна Семеновна</option>
-                                            <option>Прокофьева Анна Семеновна</option>
+                                        <!--  <select class="form-control" id="diractions_select" name="personDoctor" size="6">-->
+                                        <select class="form-control" id="diractions_select" name="personDoctor"
+                                                onmousedown="if(this.options.length>10){this.size=10;}"
+                                                onchange="this.blur()" onblur="this.size=0;">
+                                            <option style="color: lightgray">Выберите врача</option>
+                                            <?php $res = $directions->getDirections();
+                                            foreach ($res as $key => $value):?>
+                                                <option class="nnn"
+                                                        value="<?= $value['id'] ?>"><?= $value['name_of_direction'] ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="form-group" ">
+                                <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10" style="text-align: left; margin-left: 0;">
-                                        <button type="submit" class="btn btn-default diraction_form_button">Записаться</button>
+                                        <button type="submit" class="btn btn-default diraction_form_button">Записаться
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -128,7 +135,7 @@ $res = $directions->getDirections();
                         $consult_at_home = $directions->getPricesHomeDirectionsByID($id['id']);
                      ?>
     <table class="table_price">
-            <caption>В нашей клинике Вы можите получить консультации</caption>
+        <h4 class="diractions_title"><b>В нашей клинике Вы можите получить консультации</b></h4>
             <tr>
                 <th>Специалист</th>
                 <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>
@@ -162,14 +169,14 @@ $res = $directions->getDirections();
     <table class="table">
         <tbody>
         <tr>
-            <th>Название метода</th>
-            <th style="text-align: center">Стоимость, грн</th>
+            <th  style="text-align: center">Название</th>
+            <th style="text-align: right; padding-right: 10px;">цена,  грн</th>
         </tr>
         <?php foreach ($func_methods as $key => $value):?>
 
         <tr>
             <td class="diractions_laboratory_name"><?=$value['name_of_method_fd']?></td>
-            <td style="text-align: center"><?=$value['price'].''?></td>
+            <td style="text-align: right; padding-right: 40px;"><?=$value['price'].''?></td>
         </tr>
 <?php endforeach;?>
         </tbody>
@@ -186,7 +193,7 @@ $res = $directions->getDirections();
                 репродуктивной системы и мониторинг беременности
             </td>
             <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td>220</td>
 
         </tr>
         <tr>
@@ -194,14 +201,14 @@ $res = $directions->getDirections();
                 репродуктивной системы и мониторинг беременности
             </td>
             <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td>220</td>
         </tr>
         <tr>
             <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
                 репродуктивной системы и мониторинг беременности
             </td>
             <td>1-5 дней</td>
-            <td>220 грн</td>
+            <td>220</td>
         </tr>
         </tbody>
     </table>
@@ -221,8 +228,24 @@ $res = $directions->getDirections();
             <img src="img/diractions/<?= $id[0]['foto_main'] ?>" class="" style="width: 100%"><br>
             <!-- ЭТО ОПИСАНИЕ НАПРАВЛЕНИЯ-->
 
-            <div style="margin-top: 20px; font-size: 16px; text-align: justify;"><?= $id[0]['descr_main'] ?></div>
+<!--            <div style="margin-top: 20px; font-size: 16px; text-align: justify;">--><?//= $id[0]['descr_main'] ?><!--</div>-->
 
+                <div style="margin-top: 20px; font-size: 16px; text-align: justify;"> <p>&laquo;JMC&raquo; - это многопрофильная высококлассная клиника, где наилучшим образом сочетаются новейшие технологии, самое современное и уникальное оборудование, высочайшая квалификация и интеллект врачей всех профилей, высокий сервис<br>
+         К Вашим услуга представлены - все виды УЗИ; Суточный мониторинг ЭКГ по Холтеру; Суточный мониторинг артериального давления; Гастроскопия (ВГДС);
+       Колоноскопия (ВКС) с возможностью общей анестезии;
+       Видеоэндоскопическая диагностика и лечение заболеваний ЛОР-органов, физиотерапия;
+       Спирография;
+       Бесконтактная диагностика внутриглазного давления;
+       Лабораторная диагностика (более 350 показателей);
+       Дневной стационар;
+       Хирургия &laquo;одного дня&raquo; для взрослых и детей;
+       Диспансеризация для детей с выдачей справок-заключений для школ и дошкольных учреждений;
+       Диспансеризация для взрослых;
+       Детоксикационная терапия;
+       Аппаратная медицинская косметология;
+       Вертеброневрология, мануальная терапия;
+       Массаж.</p>
+    </div>
 
     <!-- Теперь получаем прайс всех консультаций-->
     <?php
@@ -233,7 +256,7 @@ $res = $directions->getDirections();
     ?>
 <!-- Вывод основного прайса-->
         <table class="table_price">
-            <caption>Прайс лист на услуги</caption>
+            <caption>Консультаивный приёмов врачей нашей клиники</caption>
             <tr>
                 <th>Направление</th>
                 <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>

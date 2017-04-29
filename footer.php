@@ -1,4 +1,4 @@
-﻿<footer>
+﻿<div>
 <div class="footer">
         <div class="container">
             <div class="row">
@@ -44,24 +44,27 @@
     </div>
 
     <!-- footer_menu -->
+    <div class="container">
     <div class="footer_menu ">
 
 
                     <div class="sosial_block Copiright">Мы в социальных сетях</div>
                     <div class="sosial_block"><a href="fb.com"><div class="sosial_fb"></div></a></div>
                     <div class="sosial_block"><a href="in.com"><div class="sosial_in"></div></a></div>
-
-
     </div>
+        <a href="index.php?page=directions#appointment" class=" hvr-grow-shadow footer_menu_button" style="">Записаться на приём</a>
 
 
 
+</div>
+</footer>
+</body>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
 
 
 
 
-</footer>
-</body>
+
+
 </html>
