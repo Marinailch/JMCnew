@@ -92,7 +92,7 @@
 <!--                            <th style="margin-top: 20px; text-align: center; width:90%;">Название процедуры<br> <small>функциональной диагностики</small></th>-->
 <!--                            <th style="width: 80px;">Цена,<small> грн </small></th>-->
 <!--                        </tr>-->
-                    <h4 class="diractions_title"><b>Прайс на услуги УЗИ в нашей клинике</b></h4>
+                    <h4 class="diractions_title"><b>Перечень диагностических исследований, проводимых в нашей клинике </b></h4>
                     <table class="table">
                         <tbody>
                         <tr>

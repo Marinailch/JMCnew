@@ -823,13 +823,16 @@ h3 {
     line-height: 1.3em;
 }
 
-.article {
-    width: 100%;
-    background-color: #edecec;
-    overflow: hidden;
-    margin-top: 30px;
-}
+    .article {
 
+        /* width: 100%; */
+        /* background-color: #edecec; */
+        overflow: hidden;
+        margin-top: 6px;
+        height: 86px;
+        margin-bottom: 60px;
+        text-align: justify;
+    }
 .article img {
     width: 100%;
 }
@@ -1740,13 +1743,31 @@ background-color: #fff;
 
     .article_text_short{
         text-align: justify; margin-top: 30px; overflow: hidden; height: 110px; color: #414141;
+        margin-bottom: 20px;
     }
-    .article_data_short{font-weight: 600; color: dimgrey; margin-bottom: -25px;
+
+    .article{
+        /*margin-top: 20px;*/
     }
-    .article_title_short{float:left;  margin-right: 35px; margin-bottom: 30px; font-size: 16px!important;
+    .article_data {
+        font-weight: 600;
+        color: dimgrey;
+        margin-bottom: 0px;
+        margin: 0px;
+    }
+    .article_title_short{
+        float:left;
+        margin-right: 35px;
+        margin-bottom: 20px;
+        font-size: 16px!important;
+        clear: both;
     }
     .article_short{
-        margin-top: 40px; margin-bottom: 40px; display: block; cursor: pointer;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        /*display: block;*/
+        cursor: pointer;
+        /*clear: both;*/
     }
 
     /*_________blog end--------------------*/
