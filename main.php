@@ -356,7 +356,7 @@
                         </div>
                     </div>
                 </div>
-                            <a href="../directions.php" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;     margin-left: 25%;
+                            <a href="../index.php?page=doctors" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;     margin-left: 25%;
 ">узнать больше</a>
             </div>
 

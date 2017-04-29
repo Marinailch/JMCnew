@@ -85,12 +85,19 @@
                     <?php
                     include "slider3.php";
                     ?>
-                    <table class="table table_price">
+<!--                    <table class="table table_price">-->
+<!--                        <tbody>-->
+<!---->
+<!--                        <tr>-->
+<!--                            <th style="margin-top: 20px; text-align: center; width:90%;">Название процедуры<br> <small>функциональной диагностики</small></th>-->
+<!--                            <th style="width: 80px;">Цена,<small> грн </small></th>-->
+<!--                        </tr>-->
+                    <h4 class="diractions_title"><b>Прайс на услуги УЗИ в нашей клинике</b></h4>
+                    <table class="table">
                         <tbody>
-
                         <tr>
-                            <th style="margin-top: 20px; text-align: center; width:90%;">Название процедуры<br> <small>функциональной диагностики</small></th>
-                            <th style="width: 80px;">Цена,<small> грн </small></th>
+                            <th>Название метода</th>
+                            <th style="width: 80px;">Цена, грн</th>
                         </tr>
                         <!-- олучаем выборку из массива-->
                         <?php foreach ($usi->getPriceForFD() as $key => $value): ?>
