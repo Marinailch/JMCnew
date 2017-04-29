@@ -18,7 +18,7 @@
                                                             class="directions_button"><?= $value['name'] ?></a></div>
                         <? $i+=1;
                         endforeach; ?>
-                        <form class="form-horizontal" style="margin-top: 30px;  margin-left: -16px;">
+                        <form class="form-horizontal" style="margin-top: 20px;  margin-left: -16px;">
                             <div class="form-group">
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control lab_form" id="text-to-find" name="search"

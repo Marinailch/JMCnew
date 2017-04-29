@@ -1553,7 +1553,7 @@ background-color: #fff;
 #menu_lub.fixed{
     position: fixed;
     /*position: absolute;*/
-    top: 170px;
+    top: 155px;
     width: 170px;
 
 }
@@ -1577,8 +1577,7 @@ background-color: #fff;
 
 #menu_lub .directions_button{
     font-size: 11px;
-    line-height: 16px !important;
-
+    line-height: 13px !important;
     padding: 0 3px;
     -moz-border-radius: 30px;
     /* -webkit-border-radius: 30px; */
