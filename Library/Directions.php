@@ -100,7 +100,7 @@ class Directions extends DataBase
             case 'Кардиология':           $title_direct="кардиолога";            break;
             case 'Проктология':           $title_direct="проктолога";            break;
             case 'Ревматология':          $title_direct="ревматолога";           break;
-            case 'Сосудистая%20хирургия': $title_direct="сосудистого хирурга";   break;
+            case 'Сосудистая хирургия': $title_direct="сосудистого хирурга";   break;
             default: return $title_direct="Консультативный приём";
         }
         return 'Консультация '.$title_direct;
