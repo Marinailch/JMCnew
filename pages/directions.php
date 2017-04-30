@@ -112,9 +112,7 @@ $res = $directions->getDirections();
                     <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
                     <hr>
    <!-- Это блок с изображениями врачей, по данному направлению-->
-                    <?php   $doctors = $doctors->getDoctorsByDirection($id['id']);
-//                    var_dump($doctors);
-                            foreach ($doctors as $key => $value): ?>
+                    <?php foreach ($doctors->getDoctorsByDirection($id['id']) as $key => $value): ?>
                     <div class="media">
                         <div class="media-left">
                             <img src="../img/doctors_foto/<?= $value['link_foto_doctor']?>" class="media-object"
@@ -122,7 +120,9 @@ $res = $directions->getDirections();
                         </div>
                         <div class="media-body" style="    padding-left: 20px;">
                             <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
-                            <p><?= $value['short_descr']?></p>
+                            <p><?= $value['specialty_of_doctor']?></p>
+                            <p><?= $value['science_degree']?></p>
+                            <p><?= $value['expirience_of_work']?></p>
                         </div>
                     </div>
                             <? endforeach; ?>
