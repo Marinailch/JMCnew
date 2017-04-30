@@ -134,6 +134,7 @@ $res = $directions->getDirections();
                         $consult = $directions->getPricesDirectionsByID($id['id']);
                         $consult_at_home = $directions->getPricesHomeDirectionsByID($id['id']);
                      ?>
+    <?php if($consult){ ?>
     <table class="table_price">
         <h4 class="diractions_title"><b>В нашей клинике Вы можете получить консультации</b></h4>
             <tr>
@@ -142,13 +143,15 @@ $res = $directions->getDirections();
                 <th style="padding-top: 25px;">Цена, грн<br>  <span style="font-weight: 100; font-size: 12px;">последующее посещение</span></th>
             </tr>
 
-            <?php foreach ($consult as $key=>$value):?>
-        <tr>
-            <td><?=$value['specialty'] ?></td>
-            <td><?=$value['price_first_time'].' ' ?></td>
-            <td><?=$value['price_after'].'' ?></td>
-        </tr>
-    <?php endforeach;
+
+                <?php foreach ($consult as $key=>$value):?>
+                    <tr>
+                        <td><?=$value['specialty'] ?></td>
+                        <td><?=$value['price_first_time'].' ' ?></td>
+                        <td><?=$value['price_after'].'' ?></td>
+                    </tr>
+                <?php endforeach;
+            }
             if($consult_at_home){?>
                 <?php foreach ($consult_at_home as $item2 => $value2):?>
                     <tr>
