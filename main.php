@@ -12,8 +12,9 @@
 
             <a href="index.php?page=directions" id="owl-demo">
                 <div class="item">
-                   <div class="circle"><img src="../img/icon_diractions/hirurg.png" alt="Owl Image"></div>
-                    <p>Хирургия</p></div>
+                    <div class="circle"><img src="../img/icon_diractions/hirurg.png" alt="Owl Image"></div>
+                    <p>Хирургия</p>
+                </div>
                 <div class="item">
                     <div class="circle"><img src="../img/icon_diractions/terapevt.png" alt="Owl Image"></div>
                     <p>Терапия</p></div>
@@ -92,21 +93,27 @@
                 <div class="about_item_text"><h4>Наши руководители </h4>
                     <p>Целями нашего центра являются оказание квалифицированной, качественной, адекватной состоянию
                         здоровья пациента ... </p>
-                    <a href="index.php?page=leaders"><div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
+                    <a href="index.php?page=leaders">
+                        <div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div>
+                    </a>
                 </div>
             </div>
             <div class="col-sm-4"><img src="../img/about/about2.jpg">
                 <div class="about_item_text"><h4>О клинике </h4>
                     <p>С открытием нового двухэтажного офиса JMC в центре «Менора» мы расширяем деятельность, в
                         частности ... </p>
-                    <a href="index.php?page=about"><div><p class=" hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
+                    <a href="index.php?page=about">
+                        <div><p class=" hvr-grow-shadow diraction_form_button">узнать больше</p></div>
+                    </a>
                 </div>
             </div>
             <div class="col-sm-4"><img src="../img/about/about3.jpg">
                 <div class="about_item_text"><h4>Главний раввин </h4>
                     <p>Начинается месяц Адар. Для еврейского народа это месяц Мазаль и Броха (успеха и благословения).
                         Сказано в Талмуде ...</p>
-                    <a href="index.php?page=ravin"><div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div></a>
+                    <a href="index.php?page=ravin">
+                        <div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -356,7 +363,7 @@
                         </div>
                     </div>
                 </div>
-                            <a href="../index.php?page=doctors" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;     margin-left: 25%;
+                <a href="../index.php?page=doctors" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;     margin-left: 25%;
 ">узнать больше</a>
             </div>
 
@@ -448,7 +455,8 @@
                 <p><span class="markh4o">Нам можно доверять! </span></p>
                 <p>Вы доверяйте нам, а мы в свою очередь предоставляем Вам максимально точную диагностику и наиболее
                     эффективные методики лечения </p>
-                <a href="index.php?page=ultrasound_investigation" class="button_o hvr-grow-shadow">Узнать о нас больше</a>
+                <a href="index.php?page=ultrasound_investigation" class="button_o hvr-grow-shadow">Узнать о нас
+                    больше</a>
 
             </div>
         </div>

@@ -278,14 +278,15 @@ a {
       margin-top: 38px;
       margin-right: 50px;
   }
-   .phone_block{
-       font-weight: 600;
-       color: #b1b1b1;
-       font-size: 12px;
-       float: right;
-       width: 137px;
-       margin-top: 30px;
-          }
+    .phone_block {
+        font-weight: 800;
+        color: #7c554c;
+        font-size: 15px;
+        float: right;
+        width: 155px;
+        margin-top: 30px;
+        font-family: serif;
+    }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
     color: #c0d05b;
@@ -810,7 +811,7 @@ h3 {
 #blog {
     /*margin-top: 80px;*/
     /*margin-bottom: 100px;*/
-    padding: 80px 0 80px 0;
+    padding: 73px 0 80px 0;
     background: url("img/bg_3.jpg") top right no-repeat;
 
 }
@@ -824,12 +825,11 @@ h3 {
 }
 
     .article {
-
-        /* width: 100%; */
-        /* background-color: #edecec; */
+        width: 100%;
+        background-color: #edecec;
         overflow: hidden;
         margin-top: 6px;
-        height: 86px;
+        /* height: 86px; */
         margin-bottom: 60px;
         text-align: justify;
     }
@@ -854,6 +854,7 @@ h3 {
     font-size: 12px;
     margin-bottom: 15px;
 }
+
 
 /*блог страница*/
 #b4 img {
@@ -1742,32 +1743,36 @@ background-color: #fff;
     /*____________blog__________________*/
 
     .article_text_short{
-        text-align: justify; margin-top: 30px; overflow: hidden; height: 110px; color: #414141;
+        text-align: justify;
+        overflow: hidden;
+        height: 250px;
+        color: #414141;
         margin-bottom: 20px;
     }
 
-    .article{
-        /*margin-top: 20px;*/
-    }
+
     .article_data {
         font-weight: 600;
         color: dimgrey;
-        margin-bottom: 0px;
-        margin: 0px;
+        margin-bottom: 14px;
+        /* margin: 6px; */
     }
     .article_title_short{
-        float:left;
+        /*float:left;*/
         margin-right: 35px;
         margin-bottom: 20px;
-        font-size: 16px!important;
-        clear: both;
-    }
-    .article_short{
-        margin-top: 40px;
-        margin-bottom: 40px;
-        /*display: block;*/
-        cursor: pointer;
+        /*font-size: 14px!important;*/
         /*clear: both;*/
+    }
+    .article_short {
+        text-align: justify;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        display: block;
+        overflow: hidden;
+        /*height: 200px;*/
+        color: #414141;
+
     }
 
     /*_________blog end--------------------*/
