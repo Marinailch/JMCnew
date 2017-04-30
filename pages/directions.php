@@ -122,7 +122,7 @@ $res = $directions->getDirections();
                             <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
                             <p><?= $value['specialty_of_doctor']?></p>
                             <p><?= $value['science_degree']?></p>
-                            <p><?php $value['expirience_of_work']?></p>
+                            <p><?= $value['expirience_of_work']?></p>
                         </div>
                     </div>
                             <? endforeach; ?>
