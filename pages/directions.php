@@ -122,15 +122,7 @@ $res = $directions->getDirections();
                             <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
                             <p><?= $value['specialty_of_doctor']?></p>
                             <p><?= $value['science_degree']?></p>
-                            <p><?php
-                                $years=$value['expirience_of_work'];
-                               if($years=1){
-                                return $age_expirience="год";
-                               }
-
-
-
-                                echo "опыт работы".$value['expirience_of_work']." "."$age_expirience"?></p>
+                            <p><?= "опыт работы".$value['expirience_of_work']?></p>
                         </div>
                     </div>
                             <? endforeach; ?>
