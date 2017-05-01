@@ -17,7 +17,11 @@ class Form
             'doctor' => filter_input(INPUT_POST, 'personDoctor'),
             'get' => filter_input(INPUT_POST, 'personGET'),
         );
-        mail('s7eell@gmail.com', 'CallDoctor', $data['name']);
+        $message = 'К Вам в клинику записался:'.$data['name'].'  '
+            .'Контактный телефон: '.$data['phone'].'  '
+            .'Дата записи: '.$data['date'].'  '
+            .'По направлению: '.$data['doctor'];
+        mail('s7eell@gmail.com', 'ЗАПИСЬ НА ПРИЕМ', $message);
         return $data;
 
     }

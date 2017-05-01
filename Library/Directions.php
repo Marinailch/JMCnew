@@ -95,7 +95,7 @@ class Directions extends DataBase
             case 'Неврология':            $title_direct="невролога";             break;
             case 'Офтальмология':         $title_direct="офтальмолога";          break;
             case 'Пульмонология':         $title_direct="пульмонолога";          break;
-            case 'Оторинолярингология':   $title_direct="оториноляринголога";    break;
+            case 'Оториноларингология':   $title_direct="оториноляринголога";    break;
             case 'Детская%20неврология':  $title_direct="детского невролога";    break;
             case 'Кардиология':           $title_direct="кардиолога";            break;
             case 'Проктология':           $title_direct="проктолога";            break;

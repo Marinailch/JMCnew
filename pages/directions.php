@@ -126,10 +126,11 @@ $res = $directions->getDirections();
                             <p><?= $value['expirience_of_work']?></p>
                         </div>
                     </div>
-                <?php }else{?>
-            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>
-                              <?php }?>
+<!--                --><?php }//else{?>
+<!--            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>-->
+<!--                              --><?php //}?>
                             <? endforeach; ?>
+    <a href="index.php?page=doctors" style="font-size: 1em;margin-left: 65%;"><i>Весь персонал клиники</i></a>
                     <hr>
     <!-- Это конец блока с изображениями врачей, по данному направлению-->
 
@@ -145,15 +146,15 @@ $res = $directions->getDirections();
             <tr>
                 <th>Специалист</th>
                 <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size:12px;">первое      посещение</span></th>
-                <th style="padding-top: 25px;">Цена, грн<br>  <span style="font-weight: 100; font-size: 12px;">последующее посещение</span></th>
+                <th style="padding-top: 25px;">Цена, грн<br> <span style="font-weight: 100; font-size: 12px;">последующее посещение</span></th>
             </tr>
 
 
                 <?php foreach ($consult as $key=>$value):?>
                     <tr>
-                        <td><?=$value['specialty'] ?></td>
+                        <td style="border-left: solid 1px #f1f1f1;"><?=$value['specialty'] ?></td>
                         <td><?=$value['price_first_time'].' ' ?></td>
-                        <td><?=$value['price_after'].'' ?></td>
+                        <td style="text-align: center;border-right: solid 1px #f1f1f1;"><?=$value['price_after'].'' ?></td>
                     </tr>
                 <?php endforeach;
             }
@@ -162,10 +163,12 @@ $res = $directions->getDirections();
                     <tr>
                         <td><?=$value2['specialty'] ?></td>
                         <td><?=$value2['consulting_at_home'].'' ?></td>
+                        <td></td>
                     </tr>
                 <?php endforeach ?>
     <?php }  ?>
     </table>
+    <a href="index.php?page=directions" style="font-size: 1em;margin-left: 70%;"><i>Все Консультации</i></a>
     <!-- Это конец блока с возможными консультациями врачей по направлению -->
 
     <!-- Это начало блока с возможными функциональными методами по направлению -->
@@ -174,7 +177,7 @@ $res = $directions->getDirections();
 //    var_dump($func_methods);
     ?>
     <h4 class="diractions_title"><b>В нашей клинике вы можете получить следующие услуги:</b></h4>
-    <table class="table">
+    <table class="table_price">
         <tbody>
         <tr>
             <th  style="text-align: center">Название</th>
@@ -183,43 +186,60 @@ $res = $directions->getDirections();
         <?php foreach ($func_methods as $key => $value):?>
 
         <tr>
-            <td class="diractions_laboratory_name"><?=$value['name_of_method_fd']?></td>
-            <td style="text-align: right; padding-right: 40px;"><?=$value['price'].''?></td>
+            <td class="diractions_laboratory_name" style="border-left: solid 1px #f1f1f1;"><?=$value['name_of_method_fd']?></td>
+            <td style="text-align: right; padding-right: 40px;border-right: solid 1px #f1f1f1;"><?=$value['price'].''?></td>
         </tr>
 <?php endforeach;?>
         </tbody>
     </table>
+    <a href="index.php?page=functional_diagnostic" style="font-size: 1em;margin-left: 50%;"><i>Весь спектр функциональных исследований</i></a>
     <!-- Это конец блока с возможными функциональными методами по направлению -->
 
 
     <!-- Это начало блока с возможными лабораторными методами по направлению -->
-    <h4 class="diractions_title"><b>Гинекологическая панель анализов</b></h4>
-    <table class="table">
+    <h4 class="diractions_title"><b>Лабораторная диагностика</b></h4>
+    <table class="table_price">
         <tbody>
         <tr>
-            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                репродуктивной системы и мониторинг беременности
+            <th>Название</th>
+            <th>Срок</th>
+            <th>Цена(грн)</th>
+        </tr>
+        <tr>
+            <td class="diractions_laboratory_name" style="text-align: left;border-left: solid 1px #f1f1f1;">
+                <ul><b>Клинический анализ крови (развернутый):</b>
+                    <li style="margin-left: 20px;">Общий анализ</li>
+                    <li style="margin-left: 20px;">Лейкоформула</li>
+                    <li style="margin-left: 20px;">СОЭ</li>
+                </ul>
             </td>
-            <td>1-5 дней</td>
-            <td>220</td>
+            <td>1</td>
+            <td style="text-align: center;border-right: solid 1px #f1f1f1;">120</td>
 
         </tr>
         <tr>
-            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                репродуктивной системы и мониторинг беременности
+            <td class="diractions_laboratory_name"  style="text-align: left;border-left: solid 1px #f1f1f1;">
+                <ul>
+                    <li style="list-style-type: none;"><b>Общий анализ мочи (с микроскопией осадка)</b></li>
+                </ul>
             </td>
-            <td>1-5 дней</td>
-            <td>220</td>
+            <td>1</td>
+            <td style="text-align: center;border-right: solid 1px #f1f1f1;">85</td>
         </tr>
         <tr>
-            <td class="diractions_laboratory_name">Лабораторная оценка гормональной регуляции функции
-                репродуктивной системы и мониторинг беременности
+            <td class="diractions_laboratory_name"  style="text-align: left;border-left: solid 1px #f1f1f1;">
+                <ul><b>КОАГУЛОГРАММА</b>
+                    <li style="margin-left: 20px;">АЧТВ (1)</li>
+                    <li style="margin-left: 20px;">Протромбин (по Квику, %)</li>
+                    <li style="margin-left: 20px;">МНО</li>
+
             </td>
-            <td>1-5 дней</td>
-            <td>220</td>
+            <td>1</td>
+            <td style="text-align: center;border-right: solid 1px #f1f1f1;">125</td>
         </tr>
         </tbody>
     </table>
+    <a href="index.php?page=laboratory_diagnostic" style="font-size: 1em;margin-left: 50%;"><i>Весь спектр лабораторных исследований</i></a>
     <!-- Это конец блока с возможными лабораторными методами по направлению -->
 
 
