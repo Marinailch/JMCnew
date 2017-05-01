@@ -31,7 +31,6 @@ class DataBase
             return $catalog;
         }
         return FALSE;
-
     }
 }
 

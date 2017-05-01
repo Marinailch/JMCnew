@@ -15,14 +15,21 @@ class Form
             'phone' => filter_input(INPUT_POST, 'personPhone'),
             'date' => filter_input(INPUT_POST, 'personDate'),
             'doctor' => filter_input(INPUT_POST, 'personDoctor'),
+            'message' => filter_input(INPUT_POST, 'personMessage'),
             'get' => filter_input(INPUT_POST, 'personGET'),
         );
-        $message = 'К Вам в клинику записался:'.$data['name'].'  '
-            .'Контактный телефон: '.$data['phone'].'  '
-            .'Дата записи: '.$data['date'].'  '
-            .'По направлению: '.$data['doctor'];
-        mail('s7eell@gmail.com', 'ЗАПИСЬ НА ПРИЕМ', $message);
-        return $data;
-
+        if($data['message'] != NULL){
+            $message = 'К Вам в клинику записался:' . $data['name'] . '  '
+                . 'Контактный телефон: ' . $data['phone'] . '  '
+                . 'Дата записи: ' . $data['date'] . '  '
+                . 'Написал следующее ' . $data['message'];
+        }else{
+            $message = 'К Вам в клинику записался:' . $data['name'] . '  '
+                . 'Контактный телефон: ' . $data['phone'] . '  '
+                . 'Дата записи: ' . $data['date'] . '  '
+                . 'По направлению: ' . $data['doctor'];
+        }
+            mail('s7eell@gmail.com', 'ЗАПИСЬ НА ПРИЕМ', $message);
+            return $data;
     }
 }

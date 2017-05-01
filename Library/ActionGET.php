@@ -68,8 +68,6 @@ class ActionGET extends DataBase
 
     }
 
-
-
     /**
      * @return bool|mixed
      * Проверяем GET запрос на главной странице
@@ -111,6 +109,7 @@ class ActionGET extends DataBase
             $res = $this->form->getForm();
             return 'pages/'.$res['get'].'.php';
 //            var_dump($res);
+
 
 
         }

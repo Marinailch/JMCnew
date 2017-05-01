@@ -37,12 +37,20 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="phone" name="personPhone"
                                                placeholder="Телефон" required>
+                                        <input type="hidden" name="personGET" value="<?= $_GET['page'] ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-sm-10">
+                                        <input type="date" class="form-control" id="phone" name="personDate"
+                                               placeholder="Дата" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-10">
                                 <div class="form-group">
 <!--                                    <label for="comment">Comment:</label>-->
-                                    <textarea class="form-control" rows="5" id="comment"  placeholder="Сообщение" required></textarea>
+                                    <textarea class="form-control" rows="5" id="comment"  name="personMessage" placeholder="Сообщение" required></textarea>
                                 </div>
                                     </div>
 
