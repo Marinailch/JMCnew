@@ -15,10 +15,10 @@ $doctors = $doctors->getDoctorsShort();
 
 <?php foreach($doctors as $key=>$value):?>
 
-    <a  href="../doctor_card.php">
+<!--    <a  href="../doctor_card.php">-->
 <!--    <a href="index.php?page=doctors&id=--><?//= $value['id'] ?><!--">-->
         <div class="col-sm-3 ">
-            <div class="doctor_card hvr-grow-shadow">
+            <div class="doctor_card ">
                 <img class="" src="img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
                 <div class="doctor_info" style="margin-bottom: 20px">
                     <?php
@@ -33,7 +33,7 @@ $doctors = $doctors->getDoctorsShort();
                 </div>
             </div>
         </div>
-    </a>
+<!--    </a>-->
 
 <?endforeach; ?>
 
