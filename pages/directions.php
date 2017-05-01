@@ -113,6 +113,7 @@ $res = $directions->getDirections();
                     <hr>
    <!-- Это блок с изображениями врачей, по данному направлению-->
                     <?php foreach ($doctors->getDoctorsByDirection($id['id']) as $key => $value): ?>
+                    <?php if ($value['link_foto_doctor'] !=='avatar.jpg'){?>
                     <div class="media">
                         <div class="media-left">
                             <img src="../img/doctors_foto/<?= $value['link_foto_doctor']?>" class="media-object"
@@ -122,9 +123,12 @@ $res = $directions->getDirections();
                             <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
                             <p><?= $value['specialty_of_doctor']?></p>
                             <p><?= $value['science_degree']?></p>
-                            <p><?= "опыт работы".$value['expirience_of_work']?></p>
+                            <p><?= $value['expirience_of_work']?></p>
                         </div>
                     </div>
+                <?php }else{?>
+            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>
+                              <?php }?>
                             <? endforeach; ?>
                     <hr>
     <!-- Это конец блока с изображениями врачей, по данному направлению-->
@@ -134,6 +138,7 @@ $res = $directions->getDirections();
                         $consult = $directions->getPricesDirectionsByID($id['id']);
                         $consult_at_home = $directions->getPricesHomeDirectionsByID($id['id']);
                      ?>
+    <!-- Функция по запросу наличия цены в таблице - если нет - то не выводится-->
     <?php if($consult){ ?>
     <table class="table_price">
         <h4 class="diractions_title"><b>В нашей клинике Вы можете получить консультации</b></h4>
