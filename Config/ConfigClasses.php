@@ -8,4 +8,6 @@ return array(
     $laboratory = new Laboratory($db),
     $form = new Form(),
     $blog = new Blog($db),
+    $nurses = new Nurses($db),
+    $administrators = new Administrators($db),
 );
