@@ -1364,6 +1364,7 @@ min-width: 220px;
     text-align: center;
     padding-bottom: 30px;
     /*padding-top: 30px;*/
+
 }
 
 .diraction_form h6{
@@ -1408,6 +1409,22 @@ background-color: #fff;
     border-left: 8px solid #c0d05b;
 }
 
+    .media-body{
+        padding-left: 20px; text-align: left;
+        line-height: 1em;
+    }
+    .media-body p{
+        margin: 0px;
+        line-height: 1.4em;
+    }
+
+    .media-heading{
+        margin-top: 40px;
+    }
+
+
+
+
 
 /*____________*/
 
@@ -1418,6 +1435,7 @@ background-color: #fff;
 .diractions_service{
     width: 100%;
     margin-bottom: 35px;
+
 
 }
 

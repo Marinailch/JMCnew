@@ -94,7 +94,7 @@ $res = $directions->getDirections();
                 </div>
             </div>
 
-        <div class="col-sm-8 text-doc">
+        <div class="col-sm-8" style=" color: #848484;">
             <nav>
 <!-- Если есть ГЕТ запрос данная функция вернет ТРУ и загрузится направление-->
 <?php if($request->getReqByGet()):?>
@@ -110,28 +110,28 @@ $res = $directions->getDirections();
                     </p>
 
                     <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
-                    <hr>
+<!--                    <hr>-->
    <!-- Это блок с изображениями врачей, по данному направлению-->
                     <?php foreach ($doctors->getDoctorsByDirection($id['id']) as $key => $value): ?>
                     <?php if ($value['link_foto_doctor'] !=='avatar.jpg'){?>
                     <div class="media">
                         <div class="media-left">
                             <img src="../img/doctors_foto/<?= $value['link_foto_doctor']?>" class="media-object"
-                                 style="width:150px">
+                                 style="width:300px">
                         </div>
-                        <div class="media-body" style="    padding-left: 20px;">
+                        <div class="media-body" style="">
                             <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
-                            <p><?= $value['specialty_of_doctor']?></p>
-                            <p><?= $value['science_degree']?></p>
-                            <p><?= $value['expirience_of_work']?></p>
-                        </div>
-                    </div>
+                            <p class="markh4o" ><?= $value['specialty_of_doctor']?></p>
+                            <p style="color: #848484;"><?= $value['science_degree']?></p>
+                            <p><span class="" style="color: #848484; text-transform: 0.5;">опыт работы :  <?= $value['expirience_of_work']?></span></p>
+
 <!--                --><?php }//else{?>
 <!--            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>-->
 <!--                              --><?php //}?>
                             <? endforeach; ?>
-    <a href="index.php?page=doctors" style="font-size: 1em;margin-left: 65%;"><i>Весь персонал клиники</i></a>
-                    <hr>
+    <a href="index.php?page=doctors" style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь персонал клиники</i></a> </div>
+    </div>
+<!--                    <hr>-->
     <!-- Это конец блока с изображениями врачей, по данному направлению-->
 
     <!-- Это начало блока с возможными консультациями врачей по направлению -->
@@ -154,7 +154,7 @@ $res = $directions->getDirections();
                     <tr>
                         <td style="border-left: solid 1px #f1f1f1;"><?=$value['specialty'] ?></td>
                         <td><?=$value['price_first_time'].' ' ?></td>
-                        <td style="text-align: center;border-right: solid 1px #f1f1f1;"><?=$value['price_after'].'' ?></td>
+                        <td style="text-align: center; border-right: solid 1px #f1f1f1;"><?=$value['price_after'].'' ?></td>
                     </tr>
                 <?php endforeach;
             }
@@ -168,7 +168,7 @@ $res = $directions->getDirections();
                 <?php endforeach ?>
     <?php }  ?>
     </table>
-    <a href="index.php?page=directions" style="font-size: 1em;margin-left: 70%;"><i>Все Консультации</i></a>
+    <a href="index.php?page=directions" style="font-size: 1em; margin-left: 70%;"><i>Все Консультации</i></a>
     <!-- Это конец блока с возможными консультациями врачей по направлению -->
 
     <!-- Это начало блока с возможными функциональными методами по направлению -->
