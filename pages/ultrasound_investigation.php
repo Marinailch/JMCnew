@@ -1,17 +1,6 @@
 <script>
     $(document).ready(function () {
         $("#form_phone").inputmask("+3(9999)9999999");
-        $("#button1").click(function () {
-            $("#hiddenTypeAvatar1").css("display", "block");
-            $("#hiddenTypeAvatar2").css("display", "none");
-            $("#form_avatar2").val('');
-        });
-        $("#button2").click(function () {
-            $("#hiddenTypeAvatar2").css("display", "block");
-            $("#hiddenTypeAvatar1").css("display", "none");
-            $("#form_avatar").val('');
-        });
-
     });
 </script>
 <div>
