@@ -117,13 +117,25 @@ if ($request->getReqByGet()):
                 <img src="img/diractions/<?= $id['link_foto_direction'] ?>" class="diractions_main_img">
                     <p class="description_direction"><?php echo $id['description_direction']; ?>  </p>
 
+<<<<<<< .mine
                     <!-- Это блок с изображениями врачей, по данному направлению-->
                     <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
                 <?php if($doctors->getDoctorsByDirection($id['id'])){?>
+=======
+                    <!-- Это блок с изображениями врачей, по данному направлению-->
+                    <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
+                    <?php if($doctors->getDoctorsByDirection($id['id'])){?>
+>>>>>>> .theirs
 
+<<<<<<< .mine
                 <?php foreach ($doctors->getDoctorsByDirection($id['id']) as $key => $value): ?>
                 <?php if ($value['link_foto_doctor'] !== 'avatar.jpg') { ?>
                     <div id="media">
+=======
+                <?php foreach ($doctors->getDoctorsByDirection($id['id']) as $key => $value): ?>
+                    <?php if ($value['link_foto_doctor'] !== 'avatar.jpg') { ?>
+                    <div id="media">
+>>>>>>> .theirs
 
                         <div class="media">
                             <div class="media-left">
@@ -160,6 +172,7 @@ if ($request->getReqByGet()):
                     <!--            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>-->
                     <!--                              --><?php //}?>
 
+<<<<<<< .mine
                 <? endforeach; ?>
                     <a href="index.php?page=doctors"
                        style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь
@@ -169,6 +182,17 @@ if ($request->getReqByGet()):
                        style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь
                             персонал клиники</i></a>
                 <?php } ?>
+=======
+                <? endforeach; ?>
+                    <a href="index.php?page=doctors"
+                       style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь
+                            персонал клиники</i></a>
+<?php }else{ ?>
+                    <a href="index.php?page=doctors"
+                       style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь
+                            персонал клиники</i></a>
+<?php } ?>
+>>>>>>> .theirs
 
                     <!--                    <hr>-->
                     <!-- Это конец блока с изображениями врачей, по данному направлению-->
