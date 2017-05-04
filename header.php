@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" media="all"/>
     <script src="js/jquery-3.1.1-jquery.min.js"></script>
     <script src="js/jquery.knob.min.js"></script>
+    <script src="js/jquery.inputmask.js"></script>
     <link rel="stylesheet" href="style.css">
 <!--    <link rel="stylesheet" href="styles2.css">-->
 <!--    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>-->

@@ -15,6 +15,22 @@ $res = $directions->getDirections();
  <?php else : ?>
     <div class="directions_header"><p>Консультативный приём</p></div>
  <?php endif ?>
+<script>
+    $(document).ready(function () {
+        $("#form_phone").inputmask("+3(9999)9999999");
+        $("#button1").click(function () {
+            $("#hiddenTypeAvatar1").css("display", "block");
+            $("#hiddenTypeAvatar2").css("display", "none");
+            $("#form_avatar2").val('');
+        });
+        $("#button2").click(function () {
+            $("#hiddenTypeAvatar2").css("display", "block");
+            $("#hiddenTypeAvatar1").css("display", "none");
+            $("#form_avatar").val('');
+        });
+
+    });
+</script>
 
 
 <div class="container">
@@ -46,7 +62,7 @@ $res = $directions->getDirections();
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" name="personPhone"
+                                        <input type="text" class="form-control" id="form_phone" name="personPhone"
                                                placeholder="Телефон" required>
                                     </div>
                                 </div>
