@@ -4,13 +4,13 @@
             <div class="row">
                 <div class="col-sm-3">
                     <a href="index.php"><img class="logo_footer" src="img/logo_footer.png"></a>
-                    <p class="footer_slogan">Честныe взаимоотношения с пациентами - во главе принципов работы Еврвйскоао медицинского центра.</p>
+                    <p class="footer_slogan">Честныe взаимоотношения с пациентами - во главе принципов работы Еврейского медицинского центра</p>
                 </div>
                 <div class="col-sm-3 service">
                     <div class="footer_service_content">
                             <span class="consultation">Контакты</span>
                             <div class="line_foot"></div>
-                            <div>717-70-58  директор</div>
+                            <div>717-70-58  регистратура</div>
                             <div>717-70-59  регистратура</div>
                             <div class="footer_phone">+38-050-900-76-61</div>
                             <div class="footer_phone">+38-096-551-75-65</div>

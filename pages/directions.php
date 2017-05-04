@@ -26,8 +26,7 @@ $res = $directions->getDirections();
                        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; width: 360px;">
                         <!-- class="" data-spy="affix" data-offset-top="205"-->
                             <?php foreach ($res as $item => $value): ?>
-                                <li class="hvr-grow-shadow"><a
-                                            href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>"
+                                <li class="hvr-grow-shadow"><a href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>"
                                             class="directions_button"><?= $value['name_of_direction'] ?></a></li>
                             <?php endforeach; ?>
                         </ul>
@@ -101,36 +100,46 @@ $res = $directions->getDirections();
                     <!-- Это начало-->
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
                         <img src="img/diractions/<?= $id['link_foto_direction'] ?>" class="diractions_main_img"  >
-                    <!-- ЭТО ОПИСАНИЕ НАПРАВЛЕНИЯ-->
-                    <p class="description_direction">
-                            <?php
-                                    echo $id['description_direction'];
+                    <p class="description_direction"><?php echo $id['description_direction'];?>  </p>
 
-                            ?>
-                    </p>
-
-                    <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
-<!--                    <hr>-->
    <!-- Это блок с изображениями врачей, по данному направлению-->
                     <?php foreach ($doctors->getDoctorsByDirection($id['id']) as $key => $value): ?>
                     <?php if ($value['link_foto_doctor'] !=='avatar.jpg'){?>
-                    <div class="media">
+                            <div  id="media">
+                                <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4><div class="media" >
                         <div class="media-left">
                             <img src="../img/doctors_foto/<?= $value['link_foto_doctor']?>" class="media-object"
                                  style="width:300px">
                         </div>
                         <div class="media-body" style="">
-                            <h4 class="media-heading"><?= $value['name_of_doctor']?></h4>
+                            <h4 class="media-heading" id="name_doc"><?= $value['name_of_doctor']?></h4>
                             <p class="markh4o" ><?= $value['specialty_of_doctor']?></p>
                             <p style="color: #848484;"><?= $value['science_degree']?></p>
-                            <p><span class="" style="color: #848484; text-transform: 0.5;">опыт работы :  <?= $value['expirience_of_work']?></span></p>
+                            <p><span class="" style="color: #848484;">опыт работы :  <?= $value['expirience_of_work']?></span></p>
+                            <a href="index.php?page=doctors" style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь персонал клиники</i></a>
+                        </div>
+                    </div>
+                    </div>
+            <script>
+//                if ($('#name_doc').get(0).firstChild == null) {
+//                if ($('#name_doc').html() == '') {}
+                function () {
+                    if ($('#name_doc').get(0).firstChild == null) {
+                        var media = $('#media').style.display = "none";
+                    } else {
+                        var media = $('#media').style.display = "block";
+                    })
+//                    return (media);
+                    alert(media);
 
+                }
+            </script>
 <!--                --><?php }//else{?>
 <!--            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>-->
 <!--                              --><?php //}?>
                             <? endforeach; ?>
-    <a href="index.php?page=doctors" style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь персонал клиники</i></a> </div>
-    </div>
+
+
 <!--                    <hr>-->
     <!-- Это конец блока с изображениями врачей, по данному направлению-->
 
@@ -165,7 +174,10 @@ $res = $directions->getDirections();
                         <td><?=$value2['consulting_at_home'].'' ?></td>
                         <td></td>
                     </tr>
+
                 <?php endforeach ?>
+
+
     <?php }  ?>
     </table>
     <a href="index.php?page=directions" style="font-size: 1em; margin-left: 70%;"><i>Все Консультации</i></a>
