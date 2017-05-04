@@ -85,7 +85,7 @@ class Directions extends DataBase
             case 'Терапия':               $title_direct="терапевта";             break;
             case 'Диетология':            $title_direct="диетолога";             break;
             case 'Травматология':         $title_direct="травматолога";          break;
-            case 'Мануальная%20терапия':  $title_direct="мануального терапевта"; break;
+            case 'Мануальная терапия':  $title_direct="мануального терапевта"; break;
             case 'Массаж': return $title_direct="Массаж";
             case 'Урология':              $title_direct="уролога";               break;
             case 'Дерматология':          $title_direct="дерматолога";           break;
@@ -96,7 +96,7 @@ class Directions extends DataBase
             case 'Офтальмология':         $title_direct="офтальмолога";          break;
             case 'Пульмонология':         $title_direct="пульмонолога";          break;
             case 'Оториноларингология':   $title_direct="оториноляринголога";    break;
-            case 'Детская%20неврология':  $title_direct="детского невролога";    break;
+            case 'Детская неврология':  $title_direct="детского невролога";    break;
             case 'Кардиология':           $title_direct="кардиолога";            break;
             case 'Проктология':           $title_direct="проктолога";            break;
             case 'Ревматология':          $title_direct="ревматолога";           break;
