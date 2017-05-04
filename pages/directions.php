@@ -139,35 +139,19 @@ if ($request->getReqByGet()):
                                 </p>
 
                             </div>
+
                         </div>
                     </div>
-                    <script>
-                        //                if ($('#name_doc').get(0).firstChild == null) {
-                        //                if ($('#name_doc').html() == '') {}
-                        function () {
-                            if ($('#name_doc').get(0).firstChild == null) {
-                                var media = $('#media').style.display = "none";
-                            } else {
-                                var media = $('#media').style.display = "block";
-                            }
-                        )
-                        //                    return (media);
-                        alert(media);
 
-                        }
-                    </script>
                     <!--                --><?php }//else{?>
                     <!--            <button type="button" class="btn btn-default diraction_form_button"><a href="index.php?page=doctors">Наш Персонал</a></button>-->
                     <!--                              --><?php //}?>
-
+                            <hr style="margin-bottom: 10px; margin-top: 0px;">
                 <? endforeach; ?>
-                    <a href="index.php?page=doctors"
-                       style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь
-                            персонал клиники</i></a>
+<!--            <hr style="margin-bottom: 10px; margin-top: 0px;">      -->
+                    <a href="index.php?page=doctors" class="direction_href" style="margin-top: 0px;"><i>Весь персонал клиники</i></a>
                 <?php }else{ ?>
-                    <a href="index.php?page=doctors"
-                       style="font-size: 1em; margin-left: 0%; float: right; margin-top: 16%;"><i>Весь
-                            персонал клиники</i></a>
+                    <a href="index.php?page=doctors" class="direction_href" style="margin-top: 0px;"><i>Весь персонал клиники</i></a>
                 <?php } ?>
 
                     <!--                    <hr>-->
@@ -185,9 +169,9 @@ if ($request->getReqByGet()):
 
                         <tr>
                             <th>Специалист</th>
-                            <th style="padding-top: 25px;">Цена, грн<br> <span
+                            <th style="padding-top: 0px;">Цена, грн<br> <span
                                         style="font-weight: 100; font-size:12px;">первое      посещение</span></th>
-                            <th style="padding-top: 25px;">Цена, грн<br> <span
+                            <th style="padding-top: 0px;">Цена, грн<br> <span
                                         style="font-weight: 100; font-size: 12px;">последующее посещение</span></th>
                         </tr>
 
@@ -214,7 +198,8 @@ if ($request->getReqByGet()):
 
                         <?php } ?>
                     </table>
-                    <a href="index.php?page=directions" style="font-size: 1em; float: right;"><i>Все Консультации</i></a>
+                    <a href="index.php?page=directions" class="direction_href"><i>Все Консультации</i></a>
+
                     <!-- Это конец блока с возможными консультациями врачей по направлению -->
 
                     <!-- Это начало блока с возможными функциональными методами по направлению -->
@@ -227,7 +212,7 @@ if ($request->getReqByGet()):
                         <tbody>
                         <tr>
                             <th style="text-align: center">Название</th>
-                            <th style="text-align: right; padding-right: 10px;">цена, грн</th>
+                            <th style="text-align: right; padding-right: 25px;">Цена, грн</th>
                         </tr>
                         <?php foreach ($func_methods as $key => $value): ?>
 
@@ -239,7 +224,7 @@ if ($request->getReqByGet()):
                         <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <a href="index.php?page=functional_diagnostic" style="font-size: 1em;float: right;"><i>Весь спектр функциональных исследований</i></a>
+                    <a href="index.php?page=functional_diagnostic" class="direction_href"><i>Весь спектр функциональных исследований</i></a>
                     <!-- Это конец блока с возможными функциональными методами по направлению -->
 
 
@@ -250,7 +235,7 @@ if ($request->getReqByGet()):
                         <tr>
                             <th>Название</th>
                             <th>Срок</th>
-                            <th>Цена(грн)</th>
+                            <th>Цена, грн</th>
                         </tr>
                         <tr>
                             <td class="diractions_laboratory_name"
@@ -290,7 +275,7 @@ if ($request->getReqByGet()):
                         </tr>
                         </tbody>
                     </table>
-                    <a href="index.php?page=laboratory_diagnostic" style="font-size: 1em;float: right;"><i>Весь
+                    <a href="index.php?page=laboratory_diagnostic" class="direction_href" style="margin-bottom: 10px;"><i>Весь
                             спектр лабораторных исследований</i></a>
                     <!-- Это конец блока с возможными лабораторными методами по направлению -->
 
