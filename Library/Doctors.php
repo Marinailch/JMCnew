@@ -10,7 +10,7 @@ class Doctors extends DataBase
 {
     public function getDoctorsByDirection($id)
     {
-        $query = "SELECT name_of_doctor, link_foto_doctor, expirience_of_work, specialty_of_doctor, science_degree, short_descr, full_descr, active FROM doctors, directions WHERE direction_id=directions.id and direction_id = '$id'";
+        $query = "SELECT name_of_doctor, link_foto_doctor, expirience_of_work, specialty_of_doctor, science_degree, short_descr, full_descr, active FROM doctors, directions WHERE direction_id=directions.id and direction_id = '$id' AND active IS NOT NULL";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
