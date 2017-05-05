@@ -197,6 +197,7 @@ if ($request->getReqByGet()):
                 //    var_dump($func_methods);
                 ?>
                     <h4 class="diractions_title"><b>В нашей клинике вы можете получить следующие услуги:</b></h4>
+                    <?php if($func_methods){?>
                     <table class="table_price">
                         <tbody>
                         <tr>
@@ -214,6 +215,9 @@ if ($request->getReqByGet()):
                         </tbody>
                     </table>
                     <a href="index.php?page=functional_diagnostic" class="direction_href"><i>Весь спектр функциональных исследований</i></a>
+                <?php }else{ ?>
+                        <a href="index.php?page=functional_diagnostic" class="direction_href"><i>Весь спектр функциональных исследований</i></a>
+                <?php } ?>
                     <!-- Это конец блока с возможными функциональными методами по направлению -->
 
 
