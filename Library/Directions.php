@@ -15,7 +15,7 @@ class Directions extends DataBase
      */
     public function getDirections()
     {
-        $query = "SELECT id, name_of_direction, link_foto_direction, description_direction FROM directions";
+        $query = "SELECT id, name_of_direction, link_foto_direction, description_direction FROM directions ORDER BY number_in_menu ASC";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
@@ -88,19 +88,22 @@ class Directions extends DataBase
             case 'Мануальная терапия':  $title_direct="мануального терапевта"; break;
             case 'Массаж': return $title_direct="Массаж";
             case 'Урология':              $title_direct="уролога";               break;
-            case 'Дерматология':          $title_direct="дерматолога";           break;
+            case 'Дерматовенерология':          $title_direct="дерматовенеролога";           break;
             case 'Косметология':          $title_direct="косметолога";           break;
             case 'Гастроэнтерология':     $title_direct="гастроэнтеролога";      break;
             case 'Эндокринология':        $title_direct="эндокринолога";         break;
             case 'Неврология':            $title_direct="невролога";             break;
             case 'Офтальмология':         $title_direct="офтальмолога";          break;
             case 'Пульмонология':         $title_direct="пульмонолога";          break;
-            case 'Оториноларингология':   $title_direct="оториноляринголога";    break;
+            case 'Оториноларингология':   $title_direct="оториноларинголога";    break;
             case 'Детская неврология':  $title_direct="детского невролога";    break;
             case 'Кардиология':           $title_direct="кардиолога";            break;
             case 'Проктология':           $title_direct="проктолога";            break;
             case 'Ревматология':          $title_direct="ревматолога";           break;
             case 'Сосудистая хирургия': $title_direct="сосудистого хирурга";   break;
+            case 'Вертебрология': $title_direct="вертебролога";   break;
+            case 'Детская хирургия': $title_direct="детского хирурга";   break;
+            case 'Психиатрия': $title_direct="психиатра";   break;
             default: return $title_direct="Консультативный приём";
         }
         return 'Консультация '.$title_direct;
