@@ -8,11 +8,21 @@
  */
 class Blog extends DataBase
 {
-    public function getFullBlogItems()
+    public function getBlogItems()
     {
-        $query = "SELECT * FROM blog ORDER BY created_at DESC LIMIT 5";
+        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC LIMIT 5";
         if($result = parent::arrayRes($query)){
         return $result;
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function getFullBlogItemByID($id)
+    {
+        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND blog.id='$id'";
+        if($result = parent::arrayRes($query)){
+            return $result;
         }else{
             return FALSE;
         }
@@ -63,5 +73,16 @@ class Blog extends DataBase
             default:            $data_blog1[1]="";
         }
         return $data_blog1[2]." ".$data_blog1[1]." ".$data_blog1[0];
+    }
+
+    public function insertIntoBlog($descr)
+    {
+        $descr = $this->db->real_escape_string($descr);
+        $query = "INSERT INTO lab_full_methods VALUES(NULL, '$descr')";
+        $result = $this->db->query($query);
+        if ($result){
+            return TRUE;
+        }
+        return FALSE;
     }
 }
