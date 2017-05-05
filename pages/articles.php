@@ -40,4 +40,5 @@
          
 
     </div>
+    <div ><?php include "slider_blog.php";?></div>
 </div>
