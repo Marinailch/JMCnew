@@ -71,7 +71,7 @@
 </div>
 
 
-        <div style=" margin-top: 40px; margin-bottom: 40px; clear: both;">
+        <div   style=" margin-top: -60px; padding-top:100px; margin-bottom: 40px; clear: both;">
             <img src="../img/equipment/DSC_6240.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
             <p class="markh3b">УЗД аппарат –  Logiq F6 Premium</p>
             <div style="text-align: justify; margin-top: 30px;">
@@ -131,7 +131,7 @@
         </div>
 
 
-        <div style=" margin-top: 40px; margin-bottom: 40px;">
+        <div id="ekg" style="margin-top: -60px; padding-top:100px; margin-bottom: 40px;">
             <img src="../img/equipment/DSC_2953.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
             <p class="markh3b">Электрокардиограф 6/12 канальный Heaco ECG600G</p>
             <div style="text-align: justify; margin-top: 30px;">
@@ -148,7 +148,7 @@
     </div>
 
 
-        <div style=" margin-top: 80px; margin-bottom: 40px;">
+        <div id="gastro" style="margin-top: -60px; padding-top:100px; margin-bottom: 40px;">
             <img src="../img/equipment/DSC_2816_2.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px; clear: both;  " >
             <p class="markh3b">Стандартный видеогастроскоп и видеоколоноскоп EC-590WI Fujinon с фильтром ранней диагностики рака</p>
             <div style="text-align: justify; margin-top: 30px;">
@@ -179,7 +179,7 @@
 
 
 
-        <div style=" margin-top: 40px; margin-bottom: 40px;">
+        <div  id="olimpus" style=" margin-top: -60px; padding-top:100px; margin-bottom: 40px;">
             <img src="../img/equipment/DSC_6003.jpg" width="480px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
             <p class="markh3b">Электрохирургическая установка <br>Olympus ESG-100</p>
             <div style="text-align: justify; margin-top: 30px;">
@@ -222,7 +222,7 @@
             </div>
         </div>
 
-        <div style=" margin-top: 40px; margin-bottom: 40px;">
+        <div  id="lor" style="margin-top: -100px; padding-top:150px; margin-bottom: 40px;">
             <img src="../img/equipment/DSC_6224.jpg" width="480px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
             <p class="markh3b">Лор-установка  NET-1100</p>
             <div style="text-align: justify; margin-top: 30px;">
@@ -273,7 +273,7 @@
             </div>
         </div>
 
-        <div style=" margin-top: 40px; margin-bottom: 40px;">
+        <div id="holter" style="margin-top: -40px; padding-top:120px; margin-bottom: 40px;">
             <img src="../img/equipment/album002.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
             <p class="markh3b">  ЭКГ мониторинг суточного артериального давления Холтер BI6600-3 </p>
             <div style="text-align: justify; margin-top: 30px;">

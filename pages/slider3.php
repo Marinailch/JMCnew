@@ -16,10 +16,10 @@
      
 
         <div class="item">
-             <a href="index.php?page=equipment"><img src="img/slider/13.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
+             <a href="index.php?page=equipment#lor"><img src="img/slider/13.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
             <div class="carousel-caption" style=" padding-bottom: 20px;">
                 <h3>Лор-установка </h3>
-               <a href="../index.php?page=equipment" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
+               <a href="../index.php?page=equipment#lor" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
             </div>
         </div>
 
@@ -31,26 +31,26 @@
             </div>
         </div> -->
          <div class="item active">
-             <a href="index.php?page=equipment"><img src="img/slider/7.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
+             <a href="index.php?page=equipment#olimpus"><img src="img/slider/7.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
             <div class="carousel-caption" style=" padding-bottom: 20px; ">
                 <h3>Электрохирургия Olympus</h3>
-                 <a href="../index.php?page=equipment" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
+                 <a href="../index.php?page=equipment#olimpus" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
             </div>
         </div>
 
          <div class="item">
-             <a href="index.php?page=equipment"><img src="img/slider/22.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
-            <div class="carousel-caption" style=" padding-bottom: 20px;">
+             <a href="index.php?page=equipment#gastro"><img src="img/slider/22.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
+            <div class="carousel-caption" style="padding-bottom: 20px;">
                 <h3>Видеогастроколоноскоп</h3>
-               <a href="../index.php?page=equipment" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
+               <a href="../index.php?page=equipment#gastro" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
             </div>
         </div>
 
          <div class="item">
-             <a href="index.php?page=equipment"><img src="img/slider/25.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
+             <a href="index.php?page=equipment#ekg"><img src="img/slider/25.jpg" alt="Chania" width="460" height="345" style="opacity: 0.7;"></a>
             <div class="carousel-caption" style=" padding-bottom: 20px;">
                 <h3>Электрокардиограф </h3>
-               <a href="../index.php?page=equipment" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
+               <a href="../index.php?page=equipment#ekg" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;      text-shadow: 0 0px 0px rgba(0,0,0,0.6);  ">узнать больше</a>
             </div>
         </div>
 
