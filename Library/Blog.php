@@ -28,6 +28,26 @@ class Blog extends DataBase
         }
     }
 
+    public function getMainFoto($id)
+    {
+        $query = "SELECT link_foto FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND blog_foto.main_foto='y' AND blog.id='$id'";
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function getOtherFotos($id)
+    {
+        $query = "SELECT link_foto FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND blog_foto.main_foto='n' AND blog.id='$id'";
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
+        }
+    }
+
     public function currentDate()
     {
         //                -----------способ 2-------------------------
