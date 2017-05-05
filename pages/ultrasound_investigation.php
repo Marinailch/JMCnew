@@ -86,7 +86,7 @@
                 include "slider2.php";
                 ?>
                 <!-- Это начало вывода прайса по УЗИ диагностике-->
-                <h4 class="diractions_title"><b>Перечень УЗИ, проводимых в нашей клинике</b></h4>
+                <h4 class="diractions_title" style="margin-top: 20px;"><b>Перечень УЗИ, проводимых в нашей клинике</b></h4>
                 <table class="table">
                     <tbody>
                     <tr>
