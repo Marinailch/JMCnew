@@ -38,31 +38,49 @@
         var_dump($mainFoto);
         var_dump($fotos);
 
+
         ?>
     <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ -->
 
 
+
+
+
+<?php if($fotos){ ?>
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 500px; overflow: hidden;">
             <!-- Indicators -->
             <ol class="carousel-indicators" >
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <?php $i=1;
+                for($j=0; $j<count($fotos)-1; $j++){?>
+                <li data-target="#myCarousel" data-slide-to="<?=$i?>"></li>
+                    <?php $i++; }?>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-
+                <?php
+                $control=0;
+             foreach ($fotos as $key => $value):
+                 if ($control==0) {
+                 ?>
                 <div class="item active">
-                    <a href=""><img src="img/blog/<?= $mainFoto['link_foto']?>" alt="" ></a>
+                    <a href=""><img src="../img/blog/<?= $value['link_foto']?>" alt="" ></a>
+<!--                    <a href=""><img src="img/blog/album005.JPG" alt="" ></a>-->
                 </div>
-<?php foreach ($fotos as $key => $value):?>
+             <?php $control++; }
+                 else {
+                 ?>
                 <div class="item">
-                    <a href=""><img src="img/blog/<?= $value['link_foto']?>" alt="" ></a>
+                    <a href=""><img src="../img/blog/<?= $value['link_foto']?>" alt="" ></a>
+<!--                    <a href=""><img src="img/blog/album006.JPG" alt="" ></a>-->
                 </div>
-<?php endforeach; ?>
-
-
+                     <?php
+                 }
+             endforeach; ?>
             </div>
+
+
 
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="
@@ -76,7 +94,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
+<?php }else{ ?>
+    hiho
+<?php } ?>
     <!--ТУТ ОН ЗАКАНЧИВАЕТСЯ -->
 <?php } ?>
 </div>
