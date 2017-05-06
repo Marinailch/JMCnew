@@ -43,40 +43,19 @@
 
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 500px; overflow: hidden;">
-            <!-- Indicators
+            <!-- Indicators -->
             <ol class="carousel-indicators" >
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
-            </ol>-->
+            </ol>
 
-            <?php
-
-            $cont_dott=0;
-            foreach ($fotos as $key => $value)
-            {
-                if ($cont_dott==0) {
-                    echo 			"<li data-target='#myCarousel' data-slide-to='$cont_dott' class='active'></li>";
-                    $cont_dott++;
-                }
-                else {
-                    echo "<li data-target='#myCarousel' data-slide-to='$cont_dott' ></li>";
-                    $cont_dott++;
-                }
-            }
-
-            ?>
-
-
-
-
-        <?php foreach ($fotos as $key => $value):?>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
 
                 <div class="item active">
                     <a href=""><img src="img/blog/<?= $mainFoto['link_foto']?>" alt="" ></a>
                 </div>
-
+<?php foreach ($fotos as $key => $value):?>
                 <div class="item">
                     <a href=""><img src="img/blog/<?= $value['link_foto']?>" alt="" ></a>
                 </div>
@@ -101,55 +80,3 @@
     <!--ТУТ ОН ЗАКАНЧИВАЕТСЯ -->
 <?php } ?>
 </div>
-
-
-
-<?php
-
-$control=0;
-foreach ($select_slider_articles as $value):
-    if ($control==0) {
-        ?>
-        <div class="item  active">
-            <div class="row">
-                <div class="col-md-6 slider-caption animated ">
-                    <h1 class="animated flash text-info" style="color: #ababab; color: #5082B7;  font-size: 28px; font-family: Arial;"><?= $value['title']?></h1>
-                    <p class="animated fadeIn"><?= $value['discription']?></p>
-                    <a href="services - EMS2.php" class=" btn btn-info animated fadeInLeft">Подробнее</a>
-                    <a href="contact - EMS.php" class=" btn btn-success animated fadeInRight">Записаться</a>
-
-                </div>
-                <div class="col-md-6">
-
-                    <img src="admin/img/<?php echo $value['name_slider']?>" width="100%" class="animated fadeInRightBig" alt="...">
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-
-
-        <?php $control++; }
-    else { ?>
-        <div class="item ">
-            <div class="row">
-                <div class="col-md-6 slider-caption animated ">
-                    <h2 class="animated flash"><?= $value['title']?></h2>
-                    <p class="animated fadeIn"> <?= $value['discription']?></p>
-                    <a href="services - EMS2.html" class=" btn btn-info animated fadeInUpBig ">Подробнее</a>
-                    <a href="contact - EMS.html" class=" btn btn-success animated fadeInUpBig ">Записаться</a>
-                </div>
-                <div class="col-md-6">
-                    <img src="admin/img/<?php echo $value['name_slider']?>" width="100%" class="animated fadeInRightBig" alt="...">
-                </div>
-            </div>
-        </div>
-        <?php
-
-    }
-
-
-endforeach; ?>
