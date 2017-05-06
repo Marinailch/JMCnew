@@ -94,7 +94,7 @@ $descr = filter_input(INPUT_POST, 'test');
 
 
 if ($x) {
-    if ($laboratory->insertIntoLabFull($name, $descr)) {
+    if ($blog->insertIntoBlog($descr)) {
         echo 'OK';
     } else {
         echo "NO";

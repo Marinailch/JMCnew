@@ -10,7 +10,7 @@ class Blog extends DataBase
 {
     public function getBlogItems()
     {
-        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC LIMIT 5";
+        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC";
         if($result = parent::arrayRes($query)){
         return $result;
         }else{
@@ -18,9 +18,19 @@ class Blog extends DataBase
         }
     }
 
+    public function getBlogItemsForMain()
+    {
+        $query = "SELECT blog.id, blog.title, blog.short_description,blog.created_at, link_foto FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC LIMIT 3";
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
+        }
+    }
+
     public function getFullBlogItemByID($id)
     {
-        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND blog.id='$id'";
+        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND blog_foto.main_foto='y' AND blog.id='$id'";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
@@ -98,7 +108,7 @@ class Blog extends DataBase
     public function insertIntoBlog($descr)
     {
         $descr = $this->db->real_escape_string($descr);
-        $query = "INSERT INTO lab_full_methods VALUES(NULL, '$descr')";
+        $query = "UPDATE blog SET full_description= '$descr' WHERE blog.id=4";
         $result = $this->db->query($query);
         if ($result){
             return TRUE;

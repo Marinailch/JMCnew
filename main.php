@@ -284,53 +284,61 @@
 
     <!--______OWL________-->
     <!-- блог -->
+    <?php
+    $resBlog = $blog->getBlogItemsForMain();
+    ?>
     <div id="blog">
         <div class="container">
             <h3 style="text-align: center"><span class="markh1w">Наш блог </span></h3>
             <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
+                <? foreach ($resBlog as $key => $value):?>
+                <?php $title = mb_substr($value['title'], 0, 40).'...';
+                      $shortDescr = mb_substr($value['short_description'], 0, 150).'...';
+                ?>
                 <div class="col-md-4">
-                    <a href="index.php?page=articles">
+                    <a href="index.php?page=blog&id=<?= $value['id']?>">
                         <div class="article">
-                            <img src="../img/blog/blog_img1.jpg">
-                            <div class="blog_content">
-                                <p class="blog_data"> 5 сентября 2016г </p>
-                                <h5> JMC расширяет спектр услуг</h5>
-                                <p class="blog_text">С 7 марта в центре можно измерить внутриглазное давление самым
-                                    комфортным и безопасным способом – с помощью бесконтактного тонометра.
-                                </p>
+                            <img src="../img/blog/<?= $value['link_foto']?>">
+                            <div class="blog_content" style="min-height: 171px; max-height: 221px;!important;">
+                                <p class="blog_data"><?= $blog->getDataFromDB($value['created_at'])?></p>
+                                <h5><?= $title ?></h5>
+                                <p class="blog_text" style="min-height: 111px;!important;"><?= $shortDescr ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
-                    <a href="index.php?page=articles">
-                        <div class="article">
-                            <img src="../img/blog/blog_img2.jpg">
-                            <div class="blog_content">
-                                <p class="blog_data"> 19 февраля 2017г </p>
-                                <h5>Открытие нового офиса JMC</h5>
-                                <p class="blog_text">Стало известно, что открытие нового офиса Еврейского Медицинского
-                                    Центра JMC в центре «Менора» запланировано на 19 февраля...
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="index.php?page=articles">
-                        <div class="article">
-                            <img src="../img/blog/blog_img3.jpg">
-                            <div class="blog_content">
-                                <p class="blog_data"> 29 ноября 2016г </p>
-                                <h5>Вступлене в завет Авраама</h5>
-                                <p class="blog_text">Провел обрезание главный моэль Украины и Молдовы раввин Яков
-                                    Гайсинович, ассистировал председатель правления, профессор Александр Родинский.....
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <? endforeach; ?>
+<!--                <div class="col-md-4">-->
+<!--                    <a href="index.php?page=articles">-->
+<!--                        <div class="article">-->
+<!--                            <img src="../img/blog/blog_img2.jpg">-->
+<!--                            <div class="blog_content">-->
+<!--                                <p class="blog_data"> 19 февраля 2017г </p>-->
+<!--                                <h5>Открытие нового офиса JMC</h5>-->
+<!--                                <p class="blog_text">Стало известно, что открытие нового офиса Еврейского Медицинского-->
+<!--                                    Центра JMC в центре «Менора» запланировано на 19 февраля...-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                -->
+<!--                <div class="col-md-4">-->
+<!--                    <a href="index.php?page=articles">-->
+<!--                        <div class="article">-->
+<!--                            <img src="../img/blog/blog_img3.jpg">-->
+<!--                            <div class="blog_content">-->
+<!--                                <p class="blog_data"> 29 ноября 2016г </p>-->
+<!--                                <h5>Вступлене в завет Авраама</h5>-->
+<!--                                <p class="blog_text">Провел обрезание главный моэль Украины и Молдовы раввин Яков-->
+<!--                                    Гайсинович, ассистировал председатель правления, профессор Александр Родинский.....-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </a>-->
+<!--                </div>-->
+
             </div>
 
         </div>
