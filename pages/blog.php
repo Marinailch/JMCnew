@@ -34,8 +34,8 @@
         $resultBlog = $blog->getFullBlogItemByID($getID);
         $mainFoto = $blog->getMainFoto($getID);
         $fotos = $blog->getOtherFotos($getID);
-//        var_dump($resultBlog);
-//        var_dump($mainFoto);
+        var_dump($resultBlog);
+        var_dump($mainFoto);
         var_dump($fotos);
 
 
@@ -46,12 +46,15 @@
 
 
 
-
+<?php if($fotos){ ?>
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 500px; overflow: hidden;">
             <!-- Indicators -->
             <ol class="carousel-indicators" >
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <?php $i=1;
+                for($j=0; $j<count($fotos)-1; $j++){?>
+                <li data-target="#myCarousel" data-slide-to="<?=$i?>"></li>
+                    <?php $i++; }?>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -91,7 +94,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
+<?php }else{ ?>
+    hiho
+<?php } ?>
     <!--ТУТ ОН ЗАКАНЧИВАЕТСЯ -->
 <?php } ?>
 </div>
