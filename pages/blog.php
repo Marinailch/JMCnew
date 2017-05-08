@@ -16,7 +16,8 @@
                              style="width: 300px; height: 235px; overflow: hidden;">
                     </div>
                     <div class="col-md-8 article_text_short">
-                        <p class="markh3b"><?= $item['title']; ?></p>
+                        <p class="" style="font-family: sans-serif; font-size: 20px ; line-height: 1em;  color: #414141;
+    font-weight: 600;"><?= $item['title']; ?></p>
                         <p class="article_data"><?= $blog->getDataFromDB($item['created_at']) ?></p>
                         <p><?= $item['short_description']; ?></p>
                     </div>
