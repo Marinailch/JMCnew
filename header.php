@@ -41,10 +41,10 @@
 </head>
 <body>
 <header>
-<div>
 
-    <div class="container">
-        <a href="index.php"><img src="img/logo.gif"></a>
+
+
+<!--        <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>-->
 <!--        <div class="right">-->
 
 
@@ -55,17 +55,19 @@
 
 
                 <div class="navbar-header">
+                    <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>
+
                     <a class="navbar-toggle">
                         <span class="sr-only">Открыть меню</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a href="index.php"><img src="img/logo.gif"></a>
-                </div>
 
 
-                <div class="phone_block col-sm-4 right">
+
+
+                <div class="phone_block col-sm-4 ">
                     <div class=" head_time ">
 <!--                        <div class="head_phone_icon"></div>-->
                         <div class="head_phone_number"><span>+38-050-900-76-61<br>+38-096-551-75-65</span></div>
@@ -77,8 +79,7 @@
 
 
 
-                <span id="slidemenu">
-
+                <div id="slidemenu">
 <!--                    <form class="navbar-form navbar-right" role="form">-->
 <!--                        <div class="form-group">-->
 <!--                            <input type="search" placeholder="Найти" class="form-control">-->
@@ -110,9 +111,9 @@
             </div>
         </div>
 
-<!--    </div>-->
-    </div>
-</div>
+        </div>
+
+
     <!-- MENU2 -->
 </header>
 

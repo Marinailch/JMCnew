@@ -293,8 +293,8 @@
             <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
                 <? foreach ($resBlog as $key => $value):?>
-                <?php $title = mb_substr($value['title'], 0, 40).'...';
-                      $shortDescr =mb_substr($value['short_description'], 0, 290).'...';
+                <?php $title = mb_substr($value['title'], 0, 40, 'UTF-8').'...';
+                      $shortDescr =mb_substr($value['short_description'], 0, 245, 'UTF-8').'...';
                 ?>
                 <div class="col-md-4">
                     <a href="index.php?page=blog&id=<?= $value['id']?>">
@@ -309,35 +309,6 @@
                     </a>
                 </div>
                 <? endforeach; ?>
-<!--                <div class="col-md-4">-->
-<!--                    <a href="index.php?page=articles">-->
-<!--                        <div class="article">-->
-<!--                            <img src="../img/blog/blog_img2.jpg">-->
-<!--                            <div class="blog_content">-->
-<!--                                <p class="blog_data"> 19 февраля 2017г </p>-->
-<!--                                <h5>Открытие нового офиса JMC</h5>-->
-<!--                                <p class="blog_text">Стало известно, что открытие нового офиса Еврейского Медицинского-->
-<!--                                    Центра JMC в центре «Менора» запланировано на 19 февраля...-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                -->
-<!--                <div class="col-md-4">-->
-<!--                    <a href="index.php?page=articles">-->
-<!--                        <div class="article">-->
-<!--                            <img src="../img/blog/blog_img3.jpg">-->
-<!--                            <div class="blog_content">-->
-<!--                                <p class="blog_data"> 29 ноября 2016г </p>-->
-<!--                                <h5>Вступлене в завет Авраама</h5>-->
-<!--                                <p class="blog_text">Провел обрезание главный моэль Украины и Молдовы раввин Яков-->
-<!--                                    Гайсинович, ассистировал председатель правления, профессор Александр Родинский.....-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
 
             </div>
 
