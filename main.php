@@ -293,17 +293,17 @@
             <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
                 <? foreach ($resBlog as $key => $value):?>
-                <?php $title = mb_substr($value['title'], 0, 100).'...';
-                      $shortDescr = mb_substr($value['short_description'], 0, 150).'...';
+                <?php $title = mb_substr($value['title'], 0, 40).'...';
+                      $shortDescr =mb_substr($value['short_description'], 0, 290).'...';
                 ?>
                 <div class="col-md-4">
                     <a href="index.php?page=blog&id=<?= $value['id']?>">
                         <div class="article">
                             <img src="../img/blog/<?= $value['link_foto']?>">
-                            <div class="blog_content" style="min-height: 171px; max-height: 221px;!important;">
+                            <div class="blog_content" style="min-height: 171px; max-height: 250px;!important;">
                                 <p class="blog_data"><?= $blog->getDataFromDB($value['created_at'])?></p>
-                                <h5><?= $title ?></h5>
-                                <p class="blog_text" style="min-height: 111px;!important;"><?= $shortDescr ?></p>
+                                <h5 style="margin-bottom: 10px; text-align: left;"><?= $title ?></h5>
+                                <p class="blog_text" style="min-height: 111px; "><?= $shortDescr ?></p>
                             </div>
                         </div>
                     </a>
