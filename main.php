@@ -293,7 +293,7 @@
             <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
                 <? foreach ($resBlog as $key => $value):?>
-                <?php $title = mb_substr($value['title'], 0, 40).'...';
+                <?php $title = mb_substr($value['title'], 0, 100).'...';
                       $shortDescr = mb_substr($value['short_description'], 0, 150).'...';
                 ?>
                 <div class="col-md-4">
