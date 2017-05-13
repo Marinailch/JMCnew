@@ -92,7 +92,7 @@
             <div class="col-sm-4"><img src="../img/about/about1.jpg">
                 <div class="about_item_text"><h4>Наши руководители </h4>
                     <p>Целями нашего центра являются оказание квалифицированной, качественной, адекватной состоянию
-                        здоровья пациента ... </p>
+                        здоровья  ... </p>
                     <a href="index.php?page=leaders">
                         <div><p class="hvr-grow-shadow diraction_form_button">узнать больше</p></div>
                     </a>
@@ -300,10 +300,10 @@
                     <a href="index.php?page=blog&id=<?= $value['id']?>">
                         <div class="article">
                             <img src="../img/blog/<?= $value['link_foto']?>">
-                            <div class="blog_content" style="min-height: 171px; max-height: 250px;!important;">
+                            <div class="blog_content">
                                 <p class="blog_data"><?= $blog->getDataFromDB($value['created_at'])?></p>
                                 <h5 style="margin-bottom: 10px; text-align: left;"><?= $title ?></h5>
-                                <p class="blog_text" style="min-height: 111px; "><?= $shortDescr ?></p>
+                                <p class="blog_text"><?= $shortDescr ?></p>
                             </div>
                         </div>
                     </a>
@@ -324,7 +324,7 @@
             <div class="track_record_record_in track_record_left">
                 <p><span class="markh2b">Встречайте докторов</span></p>
                 <p><span class="markh4o">НАШИ СОТРУДНИКИ</span></p>
-                <div class="col-sm-5">
+                <div class="col-md-5 col-sm-6">
                     <div class="doctor_card1">
                         <img class="" src="../img/vrach_card/doc1.jpg">
                         <div class="doctor_info1">
@@ -333,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-md-5 col-sm-6">
                     <div class="doctor_card1">
                         <img class="" src="../img/vrach_card/doc2.jpg">
                         <div class="doctor_info1">
@@ -356,28 +356,28 @@
                 <p class="track_record_record_text">За пять лет своей работы уникальная программа еврейской общины
                     Днепра – Медицинский центр JMC – добился значительных успехов, в частности, было проведено:</p>
                 <p><span class="markh4w">Врачебных консультаций</span><span class="markh4w"
-                                                                            style="margin-left: 44%; margin-top: 30px">10321</span>
+                                                                            style="float: right;">10321</span>
                 </p>
                 <div class="line">
                     <div></div>
                     <div class="lineTwo l1"></div>
                 </div>
                 <p><span class="markh4w">Функциональных исследований</span><span class="markh4w"
-                                                                                 style="margin-left: 36%; margin-top: 30px">3419</span>
+                                                                                 style="float: right;">3419</span>
                 </p>
                 <div class="line">
                     <div></div>
                     <div class="lineTwo l2"></div>
                 </div>
                 <p><span class="markh4w">Лабораторных исследований</span><span class="markh4w"
-                                                                               style="margin-left: 38%; margin-top: 30px">17804</span>
+                                                                               style="float: right;">17804</span>
                 </p>
                 <div class="line">
                     <div></div>
                     <div class="lineTwo l3"></div>
                 </div>
                 <p><span class="markh4w">УЗИ-исследований</span><span class="markh4w"
-                                                                      style="margin-left: 52%; margin-top: 30px">5672</span>
+                                                                      style="float: right;">5672</span>
                 </p>
                 <div class="line">
                     <div></div>
@@ -439,6 +439,7 @@
 
             </div>
         </div>
+    </div>
 </main>
 
 <!--</div>-->

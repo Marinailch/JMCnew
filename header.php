@@ -44,74 +44,74 @@
 
 
 
-<!--        <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>-->
-<!--        <div class="right">-->
+        <!--        <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>-->
+        <!--        <div class="right">-->
 
 
-
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="slide-nav">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="slide-nav" >
             <div class="container">
-
-
-                <div class="navbar-header">
-                    <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>
-
-                    <a class="navbar-toggle">
-                        <span class="sr-only">Открыть меню</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-
-
-
-
-                <div class="phone_block col-sm-4 ">
-                    <div class=" head_time ">
-<!--                        <div class="head_phone_icon"></div>-->
-                        <div class="head_phone_number"><span>+38-050-900-76-61<br>+38-096-551-75-65</span></div>
-                     </div>
-                <div class="col-4 head_adress right">
-                    <span class="geo">8 (056) 71-770-58<br> 8 (056) 71-770-59</span><br>
-                </div>
-            </div>
+            <div class="navbar-header" >
+                <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>
 
 
 
                 <div id="slidemenu">
-<!--                    <form class="navbar-form navbar-right" role="form">-->
-<!--                        <div class="form-group">-->
-<!--                            <input type="search" placeholder="Найти" class="form-control">-->
-<!--                        </div>-->
-<!--                        <button type="submit" class="btn btn-default">Поиск</button>-->
-<!--                    </form>-->
+                    <!--                    <form class="navbar-form navbar-right" role="form">-->
+                    <!--                        <div class="form-group">-->
+                    <!--                            <input type="search" placeholder="Найти" class="form-control">-->
+                    <!--                        </div>-->
+                    <!--                        <button type="submit" class="btn btn-default">Поиск</button>-->
+                    <!--                    </form>-->
 
                     <ul class="nav navbar-nav">
-                        <li ><a href="/index.php">Главная</a></li>
+                        <li><a href="/index.php">Главная</a></li>
                         <li><a href="index.php?page=directions">Услуги</a></li>
-                        <li class=""><a href="index.php?page=diagnostics" class="dropdown-toggle" data-toggle="dropdown">Диагностика <b class="caret"></b></a>
+                        <li class=""><a href="index.php?page=diagnostics" class="dropdown-toggle"
+                                        data-toggle="dropdown">Диагностика <b class="caret"></b></a>
                             <ul class="dropdown-menu dropdown">
-                                <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a></li>
-                                <li><a href="index.php?page=laboratory_diagnostic" class="hvr-grow-shadow">Лабораторная</a></li>
-                                <li><a href="index.php?page=functional_diagnostic" class="hvr-grow-shadow">Функциональная</a></li>
+                                <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a>
+                                </li>
+                                <li><a href="index.php?page=laboratory_diagnostic"
+                                       class="hvr-grow-shadow">Лабораторная</a></li>
+                                <li><a href="index.php?page=functional_diagnostic" class="hvr-grow-shadow">Функциональная</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
                         <li><a href="index.php?page=blog">Блог</a></li>
-                        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">О нас <b
+                                        class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.php?page=about"   class="hvr-grow-shadow">О клинике   </a></li>
-                                <li><a href="index.php?page=leaders"   class="hvr-grow-shadow">Руководство </a></li>
+                                <li><a href="index.php?page=about" class="hvr-grow-shadow">О клинике </a></li>
+                                <li><a href="index.php?page=leaders" class="hvr-grow-shadow">Руководство </a></li>
                                 <li><a href="index.php?page=ravin" class="hvr-grow-shadow">Раввин о нас</a></li>
+                                <li><a href="index.php#footer" class="hvr-grow-shadow">Контакты</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
+
+                <div class="phone_block col-sm-4 ">
+                    <div class=" head_time ">
+                          <div class=" right"><span>+38-050-900-76-61<br>+38-096-551-75-65</span></div>
+                    </div>
+                    <div class="col-4  right">
+                        <span class="geo">8 (056) 71-770-58<br> 8 (056) 71-770-59</span><br>
+                    </div>
+                </div>
+
+
+                <a class="navbar-toggle">
+                    <span class="sr-only">Открыть меню</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
             </div>
         </div>
 
-        </div>
+    </div>
 
 
     <!-- MENU2 -->

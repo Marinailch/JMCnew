@@ -37,8 +37,7 @@ if ($request->getReqByGet()):
 
                     <div class="diraction_form" id="appointment">
                         <h6>Запишитесь на приём!</h6>
-                        <form class="form-horizontal" method="post"
-                              action="<?= $_SERVER['PHP_SELF'] ?>?page=callform">
+                        <form class="form-horizontal" method="post" action="<?= $_SERVER['PHP_SELF'] ?>?page=callform">
 
                             <div class="form-group">
 
@@ -91,6 +90,10 @@ if ($request->getReqByGet()):
                         </form>
 
                     </div>
+
+
+
+
                     <!--                    <iframe  style=" opacity: 0.7; margin-top: 30px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1870.7383043602792!2d35.05259248512187!3d48.463753358272605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x18ebb773c0daa282!2z0JzQtdC90L7RgNCw!5e0!3m2!1sru!2sru!4v1492686565832" width="250" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>-->
 
                 </div>
