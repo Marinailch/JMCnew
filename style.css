@@ -906,7 +906,7 @@ h3 {
 .track_record_record{
     background-image: url("img/bg_record.jpg");
     z-index: 1;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .track_record_record_in{
@@ -945,8 +945,15 @@ padding: 80px 0 0 0;
 }
 
 .track_record_record_in a{
-min-width: 220px;
+/*min-width: 220px;*/
+    line-height: 35px !important;
+    min-width: 168px;
+    margin-left: 25%;
 }
+
+    /*.learn_more_doc{*/
+
+    /*}*/
 
 .doctor_card1{
     width: 97%;
@@ -1018,6 +1025,8 @@ min-width: 220px;
 /*div#recommend.row:after{*/
     /*content: none!important;*/
 /*}*/
+
+
 
 .dial1 {
     margin-top: -136px !important;
@@ -1099,6 +1108,8 @@ min-width: 220px;
 .doctor_card img:only-of-type {
     width: 100%;
 }
+
+
 
 .spaising07 {
     letter-spacing: 0.06em;
@@ -1521,7 +1532,6 @@ background-color: #fff;
     font-size: 15px !important;
     font-weight: 600;
     color: #ffffff;
-
     line-height: 47px !important;
     display: inline-block;
     min-width: 197px;
@@ -1925,6 +1935,13 @@ textarea{
 
     /*---------media--------------------------------------*/
 
+    @media (min-width: 1200px) {
+        .track_record_record_in {
+            width: 70%;
+
+        }
+    }
+
     @media screen and (min-width: 1441px) and (max-width: 1680px) {
 
     }
@@ -1932,6 +1949,14 @@ textarea{
     @media (min-width: 1200px) and (max-width: 1440px) {
         .track_record_left {
             width: 90%;
+        }
+        .wrapper {
+            margin-left: -37px;
+            margin-top: 40px;
+        }
+        .dial1 {
+            left: -82px;
+            top: 327px;
         }
     }
 
@@ -2015,6 +2040,25 @@ textarea{
         .recommend_in{
             padding: 60px;
         }
+        .recommend_record {
+            padding: 50px 0 60px 0;
+        }
+        .markh4w {
+            font-size: 13px !important;
+        }
+        .footer_slogan {
+            width: auto;
+            margin-right: 0%;
+            margin-top: 9px;
+            font-size: 13px;
+        }
+        .logo_footer {
+            width: 155px;
+             margin-left: 0px;
+        }
+        .service {
+            font-size: 13px;
+        }
     }
 
 
@@ -2023,6 +2067,52 @@ textarea{
 
         .navbar-default .navbar-nav>li>a {
             font-size: 11px;
+        }
+
+        #recommend canvas {
+            margin-left: 0;
+            margin-top: 100px;
+        }
+        #recommend canvas {
+            width: 280px !important;
+            height: 280px !important;
+        }
+
+        .dial1 {
+            margin-top: -136px !important;
+            margin-left: 311px !important;
+            font-size: 70px !important;
+            left: -155px;
+            top: 366px;}
+
+
+        #recommend .about_counter_el1 {
+            margin-top: 168px;
+            margin-left: 118px;
+        }
+        #recommend .about_counter_el2 {
+            color: #fff !important;
+            margin-top: -176px;
+            margin-left: 200px;
+            font-size: 40px;
+        }
+
+        #recommend .about_counter_el3 {
+            margin-top: -113px;
+            margin-left: 110px;
+        }
+
+        #recommend .about_counter_el4 {
+            color: #919191;
+            font-weight: 600;
+            position: absolute;
+            margin-top: -92px;
+            margin-left: 81px;
+        }
+
+        .wrapper {
+            margin-left: 110px;
+            margin-top: 50px;
         }
 
     }
@@ -2045,9 +2135,7 @@ textarea{
 
 
     }
-    @media (min-width: 768px) {
 
-    }
 
     @media (max-width: 1024px) {
         .track_record_record_text {
@@ -2064,11 +2152,6 @@ textarea{
         #owl-demo .item img {
             width: 54px;
         }
-
-
-
-
-
     }
 
     @media (max-width: 990px) {
@@ -2122,6 +2205,11 @@ textarea{
             margin-left: 5px;
         }
 
+        .navbar-nav .open .dropdown-menu {
+            margin-top: -14px;
+            margin-left: -30px;
+        }
+
         .button_w {
             min-width: 244px;}
 
@@ -2145,8 +2233,27 @@ textarea{
         }
 
         #slidemenu {
-        display: none;
-                }
+            display: none;
+            background-color: #fff;
+            position: fixed;
+            top: 45px;
+            width: 100%;
+            left: -50px;
+            padding: 0% 0% 3% 43%;
+            z-index: 1001;
+            margin-top: 45px !important;
+            border-bottom: 1px solid #d2d2d2;
+            background-color:#efefef;
+        }
+
+        .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+            background-color:#efefef;
+        }
+
+
+        .navbar-toggle{
+            display: block;
+        }
 
         .phone_block {
             font-size: 10px;
@@ -2164,6 +2271,7 @@ textarea{
         a.navbar-toggle{
             margin-right: 10px;
             margin-top: 25px;
+            /*display: block;*/
         }
 
 
@@ -2208,10 +2316,14 @@ textarea{
            background-color: #fff;
            display: block;
            overflow: hidden;
-           margin-bottom: 40px;
+           margin-bottom: 60px;
 
        }
-
+        .track_record_record_in a{
+            display: block;
+            margin: 0 auto;
+            width: 168px;
+        }
         .track_record_right {
              /*margin-bottom: 0px;*/
         }
@@ -2229,12 +2341,17 @@ textarea{
             padding: 0px 0 0px 0;
         }
         .recommend_in {
-            padding: 55px;
+            padding: 13%;
 
         }
         .recommend_in p{
             width: 92%;
+            text-align: left;
         }
+        /*#track_record .markh2b, #track_record .markh4o {*/
+             /*margin-left: 20;*/
+        /*}*/
+
 
         .footer{
             padding: 25px 0px;
@@ -2250,7 +2367,8 @@ textarea{
 
         .footer_slogan {
             float: left;
-            margin-left: 60px;}
+            margin-left: 60px;
+            clear: both;}
 
         .logo_footer {
             float: left;

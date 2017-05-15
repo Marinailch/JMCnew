@@ -322,8 +322,8 @@
     <div class="row" id="track_record">
         <div class="col-sm-6 track_record_meet_doctor">
             <div class="track_record_record_in track_record_left">
-                <p><span class="markh2b">Встречайте докторов</span></p>
-                <p><span class="markh4o">НАШИ СОТРУДНИКИ</span></p>
+                <p><p class="markh2b">Встречайте докторов</p></p>
+                <p><p class="markh4o">НАШИ СОТРУДНИКИ</p></p>
                 <div class="col-md-5 col-sm-6">
                     <div class="doctor_card1">
                         <img class="" src="../img/vrach_card/doc1.jpg">
@@ -342,8 +342,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="../index.php?page=doctors" class="diraction_form_button hvr-grow-shadow" style="line-height: 35px !important; min-width: 168px;     margin-left: 25%;
-">узнать больше</a>
+                <a  href="../index.php?page=doctors" class="diraction_form_button hvr-grow-shadow ">узнать больше</a>
             </div>
 
         </div>
@@ -385,6 +384,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 

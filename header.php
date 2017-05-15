@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>JMC - Еврейский Медицинский Центр</title>
@@ -24,6 +25,8 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
     <link href="css/hover-min.css" rel="stylesheet" media="all"> <!--hover animaition affect-->
+<!--    <script src="js/modernizr-custom.js" type="text/javascript"></script>-->
+
     <script>
         less = {
             env: "development",
@@ -52,7 +55,7 @@
             <div class="container">
             <div class="navbar-header" >
                 <a href="index.php"><img class="logo_head" src="img/logo.gif"></a>
-
+<!--                <div class="white_block"></div>-->
 
 
                 <div id="slidemenu">
@@ -81,11 +84,11 @@
                         <li><a href="index.php?page=blog">Блог</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">О нас <b
                                         class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.php?page=about" class="hvr-grow-shadow">О клинике </a></li>
-                                <li><a href="index.php?page=leaders" class="hvr-grow-shadow">Руководство </a></li>
-                                <li><a href="index.php?page=ravin" class="hvr-grow-shadow">Раввин о нас</a></li>
-                                <li><a href="index.php#footer" class="hvr-grow-shadow">Контакты</a></li>
+                            <ul class="dropdown-menu ">
+                                <li><a href="index.php?page=about" class="hvr-grow-shadow ">О клинике </a></li>
+                                <li><a href="index.php?page=leaders" class="hvr-grow-shadow ">Руководство </a></li>
+                                <li><a href="index.php?page=ravin" class="hvr-grow-shadow ">Раввин о нас</a></li>
+                                <li><a href="index.php#footer" class="hvr-grow-shadow collapse in" onclick="none()" >Контакты</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -101,12 +104,17 @@
                 </div>
 
 
-                <a class="navbar-toggle">
-                    <span class="sr-only">Открыть меню</span>
+                <a class="navbar-toggle" onclick="clik_header_menu()">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+
+<!--                <a class="navbar-toggle" onclick="clik_header_menu()">-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                    <span class="icon-bar"></span>-->
+<!--                </a>-->
 
             </div>
         </div>
