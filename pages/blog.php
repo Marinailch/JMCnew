@@ -62,8 +62,7 @@
             <p style="font-weight: 600; color: dimgrey; margin-bottom: -25px;"><?= $blog->getDataFromDB($resultBlog[0]['created_at']) ?></p>
             <p style="margin-top: -13px; margin-bottom: 28px; font-weight: 600; color: dimgrey">
             <div class="fb-share-button" data-href="http://jmcdonttouchgit.dev/index.php?page=blog"
-                 data-layout="button_count" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank"
-                                                                          href="https://www.facebook.com/sharer/sharer.php?u=http://jmcdonttouchgit.dev/index.php?page=blog&id=1">Поделиться</a>
+                 data-layout="button_count" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank"                                                                          href="https://www.facebook.com/sharer/sharer.php?u=http://jmcdonttouchgit.dev/index.php?page=blog&id=1">Поделиться</a>
             </div>
             </p>
             <div style="text-align: justify; margin-top: 30px;">

@@ -361,15 +361,14 @@
                     <div></div>
                     <div class="lineTwo l1"></div>
                 </div>
-                <p><span class="markh4w">Функциональных исследований</span><span class="markh4w"
+                <p><span class="markh4w">Функциональных <br class="block">исследований</span><span class="markh4w"
                                                                                  style="float: right;">3419</span>
                 </p>
                 <div class="line">
                     <div></div>
                     <div class="lineTwo l2"></div>
                 </div>
-                <p><span class="markh4w">Лабораторных исследований</span><span class="markh4w"
-                                                                               style="float: right;">17804</span>
+                <p><span class="markh4w">Лабораторных <br class="block"> исследований</span><span class="markh4w" style="float: right;">17804</span>
                 </p>
                 <div class="line">
                     <div></div>

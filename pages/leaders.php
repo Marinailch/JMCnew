@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="leaders_content" >
-        <img src="../img/leaders/leaders1.jpg" style="float:left; margin: 0px 30px 15px 0px; ">
+        <img src="../img/leaders/leaders1.jpg">
 
         <p class="markh3b">Родинский Александр Георгиевич</p>
         <p class="markh4b">доктор медицинских наук, профессор<br>  председатель Правления Еврейского медицинского центра «JMC»</p>

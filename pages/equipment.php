@@ -4,18 +4,18 @@
 
 <div class="container" >
     <div style=" margin-top: 40px; margin-bottom: 40px;">
-        <img src="../img/equipment/DSC_6082.jpg"  width="480px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+        <img src="../img/equipment/DSC_6082.jpg"   class="equipment_article" >
 
 
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
+<!--        <div id="fb-root"></div>-->
+<!--        <script>(function(d, s, id) {-->
+<!--                var js, fjs = d.getElementsByTagName(s)[0];-->
+<!--                if (d.getElementById(id)) return;-->
+<!--                js = d.createElement(s); js.id = id;-->
+<!--                js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.8";-->
+<!--                fjs.parentNode.insertBefore(js, fjs);-->
+<!--            }(document, 'script', 'facebook-jssdk'));-->
+<!--        </script>-->
 
 
         <p class="markh3b">УЗД аппарат – TOSHIBA Aplio 300</p>
@@ -72,7 +72,7 @@
 
 
         <div   style=" margin-top: -60px; padding-top:100px; margin-bottom: 40px; clear: both;">
-            <img src="../img/equipment/DSC_6240.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+            <img src="../img/equipment/DSC_6240.jpg" class="equipment_article" >
             <p class="markh3b">УЗД аппарат –  Logiq F6 Premium</p>
             <div style="text-align: justify; margin-top: 30px;">
                 <p><strong>Аппарат ультразвуковой диагностики LOGIQ F6 Premium</strong>&nbsp;сочетает в себе максимум возможностей при очень демократичной себестоимости. Одна такая система способна заменить целый ряд приборов во многих отделениях и проводить разноплановые ультразвуковые обследования благодаря встроенным в нее инновационным технологиям.</p>
@@ -132,7 +132,7 @@
 
 
         <div id="ekg" style="margin-top: -60px; padding-top:100px; margin-bottom: 40px;">
-            <img src="../img/equipment/DSC_2953.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+            <img src="../img/equipment/DSC_2953.jpg" class="equipment_article" >
             <p class="markh3b">Электрокардиограф 6/12 канальный Heaco ECG600G</p>
             <div style="text-align: justify; margin-top: 30px;">
 
@@ -149,7 +149,7 @@
 
 
         <div id="gastro" style="margin-top: -60px; padding-top:100px; margin-bottom: 40px;">
-            <img src="../img/equipment/DSC_2816_2.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px; clear: both;  " >
+            <img src="../img/equipment/DSC_2816_2.jpg" class="equipment_article" >
             <p class="markh3b">Стандартный видеогастроскоп и видеоколоноскоп EC-590WI Fujinon с фильтром ранней диагностики рака</p>
             <div style="text-align: justify; margin-top: 30px;">
                 <p>Производитель: Fujinon</p>
@@ -180,7 +180,7 @@
 
 
         <div  id="olimpus" style=" margin-top: -60px; padding-top:100px; margin-bottom: 40px;">
-            <img src="../img/equipment/DSC_6003.jpg" width="480px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+            <img src="../img/equipment/DSC_6003.jpg" class="equipment_article" >
             <p class="markh3b">Электрохирургическая установка <br>Olympus ESG-100</p>
             <div style="text-align: justify; margin-top: 30px;">
 
@@ -223,7 +223,7 @@
         </div>
 
         <div  id="lor" style="margin-top: -100px; padding-top:150px; margin-bottom: 40px;">
-            <img src="../img/equipment/DSC_6224.jpg" width="480px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+            <img src="../img/equipment/DSC_6224.jpg" class="equipment_article" >
             <p class="markh3b">Лор-установка  NET-1100</p>
             <div style="text-align: justify; margin-top: 30px;">
                 <p>Описание:<br />
@@ -274,7 +274,7 @@
         </div>
 
         <div id="holter" style="margin-top: -40px; padding-top:120px; margin-bottom: 40px;">
-            <img src="../img/equipment/album002.jpg" width="480px"  style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+            <img src="../img/equipment/album002.jpg" class="equipment_article" >
             <p class="markh3b">  ЭКГ мониторинг суточного артериального давления Холтер BI6600-3 </p>
             <div style="text-align: justify; margin-top: 30px;">
 

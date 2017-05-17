@@ -1114,6 +1114,9 @@ padding: 80px 0 0 0;
     width: 100%;
 }
 
+.block{
+    display: none;
+}
 
 
 .spaising07 {
@@ -1182,12 +1185,20 @@ padding: 80px 0 0 0;
     margin-top: 30px;
 }
 
-.text-doc h3 {
+ .text-doc h3 {
     font-size: 35px;
     font-weight: 600;
     font-family: serif;
-    color: #8c8c8c;
+    color: #fff;
 }
+
+
+   #uzi .text-doc h3 {
+        font-size: 35px;
+        font-weight: 600;
+        font-family: serif;
+        color: #fff;
+    }
 
 .text-doc p, .text-doc strong {
     font-size: 15px;
@@ -1678,7 +1689,6 @@ background-color: #fff;
 
     }
 
-
     #menu_lub .directions_button{
         font-size: 11px;
         line-height: 13px !important;
@@ -1841,6 +1851,11 @@ background-color: #fff;
         text-align: justify;
         font-size: 16px}
 
+    .leaders_content img{
+        float: left;
+        margin: 0px 30px 15px 0px;
+    }
+
     /*____________blog__________________*/
 
     .article_text_short{
@@ -1894,6 +1909,14 @@ background-color: #fff;
         /*height: 200px;*/
         color: #414141;
 
+    }
+
+
+    .equipment_article{
+        float:left;
+        margin-right: 35px;
+        margin-bottom: 30px;
+        width: 480px;
     }
 
     /*_________blog end--------------------*/
@@ -2039,7 +2062,7 @@ textarea{
             width: 90%;
         }
     }
-    @media (min-width: 991px) and (max-width: 1024px) {
+    @media (min-width: 992px) and (max-width: 1024px) {
         #about {
             padding: 0 0 0 5px;
             margin-top: 50px;
@@ -2286,6 +2309,9 @@ textarea{
             width: 98%;
             margin-bottom: 20px;
         }
+        .equipment_article{
+            width: 100%;
+        }
     }
 
     @media (min-width: 595px) and (max-width: 768px) {
@@ -2300,6 +2326,9 @@ textarea{
         }
         li.hvr-grow-shadow {
             float: left;
+        }
+        .doctor_info {
+            margin-bottom: 85px;
         }
 
     }
@@ -2437,6 +2466,10 @@ textarea{
             max-height: inherit;
         }
 
+        .article_short_img {
+            padding-right: 0px;
+        }
+
        .track_record_meet_doctor{
            z-index: 1000;
            background-color: #fff;
@@ -2480,7 +2513,26 @@ textarea{
         /*#track_record .markh2b, #track_record .markh4o {*/
              /*margin-left: 20;*/
         /*}*/
+        #menu_lub {
+            /*display: none;*/
+            position: relative;
+            clear: both;
+            margin-left: 20%;
 
+        }
+
+       #gematology tbody span {
+            font-size: 8px!important;
+            line-height: 0.1em;
+        }
+
+        #gematology tbody{
+            width: 100%;
+        }
+
+        #menu_lub.fixed {
+            position: relative;
+            clear: both}
 
         .footer{
             padding: 25px 0px;
@@ -2490,7 +2542,8 @@ textarea{
         .footer_service_content {
             float: left;
             margin-left: 10%;
-            margin-top: 30px;
+            margin-top: -100px;
+            padding-top: 120px;
             clear: both;
         }
 
@@ -2505,20 +2558,44 @@ textarea{
             clear: both;
         }
 
+        .footer_menu_button{
+            display: none!important;
+        }
+
         .directions_menu {
             /*width: 320px;*/
             margin: 0 auto;
+            /*margin-bottom: 85px;*/
         }
 
         #uzi {
             width: 320px;
 
         }
+        #uzi .diraction_form{
+            display: none;
+        }
+        #gematology {
+            margin-top: 150px;
+        }
+
+
 
         .text-doc {
              clear: both;
         }
 
+        .leaders_content img{
+          width: 100%;
+        }
+        #func_menu .diraction_form{
+            display: none;
+        }
+
+        #func_menu .doctor_info{
+           width: 150px;
+            margin-left: 20%;
+        }
 
 
     }
@@ -2529,5 +2606,17 @@ textarea{
         .phone_block {
             display: none;
         }
+
+        .block{
+            display: block;
+        }
+
+        .doctor_info {
+            margin-left: 20%;
+        }
+        #slider_block{
+            display: none;
+        }
+
 
     }

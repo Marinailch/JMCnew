@@ -22,6 +22,8 @@
                                                            class="directions_button">Лабораторная диагностика</a></li>
                             <li class="hvr-grow-shadow"><a href="index.php?page=functional_diagnostic"
                                                            class="directions_button">Функциональная диагностика</a></li>
+                            <li class="hvr-grow-shadow"><a href="index.php?page=equipment"
+                                                           class="directions_button">Оборудование</a></li>
                         </ul>
 
 
@@ -82,9 +84,11 @@
             <nav>
                 <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
                 <!--                    <img src="img/diractions/dr.jpg" class="" width="100%">-->
+                <div id="slider_block">
                 <?php
                 include "slider2.php";
                 ?>
+                </div>
                 <!-- Это начало вывода прайса по УЗИ диагностике-->
                 <h4 class="diractions_title" style="margin-top: 20px;"><b>Перечень УЗИ, проводимых в нашей клинике</b></h4>
                 <table class="table">

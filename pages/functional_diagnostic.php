@@ -14,6 +14,8 @@
                                                            class="directions_button">Лабораторная диагностика</a></li>
                             <li class="hvr-grow-shadow"><a href="index.php?page=functional_diagnostic"
                                                            class="directions_button">Функциональная диагностика</a></li>
+                            <li class="hvr-grow-shadow"><a href="index.php?page=equipment"
+                                                           class="directions_button">Оборудование</a></li>
                         </ul>
                         <div class="diraction_form" style="float:left;">
                             <h6>Запишитесь на приём!</h6>

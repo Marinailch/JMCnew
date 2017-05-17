@@ -88,7 +88,7 @@
                                 <li><a href="index.php?page=about" class="hvr-grow-shadow ">О клинике </a></li>
                                 <li><a href="index.php?page=leaders" class="hvr-grow-shadow ">Руководство </a></li>
                                 <li><a href="index.php?page=ravin" class="hvr-grow-shadow ">Раввин о нас</a></li>
-                                <li><a href="index.php#footer" class="hvr-grow-shadow collapse in" onclick="none()" >Контакты</a></li>
+                                <li><a href="index.php#contact" class="hvr-grow-shadow collapse in" onclick="none()" >Контакты</a></li>
                             </ul>
                         </li>
                     </ul>

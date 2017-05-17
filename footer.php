@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <a href="index.php"><img class="logo_footer" src="img/logo_footer.png"></a>
-                    <p class="footer_slogan">Честныe взаимоотношения с пациентами - во главе принципов работы Еврейского медицинского центра</p>
+                    <p class="footer_slogan" id="contact">Честныe взаимоотношения с пациентами - во главе принципов работы Еврейского медицинского центра</p>
                 </div>
                 <div class="col-sm-3 service">
                     <div class="footer_service_content">
