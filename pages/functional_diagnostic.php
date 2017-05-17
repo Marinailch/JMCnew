@@ -2,7 +2,7 @@
     <div class="directions_header">
         <p>Функциональная диагностика</p>
     </div>
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-sm-4">
                 <div class="directions_menu" id="func_menu">
@@ -53,26 +53,26 @@
                         </div>
 
 
-                        <script>
-                            jQuery(function ($) {
-                                var footer = $('.footer');
-                                var offset = footer.offset().top;
-                                // alert (offset);
-                                var lub_lenth = offset - 800;
-                                // var lub_lenth = 44000;
-                                $(window).scroll(function  () {
-                                    if ($(this).scrollTop() > 150) {
-                                        $('#func_menu').addClass('fixed');
-                                        if ($(this).scrollTop() > lub_lenth) {
-                                            $('#func_menu').removeClass('fixed');
-                                        }
-                                    }
-                                    else if ($(this).scrollTop() < 150) {
-                                        $('#func_menu').removeClass('fixed');
-                                    }
-                                });
-                            });
-                        </script>
+<!--                        <script>-->
+<!--                            jQuery(function ($) {-->
+<!--                                var footer = $('.footer');-->
+<!--                                var offset = footer.offset().top;-->
+<!--                                // alert (offset);-->
+<!--                                var lub_lenth = offset - 800;-->
+<!--                                // var lub_lenth = 44000;-->
+<!--                                $(window).scroll(function  () {-->
+<!--                                    if ($(this).scrollTop() > 150) {-->
+<!--                                        $('#func_menu').addClass('fixed');-->
+<!--                                        if ($(this).scrollTop() > lub_lenth) {-->
+<!--                                            $('#func_menu').removeClass('fixed');-->
+<!--                                        }-->
+<!--                                    }-->
+<!--                                    else if ($(this).scrollTop() < 150) {-->
+<!--                                        $('#func_menu').removeClass('fixed');-->
+<!--                                    }-->
+<!--                                });-->
+<!--                            });-->
+<!--                        </script>-->
                     </div>
                 </div>
             </div>

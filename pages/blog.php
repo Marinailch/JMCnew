@@ -11,15 +11,17 @@
         <?php foreach ($blog->getBlogItems() as $key => $item): ?>
             <a href="index.php?page=blog&id=<?= $item['id'] ?>">
                 <div class="row article_short">
-                    <div class="col-md-4" style="width: 300px; height: 200px; overflow: hidden;">
-                        <img src="../img/blog/<?= $item['link_foto']; ?>"
-                             style="width: 300px; height: 235px; overflow: hidden;">
+                    <div class="col-md-4 article_short_img">
+                        <img src="../img/blog/<?= $item['link_foto']; ?>" >
                     </div>
+                    <?php
+                    $title1 = mb_substr($item['title'], 0, 50, 'UTF-8').'...';
+                    $shortDescr1 =mb_substr($item['short_description'], 0, 300, 'UTF-8').'...';
+                    ?>
                     <div class="col-md-8 article_text_short">
-                        <p class="" style="font-family: sans-serif; font-size: 20px ; line-height: 1em;  color: #414141;
-    font-weight: 600;"><?= $item['title']; ?></p>
+                        <p class="article_title_short" ><?=  $title1 ?></p>
                         <p class="article_data"><?= $blog->getDataFromDB($item['created_at']) ?></p>
-                        <p><?= $item['short_description']; ?></p>
+                        <p class=""><?= $shortDescr1 ?></p>
                     </div>
                 </div>
             </a>
@@ -36,10 +38,10 @@
         //        var_dump($mainFoto);
         //        var_dump($fotos);
         ?>
-        <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ -->
-        <div style="margin-top: 40px; margin-bottom: 40px;">
+        <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ - статья -->
+        <div style="margin-top: 40px; margin-bottom: 40px; ">
             <img src="../img/blog/<?= $resultBlog[0]['link_foto'] ?>" width="480px" height="300px"
-                 style="float:left; margin-right: 35px; margin-bottom: 30px;  ">
+                 style="float:left; margin-right: 35px; margin-bottom: 30px; ">
 
 
             <div id="fb-root"></div>
@@ -70,7 +72,7 @@
         </div>
         <!-- ЭТО СКРИПТ ДЛЯ СЛАЙДЕРА ПРИ НАЛИЧИИ ФОТОГРАФИЙ-->
         <?php if ($fotos) { ?>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 500px; overflow: hidden;">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

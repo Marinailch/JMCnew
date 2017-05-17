@@ -26,13 +26,12 @@ if ($request->getReqByGet()):
             <div class="directions_menu">
                 <div class="directions_info ">
 
-                    <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; width: 360px;">
+                    <ul class="directions_menu_ul" style="">
                         <!-- class="" data-spy="affix" data-offset-top="205"-->
                         <?php foreach ($res as $item => $value): ?>
-                            <li class="hvr-grow-shadow"><a
-                                        href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>"
-                                        class="directions_button"><?= $value['name_of_direction'] ?></a></li>
+                            <li class="hvr-grow-shadow"><a href="/index.php?page=directions&id=<?= $value['name_of_direction'] ?>#direct" class="directions_button"><?= $value['name_of_direction'] ?></a></li>
                         <?php endforeach; ?>
+                        <li  class="hvr-grow-shadow blank_line"><a href="" class="directions_button" >пустой блок</a></li>
                     </ul>
 
                     <div class="diraction_form" id="appointment">
@@ -106,8 +105,8 @@ if ($request->getReqByGet()):
                 <?php if ($request->getReqByGet()): ?>
                     <!-- Это начало-->
                     <!-- ЭТО КАРТИНКА НАПРАВЛЕНИЯ-->
-                <img src="img/diractions/<?= $id['link_foto_direction'] ?>" class="diractions_main_img">
-                    <p class="description_direction"><?php echo $id['description_direction']; ?>  </p>
+                <img src="img/diractions/<?= $id['link_foto_direction'] ?>" id="direct" class="diractions_main_img">
+                    <p class="description_direction" ><?php echo $id['description_direction']; ?>  </p>
 
                     <!-- Это блок с изображениями врачей, по данному направлению-->
                     <h4 class="diractions_title"><b>У нас работают лучшие специалисты города</b></h4>
@@ -234,8 +233,7 @@ if ($request->getReqByGet()):
                             <th>Цена, грн</th>
                         </tr>
                         <tr>
-                            <td class="diractions_laboratory_name"
-                                style="text-align: left;border-left: solid 1px #f1f1f1;">
+                            <td class="diractions_laboratory_name" style="text-align: left;border-left: solid 1px #f1f1f1;">
                                 <ul><b>Клинический анализ крови (развернутый):</b>
                                     <li style="margin-left: 20px;">Общий анализ</li>
                                     <li style="margin-left: 20px;">Лейкоформула</li>
@@ -247,8 +245,7 @@ if ($request->getReqByGet()):
 
                         </tr>
                         <tr>
-                            <td class="diractions_laboratory_name"
-                                style="text-align: left;border-left: solid 1px #f1f1f1;">
+                            <td class="diractions_laboratory_name"  style="text-align: left;border-left: solid 1px #f1f1f1;">
                                 <ul>
                                     <li style="list-style-type: none;"><b>Общий анализ мочи (с микроскопией осадка)</b>
                                     </li>

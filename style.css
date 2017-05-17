@@ -370,6 +370,11 @@ navbar-nav {
     overflow: hidden !important;
     margin-top: -220px;
 }
+
+    .slide{
+        /*height: 500px;*/
+        overflow: hidden;
+    }
 /*end slider*/
 
 /*блок1*/
@@ -1203,6 +1208,16 @@ padding: 80px 0 0 0;
 .directions_menu{
     text-align: left;
 }
+    .directions_menu_ul{
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 10px;
+        width: 360px;
+    }
+
+    nev{
+        clear: both;
+    }
 
 /*------------------------------footer*/
 .footer {
@@ -1495,9 +1510,13 @@ background-color: #fff;
 .diractions_service{
     width: 100%;
     margin-bottom: 35px;
-
-
 }
+
+    .blank_line{
+        display: none!important;
+        width: 30px;
+
+    }
 
 
 .diractions_title {
@@ -1511,7 +1530,8 @@ background-color: #fff;
 
 .diractions_main_img {
     width: 50%;
-    margin-top: 5px;
+    margin-top: -145px;
+    padding-top: 150px;
     /*margin-bottom: 20px;*/
     margin-right: 25px;
     float: left;
@@ -1826,12 +1846,14 @@ background-color: #fff;
     .article_text_short{
         text-align: justify;
         overflow: hidden;
-        height: 190px;
+        /*height: 180px;*/
         color: #414141;
-        margin-bottom: 20px;
-        width: 60%;
+        margin-top: 20px;
+        width: 65%;
         padding-left: 40px;
     }
+
+
 
 
     .article_data {
@@ -1841,13 +1863,29 @@ background-color: #fff;
         /* margin: 6px; */
     }
     .article_title_short{
-        /*float:left;*/
-        margin-right: 35px;
-        margin-bottom: 20px;
-        /*font-size: 14px!important;*/
-        /*clear: both;*/
+        /*margin-right: 35px;*/
+        /*margin-bottom: 20px;*/
+        font-family: sans-serif;
+        font-size: 20px ;
+        line-height: 1em;
+        color: #414141;
+        font-weight: 600;
     }
+    .article_short_img{
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        padding-left: 0px
+    }
+
+    .article_short img{
+        width: 300px;
+        height: 235px;
+        overflow: hidden;
+    }
+
     .article_short {
+        border: 1px solid #c7c7c7;
         text-align: justify;
         margin-top: 15px;
         margin-bottom: 20px;
@@ -1977,9 +2015,11 @@ textarea{
         }
         .logo_head{
              width: 200px;
-
-
          }
+
+        .directions_header {
+            margin-top: 92px;
+        }
 
 
         .footer_menu_button {
@@ -1993,12 +2033,21 @@ textarea{
 
 
     }
+
     @media (min-width: 768px) and (max-width: 1200px) {
         .track_record_left {
             width: 90%;
         }
     }
+    @media (min-width: 991px) and (max-width: 1024px) {
+        #about {
+            padding: 0 0 0 5px;
+            margin-top: 50px;
+            width: 100%;
+        }
 
+
+    }
 
     @media (min-width: 768px) and (max-width: 991px) {
         .nav > li > a {
@@ -2019,8 +2068,14 @@ textarea{
 
         }
 
+
+
         .logo_head {
             width: 150px;
+        }
+
+        .directions_header {
+            margin-top: 69px;
         }
 
         #owl-demo2 img{
@@ -2045,17 +2100,30 @@ textarea{
         }
         .markh4w {
             font-size: 13px !important;
+            height: 41px;
         }
+
+        .diraction_form_button {
+            min-width: 169px;}
+
+
         .footer_slogan {
             width: auto;
             margin-right: 0%;
-            margin-top: 9px;
+            margin-top: 25px;
             font-size: 13px;
         }
         .logo_footer {
             width: 155px;
              margin-left: 0px;
         }
+        .footer_service_content {
+            float: left;
+            margin-left: 0px;
+            margin-top: 30px;
+            clear: both;
+        }
+
         .service {
             font-size: 13px;
         }
@@ -2116,25 +2184,9 @@ textarea{
         }
 
     }
-    @media (min-width: 991px) and (max-width: 1024px) {
-        #about {
-            padding: 0 0 0 5px;
-            margin-top: 50px;
-            width: 100%;
-        }
 
 
-    }
 
-
-    @media (min-width: 300px) and (max-width: 991px) {
-        #about {
-             padding: 0 0 0 5px; }
-        .about_container {
-            background: none;}
-
-
-    }
 
 
     @media (max-width: 1024px) {
@@ -2152,6 +2204,17 @@ textarea{
         #owl-demo .item img {
             width: 54px;
         }
+        .slide{
+            height: auto;
+        }
+    }
+    @media (min-width: 300px) and (max-width: 991px) {
+        #about {
+            padding: 0 0 0 5px; }
+        .about_container {
+            background: none;}
+
+
     }
 
     @media (max-width: 990px) {
@@ -2196,14 +2259,57 @@ textarea{
         .article {
             height: auto;
         }
+        .directions_menu_ul{
+            width: auto;
+        }
+
+        .diraction_form {
+             width: auto;
+             float: left;
+        }
+
+        .diraction_form {
+             max-width: 500px;
+        }
+
+        .article_short_img{
+            width: 100%;
+            height: auto;
+        }
+
+        .article_short img{
+            width: 100%;
+            height: auto;
+        }
+
+        .article_text_short {
+            width: 98%;
+            margin-bottom: 20px;
+        }
     }
 
-    @media screen and (max-width: 768px) {
+    @media (min-width: 595px) and (max-width: 768px) {
+
+        .blank_line{
+            display: block;
+        }
+
+        .directions_menu_ul {
+            padding-left: 10%;
+            margin-top: 20px;
+        }
+        li.hvr-grow-shadow {
+            float: left;
+        }
+
+    }
+    @media screen and (max-width: 767px) {
         .logo_head{
             width: 150px;
             margin-top: 5px;
             margin-left: 5px;
         }
+
 
         .navbar-nav .open .dropdown-menu {
             margin-top: -14px;
@@ -2226,6 +2332,26 @@ textarea{
             font-size: 22px;
             margin-top: 15px;
         }
+
+        #appointment {
+            margin-top: -120px;
+            padding-top: 150px;
+            clear: both;
+            width: 80%;
+            margin-left: 10%;
+            margin-bottom: 40px;
+            display: block;
+            text-align: center;
+            /* margin: 0 auto; */
+        }
+        .description_direction {
+            clear: both;
+        }
+        .diractions_main_img {
+            width: 100%;
+            margin-bottom: 20px;
+            margin-top: -130px;
+            padding-top: 130px;}
 
 
         .navbar-default {
@@ -2317,8 +2443,11 @@ textarea{
            display: block;
            overflow: hidden;
            margin-bottom: 60px;
-
        }
+
+        .diraction_form{
+
+        }
         .track_record_record_in a{
             display: block;
             margin: 0 auto;
@@ -2360,21 +2489,37 @@ textarea{
 
         .footer_service_content {
             float: left;
-            margin-left: 60px;
+            margin-left: 10%;
             margin-top: 30px;
             clear: both;
         }
 
         .footer_slogan {
             float: left;
-            margin-left: 60px;
+            margin-left: 10%;
             clear: both;}
 
         .logo_footer {
             float: left;
-            margin-left: 60px;
+            margin-left: 10%;
             clear: both;
         }
+
+        .directions_menu {
+            /*width: 320px;*/
+            margin: 0 auto;
+        }
+
+        #uzi {
+            width: 320px;
+
+        }
+
+        .text-doc {
+             clear: both;
+        }
+
+
 
     }
 

@@ -10,8 +10,8 @@
                     <div class="footer_service_content">
                             <span class="consultation">Контакты</span>
                             <div class="line_foot"></div>
-                            <div>717-70-58  регистратура</div>
-                            <div>717-70-59  регистратура</div>
+                            <div>71-770-58  <span class="none">регистратура</span></div>
+                            <div>71-770-59  <span class="none">регистратура</span></div>
                             <div class="footer_phone">+38-050-900-76-61</div>
                             <div class="footer_phone">+38-096-551-75-65</div>
 
