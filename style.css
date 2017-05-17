@@ -2150,6 +2150,7 @@ textarea{
         .service {
             font-size: 13px;
         }
+
     }
 
 
@@ -2204,6 +2205,9 @@ textarea{
         .wrapper {
             margin-left: 110px;
             margin-top: 50px;
+        }
+        .doctor_card {
+            height: 280px;
         }
 
     }
@@ -2339,6 +2343,12 @@ textarea{
             margin-left: 5px;
         }
 
+        #doctors .col-sm-3{
+            width: 49%;
+            float: left;
+        }
+        .doctor_card {
+            height: 360px;}
 
         .navbar-nav .open .dropdown-menu {
             margin-top: -14px;
@@ -2599,8 +2609,15 @@ textarea{
 
 
     }
+    @media (max-width: 500px) {
+        #doctors .col-sm-3 {
+            width: 100%;
+        }
 
-
+        .doctor_card {
+            height: auto;
+        }
+    }
 
     @media (max-width: 400px) {
         .phone_block {

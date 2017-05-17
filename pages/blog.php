@@ -40,8 +40,7 @@
         ?>
         <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ - статья -->
         <div style="margin-top: 40px; margin-bottom: 40px; ">
-            <img src="../img/blog/<?= $resultBlog[0]['link_foto'] ?>" width="480px" height="300px"
-                 style="float:left; margin-right: 35px; margin-bottom: 30px; ">
+            <img src="../img/blog/<?= $resultBlog[0]['link_foto'] ?>"  class="equipment_article">
 
 
             <div id="fb-root"></div>

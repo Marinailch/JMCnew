@@ -4,7 +4,7 @@
 
 <div class="container" >
     <div style=" margin-top: 40px; margin-bottom: 40px;">
-        <img src="../img/blog/blog_img1.jpg" width="480px" height="300px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+        <img src="../img/blog/blog_img1.jpg" class="article_short_img" >
 
 
         <div id="fb-root"></div>
