@@ -6,9 +6,12 @@
     if (!$getID) {
         ?>
         <!-- ТУТ ВЫВОДИТСЯ ВЕСЬ БЛОГ -->
-        <?php //var_dump($blog->getFullBlogItems())
+        <?php
+        //var_dump($blog->getFullBlogItems())
         ?>
-        <?php foreach ($blog->getBlogItems() as $key => $item): ?>
+        <?php
+        //var_dump($blog->getBlogItems());
+        foreach ($blog->getBlogItems() as $key => $item): ?>
             <a href="index.php?page=blog&id=<?= $item['id'] ?>">
                 <div class="row article_short">
                     <div class="col-md-4 article_short_img">
@@ -34,9 +37,9 @@
         $resultBlog = $blog->getFullBlogItemByID($getID);
         $mainFoto = $blog->getMainFoto($getID);
         $fotos = $blog->getOtherFotos($getID);
-        //        var_dump($resultBlog);
-        //        var_dump($mainFoto);
-        //        var_dump($fotos);
+                //var_dump($resultBlog);
+                //var_dump($mainFoto);
+                //var_dump($fotos);
         ?>
         <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ - статья -->
         <div style="margin-top: 40px; margin-bottom: 40px; ">
