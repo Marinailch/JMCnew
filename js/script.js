@@ -7,13 +7,20 @@
 
       }
 
-
-
-
-
-
   function none(){
-      $('#slidemenu').slideToggle();
+      // $('#slidemenu').slideToggle();
+
+      var w = window.innerWidth
+          || document.documentElement.clientWidth
+          || document.body.clientWidth;
+      // alert(w);
+      if (w < 768){
+          $('#slidemenu').slideToggle();
+      }
+      else{
+          // alert(w);
+          $('#slidemenu').css('display', 'block');
+      }
   }
   //
   // function geo_block(block){
