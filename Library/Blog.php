@@ -10,7 +10,8 @@ class Blog extends DataBase
 {
     public function getBlogItems()
     {
-        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC";
+        $query = "SELECT * FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC ";
+
         if($result = parent::arrayRes($query)){
         return $result;
         }else{
@@ -20,7 +21,7 @@ class Blog extends DataBase
 
     public function getBlogItemsForMain()
     {
-        $query = "SELECT blog.id, blog.title, blog.short_description,blog.created_at, link_foto FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC LIMIT 3";
+        $query = "SELECT blog.id, blog.title, blog.short_description,blog.created_at, link_foto FROM blog, blog_foto WHERE blog.id=blog_foto.blog_id AND main_foto='y' ORDER BY created_at DESC LIMIT 3 ";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{

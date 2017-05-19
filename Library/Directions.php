@@ -15,6 +15,7 @@ class Directions extends DataBase
      */
     public function getDirections()
     {
+
         $query = "SELECT id, name_of_direction, link_foto_direction, description_direction FROM directions ORDER BY number_in_menu ASC";
         if($result = parent::arrayRes($query)){
             return $result;
@@ -27,7 +28,9 @@ class Directions extends DataBase
      * @return array|bool
      * Функция вывода главной страницы для всех направлений
      */
-    public function getMainPage(){
+    public function getMainPage()
+    {
+
         $query = "SELECT main_pages.foto_main, main_pages.descr_main FROM main_pages,directions WHERE main_pages.id=directions.main_id AND main_id=1 limit 1";
         if($result = parent::arrayRes($query)){
             return $result;
@@ -42,7 +45,9 @@ class Directions extends DataBase
      * Функция по возврату консультаций с ценами и названием специалистов
      * без учета домашних консультаций
      */
-    public function getPricesDirectionsByID($id){
+    public function getPricesDirectionsByID($id)
+    {
+
         $query = "SELECT specialty, price_first_time, price_after FROM directions as d, specialty_price as p WHERE d.id=p.direction_id AND p.consulting_at_home IS NULL AND d.id=$id";
         if($result = parent::arrayRes($query)){
             return $result;
@@ -57,6 +62,7 @@ class Directions extends DataBase
      * Функция по возврату консультаций на дому с ценами и названием специалистов
      */
     public function getPricesHomeDirectionsByID($id){
+
         $query = "SELECT specialty, consulting_at_home FROM directions as d, specialty_price as p WHERE d.id=p.direction_id AND p.consulting_at_home IS NOT NULL AND d.id=$id";
         if($result = parent::arrayRes($query)){
             return $result;
@@ -66,6 +72,7 @@ class Directions extends DataBase
     }
 
     public function getMethodsById($id){
+
         $query = "SELECT name_of_method_fd, price FROM directions as d, dir_methods_fd, methods_fd as m WHERE d.id=dir_methods_fd.dir_id AND dir_methods_fd.methods_fd_id=m.id AND d.id = $id";
         if($result = parent::arrayRes($query)){
             return $result;
@@ -76,6 +83,7 @@ class Directions extends DataBase
 
     public function getTitleDirection($name)
     {
+
         //Переделать согласно выборке
         switch($name)
         {

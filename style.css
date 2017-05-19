@@ -1771,41 +1771,6 @@ background-color: #fff;
         color: #fff; /* Цвет текста */
     }
 
-    /*SELECT option:first-child {*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
-
-
-
-    /*SELECT option:active {*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
-
-    /*.nnn:active {*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
-
-    /*SELECT option:visited {*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
-
-    /*SELECT option:read-write{*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
-
-    /*SELECT option:optional{*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
-    /*SELECT option::-webkit-input-placeholder{*/
-        /*background: #fff!important;*/
-        /*color:red !important;;*/
-    /*}*/
 
     SELECT option:checked{
         background: #fff!important;

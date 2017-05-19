@@ -20,3 +20,20 @@ $db = array(
     'pass' => '',
     'name' => 'jmcdatabase',
 );
+
+//$db->query('SET NAMES UTF8'); //вариант 1
+//
+//mysqli_set_charset( $db, 'utf8' ); //вариант 2
+//
+//$sql = "\n". "SET NAMES \"utf8\""; //вариант 3
+//
+//$mysqli = new mysqli($db['host'], //вариант 4
+//    $db['user'],
+//    $db['pass'],
+//    $db['name']);
+//
+//if($mysqli->connect_errno){
+//    echo "error with connection to database ->".$mysqli->connect_error;
+//    die('No connection with database'.__LINE__);
+//}
+//$mysqli->query('SET NAMES UTF8');

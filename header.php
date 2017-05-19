@@ -1,6 +1,8 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+?>
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <title>JMC - Еврейский Медицинский Центр</title>

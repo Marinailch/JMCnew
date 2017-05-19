@@ -18,8 +18,15 @@ class DataBase
             $db['pass'],
             $db['name']
         );
-
+        if($this->db->query('SET NAMES UTF8')){
+            if($this->db->query('set character_set_server=UTF8')){
+                return TRUE;
+            }
+        }
+        return FALSE;
     }
+
+
     public function arrayRes($query)
     {
         $result = $this->db->query($query);
@@ -32,6 +39,7 @@ class DataBase
         }
         return FALSE;
     }
+
 }
 
 
