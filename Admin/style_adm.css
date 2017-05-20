@@ -1,0 +1,83 @@
+body{
+	background-color:#e8e8e8;
+}
+
+.container_nav{
+background-color: #ececec;
+}
+/*header*/
+  #slidemenu{
+      float: left;
+      margin-top: 12px;
+      margin-right: 0;
+    margin-left: 50px;
+
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #c0d05b;
+}
+
+.logo_head{
+    float: left;
+    width: 160px;
+}
+
+navbar-nav {
+    float: left;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-default .navbar-nav>.active>a{
+    color: #99b100;
+    background: #fff;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #414141;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.dropdown-menu{
+     border: 0px ;
+    padding: 20px 20px;
+    left: -30px !important;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+	position: relative!important;
+	 border: 1px solid #e7e7e7;
+	 background-color: #dedede;
+}
+
+.navbar {
+	margin-bottom: 0px !important;
+}
+
+/*main*/
+
+nav{
+/*	margin-top: 50px;*/
+
+}
+
+
+/*sidebar*/
+#sidebar {
+    background: #e0e0e0;
+    width: 100%;
+    display: block;
+    height: 1020px;
+    margin-left: -13px;
+}
+
+#main{
+/*	 background: #c7c7c7;*/
+    width: 100%;
+    display: block;
+       margin-top: 40px;
+}
