@@ -71,7 +71,7 @@ header('Content-Type: text/html; charset=utf-8');
                     <ul class="nav navbar-nav">
                         <li><a href="/index.php">Главная</a></li>
                         <li><a href="index.php?page=directions">Услуги</a></li>
-                        <li class=""><a href="index.php?page=diagnostics" class="dropdown-toggle"
+                        <li><a href="index.php?page=diagnostics" class="dropdown-toggle"
                                         data-toggle="dropdown">Диагностика <b class="caret"></b></a>
                             <ul class="dropdown-menu dropdown">
                                 <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a>
@@ -84,7 +84,7 @@ header('Content-Type: text/html; charset=utf-8');
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
                         <li><a href="index.php?page=blog">Блог</a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">О нас <b
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="index.php?page=about">О нас <b
                                         class="caret"></b></a>
                             <ul class="dropdown-menu ">
                                 <li><a href="index.php?page=about" class="hvr-grow-shadow ">О клинике </a></li>
