@@ -15,35 +15,20 @@
     </head>
     <body>
     <header>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="slide-nav" >
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="slide-nav" >
             <div class="container">
-            <div class="navbar-header" >
+            <div class="navbar-header">
                 <a href=""><img class="logo_head" src="../img/logo.gif"></a>
 
                 <div id="slidemenu">
                     <ul class="nav navbar-nav">
-                        <li><a href="">Главная</a></li>
-                       <li><a href="">Услуги</a></li>
-                        <li><a href="" class="dropdown-toggle"data-toggle="dropdown">Диагностика <b class="caret"></b></a>
-                            <ul class="dropdown-menu dropdown">
-                                <li><a href="" class="">УЗИ</a></li>
-                                <li><a href="" class="">Лабораторная</a></li>
-                                <li><a href="" class="">Функциональная</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Врачи</a></li>
-                        <li><a href="">Блог</a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">О нас <b class="caret"></b></a>
-                            <ul class="dropdown-menu ">
-                                <li><a href="" class="">О клинике</a></li>
-                                <li><a href="" class="">Руководство</a></li>
-                                <li><a href="" class="">Раввин о нас</a></li>
-                                <li><a href="" class="">Контакты</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="page/price.php">Прайс</a></li>
+                        <li><a href="page/doctors.php">Врачи</a></li>
+                        <li><a href="page/blog.php">Блог</a></li>
+                        <li><a href="../index.php"><b style="color: #cdc639;">Перейти на сайт</b></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    </header>
+ </header>

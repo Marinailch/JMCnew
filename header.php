@@ -71,8 +71,7 @@ header('Content-Type: text/html; charset=utf-8');
                     <ul class="nav navbar-nav">
                         <li><a href="/index.php">Главная</a></li>
                         <li><a href="index.php?page=directions">Услуги</a></li>
-                        <li><a href="index.php?page=diagnostics" class="dropdown-toggle"
-                                        data-toggle="dropdown">Диагностика <b class="caret"></b></a>
+                        <li><a href="index.php?page=diagnostics" class="dropdown-toggle" data-toggle="dropdown">Диагностика <b class="caret"></b></a>
                             <ul class="dropdown-menu dropdown">
                                 <li><a href="index.php?page=ultrasound_investigation" class="hvr-grow-shadow">УЗИ</a>
                                 </li>
