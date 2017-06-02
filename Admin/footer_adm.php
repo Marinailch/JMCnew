@@ -20,9 +20,7 @@
 	
 </footer>
   </body>
-    <script>
-        CKEDITOR.replace('test');
-    </script>
+
         <script src="../js/bootstrap.min.js"></script>
     	<script src="../js/script.js"></script>
     </html>
@@ -57,5 +55,5 @@ if ($x) {
         echo "NO";
     }
 }
-
+?>
 

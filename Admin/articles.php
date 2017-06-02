@@ -1,3 +1,6 @@
+<?php 
+include "header_adm.php"
+?>
 <div class="directions_header">
     <p>Блог</p>
 </div>
@@ -40,5 +43,8 @@
          
 
     </div>
-    <div ><?php include "slider_blog.php";?></div>
+    <div ><?php include "../pages/slider_blog.php";?></div>
 </div>
+<?php
+include "footer_adm.php" 
+?>

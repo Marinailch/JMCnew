@@ -1267,14 +1267,29 @@ padding: 80px 0 0 0;
 .footer_service_content {
     display: block;
     float: right;
+    line-height: 1.3em;
 }
+
+    .footer_service_content1 {
+        display: block;
+        float: right;
+        line-height: 0.8em;
+        width: 100%;
+    }
 
 .line_foot {
     width: 155px;
-    height: 2px;
+    height: 10px;
     /*background-color: #b3d242;*/
-    margin: 15px 0;
+    margin: 10px 0;
 }
+
+    .line_foot1 {
+        width: 155px;
+        height: 23px;
+        /*background-color: #b3d242;*/
+        margin: 19px 0;
+    }
 
 .footer_phone {
     font-weight: 600;
@@ -1336,7 +1351,7 @@ padding: 80px 0 0 0;
 }
 
     .Copiright {
-        color: #803924;
+        color: #adadad;
         font-size: 14px;
         font-weight: bold;
         margin: 12px 1% 0 0 !important;
@@ -1356,25 +1371,15 @@ padding: 80px 0 0 0;
 
 }
 
-    .footer_menu_button{
+    .footer_envelope{
         font-size: 15px !important;
         margin-top: 14px;
-        margin-bottom: 30px;
         margin-right: 25px;
         font-weight: 600;
-        color: #ffffff;
-        line-height: 35px !important;
         display: inline-block;
-        min-width: 132px;
-        width: 200px;
+        width: 170px;
         text-align: center;
-    /* background: #9c7e75; */
-        background-color: #b3d242;
         padding: 1px 4px;
-        -moz-border-radius: 30px;
-        -webkit-border-radius: 30px;
-        border-radius: 30px;
-        border-color: #fff;
         float: right;
     }
 
@@ -1961,10 +1966,12 @@ textarea{
 
     /*---------media--------------------------------------*/
 
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1200px) {
         .track_record_record_in {
             width: 70%;
-
+        }
+        .footer_service_content1 {
+           width: 75%;
         }
     }
 
@@ -2034,6 +2041,14 @@ textarea{
             width: 100%;
         }
 
+        .service div{
+            font-size: 11px;
+            width: 100%;
+            display: block;
+            overflow: hidden;
+        }
+
+
 
     }
 
@@ -2041,6 +2056,7 @@ textarea{
         .nav > li > a {
             padding: 0px 8px;
         }
+
 
         .phone_block {
             margin-top: 3px;
@@ -2071,7 +2087,7 @@ textarea{
         }
 
         .footer_phone {
-            font-size: 12px;
+            font-size: 11px;
     }
 
         .logo_footer {
@@ -2108,12 +2124,12 @@ textarea{
         .footer_service_content {
             float: left;
             margin-left: 0px;
-            margin-top: 30px;
+            /*margin-top: 30px;*/
             clear: both;
         }
 
-        .service {
-            font-size: 13px;
+        .service div {
+            font-size: 11px;
         }
 
     }
@@ -2244,9 +2260,9 @@ textarea{
 
         .line_foot {
             width: 0px;
-            height: 0px;
+            height: 12px;
             /* background-color: #b3d242; */
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .article {
             height: auto;
@@ -2513,6 +2529,9 @@ textarea{
             padding: 25px 0px;
 
         }
+        .Copiright{
+            display: none;
+        }
 
         .footer_service_content {
             float: left;
@@ -2520,6 +2539,20 @@ textarea{
             margin-top: -100px;
             padding-top: 120px;
             clear: both;
+            width: 300px;
+        }
+        .footer_service_content1 {
+            float: left;
+            margin-left: 10%;
+            margin-top: -100px;
+            padding-top: 120px;
+            clear: both;
+            width: 300px;
+        }
+
+        .footer_menu {
+            width: 100px;
+            margin-left: 10%;
         }
 
         .footer_slogan {
@@ -2537,6 +2570,12 @@ textarea{
             display: none!important;
         }
 
+        .line_foot1 {
+            height: 0px;
+        }
+        .line_foot {
+            height: 0px;
+        }
         .directions_menu {
             /*width: 320px;*/
             margin: 0 auto;

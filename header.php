@@ -7,6 +7,7 @@ header('Content-Type: text/html; charset=utf-8');
     <meta charset="UTF-8">
     <title>JMC - Еврейский Медицинский Центр</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "format-detection" content = "telephone=no" />
     <meta name="description" content="Еврейский Медицинский Центр">
     <meta name="author" content="">
     <meta name="keywords" content="Клиника">
@@ -27,22 +28,6 @@ header('Content-Type: text/html; charset=utf-8');
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet'
           type='text/css'>
     <link href="css/hover-min.css" rel="stylesheet" media="all"> <!--hover animaition affect-->
-<!--    <script src="js/modernizr-custom.js" type="text/javascript"></script>-->
-
-    <script>
-        less = {
-            env: "development",
-            async: false,
-            fileAsync: false,
-            poll: 1000,
-            functions: {},
-            dumpLineNumbers: "comments",
-            relativeUrls: false,
-            rootpath: ":/a.com/"
-        };
-    </script>
-    <script src="js/less.min.js"></script>
-
 </head>
 <body>
 <header>
