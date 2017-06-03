@@ -13,9 +13,10 @@ include_once  'header_adm.php';?>
 <div class="container container_nav">
 	<div class="row">
 		<div class="col-md-2"><?php include_once  'sidebar.php';?></div>
-		
 		<div class="col-md-10"><?php include_once  'main_adm.php';?></div>
-		
+        <a href="<?= $_SERVER[PHP_SELF]?>?page=doctor">DOCTORS</a>
+        <a href="<?= $_SERVER[PHP_SELF]?>?page=price">PRICE</a>
+
 	</div>
 </div>
 
