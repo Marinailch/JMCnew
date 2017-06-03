@@ -73,8 +73,7 @@ class ActionGET extends DataBase
      * Проверяем GET запрос на главной странице
      * Возвращаем подгружаемый файл
      */
-
-        public function getMain()
+    public function getMain()
     {
 
         $id = filter_input(INPUT_GET, 'page');

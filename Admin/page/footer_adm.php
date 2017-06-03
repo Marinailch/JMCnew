@@ -2,7 +2,7 @@
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation" id="slide-nav" >
             <div class="container">
             <div class="navbar-header" >
-                <a href=""><img class="logo_head" src="../img/logo.gif"></a>
+                <a href=""><img class="logo_head" src="../../img/logo.gif"></a>
 
                 <div id="slidemenu">
                     <ul class="nav navbar-nav">
@@ -11,19 +11,20 @@
                         <li><a href="">Диагностика</a></li>
                         <li><a href="">Врачи</a></li>
                         <li><a href="">Блог</a></li>
-                        <li><a href="">О нас</a> </li>                   
+                        <li><a href="">О нас</a> </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-	
-</footer>
-  </body>
 
-        <script src="../js/bootstrap.min.js"></script>
-    	<script src="../js/script.js"></script>
-    </html>
+</footer>
+
+
+        <script src="../../js/bootstrap.min.js"></script>
+    	<script src="../../js/script.js"></script>
+    </body>
+</html>
 <?php
 //$x = filter_input(INPUT_POST, 'submit');
 //$bio = filter_input(INPUT_POST, 'bio');
