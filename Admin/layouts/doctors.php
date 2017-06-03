@@ -1,4 +1,6 @@
+<div class="container">
 <nav id="main">
+
     <h5 class="directions_header_adm">Добавить врача</h5>
     <form class="form-horizontal" method="POST" action="../index.php">
 
@@ -6,10 +8,10 @@
             <div class="col-md-4" >
                 <div style="margin-bottom: 20px;">
                <span class="btn btn-default btn-file batton_del_panel_lab" style="width: 20px;">
-                   <img src="../img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">
+                   <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">
                    <input type="file">
                 </span>
-                    <img src="../img/default.png" width="370">
+                    <img src="./img/default.png" width="370px">
                 </div>
             </div>
             <div class="col-md-8">
@@ -54,18 +56,19 @@
 
 
         <!--    <a href="index.php?page=doctors&id=--><? //= $value['id'] ?><!--">-->
-        <div class="batton_del_panel_lab">
-            <a href="../index.php?page=doctor&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
-                    <img src="../img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
-                </button>
-            </a>
-            <a href="" >
-                <img src="../img/del.png" title="Удалить" class="del_button">
-            </a>
-        </div>
+
         <div class="col-sm-3 ">
             <div class="doctor_card hvr-grow-shadow">
-                <img class="" src="img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
+                <div class="batton_del_panel_lab" style="z-index: 100; position: relative;">
+                    <a href="../index.php?layouts/doctor_card&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
+                            <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
+                        </button>
+                    </a>
+                    <a href="" >
+                        <img src="./img/del.png" title="Удалить" class="del_button">
+                    </a>
+                </div>
+                <img class="" src="../img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
                 <div class="doctor_info" style="margin-bottom: 20px">
                     <?php
                     // не удаляй этот код он мне нужен
@@ -106,17 +109,18 @@
 
 
 
-                <div class="batton_del_panel_lab">
-                    <a href="../index.php?page=doctor&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
-                            <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
-                        </button>
-                    </a>
-                    <a href="" >
-                        <img src="./img/del.png" title="Удалить" class="del_button">
-                    </a>
-                </div>
+
                 <div class="col-sm-3 ">
                     <div class="doctor_card hvr-grow-shadow">
+                        <div class="batton_del_panel_lab" style="z-index: 100; position: relative;">
+                            <a href="../index.php?page=doctor&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
+                                    <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
+                                </button>
+                            </a>
+                            <a href="" >
+                                <img src="./img/del.png" title="Удалить" class="del_button">
+                            </a>
+                        </div>
                         <img class="" src="../img/doctors_foto/<?= $value['link_foto'] ?>">
                         <div class="doctor_info" style="margin-bottom: 20px">
                             <?php
@@ -130,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-              
+
 
                 <?
                 $i += 1;
@@ -157,18 +161,19 @@
 
 
                 <!--    <a href="index.php?page=doctors&id=--><? //= $value['id'] ?><!--">-->
-                <div class="batton_del_panel_lab">
-                    <<a href="../index.php?page=doctor&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
-                            <img src="../img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
-                        </button>
-                    </a>
-                    <a href="" >
-                        <img src="../img/del.png" title="Удалить" class="del_button">
-                    </a>
-                </div>
+
                 <div class="col-sm-3 ">
                     <div class="doctor_card hvr-grow-shadow">
-                        <img class="" src="img/doctors_foto/<?= $value['link_foto'] ?>">
+                        <div class="batton_del_panel_lab" style="z-index: 100; position: relative;">
+                            <a href="../index.php?page=doctor&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
+                                    <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
+                                </button>
+                            </a>
+                            <a href="" >
+                                <img src="./img/del.png" title="Удалить" class="del_button">
+                            </a>
+                        </div>
+                        <img class="" src="../img/doctors_foto/<?= $value['link_foto'] ?>">
                         <div class="doctor_info" style="margin-bottom: 20px">
                             <?php
                             // не удаляй этот код он мне нужен
@@ -192,3 +197,4 @@
 
     </div>
 </nav>
+</div>
