@@ -1,25 +1,3 @@
-<?php  $resultBlog = $blog->getFullBlogItemByID();
-$months = array(
-    "1"=>"Январь",
-    "2"=>"Февраль",
-    "3"=>"Март",
-    "4"=>"Апрель",
-    "5"=>"Май",
-    "6"=>"Июнь",
-    "7"=>"Июль",
-    "8"=>"Август",
-    "9"=>"Сентябрь",
-    "10"=>"Октябрь",
-    "11"=>"Ноябрь",
-    "12"=>"Декабрь",
-);
-$day = date("d");
-$mon = $months[date("n")];
-$year = date("Y");
-$data_blog=" "."$day"." "."$mon"." "."$year"." ";
-
-?>
-
 <nav id="main">
     <h5 class="directions_header_adm">Добавить статью в блог</h5>
     <form class="form-horizontal" method="POST" action="index.php">
