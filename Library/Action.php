@@ -87,6 +87,16 @@ class Action extends DataBase
      include_once $this->template_name;
  }
 
-
+    public function doctor_card()
+    {
+        $title = 'Doctors';
+        $header ="./page/header_adm.php";
+        $layout_name = 'layouts/doctor_card.php';
+        $footer = './page/footer_adm.php';
+        $doctors = $this->doctors;
+        $administrators = $this->administrators;
+        $nurses = $this->nurses;
+        include_once $this->template_name;
+    }
 
 }

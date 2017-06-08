@@ -11,6 +11,7 @@ class ActionGET extends DataBase
 
     protected $directions;
     protected $doctors;
+    protected $doctor_card;
     protected $functional_diagn;
     protected $lab_meth;
     protected $form;
@@ -20,6 +21,7 @@ class ActionGET extends DataBase
         parent::__construct($db);
         $this->directions = new Directions($db);
         $this->doctors = new Doctors($db);
+        $this->doctor_card = new doctor_card($db);
         $this->form = new Form();
     }
 
@@ -86,6 +88,8 @@ class ActionGET extends DataBase
             return 'pages/diagnostics.php';
         } else if ($id == 'doctors') {
             return 'pages/doctors.php';
+        } else if ($id == 'doctor_card') {
+            return 'pages/doctor_card.php';
         } else if ($id == 'blog') {
             return 'pages/blog.php';
         } else if ($id == 'functional_diagnostic') {
