@@ -60,7 +60,7 @@
             <div class="col-sm-3 ">
                 <div class="doctor_card hvr-grow-shadow">
                     <div class="batton_del_panel_lab" style="z-index: 100; position: relative;">
-                        <a href="../index.php?layouts/doctor_card&id=<?= $value['id'] ?>"> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
+                        <a href="<?= $_SERVER[PHP_SELF]?>?page=doctor_card&id=<?= $value['id'] ?>"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#d<?= $i ?>">
                                 <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px">
                             </button>
                         </a>

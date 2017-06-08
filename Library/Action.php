@@ -90,8 +90,9 @@ class Action extends DataBase
      include_once $this->template_name;
  }
 
-    public function doctor_card()
+    public function doctor_card($id=NULL)
     {
+        $id=filter_input(INPUT_GET, 'id');
         $title = 'Doctors';
         $header ="./page/header_adm.php";
         $layout_name = 'layouts/doctor_card.php';
