@@ -30,15 +30,6 @@ include_once '../Config/ConfigClasses.php';
  * исходное значение $action = showsongs;
  *
  */
-if($laboratory){
-    echo 'TRUE';
-}else{
-    echo 'FALSE';
-}
-
-
-
-
 
 //if(!$_SESSION['user']){
 //    $action = 'authuser';

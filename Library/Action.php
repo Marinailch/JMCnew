@@ -14,6 +14,7 @@ class Action extends DataBase
     protected $doctors;
     protected $administrators;
     protected $nurses;
+    protected $price;
 
     public function __construct($db)
     {
@@ -23,6 +24,7 @@ class Action extends DataBase
         $this->doctors = new Doctors($db);
         $this->administrators = new Administrators($db);
         $this->nurses = new Nurses($db);
+        $this->price = new Price($db);
     }
 
     public function mainpage()
@@ -41,6 +43,7 @@ class Action extends DataBase
      $header ="./page/header_adm.php";
      $layout_name = 'layouts/consultation.php';
      $footer = './page/footer_adm.php';
+     $price = $this->price;
      include_once $this->template_name;
  }
 

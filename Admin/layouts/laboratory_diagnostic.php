@@ -1,4 +1,3 @@
-
 <div class="container container_nav">
     <div class="row">
         <nav id="main">
@@ -31,11 +30,13 @@
                         <nav style="margin-top: 20px;">
                             <div id="lab">
                                 <div class="batton_del_panel_lab">
-                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#n<?= $i ?>">
-                                        <img src="img/rec.png" title="Редактировать"  class="del_button" style="margin-right: -17px">
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                                            data-target="#n<?= $i ?>">
+                                        <img src="img/rec.png" title="Редактировать" class="del_button"
+                                             style="margin-right: -17px">
                                     </button>
 
-                                    <a href="" >
+                                    <a href="">
                                         <img src="img/del.png" title="Удалить" class="del_button">
                                     </a>
                                 </div>
@@ -46,22 +47,25 @@
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
                                                 <h4 class="modal-title"><?= $value['name'] ?></h4>
                                             </div>
                                             <div class="modal-body">
                                                 <form class="form-horizontal" method="POST" action="index.php">
 
                                                     <div class="form-group">
-                                                        <label for="n<?= $i ?>">Изменить название модуля <br>лабораторного исследования</label>
+                                                        <label for="n<?= $i ?>">Изменить название модуля <br>лабораторного
+                                                            исследования</label>
                                                         <div class="col-sm-4">
-                                                            <input type="text" name="name" class="form-control" value="<?= $value['name'] ?>">
+                                                            <input type="text" name="name" class="form-control"
+                                                                   value="<?= $value['name'] ?>">
                                                         </div>
                                                     </div>
 
                                                     <textarea name="l<?= $i ?>"> <?= $value['description'] ?></textarea>
                                                     <script>
-                                                        CKEDITOR.replace( 'l<?= $i ?>' );
+                                                        CKEDITOR.replace('l<?= $i ?>');
                                                     </script>
                                                     <!-- Trying new action-->
 
@@ -84,7 +88,7 @@
 
             </nav>
 
-    </div>
 
-    </nav>
+        </nav>
+    </div>
 </div>
