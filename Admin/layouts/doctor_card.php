@@ -18,8 +18,8 @@
 </div>
 
 <?php
-$item = $doctor
-
+$item = $doctor;
+echo $i;
 
 ?>
     <div class="directions_header">

@@ -26,6 +26,13 @@ class Action extends DataBase
         $this->nurses = new Nurses($db);
         $this->price = new Price($db);
     }
+    public static function getParam($status)
+    {
+        switch ($status)
+        {
+            case'': return ;
+        }
+    }
 
     public function mainpage()
  {
@@ -44,6 +51,7 @@ class Action extends DataBase
      $layout_name = 'layouts/consultation.php';
      $footer = './page/footer_adm.php';
      $price = $this->price;
+     $b = $price;
      include_once $this->template_name;
  }
 
@@ -93,6 +101,7 @@ class Action extends DataBase
     public function doctor_card($id=NULL)
     {
         $id=filter_input(INPUT_GET, 'id');
+        $status = filter_input(INPUT_GET, 'status');
         $title = 'Doctors';
         $header ="./page/header_adm.php";
         $layout_name = 'layouts/doctor_card.php';
@@ -101,6 +110,7 @@ class Action extends DataBase
         $administrators = $this->administrators;
         $nurses = $this->nurses;
         include_once $this->template_name;
+
     }
 
 }

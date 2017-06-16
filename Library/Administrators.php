@@ -10,7 +10,7 @@ class Administrators extends DataBase
 {
     public function getAdministrators()
     {
-        $query = "SELECT name, specialty, link_foto FROM administrators";
+        $query = "SELECT id, name, specialty, link_foto FROM administrators";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{

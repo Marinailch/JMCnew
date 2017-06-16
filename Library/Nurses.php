@@ -10,7 +10,7 @@ class Nurses extends DataBase
 {
     public function getNurses()
     {
-        $query = "SELECT name, specialty, link_foto FROM nurses";
+        $query = "SELECT id, name, specialty, link_foto FROM nurses";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
