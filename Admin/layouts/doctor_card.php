@@ -1,9 +1,8 @@
-<div class="directions_header">
-    <p>Доктор</p>
-</div>
+<?php
+$item = $doctor;
+?>
 
-<div class="container" >
-    <div style="margin-top: 20px;">
+<!--<div style="margin-top: 20px;">-->
 <!--        --><?php //foreach($doctors as $key=>$value):?>
 <!--            <img src="../img/doctors_foto/--><?//= $value['link_foto_doctor']?><!--" width="300px" height="200px" style="float:left; margin-right: 30px; " >-->
 <!--            <p class="markh2b">--><?//= $value['name_of_doctor']?><!--</p>-->
@@ -13,36 +12,70 @@
 <!--            <p style="text-align: justify;">--><?//= $value['full_descr']?><!--</p>-->
 <!---->
 <!--        --><?php //endforeach; ?>
-
-    </div>
-</div>
-
-<?php
-$item = $doctor
+<!---->
+<!--    </div>-->
 
 
-?>
-    <div class="directions_header">
-        <p>Доктор</p>
-    </div>
+
 
     <div class="container" >
-    <div style=" margin-top: 10px; margin-bottom: 40px;">
-		<img src="../../img/doctors_foto/1.jpg" width="480px" height="300px" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+    <div style=" margin-top: 30px; margin-bottom: 40px;">
 
 
 
 
-            <p class="markh3b">Нороха Игорь Иванович </p>
-<!--            <p> <span class="markh4o">Врач первой катигории</span> </p>-->
-<!--            <p  style="margin-top: -13px; margin-bottom: 28px;"> <span class="markh4o">гинеколог</span> </p>-->
-            <p style="font-weight: 600; color: dimgrey">Врач высшей категории</p>
-            <p  style="margin-top: -13px; margin-bottom: 28px; font-weight: 600; color: dimgrey"> врач-дерматовенеролог</p>
-            <p style="text-align: justify; font-size: 16px"> <span class="markh4b">Опыт работы  : </span> Игорь Иванович имеет стаж работы более 20 лет в лечении пациентов с дерматологическими, онкодерматологическими и венерологическими проблемами. Проводит консультации, диагностику и лечение кожных, инфекционных и кожно-заразных заболеваний. </p>
+        <form class="form-horizontal" method="POST" action="../index.php">
 
-            <p style="text-align: justify; font-size: 16px"> <span class="markh4b">Описание : </span> Игорь Иванович прошел профессиональную подготовку в интернатуре ДГМА. Работала в ГКВД и ОКВД г. Днепропетровска, врачом дермато-венерологом. В совершенстве владеет современными методиками обследования и лечения дерматологических и онкологических заболеваний кожиразличной степени сложности. Успешно применяет дерматоскопию новообразований кожи .
-</p>
+            <div class="row">
+                <div class="col-md-5" >
+                    <div style="margin-bottom: 20px;">
+               <span class="btn btn-default btn-file batton_del_panel_lab" style="width: 20px;">
+                   <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">
+                   <input type="file">
+                </span>
+                        <img src="../../img/doctors_foto/1.jpg" width="100%" height="auto" style="float:left; margin-right: 35px; margin-bottom: 30px;  " >
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputSuccess3">Добавить <br>ФИО врача</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSuccess3">Добавить <br>категорию врача</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" class="form-control" value="Врач высшей категории">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSuccess3">Добавить <br>должность врача</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="name" class="form-control" value="Сосудистый хирург">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSuccess3">Добавить <br>краткое описание </label>
+                        <div class="col-sm-8">
+                            <textarea type="text" rows="10" cols="" name="name" class="form-control" value="Сосудистый хирург"></textarea>
+                        </div>
+                    </div>
 
+
+                </div>
+            </div>
+            <h5 class="directions_header_adm">Добавить полное описание</h5>
+
+
+            <textarea name="doctor_add"></textarea>
+            <!-- Trying new action-->
+
+            <input type="submit" class="form-horizontal" name="submit">
+        </form>
+        <script>
+            CKEDITOR.replace('doctor_add');
+        </script>
 
 
 </div>

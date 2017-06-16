@@ -46,7 +46,7 @@ include "header.php"
 <!--            <p> <span class="markh4o">Врач первой катигории</span> </p>-->
 <!--            <p  style="margin-top: -13px; margin-bottom: 28px;"> <span class="markh4o">гинеколог</span> </p>-->
             <p style="font-weight: 600; color: dimgrey">Врач высшей категории</p>
-            <p  style="margin-top: -13px; margin-bottom: 28px; font-weight: 600; color: dimgrey"> врач-дерматовенеролог</p>
+            <p  style="margin-top: -13px; margin-bottom: 28px; font-weight: 600; color: dimgrey; text-transform: uppercase;"> дерматовенеролог</p>
             <p style="text-align: justify; font-size: 16px"> <span class="markh4b">Опыт работы  : </span> Игорь Иванович имеет стаж работы более 20 лет в лечении пациентов с дерматологическими, онкодерматологическими и венерологическими проблемами. Проводит консультации, диагностику и лечение кожных, инфекционных и кожно-заразных заболеваний. </p>
 
             <p style="text-align: justify; font-size: 16px"> <span class="markh4b">Описание : </span> Игорь Иванович прошел профессиональную подготовку в интернатуре ДГМА. Работала в ГКВД и ОКВД г. Днепропетровска, врачом дермато-венерологом. В совершенстве владеет современными методиками обследования и лечения дерматологических и онкологических заболеваний кожиразличной степени сложности. Успешно применяет дерматоскопию новообразований кожи .
