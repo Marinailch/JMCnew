@@ -17,7 +17,6 @@ $item = $doctor;
 
 
 
-
     <div class="container" >
     <div style=" margin-top: 30px; margin-bottom: 40px;">
 

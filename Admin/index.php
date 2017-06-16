@@ -16,18 +16,16 @@ include_once '../Config/adminconfig.php';
 include_once '../Config/ConfigClasses.php';
 
 //echo $request->getMain();
-////Подключаем хедер
+//Подключаем хедер
 //include_once './page/header_adm.php';
-////Подключаем мейн админ панели
+//Подключаем мейн админ панели
 //include_once './page/main_adm.php';
-////Подключаем футер
+//Подключаем футер
 //include_once './page/footer_adm.php';
-//
-//
 /**
  * Смысл этого в получении GET запроса со строки index.php, если это
  * начальная страница - он пуст($action = NULL), значит получаем
- * исходное значение $action = showsongs;
+ * исходное значение $action = mainpage;
  *
  */
 
@@ -62,8 +60,8 @@ if(!method_exists($action_obj, $action)){
  * класса по GET запросу, полученному после нажатия на кнопку формы.Получается
  * ситуация типа : Начало страницы - index.php, за счет отсутствия GET
  * элементов $action присваивается NULL, из-за этого срабатывает условие
- * $action='showcatalogs' и срабатывает функция $action_obj->$action() по
- * принципу $action_obj->showcatalogs(); Далее во всех формах переходы
+ * $action='mainpage' и срабатывает функция $action_obj->$action() по
+ * принципу $action_obj->mainpage(); Далее во всех формах переходы
  * идут по принципу $_SERVER['PHP_SELF']?action=editform" всегда
  * указывая какое-либо GET значение, из-за чего мы всегда будем на странице
  * index.php, но с GET запросом, который опять будет считываться на этой

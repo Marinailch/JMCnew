@@ -10,7 +10,7 @@ class Price extends DataBase
 {
 
     public function getPriceMain(){
-        $query = "SELECT specialty, price_first_time, price_after FROM specialty_price WHERE consulting_at_home IS NULL";
+        $query = "SELECT id, specialty, price_first_time, price_after FROM specialty_price WHERE consulting_at_home IS NULL";
         $result = $this->db->query($query);
         if ($result) {
             $catalogs=array();
