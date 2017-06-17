@@ -283,7 +283,11 @@ class Action extends DataBase
             die('I cant' . __LINE__);
         }
     }
-
+    /*
+    * *******************************************
+    * БЛОК ПО РАБОТЕ С ЛАБОРАТОРНОЙ ДИАГНОСТИКОЙ*
+    * *******************************************
+    */
     public function savelab()
     {
         $name = filter_input(INPUT_POST, 'name');
@@ -295,6 +299,25 @@ class Action extends DataBase
             die('I cant' . __LINE__);
         }
 
+    }
+    public function createlabmethod()
+    {
+        $name = filter_input(INPUT_POST, 'name');
+        $description = filter_input(INPUT_POST, 'description');
+        if($this->laboratory->createLab($name, $description)){
+            $this->redirect('?page=laboratory');
+        }else{
+            die('I cant' . __LINE__);
+        }
+    }
+    public function deletelab()
+    {
+        $id = filter_input(INPUT_GET, 'id');
+        if($this->laboratory->deleteLabMethod($id)){
+            $this->redirect('?page=laboratory');
+        }else{
+            die('I cant' . __LINE__);
+        }
     }
 
 

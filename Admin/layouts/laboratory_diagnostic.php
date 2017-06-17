@@ -2,7 +2,7 @@
     <div class="row">
         <nav id="main">
             <nav id="main">
-
+<!-- ДОБАВЛЕНИЕ НОВОГО БЛОКА ЛАБОРАТОРНЫХ ИССЛЕДОВАНИЙ -->
                 <h5 class="directions_header_adm">Добавить модуль лабораторного исследования</h5>
 
                 <form class="form-horizontal" method="POST" action="index.php">
@@ -73,8 +73,6 @@
             </td>
         </tr>
     </tbody></table></textarea>
-                    <!-- Trying new action-->
-
                     <input type="submit" class="form-horizontal" value="Сохранить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createlabmethod">
                 </form>
                 <script>
@@ -83,8 +81,8 @@
                 <h5 class="directions_header_adm">Редактировать/Удалить модуль лабораторного исследования</h5>
 
                 <!-- ТУТ НАЧИНАЕТСЯ ВОЛШЕБСТВО-->
+                <!-- РЕДАКТИРОВАНИЕ БЛОКА ЛАБОРАТОРНЫХ ИССЛЕДОВАНИЙ -->
 
-                <!--                --><?php //var_dump($laboratory->getAllMethods())?>
                 <?php foreach ($laboratory->getAllMethods() as $key => $value): ?>
 
                     <div class="" id="">
@@ -97,7 +95,7 @@
                                              style="margin-right: -17px">
                                     </button>
 
-                                    <a href="">
+                                    <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deletelab&id=<?=$value['id']?>">
                                         <img src="img/del.png" title="Удалить" class="del_button">
                                     </a>
                                 </div>
