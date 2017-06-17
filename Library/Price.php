@@ -12,28 +12,21 @@ class Price extends DataBase
     public function getPriceMain(){
         $query = "SELECT id, specialty, price_first_time, price_after FROM specialty_price WHERE consulting_at_home IS NULL";
         $result = $this->db->query($query);
-        if ($result) {
-            $catalogs=array();
-            while ($new_item = $result->fetch_assoc()) {
-                $catalogs[]=$new_item;
-            }
-            return $catalogs;
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
         }
-        return false;
 
     }
 
     public function getPriceMainWithHome(){
         $query = "SELECT specialty, consulting_at_home FROM specialty_price WHERE consulting_at_home IS NOT NULL";
-        $result = $this->db->query($query);
-        if ($result) {
-            $catalogs=array();
-            while ($new_item = $result->fetch_assoc()) {
-                $catalogs[]=$new_item;
-            }
-            return $catalogs;
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
         }
-        return false;
     }
 
 }
