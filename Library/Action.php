@@ -124,6 +124,7 @@ class Action extends DataBase
         $doctors = $this->doctors;
         $administrators = $this->administrators;
         $nurses = $this->nurses;
+        $directions = $this->directions;
         include_once $this->template_name;
     }
 
@@ -318,6 +319,19 @@ class Action extends DataBase
         }else{
             die('I cant' . __LINE__);
         }
+    }
+
+    public function createDoctor()
+    {
+        $name_of_doctor = filter_input(INPUT_POST, 'name_of_doctor');
+        $expirience_of_work = filter_input(INPUT_POST, 'expirience_of_work');
+        $specialty_of_doctor = filter_input(INPUT_POST, 'specialty_of_doctor');
+        $science_degree = filter_input(INPUT_POST, 'science_degree');
+        $short_descr = filter_input(INPUT_POST, 'short_descr');
+        $full_descr = filter_input(INPUT_POST, 'full_descr');
+        $direction_id = filter_input(INPUT_POST, 'direction_id');
+        $active = filter_input(INPUT_POST, 'active');
+        echo $name_of_doctor.'<br>', $expirience_of_work.'<br>', $specialty_of_doctor.'<br>',$science_degree.'<br>',$short_descr.'<br>',$full_descr.'<br>',$direction_id.'<br>',$active;
     }
 
 
