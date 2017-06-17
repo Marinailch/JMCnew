@@ -33,6 +33,13 @@ class Action extends DataBase
             case'': return ;
         }
     }
+    public function redirect($id=NULL){
+        if(!$id){
+            header('Location:'.$_SERVER['PHP_SELF']);
+        }
+        header('Location:'.$_SERVER['PHP_SELF'].$id);
+    }
+
 
     public function mainpage()
  {
@@ -113,4 +120,37 @@ class Action extends DataBase
 
     }
 
+    public function savepriceID()
+    {
+        $specialty = filter_input(INPUT_POST, 'specialty');
+        $price_first_time = filter_input(INPUT_POST, 'price_first_time');
+        $price_after = filter_input(INPUT_POST, 'price_after');
+        $priceID = filter_input(INPUT_POST, 'priceID');
+        if($this->price->savePrice($specialty, $price_first_time, $price_after, $priceID)){
+            $this->redirect('?page=consultation');
+        }else{
+            die('I cant '.__LINE__);
+        }
+    }
+    public function deletepriceID()
+    {
+        $priceID = filter_input(INPUT_POST, 'priceID');
+        if($this->price->deletePriceID($priceID)){
+            $this->redirect('?page=consultation');
+        }else{
+            die('I cant '.__LINE__);
+        }
+    }
+
+    public function createprice()
+    {
+        $specialty = filter_input(INPUT_POST, 'specialty');
+        $price_first_time = filter_input(INPUT_POST, 'price_first_time');
+        $price_after = filter_input(INPUT_POST, 'price_after');
+        if($this->price->createPrice($specialty, $price_first_time, $price_after)){
+            $this->redirect('?page=consultation');
+        }else{
+            die('I cant '.__LINE__);
+        }
+    }
 }

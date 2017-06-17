@@ -29,4 +29,30 @@ class Price extends DataBase
         }
     }
 
+    public function savePrice($spec, $priceF, $priceA, $id)
+    {
+        $query = "UPDATE specialty_price SET specialty='$spec', price_first_time='$priceF', price_after='$priceA' WHERE id='$id'";
+        if ($result=parent::saveDB($query)){
+            return TRUE;
+        }
+            return FALSE;
+    }
+    public function deletePriceID($id)
+    {
+        $query="DELETE FROM specialty_price WHERE id='$id'";
+        if($result=parent::saveDB($query)){
+            return TRUE;
+        }
+            return FALSE;
+    }
+
+    public function createPrice($spec, $priceF, $priceA)
+    {
+        $query = "INSERT INTO specialty_price (specialty, price_first_time, price_after) VALUES ('$spec','$priceF', '$priceA')";
+        if($result=parent::saveDB($query)){
+            return TRUE;
+        }
+        return FALSE;
+    }
+
 }
