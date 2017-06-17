@@ -15,29 +15,31 @@ class FunctionalDiagnostic extends DataBase
     public function getPriceForUSI()
     {
         $query = "SELECT id, name_of_method_fd, price FROM methods_fd WHERE func_diagn_id=2";
-        $result = $this->db->query($query);
-        if ($result) {
-            $catalogs = array();
-            while ($new_item = $result->fetch_assoc()) {
-                $catalogs[] = $new_item;
-            }
-            return $catalogs;
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
         }
-        return false;
+    }
+
+    public function getMethodsFD()
+    {
+        $query="SELECT id, name_of_fd FROM functional_diagnostic WHERE id!=2";
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
+        }
     }
 
     public function getPriceForFD()
     {
         $query = "SELECT id, name_of_method_fd, price FROM methods_fd WHERE func_diagn_id!=2";
-        $result = $this->db->query($query);
-        if ($result) {
-            $catalogs = array();
-            while ($new_item = $result->fetch_assoc()) {
-                $catalogs[] = $new_item;
-            }
-            return $catalogs;
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
         }
-        return false;
     }
 
     public function createNewPrice($name, $price, $id)
@@ -66,4 +68,6 @@ class FunctionalDiagnostic extends DataBase
         }
         return false;
     }
+
+
 }
