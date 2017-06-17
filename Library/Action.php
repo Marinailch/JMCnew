@@ -100,7 +100,7 @@ class Action extends DataBase
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/laboratory_diagnostic.php';
         $footer = './page/footer_adm.php';
-        $res2 = $this->laboratory->getAllMethods();
+        $laboratory = $this->laboratory;
         include_once $this->template_name;
     }
 
@@ -283,6 +283,24 @@ class Action extends DataBase
             die('I cant' . __LINE__);
         }
     }
+
+    public function savelab()
+    {
+        $name = filter_input(INPUT_POST, 'name');
+        $id = filter_input(INPUT_POST, 'priceID');
+        $description = filter_input(INPUT_POST, 'description');
+        if($this->laboratory->saveLab($name, $description, $id)){
+            $this->redirect('?page=laboratory');
+        }else{
+            die('I cant' . __LINE__);
+        }
+
+    }
+
+
+
+
+
 }
 
 
