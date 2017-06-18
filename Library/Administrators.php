@@ -10,7 +10,7 @@ class Administrators extends DataBase
 {
     public function getAdministrators()
     {
-        $query = "SELECT id, name, specialty, link_foto FROM administrators";
+        $query = "SELECT id, name, specialty, link_foto, description FROM administrators";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
@@ -32,6 +32,16 @@ class Administrators extends DataBase
     {
         $query = "DELETE FROM administrators WHERE id='$id'";
         if($result=parent::saveDB($query)){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+    public function saveAdministrator($name, $spec,  $desc, $foto, $id)
+    {
+        $desc  = $this->db->real_escape_string($desc);
+        $query="UPDATE administrators SET name='$name', specialty='$spec', description='$desc', link_foto='$foto' WHERE id='$id'";
+        if($result= parent::saveDB($query)){
             return TRUE;
         }else{
             return FALSE;
