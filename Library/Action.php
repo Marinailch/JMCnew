@@ -583,6 +583,76 @@ class Action extends DataBase
         }
 
     }
+    public function saveNurse()
+    {
+        $name = filter_input(INPUT_POST, 'name');
+        if($name == ''||$name ==NULL){
+            $name='DEFAULT';
+        }
+        $specialty = filter_input(INPUT_POST, 'specialty');
+        if($specialty == ''||$specialty ==NULL){
+            $specialty='DEFAULT';
+        }
+        $description = filter_input(INPUT_POST, 'description');
+        if($description == ''||$description ==NULL){
+            $description = 'Lorem Ipsum';
+        }
+        $id = filter_input(INPUT_POST, 'priceID');
+        $foto = $_FILES['foto'];
+
+
+        $default_foto = filter_input(INPUT_POST, 'fotomain');
+//        echo $name, $specialty, $description, $default_foto, $id, $foto['error'];
+//        die();
+
+
+
+        if($foto['error']===4){
+            $file_name = $default_foto;
+            if($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)){
+                $this->redirect('?page=nurses');
+            }else{
+                die('I cant add administrator'. __LINE__);
+            }
+        }
+        $types = array("image/jpeg",);
+        if ($foto['error'] == UPLOAD_ERR_OK) {
+            if (in_array($foto['type'], $types)) {
+                if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
+                    $file_name_parts = explode('.',$foto['name']);
+                    $file_extension = array_pop($file_name_parts);
+                    $file_base_name = implode('',$file_name_parts);
+                    $file_name = md5($file_base_name.rand(1, getrandmax()));
+                    $file_name.='.'.$file_extension;
+                    $path = '../img/doctors_foto/' . $file_name;
+
+                    if (move_uploaded_file($foto['tmp_name'], $path)) {
+                        //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
+
+                        if($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)){
+                            $this->redirect('?page=nurses');
+                        }else{
+                            die('I cant add administrator'. __LINE__);
+                        }
+
+                        echo 'hiho';
+
+                    } else {
+                        $message = "problem with moving";
+                    }
+                } else {
+                    $message = "file is too large";
+                }
+            } else {
+                $message = "invalid type of file";
+            }
+        } else {
+            $message = parent::errorMassage($foto['error']);
+            if (!empty($message)) {
+                echo $message;
+            }
+        }
+    }
 
 
 

@@ -2,7 +2,7 @@
     <div class="row">
         <nav id="main">
             <nav id="main">
-<!-- ДОБАВЛЕНИЕ НОВОГО БЛОКА ЛАБОРАТОРНЫХ ИССЛЕДОВАНИЙ -->
+                <!-- ДОБАВЛЕНИЕ НОВОГО БЛОКА ЛАБОРАТОРНЫХ ИССЛЕДОВАНИЙ -->
                 <h5 class="directions_header_adm">Добавить модуль лабораторного исследования</h5>
 
                 <form class="form-horizontal" method="POST" action="index.php">
@@ -15,7 +15,7 @@
                     </div>
 
                     <textarea id="test" name="description"><table border="1" cellspacing="0" class="Table"
-                                               style="background-color:#ffffff; border-collapse:collapse; border:solid windowtext 1.0pt; width:100.0%">
+                                                                  style="background-color:#ffffff; border-collapse:collapse; border:solid windowtext 1.0pt; width:100.0%">
 	<tbody>
 		<tr>
 			<td colspan="6" style="background-color:#cccc66; border-color:#bbbbbb; width:100%">
@@ -73,7 +73,8 @@
             </td>
         </tr>
     </tbody></table></textarea>
-                    <input type="submit" class="form-horizontal" value="Сохранить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createlabmethod">
+                    <input type="submit" class="form-horizontal" value="Сохранить"
+                           formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createlabmethod">
                 </form>
                 <script>
                     CKEDITOR.replace('test');
@@ -95,7 +96,7 @@
                                              style="margin-right: -17px">
                                     </button>
 
-                                    <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deletelab&id=<?=$value['id']?>">
+                                    <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deletelab&id=<?= $value['id'] ?>">
                                         <img src="img/del.png" title="Удалить" class="del_button">
                                     </a>
                                 </div>
