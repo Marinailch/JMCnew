@@ -47,12 +47,12 @@ class Action extends DataBase
         }
         header('Location:' . $_SERVER['PHP_SELF'] . $id);
     }
+
     /*
      * ***************************************************
      * БЛОК ПО ОБРАБОТКЕ ГЕТ ЗАПРОСОВ С АДМИНПАНЕЛИ САЙТА*
      * ***************************************************
      */
-
     public function mainpage()
     {
         $title = 'Main Page';
@@ -125,6 +125,7 @@ class Action extends DataBase
         $directions = $this->directions;
         include_once $this->template_name;
     }
+
     public function administrators()
     {
         $title = 'Administrators';
@@ -135,6 +136,7 @@ class Action extends DataBase
         $directions = $this->directions;
         include_once $this->template_name;
     }
+
     public function nurses()
     {
         $title = 'Nurses';
@@ -145,7 +147,6 @@ class Action extends DataBase
         $directions = $this->directions;
         include_once $this->template_name;
     }
-
 
     public function doctor_card($id = null)
     {
@@ -265,6 +266,7 @@ class Action extends DataBase
             die('I cant' . __LINE__);
         }
     }
+
     /*
      * *****************************************************
      * БЛОК ПО РАБОТЕ С ПРАЙСАМИ ФУНКЦИОНАЛЬНОЙ ДИАГНОСТИКИ*
@@ -303,6 +305,7 @@ class Action extends DataBase
             die('I cant' . __LINE__);
         }
     }
+
     /*
     * *******************************************
     * БЛОК ПО РАБОТЕ С ЛАБОРАТОРНОЙ ДИАГНОСТИКОЙ*
@@ -313,32 +316,34 @@ class Action extends DataBase
         $name = filter_input(INPUT_POST, 'name');
         $id = filter_input(INPUT_POST, 'priceID');
         $description = filter_input(INPUT_POST, 'description');
-        if($this->laboratory->saveLab($name, $description, $id)){
+        if ($this->laboratory->saveLab($name, $description, $id)) {
             $this->redirect('?page=laboratory');
-        }else{
+        } else {
             die('I cant' . __LINE__);
         }
-
     }
+
     public function createlabmethod()
     {
         $name = filter_input(INPUT_POST, 'name');
         $description = filter_input(INPUT_POST, 'description');
-        if($this->laboratory->createLab($name, $description)){
+        if ($this->laboratory->createLab($name, $description)) {
             $this->redirect('?page=laboratory');
-        }else{
+        } else {
             die('I cant' . __LINE__);
         }
     }
+
     public function deletelab()
     {
         $id = filter_input(INPUT_GET, 'id');
-        if($this->laboratory->deleteLabMethod($id)){
+        if ($this->laboratory->deleteLabMethod($id)) {
             $this->redirect('?page=laboratory');
-        }else{
+        } else {
             die('I cant' . __LINE__);
         }
     }
+
     /*
      * ***************************
      * БЛОК ПО РАБОТЕ С ДОКТОРАМИ*
@@ -352,15 +357,15 @@ class Action extends DataBase
          * ********************
         */
         $name_of_doctor = filter_input(INPUT_POST, 'name_of_doctor');
-        if($name_of_doctor == ''||$name_of_doctor ==NULL){
+        if ($name_of_doctor == '' || $name_of_doctor == null) {
             $this->redirect('?page=doctors');
         }
         $expirience_of_work = filter_input(INPUT_POST, 'expirience_of_work');
-        if($expirience_of_work == ''||$expirience_of_work ==NULL){
+        if ($expirience_of_work == '' || $expirience_of_work == null) {
             $this->redirect('?page=doctors');
         }
         $specialty_of_doctor = filter_input(INPUT_POST, 'specialty_of_doctor');
-        if($specialty_of_doctor == ''||$specialty_of_doctor ==NULL){
+        if ($specialty_of_doctor == '' || $specialty_of_doctor == null) {
             $this->redirect('?page=doctors');
         }
         $science_degree = filter_input(INPUT_POST, 'science_degree');
@@ -368,9 +373,9 @@ class Action extends DataBase
         $full_descr = filter_input(INPUT_POST, 'full_descr');
         $direction_id = filter_input(INPUT_POST, 'direction_id');
         $active = filter_input(INPUT_POST, 'active');
-        if($active == 1){
+        if ($active == 1) {
             $active = 1;
-        }else{
+        } else {
             $active = 0;
         }
         /***********************************************
@@ -379,34 +384,30 @@ class Action extends DataBase
          * *********************************************
          */
         $foto = $_FILES['foto'];
-        if($foto['error']===4){
+        if ($foto['error'] === 4) {
             $this->redirect('?page=doctors');
         }
-
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/doctors_foto/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($this->doctors->createNewDoctor($name_of_doctor, $file_name, $expirience_of_work,
+                        if ($this->doctors->createNewDoctor($name_of_doctor, $file_name, $expirience_of_work,
                             $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
-                            $active)){
+                            $active)
+                        ) {
                             $this->redirect('?page=doctors');
-                        }else{
-                            die('I cant add doctor'. __LINE__);
+                        } else {
+                            die('I cant add doctor' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -427,46 +428,47 @@ class Action extends DataBase
          * **********************************
          */
     }
+
     public function deleteDoctorCard()
     {
         $id = filter_input(INPUT_GET, 'id');
-        if($this->doctors->deleteDoctor($id)){
+        if ($this->doctors->deleteDoctor($id)) {
             $this->redirect('?page=doctors');
-        }else{
-            die('I cant delete Doctor'. __LINE__);
+        } else {
+            die('I cant delete Doctor' . __LINE__);
         }
     }
+
     /*
      * Функция по редактированию доктора
      */
     public function saveDoctor()
     {
         $name_of_doctor = filter_input(INPUT_POST, 'name_of_doctor');
-        if($name_of_doctor == ''||$name_of_doctor ==NULL){
+        if ($name_of_doctor == '' || $name_of_doctor == null) {
             $this->redirect('?page=doctors');
         }
         $expirience_of_work = filter_input(INPUT_POST, 'expirience_of_work');
-        if($expirience_of_work == ''||$expirience_of_work ==NULL){
+        if ($expirience_of_work == '' || $expirience_of_work == null) {
             $this->redirect('?page=doctors');
         }
         $specialty_of_doctor = filter_input(INPUT_POST, 'specialty_of_doctor');
-        if($specialty_of_doctor == ''||$specialty_of_doctor ==NULL){
+        if ($specialty_of_doctor == '' || $specialty_of_doctor == null) {
             $this->redirect('?page=doctors');
         }
         $science_degree = filter_input(INPUT_POST, 'science_degree');
         $short_descr = filter_input(INPUT_POST, 'short_descr');
         $full_descr = filter_input(INPUT_POST, 'full_descr');
         $direction_id = filter_input(INPUT_POST, 'direction_id');
-        if($direction_id == ''||$direction_id ==NULL){
+        if ($direction_id == '' || $direction_id == null) {
             $this->redirect('?page=doctors');
         }
         $active = filter_input(INPUT_POST, 'active');
-        if($active == 1){
+        if ($active == 1) {
             $active = 1;
-        }else{
+        } else {
             $active = 0;
         }
-
         $default_foto = filter_input(INPUT_POST, 'fotomain');
         $id = filter_input(INPUT_POST, 'priceID');
         /***********************************************
@@ -475,41 +477,38 @@ class Action extends DataBase
          * *********************************************
          */
         $foto = $_FILES['foto'];
-        if($foto['error']===4) {
+        if ($foto['error'] === 4) {
             $file_name = $default_foto;
             if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
                 $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
-                $active, $id)) {
+                $active, $id)
+            ) {
                 $this->redirect('?page=doctors');
             } else {
                 die('I cant add doctor' . __LINE__);
             }
         }
-
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/doctors_foto/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
+                        if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
                             $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
-                            $active, $id)){
+                            $active, $id)
+                        ) {
                             $this->redirect('?page=doctors');
-                        }else{
-                            die('I cant add doctor'. __LINE__);
+                        } else {
+                            die('I cant add doctor' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -539,45 +538,41 @@ class Action extends DataBase
     public function createAdministrator()
     {
         $name = filter_input(INPUT_POST, 'name');
-        if($name == ''||$name ==NULL){
+        if ($name == '' || $name == null) {
             $this->redirect('?page=administrators');
         }
         $specialty = filter_input(INPUT_POST, 'specialty');
-        if($specialty == ''||$specialty ==NULL){
+        if ($specialty == '' || $specialty == null) {
             $this->redirect('?page=administrators');
         }
         $description = filter_input(INPUT_POST, 'description');
-        if($description == ''||$description ==NULL){
+        if ($description == '' || $description == null) {
             $this->redirect('?page=administrators');
         }
         $foto = $_FILES['foto'];
-        if($foto['error']===4){
+        if ($foto['error'] === 4) {
             $this->redirect('?page=administrators');
         }
-
-
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/doctors_foto/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($this->administrators->createNewAdministrator($name, $specialty, $description, $file_name)){
+                        if ($this->administrators->createNewAdministrator($name, $specialty, $description,
+                            $file_name)
+                        ) {
                             $this->redirect('?page=administrators');
-                        }else{
-                            die('I cant add administrator'. __LINE__);
+                        } else {
+                            die('I cant add administrator' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -594,67 +589,65 @@ class Action extends DataBase
             }
         }
     }
+
     public function deleteAdministrator()
     {
         $id = filter_input(INPUT_GET, 'id');
-        if($this->administrators->deleteAdministratorByID($id)){
+        if ($this->administrators->deleteAdministratorByID($id)) {
             $this->redirect('?page=administrators');
-        }else{
-            die('I cant delete Doctor'. __LINE__);
+        } else {
+            die('I cant delete Doctor' . __LINE__);
         }
-
     }
+
     /*
      * Функция по изменению данных администратора
      */
     public function saveAdministrator()
     {
         $name = filter_input(INPUT_POST, 'name');
-        if($name == ''||$name ==NULL){
+        if ($name == '' || $name == null) {
             $this->redirect('?page=administrators');
         }
         $specialty = filter_input(INPUT_POST, 'specialty');
-        if($specialty == ''||$specialty ==NULL){
+        if ($specialty == '' || $specialty == null) {
             $this->redirect('?page=administrators');
         }
         $description = filter_input(INPUT_POST, 'description');
-        if($description == ''||$description ==NULL){
+        if ($description == '' || $description == null) {
             $this->redirect('?page=administrators');
         }
         $default_foto = filter_input(INPUT_POST, 'fotomain');
         $id = filter_input(INPUT_POST, 'priceID');
-
         $foto = $_FILES['foto'];
-        if($foto['error']===4){
+        if ($foto['error'] === 4) {
             $file_name = $default_foto;
-            if($this->administrators->saveAdministrator($name, $specialty, $description, $file_name,$id)){
+            if ($this->administrators->saveAdministrator($name, $specialty, $description, $file_name, $id)) {
                 $this->redirect('?page=administrators');
-            }else{
-                die('I cant change Administrator'.__LINE__);
+            } else {
+                die('I cant change Administrator' . __LINE__);
             }
         }
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/doctors_foto/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($this->administrators->saveAdministrator($name, $specialty, $description, $file_name, $id)){
+                        if ($this->administrators->saveAdministrator($name, $specialty, $description, $file_name,
+                            $id)
+                        ) {
                             $this->redirect('?page=administrators');
-                        }else{
-                            die('I cant change administrator'. __LINE__);
+                        } else {
+                            die('I cant change administrator' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -680,45 +673,39 @@ class Action extends DataBase
     public function createNurse()
     {
         $name = filter_input(INPUT_POST, 'name');
-        if($name == ''||$name ==NULL){
+        if ($name == '' || $name == null) {
             $this->redirect('?page=nurses');
         }
         $specialty = filter_input(INPUT_POST, 'specialty');
-        if($specialty == ''||$specialty ==NULL){
+        if ($specialty == '' || $specialty == null) {
             $this->redirect('?page=nurses');
         }
         $description = filter_input(INPUT_POST, 'description');
-        if($description == ''||$description ==NULL){
+        if ($description == '' || $description == null) {
             $this->redirect('?page=nurses');
         }
         $foto = $_FILES['foto'];
-        if($foto['error']===4){
+        if ($foto['error'] === 4) {
             $this->redirect('?page=nurses');
         }
-
-
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/doctors_foto/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($this->nurses->createNewNurse($name, $specialty, $description, $file_name)){
+                        if ($this->nurses->createNewNurse($name, $specialty, $description, $file_name)) {
                             $this->redirect('?page=nurses');
-                        }else{
-                            die('I cant add administrator'. __LINE__);
+                        } else {
+                            die('I cant add administrator' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -735,70 +722,62 @@ class Action extends DataBase
             }
         }
     }
+
     public function deleteNurse()
     {
         $id = filter_input(INPUT_GET, 'id');
-        if($this->nurses->deleteNurseByID($id)){
+        if ($this->nurses->deleteNurseByID($id)) {
             $this->redirect('?page=nurses');
-        }else{
-            die('I cant delete Doctor'. __LINE__);
+        } else {
+            die('I cant delete Doctor' . __LINE__);
         }
-
     }
+
     public function saveNurse()
     {
         $name = filter_input(INPUT_POST, 'name');
-        if($name == ''||$name ==NULL){
-            $name='DEFAULT';
+        if ($name == '' || $name == null) {
+            $name = 'DEFAULT';
         }
         $specialty = filter_input(INPUT_POST, 'specialty');
-        if($specialty == ''||$specialty ==NULL){
-            $specialty='DEFAULT';
+        if ($specialty == '' || $specialty == null) {
+            $specialty = 'DEFAULT';
         }
         $description = filter_input(INPUT_POST, 'description');
-        if($description == ''||$description ==NULL){
+        if ($description == '' || $description == null) {
             $description = 'Lorem Ipsum';
         }
         $id = filter_input(INPUT_POST, 'priceID');
         $foto = $_FILES['foto'];
-
-
         $default_foto = filter_input(INPUT_POST, 'fotomain');
-//        echo $name, $specialty, $description, $default_foto, $id, $foto['error'];
-//        die();
-
-
-
-        if($foto['error']===4){
+        //        echo $name, $specialty, $description, $default_foto, $id, $foto['error'];
+        //        die();
+        if ($foto['error'] === 4) {
             $file_name = $default_foto;
-            if($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)){
+            if ($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)) {
                 $this->redirect('?page=nurses');
-            }else{
-                die('I cant add administrator'. __LINE__);
+            } else {
+                die('I cant add administrator' . __LINE__);
             }
         }
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/doctors_foto/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)){
+                        if ($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)) {
                             $this->redirect('?page=nurses');
-                        }else{
-                            die('I cant add administrator'. __LINE__);
+                        } else {
+                            die('I cant add administrator' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -815,6 +794,7 @@ class Action extends DataBase
             }
         }
     }
+
     /*
      * ************************
      * БЛОК ПО РАБОТЕ С БЛОГОМ*
@@ -823,56 +803,79 @@ class Action extends DataBase
     public function createBlogItem()
     {
         $title = filter_input(INPUT_POST, 'title');
-        if($title == ''||$title ==NULL){
+        if ($title == '' || $title == null) {
             $this->redirect('?page=blog');
         }
         $short_description = filter_input(INPUT_POST, 'short_description');
-        if($short_description == ''||$short_description ==NULL){
+        if ($short_description == '' || $short_description == null) {
             $this->redirect('?page=blog');
         }
         $full_description = filter_input(INPUT_POST, 'full_description');
-        if($full_description == ''||$full_description ==NULL){
+        if ($full_description == '' || $full_description == null) {
             $this->redirect('?page=blog');
         }
         $created_at = filter_input(INPUT_POST, 'created_at');
-        if($created_at == ''||$created_at ==NULL){
+        if ($created_at == '' || $created_at == null) {
             $this->redirect('?page=blog');
         }
-
         $foto = $_FILES['foto'];
-        if($foto['error']===4){
+        if ($foto['error'] === 4) {
             $this->redirect('?page=blog');
         }
-
-//        echo $title.'<br>',$short_description.'<br>', $full_description.'<br>', $created_at.'<br>', $foto['error'].'<br>';
-
+        $foto_slider = $_FILES['slider'];
+        //        var_dump($foto_slider);
+        //        die();
+        //        echo $title.'<br>',$short_description.'<br>', $full_description.'<br>', $created_at.'<br>', $foto['error'].'<br>';
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {
                 if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
-                    $file_name_parts = explode('.',$foto['name']);
+                    $file_name_parts = explode('.', $foto['name']);
                     $file_extension = array_pop($file_name_parts);
-                    $file_base_name = implode('',$file_name_parts);
-                    $file_name = md5($file_base_name.rand(1, getrandmax()));
-                    $file_name.='.'.$file_extension;
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
                     $path = '../img/blog/' . $file_name;
-
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-
-                        if($result = $this->blog->createNewArticle($title, $short_description, $full_description, $created_at)){
+                        if ($result =
+                            $this->blog->createNewArticle($title, $short_description, $full_description, $created_at)
+                        ) {
                             $var = 'y';
-                            if($this->blog->saveMainFoto($file_name, $var, $result)){
-                                $this->redirect('?page=blog');
-                            }else{
-                                die('I cant add Foto to the new article'.__LINE__);
+                            if ($this->blog->saveMainFoto($file_name, $var, $result)) {
+                                // С данного момента проверяем наличие фотографий для слайдера
+                                if ($foto_slider['error'][0] === 4) {
+                                    $this->redirect('?page=blog');
+                                } else {
+                                    //Тут начинаем вносить фото слайдера
+                                    $var = 'n';
+                                    for ($i = 0; $i < count($foto_slider['name']); $i++) {
+                                        if ($foto_slider['error'][$i] == UPLOAD_ERR_OK) {
+                                            if (in_array($foto_slider['type'][$i], $types)) {
+                                                if ($foto_slider['size'][$i] <= 3 * 1024 * 1024) {//Не более 3 мб
+                                                    $file_name_parts = explode('.', $foto_slider['name'][$i]);
+                                                    $file_extension = array_pop($file_name_parts);
+                                                    $file_base_name = implode('', $file_name_parts);
+                                                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                                                    $file_name .= '.' . $file_extension;
+                                                    $path = '../img/blog/' . $file_name;
+                                                    if (move_uploaded_file($foto_slider['tmp_name'][$i], $path)) {
+                                                        $this->blog->saveMainFoto($file_name, $var, $result);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    $this->redirect('?page=blog');
+                                    //Тут по логике конец
+                                }
+                            } else {
+                                die('I cant add Foto to the new article' . __LINE__);
                             }
-                        }else{
-                            die('I cant add blog post'. __LINE__);
+                        } else {
+                            die('I cant add blog post' . __LINE__);
                         }
-
                         echo 'hiho';
-
                     } else {
                         $message = "problem with moving";
                     }
@@ -888,27 +891,7 @@ class Action extends DataBase
                 echo $message;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
 }
 
 

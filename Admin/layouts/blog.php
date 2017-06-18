@@ -39,6 +39,12 @@
                                     <input type="file" name="foto">
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="inputSuccess3">Добавить фото<br>для слайдера</label>
+                                <div class="col-sm-6">
+                                    <input type="file" multiple title="Удерживая клавишу Ctrl, выберите любое количество изображений, которые вы хотите видеть в вашем слайдере" name="slider[]">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <h5 class="directions_header_adm">Добавить текст статьи</h5>
