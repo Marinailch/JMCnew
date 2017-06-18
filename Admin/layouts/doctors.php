@@ -72,8 +72,8 @@
                         <div class="col-sm-6">
                             <select class="form-control" id="diractions_select" name="active">
                                 <option disabled>Выберите статус</option>
-                                <option class="nnn" value="0">Не активен</option>
-                                <option class="nnn" value="1">Активен</option>
+                                <option value="0">Не активен</option>
+                                <option value="1">Активен</option>
                             </select>
                         </div>
                     </div>
