@@ -44,26 +44,21 @@
         <h5 class="directions_header_adm">Добавить текст статьи</h5>
 
 
-        <textarea name="blog"></textarea>
+        <textarea id="test" name="blog"></textarea>
         <!-- Trying new action-->
 
         <input type="submit" class="form-horizontal" name="submit">
     </form>
     <script>
-        CKEDITOR.replace('blog');
+        CKEDITOR.replace('test');
     </script>
+<!-- ------------------------------------------------------------------------------------------------------------ -->
+<!-- -------------------------------------СТАТЬИ БЛОГА----------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------------------ -->
+
     <h5 class="directions_header_adm">Редактировать/Удалить статью</h5>
-    <?php $getID = filter_input(INPUT_GET, 'id');
-    if (!$getID) {
-        ?>
-        <!-- ТУТ ВЫВОДИТСЯ ВЕСЬ БЛОГ -->
-        <?php
-        //var_dump($blog->getFullBlogItems())
-        ?>
-        <?php
-        //var_dump($blog->getBlogItems());
-        $i = 1;
-    foreach ($blog->getBlogItems() as $key => $item): ?>
+    <?php var_dump($blog->getBlogItems()) ?>
+    <?php foreach ($blog->getBlogItems() as $key => $item): ?>
 
         <div class="row article_short">
             <div class="batton_del_panel_lab">
@@ -90,12 +85,12 @@
         </div>
 
         <?php
-        $i += 1;
+
     endforeach; ?>
 
 
         <!-- ТУТ ЗАКАНЧИВАЕТСЯ ВЫВОД ВСЕГО БЛОГА -->
-    <?php } else {
+    <?php
     $resultBlog = $blog->getFullBlogItemByID($getID);
     $mainFoto = $blog->getMainFoto($getID);
     $fotos = $blog->getOtherFotos($getID);
@@ -209,5 +204,5 @@
     <?php } ?>
         <!-- ЭТО КОНЕЦ СКРИПТА ДЛЯ СЛАЙДЕРА ПРИ НАЛИЧИИ ФОТОГРАФИЙ-->
         <!--ТУТ ЗАКАНЧИВАЕТСЯ БЛОК ОТДЕЛЬНОЙ ЧАСТИ БЛОГА-->
-    <?php } ?>
+
 </nav>
