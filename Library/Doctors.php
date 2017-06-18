@@ -10,7 +10,7 @@ class Doctors extends DataBase
 {
     public function getDoctorsByDirection($id)
     {
-        $query = "SELECT name_of_doctor, link_foto_doctor, expirience_of_work, specialty_of_doctor, science_degree, short_descr, full_descr, active FROM doctors, directions WHERE direction_id=directions.id and direction_id = '$id' AND active IS NOT NULL";
+        $query = "SELECT doctors.id, name_of_doctor, link_foto_doctor, expirience_of_work, specialty_of_doctor, science_degree, short_descr, full_descr, active FROM doctors, directions WHERE direction_id=directions.id and direction_id = '$id' AND active!=0";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
@@ -20,9 +20,40 @@ class Doctors extends DataBase
 
     public function getDoctorsShort()
     {
-        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr  FROM doctors WHERE active IS NOT NULL";
+        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr  FROM doctors WHERE active!=0";
         if($result = parent::arrayRes($query)){
             return $result;
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function getDoctorsShortFull()
+    {
+        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr  FROM doctors";
+        if($result = parent::arrayRes($query)){
+            return $result;
+        }else{
+            return FALSE;
+        }
+    }
+
+
+    public function createNewDoctor($name, $foto, $exp, $spec, $science, $short, $full, $dir_id, $active)
+    {
+        $full  = $this->db->real_escape_string($full);
+        $query="INSERT INTO doctors (name_of_doctor, link_foto_doctor, expirience_of_work, specialty_of_doctor, science_degree, short_descr, full_descr, direction_id, active) VALUES ('$name', '$foto', '$exp', '$spec', '$science', '$short', '$full', '$dir_id', '$active')";
+        if($result= parent::saveDB($query)){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+    public function deleteDoctor($id)
+    {
+        $query = "DELETE FROM doctors WHERE id='$id'";
+        if($result=parent::saveDB($query)){
+            return TRUE;
         }else{
             return FALSE;
         }

@@ -40,9 +40,22 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="<?= $_SERVER[PHP_SELF] ?>?page=doctors">Врачи
-                            </a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Врачи <b
+                                        class="caret"></b></a>
+                            <ul class="dropdown-menu ">
+                                <li>
+                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=doctors" class="hvr-grow-shadow ">Врачи
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=administrators" class="hvr-grow-shadow ">Администрация
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=nurses" class="hvr-grow-shadow ">Медсестры
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="<?= $_SERVER[PHP_SELF] ?>?page=blog">Блог
