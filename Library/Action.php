@@ -820,7 +820,87 @@ class Action extends DataBase
      * БЛОК ПО РАБОТЕ С БЛОГОМ*
      * ************************
      */
+    public function createBlogItem()
+    {
+        $title = filter_input(INPUT_POST, 'title');
+        if($title == ''||$title ==NULL){
+            $this->redirect('?page=blog');
+        }
+        $short_description = filter_input(INPUT_POST, 'short_description');
+        if($short_description == ''||$short_description ==NULL){
+            $this->redirect('?page=blog');
+        }
+        $full_description = filter_input(INPUT_POST, 'full_description');
+        if($full_description == ''||$full_description ==NULL){
+            $this->redirect('?page=blog');
+        }
+        $created_at = filter_input(INPUT_POST, 'created_at');
+        if($created_at == ''||$created_at ==NULL){
+            $this->redirect('?page=blog');
+        }
 
+        $foto = $_FILES['foto'];
+        if($foto['error']===4){
+            $this->redirect('?page=blog');
+        }
+
+//        echo $title.'<br>',$short_description.'<br>', $full_description.'<br>', $created_at.'<br>', $foto['error'].'<br>';
+
+        $types = array("image/jpeg",);
+        if ($foto['error'] == UPLOAD_ERR_OK) {
+            if (in_array($foto['type'], $types)) {
+                if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
+                    $file_name_parts = explode('.',$foto['name']);
+                    $file_extension = array_pop($file_name_parts);
+                    $file_base_name = implode('',$file_name_parts);
+                    $file_name = md5($file_base_name.rand(1, getrandmax()));
+                    $file_name.='.'.$file_extension;
+                    $path = '../img/blog/' . $file_name;
+
+                    if (move_uploaded_file($foto['tmp_name'], $path)) {
+                        //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
+
+                        if($result = $this->blog->createNewArticle($title, $short_description, $full_description, $created_at)){
+                            $var = 'y';
+                            if($this->blog->saveMainFoto($file_name, $var, $result)){
+                                $this->redirect('?page=blog');
+                            }else{
+                                die('I cant add Foto to the new article'.__LINE__);
+                            }
+                        }else{
+                            die('I cant add blog post'. __LINE__);
+                        }
+
+                        echo 'hiho';
+
+                    } else {
+                        $message = "problem with moving";
+                    }
+                } else {
+                    $message = "file is too large";
+                }
+            } else {
+                $message = "invalid type of file";
+            }
+        } else {
+            $message = parent::errorMassage($foto['error']);
+            if (!empty($message)) {
+                echo $message;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
 

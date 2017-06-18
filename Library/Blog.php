@@ -111,9 +111,50 @@ class Blog extends DataBase
         $descr = $this->db->real_escape_string($descr);
         $query = "UPDATE blog SET full_description= '$descr' WHERE blog.id=4";
         $result = $this->db->query($query);
-        if ($result){
-            return TRUE;
+        if ($result) {
+            return true;
         }
-        return FALSE;
+        return false;
     }
+    public function createNewArticle($title, $short, $full, $date)
+    {
+        $full = $this->db->real_escape_string($full);
+        $query="INSERT INTO blog (title, short_description, full_description, created_at) VALUES ('$title','$short','$full','$date')";
+        $result = $this->db->query($query);
+        if($result){
+            return $this->db->insert_id;
+        }
+        return false;
+    }
+    public function saveMainFoto($foto, $var, $dir_id)
+    {
+        $query ="INSERT INTO blog_foto (link_foto, main_foto, blog_id) VALUES ('$foto', '$var', '$dir_id')";
+        if($result= parent::saveDB($query)){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

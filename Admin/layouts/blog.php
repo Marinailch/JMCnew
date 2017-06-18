@@ -1,17 +1,16 @@
 <div class="container container_nav">
     <div class="row">
         <nav id="main">
-            <nav id="main">
                 <h5 class="directions_header_adm">Добавить статью в блог</h5>
-                <form class="form-horizontal" method="POST" action="index.php">
-
+                <!-- ------------------------- -->
+                <!-- ------------------------- -->
+                <!-- ДОБАВЛЕНИЕ НОВОЙ СТАТЬИ-- -->
+                <!-- ---------БЛОГА----------- -->
+                <!-- ------------------------- -->
+                <form class="form-horizontal" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-4">
                             <div style="margin-bottom: 20px;">
-               <span class="btn btn-default btn-file batton_del_panel_lab" style="width: 20px;">
-                   <img src="img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">
-                   <input type="file">
-                </span>
                                 <img src="img/default.png" width="370">
                             </div>
                         </div>
@@ -19,35 +18,47 @@
                             <div class="form-group">
                                 <label for="inputSuccess3">Добавить <br>название статьи</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="title" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputSuccess3">Добавить <br>дату публикации</label>
                                 <div class="col-sm-6">
-                                    <input type="data" name="name" class="form-control" value="<?= $data_blog ?>">
+                                    <input type="date" name="created_at" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputSuccess3">Добавить <br>краткое описание статьи</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="name" class="form-control" value="">
+                                    <input type="text" name="short_description" class="form-control" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputSuccess3">Добавить заглавное<br>фото для статьи</label>
+                                <div class="col-sm-6">
+                                    <input type="file" name="foto">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <h5 class="directions_header_adm">Добавить текст статьи</h5>
-                    <textarea name="blog"></textarea>
-                    <input type="submit" class="form-horizontal" name="submit">
+                    <textarea id="test" name="full_description"></textarea>
+                    <input type="submit" class="form-horizontal" value="Сохранить"
+                           formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createBlogItem">
                 </form>
                 <script>
-                    CKEDITOR.replace('blog');
+                    CKEDITOR.replace('test');
                 </script>
+                <!-- ------------------------- -->
+                <!-- -------КОНЕЦ------------- -->
+                <!-- ДОБАВЛЕНИЯ НОВОЙ СТАТЬИ-- -->
+                <!-- ---------БЛОГА----------- -->
+                <!-- ------------------------- -->
                 <!-- --------------------------------------------------------------------- -->
                 <!-- -----------------ТУТ ВЫВОДИТСЯ ВЕСЬ БЛОГ----------------------------- -->
                 <!-- --------------------------------------------------------------------- -->
                 <h5 class="directions_header_adm">Редактировать/Удалить статью</h5>
-                <?php var_dump($blog->getBlogItems()) ?>
+<!--                --><?php //var_dump($blog->getBlogItems()) ?>
                 <?php foreach ($blog->getBlogItems() as $key => $value): ?>
                     <div class="row article_short">
                         <div class="batton_del_panel_lab">
@@ -61,9 +72,9 @@
                             </a>
                         </div>
 
-<!-- ------------------------------------------------------------------------------------------------------------ -->
-<!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ БЛОГА--------------------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------ -->
+                        <!-- ------------------------------------------------------------------------------------------------------------ -->
+                        <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ БЛОГА--------------------------------------------- -->
+                        <!-- ------------------------------------------------------------------------------------------------------------ -->
                         <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -113,9 +124,9 @@
                                 </div>
                             </div>
                         </div>
-<!-- ------------------------------------------------------------------------------------------------------------ -->
-<!-- --------------------------------КОНЕЦ МОДАЛЬНОГО ОКНА ДЛЯ БЛОГА--------------------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------ -->
+                        <!-- ------------------------------------------------------------------------------------------------------------ -->
+                        <!-- --------------------------------КОНЕЦ МОДАЛЬНОГО ОКНА ДЛЯ БЛОГА--------------------------------------------- -->
+                        <!-- ------------------------------------------------------------------------------------------------------------ -->
 
                         <div class="col-md-4 article_short_img">
                             <img src="../img/blog/<?= $value['link_foto']; ?>">
@@ -133,6 +144,5 @@
                     <?php
                 endforeach; ?>
             </nav>
-        </nav>
     </div>
 </div>

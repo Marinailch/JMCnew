@@ -36,7 +36,6 @@
                         <div class="col-sm-6">
                             <input type="file" name="foto">
                         </div>
-
                     </div>
                 </div>
             </div>
