@@ -17,4 +17,24 @@ class Administrators extends DataBase
             return FALSE;
         }
     }
+    public function createNewAdministrator($name, $spec,  $desc, $foto)
+    {
+        $desc  = $this->db->real_escape_string($desc);
+        $query="INSERT INTO administrators ( name, specialty, description, link_foto) VALUES ('$name', '$spec', '$desc', '$foto')";
+        if($result= parent::saveDB($query)){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function deleteAdministratorByID($id)
+    {
+        $query = "DELETE FROM administrators WHERE id='$id'";
+        if($result=parent::saveDB($query)){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
 }

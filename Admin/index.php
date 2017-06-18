@@ -1,14 +1,5 @@
-
-<!--  
-* Created by PhpStorm.
- * User: Админ
- * Date: 17.04.2017
- * Time: 22:01
- -->
-
-
 <?php
-error_reporting(1);
+//error_reporting(1);
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
@@ -37,7 +28,6 @@ include_once '../Config/ConfigClasses.php';
         $action = 'mainpage';
 //    }
 }
-
 /**
  * Теперь самое интересное, получаем экземпляр класса Action, содержащий
  * в себе $template(main.php) и $db - массив дл подсоединения к БД, в

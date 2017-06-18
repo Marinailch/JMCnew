@@ -11,7 +11,6 @@
 
         <?php foreach ($doctors->getDoctorsShort() as $key => $value): ?>
 
-
                 <!--    <a href="index.php?page=doctors&id=--><? //= $value['id'] ?><!--">-->
                 <div class="col-sm-3 ">
                     <div class="doctor_card hvr-grow-shadow">

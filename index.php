@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+error_reporting(1);
 //Настройки приложения
 include_once 'Config/config.php';
 //Возврат классов, подключаемых к приложению
