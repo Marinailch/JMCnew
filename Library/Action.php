@@ -604,6 +604,73 @@ class Action extends DataBase
         }
 
     }
+    /*
+     * Функция по изменению данных администратора
+     */
+    public function saveAdministrator()
+    {
+        $name = filter_input(INPUT_POST, 'name');
+        if($name == ''||$name ==NULL){
+            $this->redirect('?page=administrators');
+        }
+        $specialty = filter_input(INPUT_POST, 'specialty');
+        if($specialty == ''||$specialty ==NULL){
+            $this->redirect('?page=administrators');
+        }
+        $description = filter_input(INPUT_POST, 'description');
+        if($description == ''||$description ==NULL){
+            $this->redirect('?page=administrators');
+        }
+        $default_foto = filter_input(INPUT_POST, 'fotomain');
+        $id = filter_input(INPUT_POST, 'priceID');
+
+        $foto = $_FILES['foto'];
+        if($foto['error']===4){
+            $file_name = $default_foto;
+            if($this->administrators->saveAdministrator($name, $specialty, $description, $file_name,$id)){
+                $this->redirect('?page=administrators');
+            }else{
+                die('I cant change Administrator'.__LINE__);
+            }
+        }
+        $types = array("image/jpeg",);
+        if ($foto['error'] == UPLOAD_ERR_OK) {
+            if (in_array($foto['type'], $types)) {
+                if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
+                    $file_name_parts = explode('.',$foto['name']);
+                    $file_extension = array_pop($file_name_parts);
+                    $file_base_name = implode('',$file_name_parts);
+                    $file_name = md5($file_base_name.rand(1, getrandmax()));
+                    $file_name.='.'.$file_extension;
+                    $path = '../img/doctors_foto/' . $file_name;
+
+                    if (move_uploaded_file($foto['tmp_name'], $path)) {
+                        //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
+
+                        if($this->administrators->saveAdministrator($name, $specialty, $description, $file_name, $id)){
+                            $this->redirect('?page=administrators');
+                        }else{
+                            die('I cant change administrator'. __LINE__);
+                        }
+
+                        echo 'hiho';
+
+                    } else {
+                        $message = "problem with moving";
+                    }
+                } else {
+                    $message = "file is too large";
+                }
+            } else {
+                $message = "invalid type of file";
+            }
+        } else {
+            $message = parent::errorMassage($foto['error']);
+            if (!empty($message)) {
+                echo $message;
+            }
+        }
+    }
 
     /*
      * **************************************************
