@@ -30,7 +30,7 @@ class Doctors extends DataBase
 
     public function getDoctorsShortFull()
     {
-        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr  FROM doctors";
+        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr, full_descr FROM doctors";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{
@@ -52,6 +52,16 @@ class Doctors extends DataBase
     public function deleteDoctor($id)
     {
         $query = "DELETE FROM doctors WHERE id='$id'";
+        if($result=parent::saveDB($query)){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+    public function saveDoctorByID($name, $foto, $exp, $spec, $science, $short, $full, $dir_id, $active, $id)
+    {
+        $full  = $this->db->real_escape_string($full);
+        $query="UPDATE doctors SET name_of_doctor='$name', link_foto_doctor='$foto', expirience_of_work='$exp', specialty_of_doctor='$spec', science_degree='$science', short_descr='$short', full_descr='$full', direction_id='$dir_id', active='$active' WHERE id='$id'";
         if($result=parent::saveDB($query)){
             return TRUE;
         }else{

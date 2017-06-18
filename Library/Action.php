@@ -437,6 +437,101 @@ class Action extends DataBase
         }
     }
     /*
+     * Функция по редактированию доктора
+     */
+    public function saveDoctor()
+    {
+        $name_of_doctor = filter_input(INPUT_POST, 'name_of_doctor');
+        if($name_of_doctor == ''||$name_of_doctor ==NULL){
+            $this->redirect('?page=doctors');
+        }
+        $expirience_of_work = filter_input(INPUT_POST, 'expirience_of_work');
+        if($expirience_of_work == ''||$expirience_of_work ==NULL){
+            $this->redirect('?page=doctors');
+        }
+        $specialty_of_doctor = filter_input(INPUT_POST, 'specialty_of_doctor');
+        if($specialty_of_doctor == ''||$specialty_of_doctor ==NULL){
+            $this->redirect('?page=doctors');
+        }
+        $science_degree = filter_input(INPUT_POST, 'science_degree');
+        $short_descr = filter_input(INPUT_POST, 'short_descr');
+        $full_descr = filter_input(INPUT_POST, 'full_descr');
+        $direction_id = filter_input(INPUT_POST, 'direction_id');
+        if($direction_id == ''||$direction_id ==NULL){
+            $this->redirect('?page=doctors');
+        }
+        $active = filter_input(INPUT_POST, 'active');
+        if($active == 1){
+            $active = 1;
+        }else{
+            $active = 0;
+        }
+
+        $default_foto = filter_input(INPUT_POST, 'fotomain');
+        $id = filter_input(INPUT_POST, 'priceID');
+        /***********************************************
+         * ПОЛУЧАЕМ ФОТО ВРАЧА ВЫБРАННОГО ПОЛЬЗОВАТЕЛЕМ*
+         * И ЗАНОСИМ ЕГО В НЕОБХОДИМУЮ ДИРЕКТОРИЮ*******
+         * *********************************************
+         */
+        $foto = $_FILES['foto'];
+        if($foto['error']===4) {
+            $file_name = $default_foto;
+            if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
+                $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
+                $active, $id)) {
+                $this->redirect('?page=doctors');
+            } else {
+                die('I cant add doctor' . __LINE__);
+            }
+        }
+
+        $types = array("image/jpeg",);
+        if ($foto['error'] == UPLOAD_ERR_OK) {
+            if (in_array($foto['type'], $types)) {
+                if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
+                    $file_name_parts = explode('.',$foto['name']);
+                    $file_extension = array_pop($file_name_parts);
+                    $file_base_name = implode('',$file_name_parts);
+                    $file_name = md5($file_base_name.rand(1, getrandmax()));
+                    $file_name.='.'.$file_extension;
+                    $path = '../img/doctors_foto/' . $file_name;
+
+                    if (move_uploaded_file($foto['tmp_name'], $path)) {
+                        //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
+
+                        if($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
+                            $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
+                            $active, $id)){
+                            $this->redirect('?page=doctors');
+                        }else{
+                            die('I cant add doctor'. __LINE__);
+                        }
+
+                        echo 'hiho';
+
+                    } else {
+                        $message = "problem with moving";
+                    }
+                } else {
+                    $message = "file is too large";
+                }
+            } else {
+                $message = "invalid type of file";
+            }
+        } else {
+            $message = parent::errorMassage($foto['error']);
+            if (!empty($message)) {
+                echo $message;
+            }
+        }
+        /************************************
+         * КОНЕЦ БЛОКА ПОЛУЧЕНИЯ ФОТО ВРАЧА *
+         * **********************************
+         */
+    }
+
+    /*
      * **********************************
      * БЛОК ПО РАБОТЕ С АДМИНИСТРАТОРАМИ*
      * **********************************
