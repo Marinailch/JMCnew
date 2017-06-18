@@ -100,6 +100,16 @@ nav{
   margin-top:40px;
 }
 
+.form-control {
+     border-radius: 0; 
+     height: 30px;
+}
+
+label[for="inputSuccess3"] {
+ 
+    font-size: 12px;
+}
+
 #lab{
   margin-bottom: 20px;
 

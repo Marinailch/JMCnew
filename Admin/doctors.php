@@ -95,7 +95,7 @@
                         <img class="" src="img/doctors_foto/<?= $value['link_foto'] ?>">
                         <div class="doctor_info" style="margin-bottom: 20px">
                             <?php
-                            // не удаляй этот код он мне нужен
+                            // не удаляй этот код он мне нуженб
                             $fio = $value['name'];
                             $fio_pieces = explode(" ", $fio);
                             ?>
