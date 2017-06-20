@@ -892,6 +892,11 @@ class Action extends DataBase
             }
         }
     }
+
+    public function deleteBlogItems()
+    {
+
+    }
 }
 
 
