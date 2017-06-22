@@ -1,5 +1,5 @@
 <div class="container container_nav">
-    <div class="row">
+    <div class="row" id="blog_rec">
         <nav id="main">
                 <h5 class="directions_header_adm">Добавить статью в блог</h5>
                 <!-- ------------------------- -->
@@ -9,16 +9,11 @@
                 <!-- ------------------------- -->
                 <form class="form-horizontal" method="POST" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div style="margin-bottom: 20px;">
-                                <img src="img/default.png" width="370">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="inputSuccess3">Добавить <br>название статьи</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="title" class="form-control">
+                                    <input type="text" name="title" class="form-control" placeholder="Заголовок статьи ">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -30,25 +25,38 @@
                             <div class="form-group">
                                 <label for="inputSuccess3">Добавить <br>краткое описание статьи</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="short_description" class="form-control" value="">
+                                    <input type="text" name="short_description" class="form-control" value="" placeholder="Анонс статьи до 300 симвалов">
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-md-6">
+
                             <div class="form-group">
-                                <label for="inputSuccess3">Добавить заглавное<br>фото для статьи</label>
+                                <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить заглавное фото статьи</p>
+<!--                                <label for="inputSuccess3">Добавить заглавное<br>фото для статьи</label>-->
                                 <div class="col-sm-6">
-                                    <input type="file" name="foto">
+                                    <input type="file" name="foto" >
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="inputSuccess3">Добавить фото<br>для слайдера</label>
+                            <div class="form-group" style="margin-top: 40px;">
+                                <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить фото для слайдера</p>
+<!--                                <label for="inputSuccess3">Добавить фото<br>для слайдера</label>-->
+
                                 <div class="col-sm-6">
-                                    <input type="file" multiple title="Удерживая клавишу Ctrl, выберите любое количество изображений, которые вы хотите видеть в вашем слайдере" name="slider[]">
+                                    <input type="file"  required multiple data-toggle="tooltip" data-placement="bottom"  title="Удерживая клавишу Ctrl, выберите любое количество изображений, которые вы хотите видеть в вашем слайдере" name="slider[]">
                                 </div>
+
+                                <script>
+                                    $(document).ready(function(){
+                                        $('[data-toggle="tooltip"]').tooltip();
+                                    });
+                                </script>
+
                             </div>
                         </div>
                     </div>
                     <h5 class="directions_header_adm">Добавить текст статьи</h5>
-                    <textarea id="test" name="full_description"></textarea>
+                    <textarea id="test" name="full_description" >Текст статьи</textarea>
                     <input type="submit" class="form-horizontal" value="Сохранить"
                            formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createBlogItem">
                 </form>
@@ -71,10 +79,10 @@
                             <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
                                     data-target="#n<?= $value['id'] ?>">
                                 <img src="img/rec.png" title="Редактировать" class="del_button"
-                                     style="margin-right: -17px">
+                                     style="margin-right: -17px; min-height: auto;">
                             </button>
                             <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id=<?= $value['id'] ?>">
-                                <img src="img/del.png" title="Удалить" class="del_button">
+                                <img src="img/del.png" title="Удалить" class="del_button" style="min-height: auto;">
                             </a>
                         </div>
 
@@ -90,42 +98,55 @@
                                         <h4 class="modal-title">Изменение данных о статье</h4>
                                     </div>
                                     <div class="modal-body">
+                                        <div class="row">
+                                            <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                        <div class="col-md-6">
                                         <!-- ТУТ НАДО ПОДРИХТОВАТЬ ИЗОБРАЖЕНИЕ-->
-                                        <img class="" style="width:100px; height:100px;"
-                                             src="../img/blog/<?= $value['link_foto'] ?>">
-                                        <form class="form-horizontal" method="POST" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="n<?= $value['id'] ?>">Изменить название<br>статьи</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" name="title" class="form-control"
-                                                           value="<?= $value['title'] ?>">
+                                            <div class="col-sm-5">
+                                                <div style="width:230px; height:150px; overflow: hidden;">
+                                                        <img  src="../img/blog/<?= $value['link_foto'] ?>" style="width: 100%;">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="n<?= $value['id'] ?>">Изменить
-                                                    короткое<br>описание</label>
-                                                <div class="col-sm-4">
-                                                    <input type="text" name="short_description" class="form-control"
-                                                           value="<?= $value['short_description'] ?>">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputSuccess3">Изменить заглавное<br>фото блога</label>
-                                                <div class="col-sm-6">
-                                                    <input type="file" name="foto">
-                                                </div>
-                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+<!--                                                    <label for="inputSuccess3">Изменить заглавное<br>фото блога</label>-->
 
-                                            <input type="hidden" name="priceID" value="<?= $value['id'] ?>">
-                                            <input type="hidden" name="fotomain" value="<?= $value['link_foto'] ?>">
-                                            <textarea id="test<?= $value['id'] ?>"
-                                                      name="full_description"><?= $value['full_description'] ?></textarea>
-                                            <script>
-                                                CKEDITOR.replace('test<?= $value['id']?>');
-                                            </script>
-                                            <input type="submit" class="form-horizontal" value="Сохранить"
-                                                   formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveBlogItemByID">
+                                                        <p style="font-weight: 600; font-size: 12px; ">Изменить заглавное фото блога</p>
+                                                        <input type="file" name="foto">
+                                                        <input type="hidden" name="priceID" value="<?= $value['id'] ?>">
+                                                        <input type="hidden" name="fotomain" value="<?= $value['link_foto'] ?>">
+                                                        <p style="font-weight: 600; font-size: 12px; margin-top: 20px;">Изменить название статьи</p>
+                                                        <div class="form-group">
+<!--                                                            <label for="n--><?//= $value['id'] ?><!--">Изменить название<br>статьи</label>-->
+
+                                                            <textarea type="text" name="title" rows="3" class="form-control" style="margin-left: 16px;     min-width: 100px;
+    max-width: 400px !important; width: 90%; height: 50px"
+                                                                       value=""><?= $value['title'] ?></textarea>
+
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group" style="margin-left: 0; margin-right: 0px;">
+                                                <p style="font-weight: 600; font-size: 12px; margin-top: 0px; margin-left: 0px;">Изменить короткое описание</p>
+<!--                                                <label for="n--><?//= $value['id'] ?><!--">Изменить короткое<br>описание</label>-->
+                                                    <textarea type="text" name="short_description"  rows="20" class="form-control" style="max-height: 121px!important; width: 80%;"
+                                                           value=""><?= $value['short_description'] ?></textarea>
+                                            </div>
                                         </form>
+                                        </div>
+                                        </div>
+                                        <textarea id="test<?= $value['id'] ?>"
+                                                  name="full_description" ><?= $value['full_description'] ?></textarea>
+                                        <script>
+                                            CKEDITOR.replace('test<?= $value['id']?>');
+                                        </script>
+                                        <input type="submit" class="form-horizontal" value="Сохранить"
+                                               formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveBlogItemByID">
+
+
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +156,7 @@
                         <!-- ------------------------------------------------------------------------------------------------------------ -->
 
                         <div class="col-md-4 article_short_img">
-                            <img src="../img/blog/<?= $value['link_foto']; ?>">
+                            <img src="../img/blog/<?= $value['link_foto']; ?>" width="100%">
                         </div>
                         <?php
                         $title1 = mb_substr($value['title'], 0, 50, 'UTF-8') . '...';

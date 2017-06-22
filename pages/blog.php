@@ -42,7 +42,7 @@
                 //var_dump($fotos);
         ?>
         <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ - статья -->
-        <div style="margin-top: 40px; margin-bottom: 40px; ">
+        <div style="margin-top: 40px; margin-bottom: 40px; width: 100%; clear: both;">
             <img src="../img/blog/<?= $resultBlog[0]['link_foto'] ?>"  class="equipment_article">
 
 
@@ -73,7 +73,7 @@
         </div>
         <!-- ЭТО СКРИПТ ДЛЯ СЛАЙДЕРА ПРИ НАЛИЧИИ ФОТОГРАФИЙ-->
         <?php if ($fotos) { ?>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%; min-height: 200px; max-height: 800px; clear: both; overflow: hidden; ">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

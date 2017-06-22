@@ -179,6 +179,10 @@ label[for="inputSuccess3"] {
     height: 370px !important;
 }
 
+#blog_rec .cke_contents {
+    height: 300px !important;
+}
+
 
 .btn-file {
     position: relative;
