@@ -750,14 +750,12 @@ class Action extends DataBase
         $id = filter_input(INPUT_POST, 'priceID');
         $foto = $_FILES['foto'];
         $default_foto = filter_input(INPUT_POST, 'fotomain');
-        //        echo $name, $specialty, $description, $default_foto, $id, $foto['error'];
-        //        die();
         if ($foto['error'] === 4) {
             $file_name = $default_foto;
             if ($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)) {
                 $this->redirect('?page=nurses');
             } else {
-                die('I cant add administrator' . __LINE__);
+                die('I cant save Nurse' . __LINE__);
             }
         }
         $types = array("image/jpeg",);

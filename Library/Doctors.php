@@ -30,7 +30,7 @@ class Doctors extends DataBase
 
     public function getDoctorsShortFull()
     {
-        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr, full_descr FROM doctors";
+        $query = "SELECT id, name_of_doctor, link_foto_doctor, expirience_of_work,specialty_of_doctor, science_degree, short_descr, full_descr, direction_id FROM doctors";
         if($result = parent::arrayRes($query)){
             return $result;
         }else{

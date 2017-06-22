@@ -8,15 +8,6 @@
         <h5 class="directions_header_adm">Добавить Администратора</h5>
         <form class="form-horizontal" method="POST" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-md-4">
-                    <div style="margin-bottom: 20px;">
-                        <!--               <span class="btn btn-default btn-file batton_del_panel_lab" style="width: 20px;">-->
-                        <!--                   <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">-->
-                        <!--                   <input type="file" name="foto">-->
-                        <!--                </span>-->
-                        <img src="./img/default.png" width="370px">
-                    </div>
-                </div>
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>ФИО Администратора</label>
@@ -31,8 +22,13 @@
                                    placeholder="Введите должность">
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+
                     <div class="form-group">
-                        <label for="inputSuccess3">Добавить <br>фото администратора</label>
+                        <p style="font-weight: 600; font-size: 12px; margin-left: 20px;">Добавить фото
+                            администратора</p>
+                        <!--                        <label for="inputSuccess3">Добавить <br>фото администратора</label>-->
                         <div class="col-sm-6">
                             <input type="file" name="foto">
                         </div>
@@ -75,10 +71,68 @@
                             <img src="./img/del.png" title="Удалить" class="del_button">
                         </a>
                     </div>
-<!-- ------------------------------------------------------------------------------------------------------------ -->
-<!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ АДМИНИСТРАТОРОВ----------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------ -->
+                    <!-- ------------------------------------------------------------------------------------------------------------ -->
+                    <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ АДМИНИСТРАТОРОВ----------------------------------- -->
+                    <!-- ------------------------------------------------------------------------------------------------------------ -->
                     <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
+                        <!--                        <div class="modal-dialog">-->
+                        <!--                            <div class="modal-content">-->
+                        <!--                                <div class="modal-header">-->
+                        <!--                                    <button type="button" class="close"-->
+                        <!--                                            data-dismiss="modal">&times;</button>-->
+                        <!--                                    <h4 class="modal-title">Изменение данных об Администраторе</h4>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="modal-body">-->
+                        <!--                                    <!-- ТУТ НАДО ПОДРИХТОВАТЬ ИЗОБРАЖЕНИЕ-->-->
+                        <!--                                    <img class="" style="width:100px; height:100px;"-->
+                        <!--                                         src="../img/doctors_foto/-->
+                        <? //= $value['link_foto'] ?><!--">-->
+                        <!--                                    <form class="form-horizontal" method="POST" enctype="multipart/form-data">-->
+                        <!--                                        <div class="form-group">-->
+                        <!--                                            <label for="n-->
+                        <? //= $value['id'] ?><!--">Изменить ФИО<br>Администратора</label>-->
+                        <!--                                            <div class="col-sm-4">-->
+                        <!--                                                <input type="text" name="name" class="form-control"-->
+                        <!--                                                       value="-->
+                        <? //= $value['name'] ?><!--">-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="form-group">-->
+                        <!--                                            <label for="n-->
+                        <? //= $value['id'] ?><!--">Изменить-->
+                        <!--                                                должность<br>Администратора</label>-->
+                        <!--                                            <div class="col-sm-4">-->
+                        <!--                                                <input type="text" name="specialty" class="form-control"-->
+                        <!--                                                       value="-->
+                        <? //= $value['specialty'] ?><!--">-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="form-group">-->
+                        <!--                                            <label for="inputSuccess3">Изменить фото<br>Администратора</label>-->
+                        <!--                                            <div class="col-sm-6">-->
+                        <!--                                                <input type="file" name="foto">-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <input type="hidden" name="priceID" value="-->
+                        <? //= $value['id'] ?><!--">-->
+                        <!--                                        <input type="hidden" name="fotomain" value="-->
+                        <? //= $value['link_foto'] ?><!--">-->
+                        <!--                                        <textarea id="test--><? //= $value['id'] ?><!--"-->
+                        <!--                                                  name="description">-->
+                        <? //= $value['description'] ?><!--</textarea>-->
+                        <!--                                        <script>-->
+                        <!--                                            CKEDITOR.replace('test--><? //= $value['id']?>
+                        //');
+                        <!--//                                        </script>-->
+                        <!--//                                        <input type="submit" class="form-horizontal" value="Сохранить"-->
+                        // formaction="<? //= $_SERVER['PHP_SELF'] ?><!--?page=saveAdministrator">-->
+                        //<!--                                    </form>-->
+                        //<!--                                </div>-->
+                        //<!--                            </div>-->
+                        <!---->
+                        //<!--                        </div>-->
+                        //<!--                    </div>-->
+
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -88,37 +142,58 @@
                                 </div>
                                 <div class="modal-body">
                                     <!-- ТУТ НАДО ПОДРИХТОВАТЬ ИЗОБРАЖЕНИЕ-->
-                                    <img class="" style="width:100px; height:100px;"
-                                         src="../img/doctors_foto/<?= $value['link_foto'] ?>">
                                     <form class="form-horizontal" method="POST" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить ФИО<br>Администратора</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="name" class="form-control"
-                                                       value="<?= $value['name'] ?>">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <img class=""
+                                                             style=" width: 100%; height: auto; margin-bottom: 20px;"
+                                                             src="../img/doctors_foto/<?= $value['link_foto'] ?>">
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <input type="hidden" name="fotomain"
+                                                               value="<?= $value['link_foto'] ?>">
+                                                        <input type="hidden" name="priceID" value="<?= $value['id'] ?>">
+                                                        <div class="form-group">
+                                                            <p style="font-weight: 600; font-size: 14px; margin-left: 20px;">
+                                                                Изменить фото Администратора</p>
+                                                            <!--                                                            <label for="inputSuccess3">Изменить<br>фото доктора</label>-->
+                                                            <div class="col-sm-6">
+                                                                <input type="file" name="foto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить
+                                                        ФИО<br>Администратора</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="name_of_doctor" class="form-control"
+                                                               value="<?= $value['name'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить должность<br>Администратора</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="specialty_of_doctor"
+                                                               class="form-control"
+                                                               value="<?= $value['specialty'] ?>">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <textarea id="test<?= $value['id'] ?>"
+                                                          name="full_descr"><?= $value['full_descr'] ?>
+                                                </textarea>
+                                                <script>
+                                                    CKEDITOR.replace('test<?= $value['id']?>');
+                                                </script>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить
-                                                должность<br>Администратора</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="specialty" class="form-control"
-                                                       value="<?= $value['specialty'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputSuccess3">Изменить фото<br>Администратора</label>
-                                            <div class="col-sm-6">
-                                                <input type="file" name="foto">
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="priceID" value="<?= $value['id'] ?>">
-                                        <input type="hidden" name="fotomain" value="<?= $value['link_foto'] ?>">
-                                        <textarea id="test<?= $value['id'] ?>"
-                                                  name="description"><?= $value['description'] ?></textarea>
-                                        <script>
-                                            CKEDITOR.replace('test<?= $value['id']?>');
-                                        </script>
                                         <input type="submit" class="form-horizontal" value="Сохранить"
                                                formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveAdministrator">
                                     </form>
@@ -127,9 +202,9 @@
 
                         </div>
                     </div>
-<!-- ------------------------------------------------------------------------------------------------------------ -->
-<!-- --------------------------------КОНЕЦ МОДАЛЬНОГО ОКНА ДЛЯ АДМИНИСТРАТОРОВ----------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------ -->
+                    <!-- ------------------------------------------------------------------------------------------------------------ -->
+                    <!-- --------------------------------КОНЕЦ МОДАЛЬНОГО ОКНА ДЛЯ АДМИНИСТРАТОРОВ----------------------------------- -->
+                    <!-- ------------------------------------------------------------------------------------------------------------ -->
                     <img class="" src="../img/doctors_foto/<?= $value['link_foto'] ?>">
                     <div class="doctor_info" style="margin-bottom: 20px">
                         <?php

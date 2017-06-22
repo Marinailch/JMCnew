@@ -8,16 +8,14 @@
         <h5 class="directions_header_adm">Добавить врача</h5>
         <form class="form-horizontal" method="POST" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-md-4">
-                    <div style="margin-bottom: 20px;">
-                        <!--               <span class="btn btn-default btn-file batton_del_panel_lab" style="width: 20px;">-->
-                        <!--                   <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">-->
-                        <!--                   <input type="file" name="foto">-->
-                        <!--                </span>-->
-                        <img src="./img/default.png" width="370px">
-                    </div>
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
+<!--                    <div style="margin-bottom: 20px;">-->
+<!--                                       <span class="btn btn-default btn-file batton_del_panel_lab" style="width: 20px;">-->
+<!--                                           <img src="./img/rec.png" title="Редактировать" class="del_button" style="margin-right: -10px">-->
+<!--                                           <input type="file" name="foto">-->
+<!--                                        </span>-->
+<!--                        <img src="./img/default.png" width="370px">-->
+<!--                    </div>-->
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>ФИО врача</label>
                         <div class="col-sm-6">
@@ -60,24 +58,27 @@
                                    placeholder="Введите научную степень">
                         </div>
                     </div>
+                </div>
+                <div class="col-md-6">
+
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>Короткое описание</label>
                         <div class="col-sm-6">
-                            <input type="text" name="short_descr" class="form-control"
-                                   placeholder="Введите короткое описание">
+                           <textarea type="text" name="short_descr" class="form-control"
+                                     placeholder="Введите короткое описание" style="min-height: 160px"> </textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>Статус(актив/не актив)</label>
                         <div class="col-sm-6">
                             <select class="form-control" id="diractions_select" name="active">
-                                <option disabled>Выберите статус</option>
+                                <option disabled selected>Выберите статус</option>
                                 <option value="0">Не активен</option>
                                 <option value="1">Активен</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 0px;">
                         <label for="inputSuccess3">Добавить <br>фото врача</label>
                         <div class="col-sm-6">
                             <input type="file" name="foto">
@@ -85,12 +86,10 @@
 
                     </div>
                 </div>
+            </div>
                 <h5 class="directions_header_adm">Добавить описание</h5>
-
-
                 <textarea name="full_descr" id="doctor_add"></textarea>
                 <!-- Trying new action-->
-
                 <input type="submit" class="form-horizontal" value="Сохранить"
                        formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createDoctor">
         </form>
@@ -138,82 +137,104 @@
                                 </div>
                                 <div class="modal-body">
                                     <!-- ТУТ НАДО ПОДРИХТОВАТЬ ИЗОБРАЖЕНИЕ-->
-                                    <img class="" style="width:100px; height:100px;" src="../img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
                                     <form class="form-horizontal" method="POST" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить ФИО<br>врача</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="name_of_doctor" class="form-control"
-                                                       value="<?= $value['name_of_doctor'] ?>">
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <img class="" style=" width: 100%; height: auto; margin-bottom: 20px;" src="../img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <input type="hidden" name="fotomain" value="<?= $value['link_foto_doctor'] ?>">
+                                                        <input type="hidden" name="priceID" value="<?= $value['id'] ?>">
+                                                        <div class="form-group">
+                                                            <p style="font-weight: 600; font-size: 14px; margin-left: 20px;">Изменить фото доктора</p>
+<!--                                                            <label for="inputSuccess3">Изменить<br>фото доктора</label>-->
+                                                            <div class="col-sm-6">
+                                                                <input type="file" name="foto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить ФИО<br>врача</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="name_of_doctor" class="form-control"
+                                                               value="<?= $value['name_of_doctor'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить должность<br>Доктора</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="specialty_of_doctor" class="form-control"
+                                                               value="<?= $value['specialty_of_doctor'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить Опыт работы<br>Доктора</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="expirience_of_work" class="form-control"
+                                                               value="<?= $value['expirience_of_work'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить Научную степень<br>Доктора</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="science_degree" class="form-control"
+                                                               value="<?= $value['science_degree'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="width: 1100px;">
+                                                    <label for="n<?= $value['id'] ?>">Изменить короткое описание<br>Доктора</label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" name="short_descr" class="form-control"
+                                                               value="<?= $value['short_descr'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" >
+                                                    <label for="">Изменить<br>Статус(актив/не актив)</label>
+                                                    <div class="col-sm-6" >
+                                                        <select class="form-control" id="diractions_select" name="active">
+                                                            <option disabled selected>Выберите статус</option>
+                                                            <option value="0">Не активен</option>
+                                                            <option value="1">Активен</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Добавить <br>категорию врача</label>
+                                                    <div class="col-sm-6">
+                                                        <select class="form-control" id="diractions_select"  name="direction_id"
+                                                                onmousedown="if(this.options.length>10){this.size=10;}"
+                                                                onchange="this.blur()" onblur="this.size=0;">
+                                                            <option style="color: lightgray" disabled selected>Выберите категорию</option>
+
+                                                            <?php $res = $directions->getDirections();
+                                                            foreach ($res as $key2 => $value2):
+                                                            if($value['direction_id']==$value2['id']):?>
+                                                                <option class="nnn"
+                                                                        selected value="<?= $value2['id']?>"><?= $value2['name_of_direction']?></option>
+                                                            <?php continue;
+                                                            endif; ?>
+                                                                <option class="nnn"
+                                                                        value="<?= $value2['id'] ?>"><?= $value2['name_of_direction'] ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
                                         </div>
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить должность<br>Доктора</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="specialty_of_doctor" class="form-control"
-                                                       value="<?= $value['specialty_of_doctor'] ?>">
-                                            </div>
+                                        <div class="col-md-6">
+                                            <textarea id="test<?= $value['id'] ?>"
+                                                      name="full_descr"><?= $value['full_descr'] ?></textarea>
+                                            <script>
+                                                CKEDITOR.replace('test<?= $value['id']?>');
+                                            </script>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить Опыт работы<br>Доктора</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="expirience_of_work" class="form-control"
-                                                       value="<?= $value['expirience_of_work'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить Научную степень<br>Доктора</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="science_degree" class="form-control"
-                                                       value="<?= $value['science_degree'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="n<?= $value['id'] ?>">Изменить короткое описание<br>Доктора</label>
-                                            <div class="col-sm-4">
-                                                <input type="text" name="short_descr" class="form-control"
-                                                       value="<?= $value['short_descr'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputSuccess3">Изменить<br>Статус(актив/не актив)</label>
-                                            <div class="col-sm-6">
-                                                <select class="form-control" id="diractions_select" name="active">
-                                                    <option disabled>Выберите статус</option>
-                                                    <option value="0">Не активен</option>
-                                                    <option value="1">Активен</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputSuccess3">Добавить <br>категорию врача</label>
-                                            <div class="col-sm-6">
-                                                <select class="form-control" id="diractions_select" name="direction_id"
-                                                        onmousedown="if(this.options.length>10){this.size=10;}"
-                                                        onchange="this.blur()" onblur="this.size=0;">
-                                                    <option style="color: lightgray">Выберите категорию</option>
-                                                    <?php $res = $directions->getDirections();
-                                                    foreach ($res as $key2 => $value2):?>
-                                                        <option class="nnn"
-                                                                value="<?= $value2['id'] ?>"><?= $value2['name_of_direction'] ?></option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputSuccess3">Изменить<br>фото доктора</label>
-                                            <div class="col-sm-6">
-                                                <input type="file" name="foto">
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="priceID" value="<?= $value['id'] ?>">
-                                        <input type="hidden" name="fotomain" value="<?= $value['link_foto_doctor'] ?>">
-                                        <textarea id="test<?= $value['id'] ?>"
-                                                  name="full_descr"><?= $value['full_descr'] ?></textarea>
-                                        <script>
-                                            CKEDITOR.replace('test<?= $value['id']?>');
-                                        </script>
-                                        <input type="submit" class="form-horizontal" value="Сохранить"
+                                    </div>
+                                <input type="submit" class="form-horizontal" value="Сохранить"
                                                formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveDoctor">
                                     </form>
                                 </div>
