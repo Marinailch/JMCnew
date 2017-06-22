@@ -14,7 +14,9 @@
                 <!--    <a href="index.php?page=doctors&id=--><? //= $value['id'] ?><!--">-->
                 <div class="col-sm-3 ">
                     <div class="doctor_card hvr-grow-shadow">
-                        <img class="" src="img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
+                        <div style="width: 100%; height: 170px; display: block; overflow: hidden;">
+                            <img class="" src="img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
+                        </div>
                         <div class="doctor_info" style="margin-bottom: 20px">
                             <?php
                             // не удаляй этот код он мне нужен
@@ -53,7 +55,9 @@
             <!--    <a href="index.php?page=doctors&id=--><? //= $value['id'] ?><!--">-->
             <div class="col-sm-3 ">
                 <div class="doctor_card hvr-grow-shadow">
-                    <img class="" src="img/doctors_foto/<?= $value['link_foto'] ?>">
+                    <div style="width: 100%; height: 170px; display: block; overflow: hidden;">
+                     <img class="" src="img/doctors_foto/<?= $value['link_foto'] ?>">
+                    </div>
                     <div class="doctor_info" style="margin-bottom: 20px">
                         <?php
                         // не удаляй этот код он мне нужен
@@ -91,7 +95,9 @@
                 <!--    <a href="index.php?page=doctors&id=--><? //= $value['id'] ?><!--">-->
                 <div class="col-sm-3 ">
                     <div class="doctor_card hvr-grow-shadow">
-                        <img class="" src="img/doctors_foto/<?= $value['link_foto'] ?>">
+                        <div style="width: 100%; height: 170px; display: block; overflow: hidden;">
+                            <img class="" src="img/doctors_foto/<?= $value['link_foto'] ?>">
+                        </div>
                         <div class="doctor_info" style="margin-bottom: 20px">
                             <?php
                             // не удаляй этот код он мне нужен
