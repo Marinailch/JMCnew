@@ -104,30 +104,64 @@
                     <th>Specialty</th>
                     <th>Price1</th>
                     <th>Actions</th>
-                    <?php foreach ($price->getPriceMainWithHome() as $key => $item): ?>
+                    <?php
+
+                    foreach ($price->getPriceMainWithHome() as $key => $item): ?>
 
 
                 <tr>
                     <form method="POST">
-                    <td class="" style="width: 200px; border-top: none" >
+                    <td class="" style="width: 250px; border-top: none" >
                         <input  type="text" name="specialty" value="<?= $item['specialty'] ?>">
                     </td>
-                    <td class="" style="width: 200px">
+                    <td class="" style="width: 250px">
                         <input  type="text" name="consulting_at_home" value="<?= $item['consulting_at_home'] ?>">
                     </td>
                     <td class="">
 
                         <input type="hidden" value="<?= $item['id'] ?>" name="priceID">
 
-                        <input type="submit" value="Удалить"
-                               formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deletepriceID">
-                        <input type="submit" value="Сохранить"
-                               formaction="<?= $_SERVER['PHP_SELF'] ?>?page=savepriceHID">
+                       <input type="button" class="btn btn-danger bt_del" data-toggle="modal" data-target="#c<?= $item['id'] ?>" value="Удалить"    style="" >
+
+                        <input type="submit" class="btn btn-primary bt_del" value="Сохранить"
+                               formaction="<?= $_SERVER['PHP_SELF'] ?>?page=savepriceHID"  style="">
+
+
                     </td>
-                    </form>
+
 
                 </tr>
-                <?php endforeach; ?>
+<!--модальное окно -->
+                <!-- Modal -->
+                <div class="modal fade" id="c<?= $item['id'] ?>" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title"><b>Внимание!</b></h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Данные будут удалены без возможности восстановления</p>
+                                <p>Вы уверены что хотите удалить эту информацию?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit"  class="btn btn-danger bt_del" value="Удалить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deletepriceID" >
+                                <input type="button" class="btn btn-default bt_del" data-dismiss="modal"  value="Закрыть">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+<!--модальное окно end -->
+
+                </form>
+
+
+                <?php
+                endforeach;?>
             </table>
         </nav>
     </div>

@@ -213,6 +213,19 @@ label[for="inputSuccess3"] {
     width: 500px;
 }
 
+.bt_del{
+    font-size: 12px;
+    background-color: #f1f1f1;
+    height: 37px;
+    margin-top: 0px;
+    color: #585858;
+    border: #c3c3c3 solid 1px;
+}
 
+input[name="consulting_at_home"], input[name="specialty"] {
+    height: 35px;
+}
 
-
+input[name="specialty"]{
+    width: 350px;
+}
