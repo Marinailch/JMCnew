@@ -136,13 +136,22 @@ class Blog extends DataBase
         }
     }
 
-
-
+    public function deletBlogItemByID($id)
+    {
+        $query = "DELETE FROM blog WHERE id='$id'";
+        $query2 = "DELETE FROM blog_foto WHERE blog_id='$id'";
+        if($result= parent::saveDB($query)){
+            if($result= parent::saveDB($query2)){
+                return TRUE;
+            }else{
+                echo 'Cant delete additional foto';
+            }
+        }else{
+            echo 'Cant delete main blog_item';
+        }
+        return FALSE;
+    }
 }
-
-
-
-
 
 
 

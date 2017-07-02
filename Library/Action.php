@@ -891,9 +891,14 @@ class Action extends DataBase
         }
     }
 
-    public function deleteBlogItems()
+    public function deleteBlogItemByID()
     {
-
+        $id = filter_input(INPUT_GET, 'id');
+        if ($this->blog->deletBlogItemByID($id)) {
+            $this->redirect('?page=blog');
+        } else {
+            die('I cant delete Doctor' . __LINE__);
+        }
     }
 }
 

@@ -145,8 +145,6 @@
                                         </script>
                                         <input type="submit" class="form-horizontal" value="Сохранить"
                                                formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveBlogItemByID">
-
-
                                     </div>
                                 </div>
                             </div>
