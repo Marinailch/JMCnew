@@ -299,7 +299,7 @@
                 <div class="col-md-4">
                     <a href="index.php?page=blog&id=<?= $value['id']?>">
                         <div class="article">
-                            <img src="../img/blog/<?= $value['link_foto']?>">
+                            <div style="width: 100%; height: 220px; overflow: hidden"><img src="../img/blog/<?= $value['link_foto']?>"></div>
                             <div class="blog_content">
                                 <p class="blog_data"><?= $blog->getDataFromDB($value['created_at'])?></p>
                                 <h5 style="margin-bottom: 10px; text-align: left;"><?= $title ?></h5>
