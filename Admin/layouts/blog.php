@@ -32,14 +32,14 @@
                         <div class="col-md-6">
 
                             <div class="form-group">
-                                <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить заглавное фото статьи</p>
+                                <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить заглавное фото статьи (не более 3МБ)</p>
 <!--                                <label for="inputSuccess3">Добавить заглавное<br>фото для статьи</label>-->
                                 <div class="col-sm-6">
                                     <input type="file" name="foto" >
                                 </div>
                             </div>
                             <div class="form-group" style="margin-top: 40px;">
-                                <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить фото для слайдера</p>
+                                <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить фото для слайдера (не более 3МБ)</p>
 <!--                                <label for="inputSuccess3">Добавить фото<br>для слайдера</label>-->
 
                                 <div class="col-sm-6">
@@ -81,10 +81,48 @@
                                 <img src="img/rec.png" title="Редактировать" class="del_button"
                                      style="margin-right: -17px; min-height: auto;">
                             </button>
-                            <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id=<?= $value['id'] ?>">
+                            <a href="" data-toggle="modal" data-target="#bd<?= $item['id'] ?>">
                                 <img src="img/del.png" title="Удалить" class="del_button" style="min-height: auto;">
                             </a>
+<!---->
+<!--                            <a href="--><?//= $_SERVER['PHP_SELF'] ?><!--?page=deleteBlogItemByID&id=--><?//= $value['id'] ?><!--" >-->
+<!--                                <img src="img/del.png" title="Удалить" class="del_button" style="min-height: auto;">-->
+<!--                            </a>-->
+
+
                         </div>
+
+
+                        <!--модальное окно -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="bd<?= $item['id'] ?>" role="dialog">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"><b>Внимание!</b></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Данные будут удалены без возможности восстановления.</p>
+                                        <p>Вы уверены, что хотите удалить эту информацию?</p>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id=<?= $value['id'] ?>" >
+                                            <input type="submit"  class="btn btn-danger bt_del" value="Удалить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id" >  </a>
+                                            <input type="button" class="btn btn-default bt_del" data-dismiss="modal"  value="Закрыть">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--модальное окно end -->
+
+
+
 
                         <!-- ------------------------------------------------------------------------------------------------------------ -->
                         <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ БЛОГА--------------------------------------------- -->
