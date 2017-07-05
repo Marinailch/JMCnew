@@ -107,20 +107,35 @@ class ActionGET extends DataBase
             return 'pages/equipment.php';
         }else if($id == 'callform'){
             //Обработка формы
-            $res = $this->form->getForm();
-            return 'pages/'.$res['get'].'.php';
-//            var_dump($res);
-
-
-
+            $data = $this->getDataFromForm();
+            if($this->form->getForm($data)) {
+                return 'pages/' . $data['get'] . '.php';
+            }else{
+                return FALSE;
+            }
         }
-
-
-
         return FALSE;
-
     }
 
+    public function getDataFromForm()
+    {
+        $data = array(
+            'name' => filter_input(INPUT_POST, 'personName'),
+            'phone' => filter_input(INPUT_POST, 'personPhone'),
+            'date' => filter_input(INPUT_POST, 'personDate'),
+            'doctor' => filter_input(INPUT_POST, 'personDoctor'),
+            'message' => filter_input(INPUT_POST, 'personMessage'),
+            'get' => filter_input(INPUT_POST, 'personGET'),
+        );
+        $res = $this->directions->getDirections();
+        foreach ($res as $key => $value) {
+            if ($data['doctor'] == $value['id']) {
+                $data['doctor'] = $value['name_of_direction'];
+                break;
+            }
+        }
+        return $data;
+    }
 
 }
 

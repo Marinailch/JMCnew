@@ -25,36 +25,7 @@
     	<script src="../../js/script.js"></script>
     </body>
 </html>
-<?php
-//$x = filter_input(INPUT_POST, 'submit');
-//$bio = filter_input(INPUT_POST, 'bio');
-//$test = filter_input(INPUT_POST, 'test');
-//$result = filter_input(INPUT_POST, 'result');
-//$term = filter_input(INPUT_POST, 'term');
-//$price = filter_input(INPUT_POST, 'price');
-//
-//
-//if($x){
-////    echo $bio.'<br>'.$test.'<br>'.$result.'<br>'.$term.'<br>'.$price;
-//    if($laboratory->insertIntoLab($test, $bio, $result, $term, $price)){
-//        echo 'OK';
-//    }else{
-//        echo "NO";
-//    }
-//}
-
-$x = filter_input(INPUT_POST, 'submit');
-
-$name = filter_input(INPUT_POST, 'name');
-$descr = filter_input(INPUT_POST, 'test');
 
 
-if ($x) {
-    if ($laboratory->insertIntoLabFull($name, $descr)) {
-        echo 'OK';
-    } else {
-        echo "NO";
-    }
-}
-?>
+
 

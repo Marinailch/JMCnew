@@ -8,28 +8,27 @@
  */
 class Form
 {
-    public function getForm()
+    public function getForm(array $data)
     {
-        $data = array(
-            'name' => filter_input(INPUT_POST, 'personName'),
-            'phone' => filter_input(INPUT_POST, 'personPhone'),
-            'date' => filter_input(INPUT_POST, 'personDate'),
-            'doctor' => filter_input(INPUT_POST, 'personDoctor'),
-            'message' => filter_input(INPUT_POST, 'personMessage'),
-            'get' => filter_input(INPUT_POST, 'personGET'),
-        );
-        if($data['message'] != NULL){
-            $message = 'К Вам в клинику записался:' . $data['name'] . '  '
-                . 'Контактный телефон: ' . $data['phone'] . '  '
-                . 'Дата записи: ' . $data['date'] . '  '
-                . 'Написал следующее ' . $data['message'];
-        }else{
-            $message = 'К Вам в клинику записался:' . $data['name'] . '  '
-                . 'Контактный телефон: ' . $data['phone'] . '  '
-                . 'Дата записи: ' . $data['date'] . '  '
-                . 'По направлению: ' . $data['doctor'];
+        $to = 's7eell@gmail.com';
+        $subject = 'ЗАПИСЬ НА ПРИЕМ В КЛИНИКУ JMC';
+        $subject = '=?utf-8?B?'.base64_encode($subject).'?=';
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= "Content-type: text/html; charset=\"UTF-8\"; format=flowed \r\n";
+        if($data['doctor']==NULL){
+            $data['doctor']='без указания доктора';
         }
-            mail('s7eell@gmail.com', 'ЗАПИСЬ НА ПРИЕМ', $message);
-            return $data;
+        if($data['message']==NULL){
+            $data['message']='Пациент не указывал никаких дополнительных данных';
+        }
+         $message = 'К Вам в клинику записался:' . $data['name'] . '<br>'
+                . 'Контактный телефон: ' . $data['phone'] . '<br>'
+                . 'Дата записи: ' . $data['date'] . '<br>'
+                . 'Написал следующее: ' . $data['message']. '<br>'
+                . 'По направлению: ' . $data['doctor'];
+
+            mail($to, $subject, $message, $headers);
+
+            return TRUE;
     }
 }

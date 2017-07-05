@@ -64,6 +64,7 @@
 
                         <li><a href="<?= $_SERVER[PHP_SELF] ?>?page=laboratory">Лаборатория</a></li>
                         <li><a href="../index.php"><b style="color: #cdc639;">Перейти на сайт</b></a></li>
+                        <li><a href="<?=$_SERVER['PHP_SELF']?>?page=destroy">Выйти из Админпанели</a></li>
                     </ul>
                 </div>
             </div>

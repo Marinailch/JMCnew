@@ -184,16 +184,16 @@ class Blog extends DataBase
     public function saveItemByID($title, $short_description, $full_description, $file_name, $id)
     {
         $full_description = $this->db->real_escape_string($full_description);
-        $query = "INSERT INTO blog_foto (link_foto) VALUES('$file_name') WHERE blog_id='$id'";
-        $query2 ="INSERT INTO blog (title, short_description, full_description) VALUES('$title', '$short_description', '$full_description') WHERE id='$id'";
-        if ($result = parent::saveDB($query2)) {
-            if ($result = parent::saveDB($query)) {
+        $query = "UPDATE blog_foto SET link_foto= '$file_name' WHERE blog_id='$id' AND main_foto='y'";
+        $query2 ="UPDATE blog SET title='$title', short_description='$short_description', full_description='$full_description' WHERE id='$id'";
+        if ($result = parent::saveDB($query)) {
+            if ($result = parent::saveDB($query2)) {
                 return true;
             } else {
-                echo 'Cant change main foto in blog object';
+                echo 'Cant change main foto in blog object'.__LINE__;
             }
         } else {
-            echo 'Cant change data in blog main object';
+            echo 'Cant change data in blog main object'.__LINE__;
         }
         return false;
     }

@@ -32,14 +32,6 @@ class Action extends DataBase
         $this->usi = new FunctionalDiagnostic($db);
     }
 
-    public static function getParam($status)
-    {
-        switch ($status) {
-            case'':
-                return;
-        }
-    }
-
     public function redirect($id = null)
     {
         if (!$id) {
@@ -922,6 +914,8 @@ class Action extends DataBase
         $short_description = filter_input(INPUT_POST, 'short_description');
         $full_description = filter_input(INPUT_POST, 'full_description');
         $foto = $_FILES['foto'];
+
+//        echo $id, $default_foto, $title, $short_description, $full_description;die();
         //Если фото не было изменено, подгружаем старое фото и заносим изменения без изменения фото
         if ($foto['error'] === 4) {
             $file_name = $default_foto;
@@ -963,6 +957,39 @@ class Action extends DataBase
                 echo $message;
             }
         }
+    }
+    /**
+     ******************
+     *  АУТЕНТИФИКАЦИЯ*
+     * ****************
+     */
+    public function authuser(){
+        $title = 'Authentificate';
+        $header = '';
+        $layout_name = 'layouts/authentication.php';
+        $footer = '';
+        $login = User::$login;
+        $password = User::$password;
+        include_once $this->template_name='./template/adminenter.php';
+    }
+
+    public function destroy(){
+        $_SESSION['user']=NULL;
+        session_unset();
+        $this->redirect();
+
+    }
+
+    public function authUserByNameAndLogin()
+    {
+        $authlogin = $_POST['login'];
+        $authpassword = $_POST['password'];
+        if ($authlogin === User::$login && $authpassword === User::$password) {
+            $_SESSION['user'] = 'admin';
+        }else{
+            session_unset();
+        }
+        return $this->redirect();
     }
 }
 
