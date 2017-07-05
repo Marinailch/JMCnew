@@ -1,18 +1,10 @@
 <?php
-//error_reporting(1);
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
 include_once '../Config/adminconfig.php';
 include_once '../Config/ConfigClasses.php';
 
-//echo $request->getMain();
-//Подключаем хедер
-//include_once './page/header_adm.php';
-//Подключаем мейн админ панели
-//include_once './page/main_adm.php';
-//Подключаем футер
-//include_once './page/footer_adm.php';
 /**
  * Смысл этого в получении GET запроса со строки index.php, если это
  * начальная страница - он пуст($action = NULL), значит получаем
@@ -36,10 +28,10 @@ include_once '../Config/ConfigClasses.php';
  * экземпляром класса MainStorage.
  * Теперь имея GET запрос сверху($action) мы спрашиваем есть ли функция
  * полученная в GET запросе - в классе Action, если нет - то запустится
- * опять showcatalogs, если есть - то запустится функция, одноименнаая GET
+ * опять mainpage, если есть - то запустится функция, одноименнаая GET
  * запросу. Т.е. мы всегда будем находится на главной странице, а функции
  * будут срабатывать согласно полученного GET запроса после нажатия
- *
+ * Отработана единая точка входа
  */
 
 if(!method_exists($action_obj, $action)){
