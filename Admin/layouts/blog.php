@@ -159,20 +159,14 @@
                                                     <p style="font-weight: 600; font-size: 12px; ">Изменить
                                                         заглавное фото блога</p>
                                                     <input type="file" name="foto">
-                                                    <input type="hidden" name="priceID"
-                                                           value="<?= $value['id'] ?>">
-                                                    <input type="hidden" name="fotomain"
-                                                           value="<?= $value['link_foto'] ?>">
-                                                    <p style="font-weight: 600; font-size: 12px; margin-top: 20px;">
-                                                        Изменить название статьи</p>
+                                                    <input type="hidden" name="priceID"  value="<?= $value['id'] ?>">
+                                                    <input type="hidden" name="fotomain" value="<?= $value['link_foto'] ?>">
+                                                    <p style="font-weight: 600; font-size: 12px; margin-top: 20px;">Изменить название статьи</p>
                                                     <div class="form-group">
                                                         <!--                                                            <label for="n-->
                                                         <?//= $value['id'] ?><!--">Изменить название<br>статьи</label>-->
-
-                                                        <textarea type="text" name="title" rows="3"
-                                                                  class="form-control" style="margin-left: 16px;     min-width: 100px;
-    max-width: 400px !important; width: 90%; height: 50px"
-                                                                  value=""><?= $value['title'] ?></textarea>
+                                                       <textarea type="text" name="title" rows="3" class="form-control" style="margin-left: 16px; min-width: 100px; max-width: 400px !important; width: 90%; height: 50px" value="">
+                                                           <?= $value['title'] ?></textarea>
 
                                                     </div>
                                                 </div>

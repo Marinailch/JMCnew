@@ -14,8 +14,7 @@
                         </div>
                     </div>
 
-                    <textarea id="test" name="description"><table border="1" cellspacing="0" class="Table"
-                                                                  style="background-color:#ffffff; border-collapse:collapse; border:solid windowtext 1.0pt; width:100.0%">
+                    <textarea id="test" name="description"><table border="1" cellspacing="0" class="Table"  style="background-color:#ffffff; border-collapse:collapse; border:solid windowtext 1.0pt; width:100.0%">
 	<tbody>
 		<tr>
 			<td colspan="6" style="background-color:#cccc66; border-color:#bbbbbb; width:100%">
