@@ -125,7 +125,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
                 <!--модальное окно end -->
 
@@ -142,8 +141,8 @@
                                 <h4 class="modal-title">Изменение данных о статье</h4>
                             </div>
                             <div class="modal-body">
-                                <div class="row">
-                                    <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <!-- ТУТ НАДО ПОДРИХТОВАТЬ ИЗОБРАЖЕНИЕ-->
                                             <div class="col-sm-5">
@@ -154,7 +153,6 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="form-group">
-                                                    <!--                                                    <label for="inputSuccess3">Изменить заглавное<br>фото блога</label>-->
 
                                                     <p style="font-weight: 600; font-size: 12px; ">Изменить
                                                         заглавное фото блога</p>
@@ -163,11 +161,10 @@
                                                     <input type="hidden" name="fotomain" value="<?= $value['link_foto'] ?>">
                                                     <p style="font-weight: 600; font-size: 12px; margin-top: 20px;">Изменить название статьи</p>
                                                     <div class="form-group">
-                                                        <!--                                                            <label for="n-->
-                                                        <?//= $value['id'] ?><!--">Изменить название<br>статьи</label>-->
-                                                       <textarea type="text" name="title" rows="3" class="form-control" style="margin-left: 16px; min-width: 100px; max-width: 400px !important; width: 90%; height: 50px" value="">
-                                                           <?= $value['title'] ?></textarea>
-
+                                                        <textarea type="text" name="title" rows="3"
+                                                                  class="form-control" style="margin-left: 16px;     min-width: 100px;
+    max-width: 400px !important; width: 90%; height: 50px"
+                                                                  value=""><?= $value['title'] ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,23 +173,20 @@
                                             <div class="form-group" style="margin-left: 0; margin-right: 0px;">
                                                 <p style="font-weight: 600; font-size: 12px; margin-top: 0px; margin-left: 0px;">
                                                     Изменить короткое описание</p>
-                                                <!--                                                <label for="n-->
-                                                <?//= $value['id'] ?><!--">Изменить короткое<br>описание</label>-->
                                                 <textarea type="text" name="short_description" rows="20"
                                                           class="form-control"
                                                           style="max-height: 121px!important; width: 80%;"
                                                           value=""><?= $value['short_description'] ?></textarea>
                                             </div>
-
                                         </div>
-                                </div>
-                                <textarea id="test<?= $value['id'] ?>"
-                                          name="full_description"><?= $value['full_description'] ?></textarea>
-                                <script>
-                                    CKEDITOR.replace('test<?= $value['id']?>');
-                                </script>
-                                <input type="submit" class="form-horizontal" value="Сохранить"
-                                       formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveBlogItemByID">
+                                    </div>
+                                    <textarea id="test<?= $value['id'] ?>"
+                                              name="full_description"><?= $value['full_description'] ?></textarea>
+                                    <script>
+                                        CKEDITOR.replace('test<?= $value['id']?>');
+                                    </script>
+                                    <input type="submit" class="form-horizontal" value="Сохранить"
+                                           formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveBlogItemByID">
                                 </form>
                             </div>
                         </div>
@@ -214,6 +208,7 @@
                     <p class="article_title_short" style="width: 450px;"><?= $title1 ?></p>
                     <p class="article_data"><?= $blog->getDataFromDB($value['created_at']) ?></p>
                     <p class=""><?= $shortDescr1 ?></p>
+                </div>
                 </div>
 
                 <?php

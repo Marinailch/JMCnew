@@ -4,21 +4,27 @@ session_start();
 
 include_once '../Config/adminconfig.php';
 include_once '../Config/ConfigClasses.php';
-
+//var_dump($_SESSION);
 /**
  * Смысл этого в получении GET запроса со строки index.php, если это
  * начальная страница - он пуст($action = NULL), значит получаем
  * исходное значение $action = mainpage;
  *
  */
+if($_POST['submit']&&!$_SESSION['user']){
+    $action = 'authUserByNameAndLogin';
+    $action_obj->$action();
+}
 
-//if(!$_SESSION['user']){
-//    $action = 'authuser';
-//}else {
+
+
+if(!$_SESSION['user']){
+    $action = 'authuser';
+}else {
     $action = filter_input(INPUT_GET, 'page');
     if (!$action) {
         $action = 'mainpage';
-//    }
+    }
 }
 /**
  * Теперь самое интересное, получаем экземпляр класса Action, содержащий

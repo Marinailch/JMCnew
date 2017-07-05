@@ -11,4 +11,5 @@ return array(
     $nurses = new Nurses($db),
     $administrators = new Administrators($db),
     $action_obj=new Action($db),
+    $user = new User(),
 );
