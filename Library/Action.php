@@ -982,8 +982,8 @@ class Action extends DataBase
 
     public function authUserByNameAndLogin()
     {
-        $authlogin = $_POST['login'];
-        $authpassword = $_POST['password'];
+        $authlogin = filter_input(INPUT_POST, 'login');
+        $authpassword = filter_input(INPUT_POST, 'password');
         if ($authlogin === User::$login && $authpassword === User::$password) {
             $_SESSION['user'] = 'admin';
         }else{
