@@ -12,13 +12,13 @@
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>ФИО Администратора</label>
                         <div class="col-sm-6">
-                            <input type="text" name="name" class="form-control" placeholder="Введите ФИО">
+                            <input type="text" name="name" style="width: 95%;" class="form-control" placeholder="Введите ФИО">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>должность администратора</label>
                         <div class="col-sm-6">
-                            <input type="text" name="specialty" class="form-control"
+                            <input type="text" name="specialty" style="width: 95%;" class="form-control"
                                    placeholder="Введите должность">
                         </div>
                     </div>
@@ -134,8 +134,8 @@
             <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ АДМИНИСТРАТОРОВ----------------------------------- -->
             <!-- ------------------------------------------------------------------------------------------------------------ -->
             <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+                <div class="modal-dialog" style="width: 1200px; ">
+                    <div class="modal-content" style="height: 1000px;">
                         <div class="modal-header">
                             <button type="button" class="close"
                                     data-dismiss="modal">&times;</button>
@@ -186,8 +186,8 @@
 
 
                                     </div>
-                                    <div class="col-md-6">
-                                                <textarea id="test<?= $value['id'] ?>"
+                                    <div class="col-md-12">
+                                                <textarea id="test<?= $value['id'] ?>" style="height: 100px"
                                                           name="full_descr"><?= $value['full_descr'] ?>
                                                 </textarea>
                                         <script>
@@ -195,7 +195,7 @@
                                         </script>
                                     </div>
                                 </div>
-                                <input type="submit" class="form-horizontal" value="Сохранить"
+                                <input type="submit" class="form-horizontal"    style="margin-top: 50px;" value="Сохранить"
                                        formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveAdministrator">
                             </form>
                         </div>

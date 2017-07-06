@@ -236,7 +236,7 @@ input[name="consulting_at_home"], input[name="specialty"] {
 }
 
 input[name="specialty"]{
-    width: 350px;
+    width: 337px;
 }
 
 @media (min-width: 300px) and (max-width: 1460px) {

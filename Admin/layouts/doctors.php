@@ -136,7 +136,7 @@
                     <!-- Modal -->
                     <div class="modal fade" id="dd<?= $value['id'] ?>" role="dialog">
                         <div class="modal-dialog modal-sm">
-                            <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                            <div class="modal-content" style="width: 500px; height: 250px; margin: 0 auto;">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title"><b>Внимание!</b></h4>

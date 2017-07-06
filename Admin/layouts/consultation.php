@@ -10,7 +10,7 @@
                 <table class="table  ">
 
                     <tr>
-                        <td class="" style="width: 40%; border-top: none; height: 35px;"><input style="height: 35px; width: 100%" placeholder=" Описание" type="text" name="specialty"></td>
+                        <td class="" style="width: 34%; border-top: none; height: 35px;"><input style="height: 35px; width: 100%" placeholder=" Описание" type="text" name="specialty"></td>
                         <td class="" style="width: 15%; border-top: none; height: 35px;"><input style="height: 35px; width: 100%" placeholder=" Цена/1-го посещения" type="text" name="price_first_time"></td>
                         <td class="" style="width: 15%; border-top: none; height: 35px;"><input style="height: 35px; width: 100%" placeholder=" Цена/последующие" type="text" name="price_after"></td>
                         <td style="border-top: none;">
@@ -45,7 +45,7 @@
 
                 <tr>
                     <form method="POST">
-                        <td class="" style="width: 63%; border-top: none"><input style="height: 35px; width: 100%" type="text" class="diract_input" name="specialty"         value="<?= $item['specialty'] ?>">       </td>
+                        <td class="" style="width: 59%; border-top: none"><input style="height: 35px; width: 100%" type="text" class="diract_input" name="specialty"         value="<?= $item['specialty'] ?>">       </td>
                         <td class="" style="width: 10%; border-top: none"><input style="height: 35px; width: 100%" type="text" style="height: 35px;" class="" name="price_first_time"  value="<?= $item['price_first_time'] ?>"></td>
                         <td class="" style="width: 10%; border-top: none"><input style="height: 35px; width: 100%" type="text" style="height: 35px;" class="" name="price_after"       value="<?= $item['price_after'] ?>">     </td>
                         <td class="" style="border-top: none"">
@@ -61,7 +61,7 @@
                         <!-- Modal -->
                         <div class="modal fade" id="cc<?= $item['id'] ?>" role="dialog">
                             <div class="modal-dialog modal-sm">
-                                <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                                <div class="modal-content" style="width: 500px; height: 250px; margin: 0 auto;">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title"><b>Внимание!</b></h4>
@@ -95,7 +95,7 @@
             <form method="POST">
                 <table class="table ">
                     <tr>
-                        <td class="" style="width: 63%;  border-top: none" ><input style="height: 35px; width: 100%"   placeholder=" Название услуги" type="text" name="specialty"></td>
+                        <td class="" style="width: 61%;  border-top: none" ><input style="height: 35px; width: 100%"   placeholder=" Название услуги" type="text" name="specialty"></td>
                         <td class="" style="width: 10%;  border-top: none" ><input style="height: 35px; width: 100%"  placeholder=" Цена, грн" type="text" name="consulting_at_home"></td>
                         <td          style="width: 17%;  border-top: none; ">
                             <select class="form-control" id="diractions_select" name="direction" style="min-height: 35px; width: 100%"
@@ -130,7 +130,7 @@
 
                 <tr>
                     <form method="POST">
-                    <td class="" style="width: 73%; border-top: none" >
+                    <td class="" style="width: 69%; border-top: none" >
                         <input  style="width: 100%" type="text" name="specialty" value="<?= $item['specialty'] ?>">
                     </td>
                     <td class="" style="width: 10%; border-top: none">

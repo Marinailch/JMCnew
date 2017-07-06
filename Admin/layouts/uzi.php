@@ -23,7 +23,7 @@
             <table class="table ">
                 <?php foreach ($usi->getPriceForUSI() as $key => $item): ?>
                     <form method="POST">
-                        <td class="" style="width: 70%; border-top: none; height: 35px;"><input style="height: 35px; width: 100%;" type="text" name="name_of_method_fd"   value="<?= $item['name_of_method_fd'] ?>"></td>
+                        <td class="" style="width: 69%; border-top: none; height: 35px;"><input style="height: 35px; width: 100%;" type="text" name="name_of_method_fd"   value="<?= $item['name_of_method_fd'] ?>"></td>
                         <td class="" style="width: 10%; border-top: none; height: 35px;"> <input style="height: 35px; width: 100%;"type="text" name="price"                value="<?= $item['price'] ?>">            </td>
 
                         <td class="" style="height: 35px; border-top: none;">
@@ -40,7 +40,7 @@
                         <!-- Modal -->
                         <div class="modal fade" id="cu<?= $item['id'] ?>" role="dialog">
                             <div class="modal-dialog modal-sm">
-                                <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                                <div class="modal-content" style="width: 500px; height: 250px; margin: 0 auto;">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         <h4 class="modal-title"><b>Внимание!</b></h4>

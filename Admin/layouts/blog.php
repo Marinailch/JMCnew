@@ -83,8 +83,7 @@
                     <div class="batton_del_panel_lab">
                         <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
                                 data-target="#n<?= $value['id'] ?>">
-                            <img src="img/rec.png" title="Редактировать" class="del_button"
-                                 style="margin-right: -17px; min-height: auto;">
+                            <img src="img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px; min-height: auto;">
                         </button>
                         <a href="" data-toggle="modal" data-target="#n<?= $item['id'] ?>">
                             <img src="img/del.png" title="Удалить" class="del_button" style="min-height: auto;">
@@ -103,7 +102,7 @@
                     <!-- Modal -->
                     <div class="modal fade" id="n<?= $item['id'] ?>" role="dialog">
                         <div class="modal-dialog modal-sm">
-                            <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                            <div class="modal-content" style="width: 500px; height: 250px; margin: 0 auto;">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title"><b>Внимание!</b></h4>
@@ -133,7 +132,7 @@
                 <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ БЛОГА--------------------------------------------- -->
                 <!-- ------------------------------------------------------------------------------------------------------------ -->
                 <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog" style="width: 1200px">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close"
@@ -152,7 +151,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-7">
-                                                <div class="form-group">
+                                                <div class="form-group" style="margin-left: 50px;">
 
                                                     <p style="font-weight: 600; font-size: 12px; ">Изменить
                                                         заглавное фото блога</p>
