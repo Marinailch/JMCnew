@@ -225,6 +225,10 @@ label[for="inputSuccess3"] {
 .imgerror{
     margin-top: -320px;
 }
+.modal-content1{
+
+}
+
 
 
 input[name="consulting_at_home"], input[name="specialty"] {
@@ -236,7 +240,7 @@ input[name="specialty"]{
 }
 
 @media (min-width: 300px) and (max-width: 1460px) {
-    .modal-content{
+    .modal-content1{
         width: 60% !important;
     }
 
