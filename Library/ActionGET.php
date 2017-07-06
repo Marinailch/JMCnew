@@ -64,11 +64,11 @@ class ActionGET extends DataBase
      * Возвращаем подгружаемый файл
      */
 
-        public function getMain()
+        public function getMain($id=NULL)
     {
-
-        $id = filter_input(INPUT_GET, 'page');
-
+        if($id==NULL) {
+            $id = filter_input(INPUT_GET, 'page');
+        }
         if (!$id) {
             return array('pages/main.php', 'Главная страница');
         } else if ($id == 'directions') {
@@ -99,12 +99,15 @@ class ActionGET extends DataBase
             //Обработка формы
             $data = $this->getDataFromForm();
             if($this->form->getForm($data)) {
-                return 'pages/' . $data['get'] . '.php';
+//                return 'pages/' . $data['get'] . '.php';
+                  return $this->getMain($data['get']);
             }else{
                 return FALSE;
             }
+        }else{
+            return array('pages/404.php', 'Ошибка обращения');
         }
-        return FALSE;
+
     }
 
     public function getDataFromForm()
