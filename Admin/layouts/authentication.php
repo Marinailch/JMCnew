@@ -19,5 +19,5 @@
     </div>
   </div>  
 </form>
+    <a href="../index.php"><b style="color: #cdc639;">Перейти на сайт</b></a>
 </div>
-<a href="../index.php"><b style="color: #cdc639;">Перейти на сайт</b></a>
