@@ -46,7 +46,7 @@
                             <!--                                <label for="inputSuccess3">Добавить фото<br>для слайдера</label>-->
 
                             <div class="col-sm-6">
-                                <input type="file" required multiple data-toggle="tooltip" data-placement="bottom"
+                                <input type="file" multiple data-toggle="tooltip" data-placement="bottom"
                                        title="Удерживая клавишу Ctrl, выберите любое количество изображений, которые вы хотите видеть в вашем слайдере"
                                        name="slider[]">
                             </div>
@@ -86,7 +86,7 @@
                             <img src="img/rec.png" title="Редактировать" class="del_button"
                                  style="margin-right: -17px; min-height: auto;">
                         </button>
-                        <a href="" data-toggle="modal" data-target="#bd<?= $item['id'] ?>">
+                        <a href="" data-toggle="modal" data-target="#n<?= $item['id'] ?>">
                             <img src="img/del.png" title="Удалить" class="del_button" style="min-height: auto;">
                         </a>
                         <!---->
@@ -101,7 +101,7 @@
 
                     <!--модальное окно -->
                     <!-- Modal -->
-                    <div class="modal fade" id="bd<?= $item['id'] ?>" role="dialog">
+                    <div class="modal fade" id="n<?= $item['id'] ?>" role="dialog">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
                                 <div class="modal-header">

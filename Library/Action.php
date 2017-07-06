@@ -830,7 +830,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/blog/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/img/blog/'. $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($result =
@@ -934,7 +934,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/blog/' . $file_name;
+                    $path = '/img/blog/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->blog->saveItemByID($title, $short_description, $full_description, $file_name, $id)) {

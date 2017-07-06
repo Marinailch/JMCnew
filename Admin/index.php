@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 session_start();
-
+ini_set('display_errors','0');
 include_once '../Config/adminconfig.php';
 include_once '../Config/ConfigClasses.php';
 //var_dump($_SESSION);
@@ -11,14 +11,28 @@ include_once '../Config/ConfigClasses.php';
  * исходное значение $action = mainpage;
  *
  */
-if($_POST['submit']&&!$_SESSION['user']){
+if (isset($_POST['submit'])) {
+    $dataPost = $_POST['submit'];
+}else{
+    $dataPost = NULL;
+}
+if(isset($_SESSION['user'])){
+    $user = $_SESSION['user'];
+}else{
+    $user=NULL;
+}
+
+
+
+
+if($dataPost!=NULL && $user==NULL){
     $action = 'authUserByNameAndLogin';
     $action_obj->$action();
 }
 
 
 
-if(!$_SESSION['user']){
+if($user==NULL){
     $action = 'authuser';
 }else {
     $action = filter_input(INPUT_GET, 'page');
