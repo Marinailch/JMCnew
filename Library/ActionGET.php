@@ -59,16 +59,6 @@ class ActionGET extends DataBase
     }
 
     /**
-     * @param $id
-     * Функция по обработке ГЕТ запроса от докторов
-     * Возвращает массив с выбранным доктором
-     */
-    public function getGetDoctors($id)
-    {
-
-    }
-
-    /**
      * @return bool|mixed
      * Проверяем GET запрос на главной странице
      * Возвращаем подгружаемый файл
@@ -80,31 +70,31 @@ class ActionGET extends DataBase
         $id = filter_input(INPUT_GET, 'page');
 
         if (!$id) {
-            return 'main.php';
+            return array('pages/main.php', 'Главная страница');
         } else if ($id == 'directions') {
-            return 'pages/directions.php';
+            return array('pages/directions.php','Направления');
         } else if ($id == 'diagnostics') {
-            return 'pages/diagnostics.php';
+            return array('pages/diagnostics.php', 'Диагностика');
         } else if ($id == 'doctors') {
-            return 'pages/doctors.php';
+            return array('pages/doctors.php', 'Наш коллектив');
         } else if ($id == 'blog') {
-            return 'pages/blog.php';
+            return array('pages/blog.php', 'Блог');
         } else if ($id == 'functional_diagnostic') {
-            return 'pages/functional_diagnostic.php';
+            return array('pages/functional_diagnostic.php', 'Функциональная Диагностика');
         }else if ($id == 'laboratory_diagnostic') {
-            return 'pages/laboratory_diagnostic.php';
+            return array('pages/laboratory_diagnostic.php', 'Лабораторная Диагностика');
         }else if ($id == 'leaders') {
-            return 'pages/leaders.php';
+            return array('pages/leaders.php', 'Администрация');
         }else if ($id == 'ultrasound_investigation') {
-            return 'pages/ultrasound_investigation.php';
+            return array('pages/ultrasound_investigation.php', 'УЗИ');
         }else if ($id == 'about') {
-            return 'pages/about.php';
+            return array('pages/about.php', 'О нас');
         }else if ($id == 'ravin') {
-            return 'pages/ravin.php';
+            return array('pages/ravin.php', 'Равин');
         }else if ($id == 'articles') {
-            return 'pages/articles.php';
+            return array('pages/articles.php', 'Статьи');
         }else if ($id == 'equipment') {
-            return 'pages/equipment.php';
+            return array('pages/equipment.php', 'Оборудование');
         }else if($id == 'callform'){
             //Обработка формы
             $data = $this->getDataFromForm();
