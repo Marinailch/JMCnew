@@ -15,7 +15,7 @@ if ($request->getReqByGet()):
 <?php endif ?>
 <script>
     $(document).ready(function () {
-        $("#form_phone").inputmask("+3(9999)9999999");
+        $("#form_phone").inputmask("+3(999)9999999");
     });
 </script>
 

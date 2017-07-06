@@ -1,4 +1,9 @@
 <div>
+    <script>
+        $(document).ready(function () {
+            $("#form_phone").inputmask("+3(999)9999999");
+        });
+    </script>
     <div class="directions_header">
         <p>Функциональная диагностика</p>
     </div>
@@ -32,7 +37,7 @@
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" name="personPhone"
+                                        <input id='form_phone' type="text" class="form-control" id="phone" name="personPhone"
                                                placeholder="Телефон" required>
                                     </div>
                                 </div>

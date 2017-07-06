@@ -965,9 +965,9 @@ class Action extends DataBase
      */
     public function authuser(){
         $title = 'Authentificate';
-        $header = '';
+        $header = './page/header_adm2.php';
         $layout_name = 'layouts/authentication.php';
-        $footer = '';
+        $footer = './page/footer_adm2.php';
         $login = User::$login;
         $password = User::$password;
         include_once $this->template_name='./template/adminenter.php';
