@@ -5,14 +5,14 @@
                 <a href=""><img class="logo_head" src="../../img/logo.gif"></a>
 
                 <div id="slidemenu">
-                    <ul class="nav navbar-nav">
-                        <li><a href="">Главная</a></li>
-                        <li><a href="">Услуги</a></li>
-                        <li><a href="">Диагностика</a></li>
-                        <li><a href="">Врачи</a></li>
-                        <li><a href="">Блог</a></li>
-                        <li><a href="">О нас</a> </li>
-                    </ul>
+<!--                    <ul class="nav navbar-nav">-->
+<!--                        <li><a href="">Главная</a></li>-->
+<!--                        <li><a href="">Услуги</a></li>-->
+<!--                        <li><a href="">Диагностика</a></li>-->
+<!--                        <li><a href="">Врачи</a></li>-->
+<!--                        <li><a href="">Блог</a></li>-->
+<!--                        <li><a href="">О нас</a> </li>-->
+<!--                    </ul>-->
                 </div>
             </div>
         </div>
