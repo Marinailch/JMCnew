@@ -170,7 +170,7 @@
 <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ ДОКТОРОВ------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------ -->
                     <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog" style="min-width: 1200px">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close"
