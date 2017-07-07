@@ -99,7 +99,9 @@ class ActionGET extends DataBase
             //Обработка формы
             $data = $this->getDataFromForm();
             if($this->form->getForm($data)) {
-//                return 'pages/' . $data['get'] . '.php';
+                $x = 'pages/' . $data['get'] . '.php';
+                return array($x, $x);
+                return array('pages/' . $data['get'] . '.php');
                   return $this->getMain($data['get']);
             }else{
                 return FALSE;
