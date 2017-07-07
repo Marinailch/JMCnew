@@ -97,6 +97,9 @@ class ActionGET extends DataBase
             return array('pages/equipment.php', 'Оборудование');
         }else if($id == 'callform'){
             //Обработка формы
+            //*************************************
+            //УБРАТЬ РЕКУРСИВНЫЙ ОБХОД ГЕТ ЗАПРОСА*
+            //*************************************
             $data = $this->getDataFromForm();
 //            if($this->form->getForm($data)) {
 //                $x = 'pages/' . $data['get'] . '.php';
@@ -106,6 +109,9 @@ class ActionGET extends DataBase
 //            }
             $x = 'pages/' . $data['get'] . '.php';
             return array($x, $x);
+            //*************************************
+            //УБРАТЬ РЕКУРСИВНЫЙ ОБХОД ГЕТ ЗАПРОСА*
+            //*************************************
         }else{
             return array('pages/404.php', 'Ошибка обращения');
         }
