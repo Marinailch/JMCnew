@@ -98,14 +98,14 @@ class ActionGET extends DataBase
         }else if($id == 'callform'){
             //Обработка формы
             $data = $this->getDataFromForm();
-            if($this->form->getForm($data)) {
-                $x = 'pages/' . $data['get'] . '.php';
-                return array($x, $x);
-                return array('pages/' . $data['get'] . '.php');
-                  return $this->getMain($data['get']);
-            }else{
-                return FALSE;
-            }
+//            if($this->form->getForm($data)) {
+//                $x = 'pages/' . $data['get'] . '.php';
+//                return array($x, $x);
+//            }else{
+//                return FALSE;
+//            }
+            $x = 'pages/' . $data['get'] . '.php';
+            return array($x, $x);
         }else{
             return array('pages/404.php', 'Ошибка обращения');
         }
