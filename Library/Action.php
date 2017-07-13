@@ -388,7 +388,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->doctors->createNewDoctor($name_of_doctor, $file_name, $expirience_of_work,
@@ -490,7 +490,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
@@ -554,7 +554,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->administrators->createNewAdministrator($name, $specialty, $description,
@@ -630,7 +630,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->administrators->saveAdministrator($name, $specialty, $description, $file_name,
@@ -690,7 +690,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->nurses->createNewNurse($name, $specialty, $description, $file_name)) {
@@ -760,7 +760,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)) {
@@ -853,7 +853,7 @@ class Action extends DataBase
                                                     $file_base_name = implode('', $file_name_parts);
                                                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                                                     $file_name .= '.' . $file_extension;
-                                                    $path = '../img/blog/' . $file_name;
+                                                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/blog/' . $file_name;
                                                     if (move_uploaded_file($foto_slider['tmp_name'][$i], $path)) {
                                                         $this->blog->saveMainFoto($file_name, $var, $result);
                                                     }
@@ -934,7 +934,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '/img/blog/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'/img/blog/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->blog->saveItemByID($title, $short_description, $full_description, $file_name, $id)) {
