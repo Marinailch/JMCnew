@@ -12,13 +12,13 @@
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>ФИО сотрудника</label>
                         <div class="col-sm-6">
-                            <input type="text" name="name" class="form-control" placeholder="Введите ФИО">
+                            <input type="text" name="name" style="width:95%;" class="form-control" placeholder="Введите ФИО">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>должность сотрудника</label>
                         <div class="col-sm-6">
-                            <input type="text" name="specialty" class="form-control"
+                            <input type="text" name="specialty" style="width:95%;" class="form-control"
                                    placeholder="Введите должность">
                         </div>
                     </div>
@@ -37,7 +37,7 @@
             </div>
             <h5 class="directions_header_adm">Добавить описание</h5>
             <textarea name="description" id="doctor_add"></textarea>
-            <input type="submit" class="form-horizontal" value="Сохранить"
+            <input type="submit" class="form-horizontal"  value="Сохранить"
                    formaction="<?= $_SERVER['PHP_SELF'] ?>?page=createNurse">
         </form>
         <script>
@@ -66,15 +66,51 @@
                                              style="margin-right: -17px">
                                     </button>
 <!--                                </a>-->
-                                <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteNurse&id=<?= $value['id'] ?>">
-                                    <img src="./img/del.png" title="Удалить" class="del_button">
+
+                                <a href=""  data-toggle="modal"  data-target="#dn<?= $value['id'] ?>">
+                                    <img src="./img/del.png" class="del_button" title="Удалить" >
                                 </a>
+
+
+<!--                                <a href="--><?//= $_SERVER['PHP_SELF'] ?><!--?page=deleteNurse&id=--><?//= $value['id'] ?><!--">-->
+<!--                                    <img src="./img/del.png" title="Удалить" class="del_button">-->
+<!--                                </a>-->
                             </div>
-<!-- ------------------------------------------------------------------------------------------------------------ -->
+
+                            <!--модальное окно -->
+                            <!-- Modal -->
+                            <div class="modal fade" id="dn<?= $value['id'] ?>" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content" style="width:500px; height: 250px; margin: 0 auto;">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title"><b>Внимание!</b></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Данные будут удалены без возможности восстановления.</p>
+                                            <p>Вы уверены, что хотите удалить эту информацию?</p>
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteNurse&id=<?= $value['id'] ?>" >
+                                                <input type="submit"  class="btn btn-danger bt_del" value="Удалить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deleteNurse&id">  </a>
+                                            <input type="button" class="btn btn-default bt_del" data-dismiss="modal"  value="Закрыть">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--модальное окно end -->
+
+
+                            <!-- ------------------------------------------------------------------------------------------------------------ -->
 <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ МЕДСЕСТЕР----------------------------------------- -->
 <!-- ------------------------------------------------------------------------------------------------------------ -->
                             <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog"  style="min-width: 1200px">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close"
@@ -135,7 +171,7 @@
                                                         </script>
                                                     </div>
                                                 </div>
-                                                <input type="submit" class="form-horizontal" value="Сохранить"
+                                                <input type="submit" class="form-horizontal" style="    margin-top: 0px;" value="Сохранить"
                                                        formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveNurse">
                                             </form>
                                         </div>

@@ -27,15 +27,15 @@
                                         class="caret"></b></a>
                             <ul class="dropdown-menu ">
                                 <li>
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=consultation" class="hvr-grow-shadow ">Консультации
+                                    <a href="/Admin/index.php?page=consultation" class="hvr-grow-shadow">Консультации
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=ultra" class="hvr-grow-shadow ">УЗИ диагностика
+                                    <a href="/Admin/index.php?page=ultra" class="hvr-grow-shadow ">УЗИ диагностика
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=functionaldiagn" class="hvr-grow-shadow ">Функционал диагностика
+                                    <a href="/Admin/index.php?page=functionaldiagn" class="hvr-grow-shadow ">Функционал диагностика
                                     </a>
                                 </li>
                             </ul>
@@ -44,26 +44,27 @@
                                         class="caret"></b></a>
                             <ul class="dropdown-menu ">
                                 <li>
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=doctors" class="hvr-grow-shadow ">Врачи
+                                    <a href="/Admin/index.php?page=doctors" class="hvr-grow-shadow ">Врачи
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=administrators" class="hvr-grow-shadow ">Администрация
+                                    <a href="/Admin/index.php?page=administrators" class="hvr-grow-shadow ">Администрация
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=nurses" class="hvr-grow-shadow ">Медсестры
+                                    <a href="/Admin/index.php?page=nurses" class="hvr-grow-shadow ">Медсестры
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?= $_SERVER[PHP_SELF] ?>?page=blog">Блог
+                            <a href="/Admin/index.php?page=blog">Блог
                             </a>
                         </li>
 
-                        <li><a href="<?= $_SERVER[PHP_SELF] ?>?page=laboratory">Лаборатория</a></li>
+                        <li><a href="/Admin/index.php?page=laboratory">Лаборатория</a></li>
                         <li><a href="../index.php"><b style="color: #cdc639;">Перейти на сайт</b></a></li>
+                        <li><a href="/Admin/index.php?page=destroy">Выйти из Админпанели</a></li>
                     </ul>
                 </div>
             </div>

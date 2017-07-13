@@ -15,3 +15,4 @@ include_once $page;
 
 
 include_once "footer.php";
+

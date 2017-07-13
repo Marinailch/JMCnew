@@ -119,16 +119,58 @@
                                      style="margin-right: -17px">
                             </button>
 
-                        <a href="<?= $_SERVER[PHP_SELF] ?>?page=deleteDoctorCard&id=<?= $value['id'] ?>">
-                            <img src="./img/del.png" title="Удалить" class="del_button">
+                        <a href=""  data-toggle="modal"  data-target="#dd<?= $value['id'] ?>">
+                            <img src="./img/del.png" class="del_button" title="Удалить" >
                         </a>
+
+
+<!--                        <a href="--><?//= $_SERVER[PHP_SELF] ?><!--?page=deleteDoctorCard&id=--><?//= $value['id'] ?><!--">-->
+<!--                            <img src="./img/del.png" title="Удалить" class="del_button">-->
+<!--                        </a>-->
+
                     </div>
 
-<!-- ------------------------------------------------------------------------------------------------------------ -->
+
+
+                    <!--модальное окно -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="dd<?= $value['id'] ?>" role="dialog">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content" style="width: 500px; height: 250px; margin: 0 auto;">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title"><b>Внимание!</b></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Данные будут удалены без возможности восстановления.</p>
+                                    <p>Вы уверены, что хотите удалить эту информацию?</p>
+                                </div>
+                                <div class="modal-footer">
+
+                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=deleteDoctorCard&id=<?= $value['id'] ?>" >
+                                        <input type="submit"  class="btn btn-danger bt_del" value="Удалить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deleteDoctorCard&id">  </a>
+                                    <input type="button" class="btn btn-default bt_del" data-dismiss="modal"  value="Закрыть">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--модальное окно end -->
+
+
+
+
+
+
+
+                    <!-- ------------------------------------------------------------------------------------------------------------ -->
 <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ ДОКТОРОВ------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------ -->
                     <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog" style="min-width: 1200px">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close"

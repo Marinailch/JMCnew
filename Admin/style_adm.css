@@ -97,7 +97,7 @@ nav{
 }
 
 .form-horizontal[type="submit"] { 
-  margin-top:40px;
+  margin-top:30px;
 }
 
 .form-control {
@@ -222,10 +222,31 @@ label[for="inputSuccess3"] {
     border: #c3c3c3 solid 1px;
 }
 
+.imgerror{
+    margin-top: -320px;
+}
+.modal-content1{
+
+}
+
+
+
 input[name="consulting_at_home"], input[name="specialty"] {
     height: 35px;
 }
 
 input[name="specialty"]{
-    width: 350px;
+    width: 337px;
+}
+
+@media (min-width: 300px) and (max-width: 1460px) {
+    .modal-content1{
+        width: 60% !important;
+    }
+
+   .imgerror{
+        margin-top: -347px;
+        /* margin-right: -135px; */
+        margin-left: -400px;
+    }
 }

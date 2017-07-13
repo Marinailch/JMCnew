@@ -59,68 +59,84 @@ class ActionGET extends DataBase
     }
 
     /**
-     * @param $id
-     * Функция по обработке ГЕТ запроса от докторов
-     * Возвращает массив с выбранным доктором
-     */
-    public function getGetDoctors($id)
-    {
-
-    }
-
-    /**
      * @return bool|mixed
      * Проверяем GET запрос на главной странице
      * Возвращаем подгружаемый файл
      */
 
-        public function getMain()
+        public function getMain($id=NULL)
     {
-
-        $id = filter_input(INPUT_GET, 'page');
-
+        if($id==NULL) {
+            $id = filter_input(INPUT_GET, 'page');
+        }
         if (!$id) {
-            return 'main.php';
+            return array('pages/main.php', 'Главная страница');
         } else if ($id == 'directions') {
-            return 'pages/directions.php';
+            return array('pages/directions.php','Направления');
         } else if ($id == 'diagnostics') {
-            return 'pages/diagnostics.php';
+            return array('pages/diagnostics.php', 'Диагностика');
         } else if ($id == 'doctors') {
-            return 'pages/doctors.php';
+            return array('pages/doctors.php', 'Наш коллектив');
         } else if ($id == 'blog') {
-            return 'pages/blog.php';
+            return array('pages/blog.php', 'Блог');
         } else if ($id == 'functional_diagnostic') {
-            return 'pages/functional_diagnostic.php';
+            return array('pages/functional_diagnostic.php', 'Функциональная Диагностика');
         }else if ($id == 'laboratory_diagnostic') {
-            return 'pages/laboratory_diagnostic.php';
+            return array('pages/laboratory_diagnostic.php', 'Лабораторная Диагностика');
         }else if ($id == 'leaders') {
-            return 'pages/leaders.php';
+            return array('pages/leaders.php', 'Администрация');
         }else if ($id == 'ultrasound_investigation') {
-            return 'pages/ultrasound_investigation.php';
+            return array('pages/ultrasound_investigation.php', 'УЗИ');
         }else if ($id == 'about') {
-            return 'pages/about.php';
+            return array('pages/about.php', 'О нас');
         }else if ($id == 'ravin') {
-            return 'pages/ravin.php';
+            return array('pages/ravin.php', 'Равин');
         }else if ($id == 'articles') {
-            return 'pages/articles.php';
+            return array('pages/articles.php', 'Статьи');
         }else if ($id == 'equipment') {
-            return 'pages/equipment.php';
+            return array('pages/equipment.php', 'Оборудование');
         }else if($id == 'callform'){
             //Обработка формы
-            $res = $this->form->getForm();
-            return 'pages/'.$res['get'].'.php';
-//            var_dump($res);
-
-
-
+            //*************************************
+            //УБРАТЬ РЕКУРСИВНЫЙ ОБХОД ГЕТ ЗАПРОСА*
+            //*************************************
+            $data = $this->getDataFromForm();
+//            if($this->form->getForm($data)) {
+//                $x = 'pages/' . $data['get'] . '.php';
+//                return array($x, $x);
+//            }else{
+//                return FALSE;
+//            }
+            $x = 'pages/' . $data['get'] . '.php';
+            return array($x, $x);
+            //*************************************
+            //УБРАТЬ РЕКУРСИВНЫЙ ОБХОД ГЕТ ЗАПРОСА*
+            //*************************************
+        }else{
+            return array('pages/404.php', 'Ошибка обращения');
         }
-
-
-
-        return FALSE;
 
     }
 
+    public function getDataFromForm()
+    {
+        $data = array(
+            'name' => filter_input(INPUT_POST, 'personName'),
+            'phone' => filter_input(INPUT_POST, 'personPhone'),
+            'date' => filter_input(INPUT_POST, 'personDate'),
+            'doctor' => filter_input(INPUT_POST, 'personDoctor'),
+            'message' => filter_input(INPUT_POST, 'personMessage'),
+            'get' => filter_input(INPUT_POST, 'personGET'),
+        );
+        $res = $this->directions->getDirections();
+        foreach ($res as $key => $value) {
+            if ($data['doctor'] == $value['id']) {
+                $data['doctor'] = $value['name_of_direction'];
+                break;
+            }
+        }
+        return $data;
+    }
 
 }
 

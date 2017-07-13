@@ -12,13 +12,13 @@
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>ФИО Администратора</label>
                         <div class="col-sm-6">
-                            <input type="text" name="name" class="form-control" placeholder="Введите ФИО">
+                            <input type="text" name="name" style="width: 95%;" class="form-control" placeholder="Введите ФИО">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputSuccess3">Добавить <br>должность администратора</label>
                         <div class="col-sm-6">
-                            <input type="text" name="specialty" class="form-control"
+                            <input type="text" name="specialty" style="width: 95%;" class="form-control"
                                    placeholder="Введите должность">
                         </div>
                     </div>
@@ -65,10 +65,53 @@
                         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#n<?= $value['id'] ?>">
                             <img src="./img/rec.png" title="Редактировать" class="del_button"   style="margin-right: -17px">
                         </button>
-                        <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteAdministrator&id=<?= $value['id'] ?>">
-                            <img src="./img/del.png" title="Удалить" class="del_button">
+                        <a href=""  data-toggle="modal"  data-target="#da<?= $value['id'] ?>">
+                            <img src="./img/del.png" class="del_button" title="Удалить" >
                         </a>
-                    </div>
+
+<!--                        <a href="--><?//= $_SERVER['PHP_SELF'] ?><!--?page=deleteAdministrator&id=--><?//= $value['id'] ?><!--">-->
+<!--                            <img src="./img/del.png" title="Удалить" class="del_button">-->
+<!--                        </a>-->
+
+                </div>
+                        <!--модальное окно -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="da<?= $value['id'] ?>" role="dialog">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content" style="width: 40%; height: 250px; margin: 0 auto;">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"><b>Внимание!</b></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Данные будут удалены без возможности восстановления.</p>
+                                        <p>Вы уверены, что хотите удалить эту информацию?</p>
+                                    </div>
+                                    <div class="modal-footer">
+
+                                        <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteAdministrator&id=<?= $value['id'] ?>" >
+                                            <input type="submit"  class="btn btn-danger bt_del" value="Удалить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deleteAdministrator&id">  </a>
+                                        <input type="button" class="btn btn-default bt_del" data-dismiss="modal"  value="Закрыть">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--модальное окно end -->
+
+
+
+
+
+
+
+
+
+
+
 
                     <div style="width: 100%; height: 170px; display: block; overflow: hidden;">
                         <img class="" style="" src="../img/doctors_foto/<?= $value['link_foto'] ?>">
@@ -91,8 +134,8 @@
             <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ АДМИНИСТРАТОРОВ----------------------------------- -->
             <!-- ------------------------------------------------------------------------------------------------------------ -->
             <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+                <div class="modal-dialog" style="width: 1200px; ">
+                    <div class="modal-content" style="height: 1000px;">
                         <div class="modal-header">
                             <button type="button" class="close"
                                     data-dismiss="modal">&times;</button>
@@ -143,8 +186,8 @@
 
 
                                     </div>
-                                    <div class="col-md-6">
-                                                <textarea id="test<?= $value['id'] ?>"
+                                    <div class="col-md-12">
+                                                <textarea id="test<?= $value['id'] ?>" style="height: 100px"
                                                           name="full_descr"><?= $value['full_descr'] ?>
                                                 </textarea>
                                         <script>
@@ -152,7 +195,7 @@
                                         </script>
                                     </div>
                                 </div>
-                                <input type="submit" class="form-horizontal" value="Сохранить"
+                                <input type="submit" class="form-horizontal"    style="margin-top: 50px;" value="Сохранить"
                                        formaction="<?= $_SERVER['PHP_SELF'] ?>?page=saveAdministrator">
                             </form>
                         </div>

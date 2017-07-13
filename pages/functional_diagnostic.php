@@ -1,4 +1,9 @@
 <div>
+    <script>
+        $(document).ready(function () {
+            $("#form_phone").inputmask("+3(999)9999999");
+        });
+    </script>
     <div class="directions_header">
         <p>Функциональная диагностика</p>
     </div>
@@ -21,7 +26,7 @@
                             <h6>Запишитесь на приём!</h6>
                             <form class="form-horizontal" method="post"
                                   action="<?= $_SERVER['PHP_SELF'] ?>?page=callform">
-
+                                <input type="hidden" name="personGET" value="<?= $_GET['page'] ?>">
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
@@ -32,7 +37,7 @@
                                 <div class="form-group">
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" name="personPhone"
+                                        <input id='form_phone' type="text" class="form-control" id="phone" name="personPhone"
                                                placeholder="Телефон" required>
                                     </div>
                                 </div>
@@ -87,13 +92,6 @@
                     <?php
                     include "slider3.php";
                     ?>
-<!--                    <table class="table table_price">-->
-<!--                        <tbody>-->
-<!---->
-<!--                        <tr>-->
-<!--                            <th style="margin-top: 20px; text-align: center; width:90%;">Название процедуры<br> <small>функциональной диагностики</small></th>-->
-<!--                            <th style="width: 80px;">Цена,<small> грн </small></th>-->
-<!--                        </tr>-->
                     <h4 class="diractions_title"><b>Перечень диагностических исследований, проводимых в нашей клинике </b></h4>
                     <table class="table">
                         <tbody>

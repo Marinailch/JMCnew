@@ -5,7 +5,7 @@ header('Content-Type: text/html; charset=utf-8');
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>JMC - Еврейский Медицинский Центр</title>
+    <title><?=$page[1]?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name = "format-detection" content = "telephone=no" />
     <meta name="description" content="Еврейский Медицинский Центр">

@@ -32,14 +32,6 @@ class Action extends DataBase
         $this->usi = new FunctionalDiagnostic($db);
     }
 
-    public static function getParam($status)
-    {
-        switch ($status) {
-            case'':
-                return;
-        }
-    }
-
     public function redirect($id = null)
     {
         if (!$id) {
@@ -439,8 +431,9 @@ class Action extends DataBase
         }
     }
 
-    /*
-     * Функция по редактированию доктора
+    /************************************
+     * Функция по редактированию доктора*
+     * **********************************
      */
     public function saveDoctor()
     {
@@ -524,12 +517,11 @@ class Action extends DataBase
                 echo $message;
             }
         }
-        /************************************
-         * КОНЕЦ БЛОКА ПОЛУЧЕНИЯ ФОТО ВРАЧА *
-         * **********************************
-         */
     }
-
+    /************************************
+     * КОНЕЦ БЛОКА ПОЛУЧЕНИЯ ФОТО ВРАЧА *
+     * **********************************
+     */
     /*
      * **********************************
      * БЛОК ПО РАБОТЕ С АДМИНИСТРАТОРАМИ*
@@ -600,8 +592,9 @@ class Action extends DataBase
         }
     }
 
-    /*
-     * Функция по изменению данных администратора
+    /*********************************************
+     * Функция по изменению данных администратора*
+     * *******************************************
      */
     public function saveAdministrator()
     {
@@ -775,7 +768,6 @@ class Action extends DataBase
                         } else {
                             die('I cant add administrator' . __LINE__);
                         }
-                        echo 'hiho';
                     } else {
                         $message = "problem with moving";
                     }
@@ -797,6 +789,11 @@ class Action extends DataBase
      * ************************
      * БЛОК ПО РАБОТЕ С БЛОГОМ*
      * ************************
+     */
+    /*
+     * ********************************
+     * ФУНКЦИЯ ДОБАВЛЕНИЯ НОВОГО ПОСТА*
+     * ********************************
      */
     public function createBlogItem()
     {
@@ -833,7 +830,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = '../img/blog/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/img/blog/'. $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($result =
@@ -890,7 +887,11 @@ class Action extends DataBase
             }
         }
     }
-
+    /*
+     * ***********************
+     * ФУНКЦИЯ УДАЛЕНИЯ ПОСТА*
+     * ***********************
+    */
     public function deleteBlogItemByID()
     {
         $id = filter_input(INPUT_GET, 'id');
@@ -899,6 +900,97 @@ class Action extends DataBase
         } else {
             die('I cant delete Doctor' . __LINE__);
         }
+    }
+    /*
+     * *****************************
+     * ФУНКЦИЯ РЕДАКТИРОВАНИЯ ПОСТА*
+     * *****************************
+    */
+    public function saveBlogItemByID()
+    {
+        $id = filter_input(INPUT_POST, 'priceID');
+        $default_foto = filter_input(INPUT_POST, 'fotomain');
+        $title = filter_input(INPUT_POST, 'title');
+        $short_description = filter_input(INPUT_POST, 'short_description');
+        $full_description = filter_input(INPUT_POST, 'full_description');
+        $foto = $_FILES['foto'];
+
+//        echo $id, $default_foto, $title, $short_description, $full_description;die();
+        //Если фото не было изменено, подгружаем старое фото и заносим изменения без изменения фото
+        if ($foto['error'] === 4) {
+            $file_name = $default_foto;
+            if ($this->blog->saveItemByID($title, $short_description, $full_description, $file_name, $id)) {
+                $this->redirect('?page=blog');
+            } else {
+                die('I cant save Blog with old foto' . __LINE__);
+            }
+        }
+        $types = array("image/jpeg",);
+        if ($foto['error'] == UPLOAD_ERR_OK) {
+            if (in_array($foto['type'], $types)) {
+                if ($foto['size'] <= 3 * 1024 * 1024) {//Не более 3 мб
+                    $file_name_parts = explode('.', $foto['name']);
+                    $file_extension = array_pop($file_name_parts);
+                    $file_base_name = implode('', $file_name_parts);
+                    $file_name = md5($file_base_name . rand(1, getrandmax()));
+                    $file_name .= '.' . $file_extension;
+                    $path = '/img/blog/' . $file_name;
+                    if (move_uploaded_file($foto['tmp_name'], $path)) {
+                        //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
+                        if ($this->blog->saveItemByID($title, $short_description, $full_description, $file_name, $id)) {
+                            $this->redirect('?page=blog');
+                        } else {
+                            die('I cant change blog item with new foto' . __LINE__);
+                        }
+                    } else {
+                        $message = "problem with moving";
+                    }
+                } else {
+                    $message = "file is too large";
+                }
+            } else {
+                $message = "invalid type of file";
+            }
+        } else {
+            $message = parent::errorMassage($foto['error']);
+            if (!empty($message)) {
+                echo $message;
+            }
+        }
+    }
+    /**
+     ******************
+     *  АУТЕНТИФИКАЦИЯ*
+     * ****************
+     */
+    public function authuser(){
+        $title = 'Authentificate';
+        $header = './page/header_adm2.php';
+        $layout_name = 'layouts/authentication.php';
+        $footer = './page/footer_adm2.php';
+        $login = User::$login;
+        $password = User::$password;
+        include_once $this->template_name='./template/adminenter.php';
+    }
+
+    public function destroy(){
+        $_SESSION['user']=NULL;
+        session_unset();
+        $this->redirect();
+
+    }
+
+    public function authUserByNameAndLogin()
+    {
+        $authlogin = filter_input(INPUT_POST, 'login');
+        $authpassword = filter_input(INPUT_POST, 'password');
+        if ($authlogin === User::$login && $authpassword === User::$password) {
+            $_SESSION['user'] = 'admin';
+        }
+        else{
+            session_unset();
+        }
+        return $this->redirect();
     }
 }
 
