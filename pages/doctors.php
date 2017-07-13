@@ -15,7 +15,7 @@
                 <div class="col-sm-3 ">
                     <div class="doctor_card hvr-grow-shadow">
                         <div style="width: 100%; height: 170px; display: block; overflow: hidden;">
-                            <img class="" src="img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
+                            <img class="" src="../img/doctors_foto/<?= $value['link_foto_doctor'] ?>">
                         </div>
                         <div class="doctor_info" style="margin-bottom: 20px">
                             <?php
@@ -30,10 +30,7 @@
                         </div>
                     </div>
                 </div>
-
-
         <? endforeach; ?>
-
 
     </div>
 
