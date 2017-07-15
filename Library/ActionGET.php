@@ -24,6 +24,18 @@ class ActionGET extends DataBase
     }
 
     /**
+     * @param null $id
+     * Попытка вызова и перезаписи редиректа
+     */
+    public function redirect($id = null)
+    {
+        if (!$id) {
+            header('Location:' . $_SERVER['PHP_SELF']);
+        }
+        header('Location:' . $_SERVER['PHP_SELF'] . '?page='.$id);
+    }
+
+    /**
      * Проверяем просто наличие или отсутствие GET запроса
      */
     public function getReqByGet()
@@ -101,14 +113,14 @@ class ActionGET extends DataBase
             //УБРАТЬ РЕКУРСИВНЫЙ ОБХОД ГЕТ ЗАПРОСА*
             //*************************************
             $data = $this->getDataFromForm();
-//            if($this->form->getForm($data)) {
+            if($this->form->getForm($data)) {
 //                $x = 'pages/' . $data['get'] . '.php';
 //                return array($x, $x);
-//            }else{
-//                return FALSE;
-//            }
-            $x = 'pages/' . $data['get'] . '.php';
-            return array($x, $x);
+//                return $this->getMain($data['get']);
+                $this->redirect($data['get']);
+            }else{
+                return FALSE;
+            }
             //*************************************
             //УБРАТЬ РЕКУРСИВНЫЙ ОБХОД ГЕТ ЗАПРОСА*
             //*************************************

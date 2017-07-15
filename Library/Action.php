@@ -191,7 +191,7 @@ class Action extends DataBase
         if ($this->price->createPrice($specialty, $price_first_time, $price_after, $directions)) {
             $this->redirect('?page=consultation');
         } else {
-            die('I cant ' . __LINE__);
+            die('Вы ввели некорректные данные, повторите ввод' . __LINE__);
         }
     }
 
@@ -203,7 +203,7 @@ class Action extends DataBase
         if ($this->price->savePriceHome($specialty, $consulting_at_home, $priceID)) {
             $this->redirect('?page=consultation');
         } else {
-            die('I cant ' . __LINE__);
+            die('Вы ввели некорректные данные, повторите ввод' . __LINE__);
         }
     }
 
@@ -760,7 +760,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.$_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)) {
@@ -820,7 +820,7 @@ class Action extends DataBase
         $foto_slider = $_FILES['slider'];
         //        var_dump($foto_slider);
         //        die();
-        //        echo $title.'<br>',$short_description.'<br>', $full_description.'<br>', $created_at.'<br>', $foto['error'].'<br>';
+        //       echo $title.'<br>',$short_description.'<br>', $full_description.'<br>', $created_at.'<br>', $foto['error'].'<br>';die();
         $types = array("image/jpeg",);
         if ($foto['error'] == UPLOAD_ERR_OK) {
             if (in_array($foto['type'], $types)) {

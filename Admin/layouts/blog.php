@@ -85,7 +85,7 @@
                                 data-target="#n<?= $value['id'] ?>">
                             <img src="img/rec.png" title="Редактировать" class="del_button" style="margin-right: -17px; min-height: auto;">
                         </button>
-                        <a href="" data-toggle="modal" data-target="#n<?= $item['id'] ?>">
+                        <a href="" data-toggle="modal" data-target="#nn<?= $value['id'] ?>">
                             <img src="img/del.png" title="Удалить" class="del_button" style="min-height: auto;">
                         </a>
                         <!---->
@@ -97,10 +97,10 @@
 
                     </div>
 
-
+                    <!------------------->
                     <!--модальное окно -->
-                    <!-- Modal -->
-                    <div class="modal fade" id="n<?= $item['id'] ?>" role="dialog">
+                    <!------------------->
+                    <div class="modal fade" id="nn<?= $value['id'] ?>" role="dialog">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content" style="width: 500px; height: 250px; margin: 0 auto;">
                                 <div class="modal-header">
@@ -113,20 +113,18 @@
                                 </div>
                                 <div class="modal-footer">
 
-                                    <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id=<?= $value['id'] ?>">
-                                        <input type="submit" class="btn btn-danger bt_del" value="Удалить"
-                                               formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id"> </a>
-                                    <input type="button" class="btn btn-default bt_del" data-dismiss="modal"
+                                    <a href="<?= $_SERVER['PHP_SELF'] ?>?page=deleteBlogItemByID&id=<?= $value['id']?>">
+                                        <input type="button" class="btn btn-danger bt_del" value="Удалить">
+                                    </a>
+                                        <input type="button" class="btn btn-default bt_del" data-dismiss="modal"
                                            value="Закрыть">
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                <!----------------------->
                 <!--модальное окно end -->
-
+                <!----------------------->
 
                 <!-- ------------------------------------------------------------------------------------------------------------ -->
                 <!-- ---------------------------------------МОДАЛЬНОЕ ОКНО ДЛЯ БЛОГА--------------------------------------------- -->
