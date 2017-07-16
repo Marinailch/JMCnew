@@ -10,7 +10,7 @@ class Form
 {
     public function getForm(array $data)
     {
-        $to = 's7eell@gmail.com';
+        $to = 'info@jmc.org.ua';
         $subject = 'ЗАПИСЬ НА ПРИЕМ В КЛИНИКУ JMC';
         $subject = '=?utf-8?B?'.base64_encode($subject).'?=';
         $headers  = 'MIME-Version: 1.0' . "\r\n";

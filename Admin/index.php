@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 session_start();
-ini_set('display_errors','1');
+ini_set('display_errors','0');
 include_once '../Config/adminconfig.php';
 include_once '../Config/ConfigClasses.php';
 //var_dump($_SESSION);

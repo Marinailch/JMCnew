@@ -40,6 +40,9 @@
                                 <input type="file" name="foto">
                             </div>
                         </div>
+
+
+
                         <div class="form-group" style="margin-top: 40px;">
                             <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить фото для слайдера
                                 (не более 3МБ)</p>
@@ -131,7 +134,7 @@
                 <!-- ------------------------------------------------------------------------------------------------------------ -->
                 <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
                     <div class="modal-dialog" style="width: 1200px">
-                        <div class="modal-content">
+                        <div class="modal-content" style="height: 800px;">
                             <div class="modal-header">
                                 <button type="button" class="close"
                                         data-dismiss="modal">&times;</button>

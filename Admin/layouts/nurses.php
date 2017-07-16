@@ -111,7 +111,7 @@
 <!-- ------------------------------------------------------------------------------------------------------------ -->
                             <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
                                 <div class="modal-dialog"  style="min-width: 1200px">
-                                    <div class="modal-content">
+                                    <div class="modal-content" style="height: 740px;">
                                         <div class="modal-header">
                                             <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
@@ -182,7 +182,10 @@
 <!-- ------------------------------------------------------------------------------------------------------------ -->
 <!-- --------------------------------КОНЕЦ МОДАЛЬНОГО ОКНА ДЛЯ МЕДСЕСТЕР----------------------------------------- -->
 <!-- ------------------------------------------------------------------------------------------------------------ -->
-                            <img class="" src="../img/doctors_foto/<?= $value['link_foto'] ?>">
+                            <div style="width: 100%; height: 170px; display: block; overflow: hidden;">
+                                <img class="" src="../img/doctors_foto/<?= $value['link_foto'] ?>">
+                            </div>
+<!--                            <img class="" src="../img/doctors_foto/--><?//= $value['link_foto'] ?><!--">-->
                             <div class="doctor_info" style="margin-bottom: 20px">
                                 <?php
                                 // не удаляй этот код он мне нужен

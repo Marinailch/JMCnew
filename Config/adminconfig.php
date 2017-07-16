@@ -11,6 +11,6 @@ function __autoload($class){
 $db = array(
     'host' => 'localhost',
     'user' => 'root',
-    'pass' => 'root',
+    'pass' => '',
     'name' => 'jmcdatabase',
 );

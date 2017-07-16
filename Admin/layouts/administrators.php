@@ -135,7 +135,7 @@
             <!-- ------------------------------------------------------------------------------------------------------------ -->
             <div class="modal fade" id="n<?= $value['id'] ?>" role="dialog">
                 <div class="modal-dialog" style="width: 1200px; ">
-                    <div class="modal-content" style="height: 1000px;">
+                    <div class="modal-content" style="height: 1100px;">
                         <div class="modal-header">
                             <button type="button" class="close"
                                     data-dismiss="modal">&times;</button>
