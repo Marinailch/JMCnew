@@ -289,11 +289,11 @@
     ?>
     <div id="blog">
         <div class="container">
-            <h3 style="text-align: center"><span class="markh1w">Наш блог </span></h3>
+            <h3 style="text-align: center"><span class="markh1w">Наши новости </span></h3>
             <p><span class="markh4o">Последние статьи</span></p>
             <div class="row">
                 <? foreach ($resBlog as $key => $value):?>
-                <?php $title = mb_substr($value['title'], 0, 40, 'UTF-8').'...';
+                <?php $title = mb_substr($value['title'], 0, 60, 'UTF-8').'...';
                       $shortDescr =mb_substr($value['short_description'], 0, 245, 'UTF-8').'...';
                 ?>
                 <div class="col-md-4">
