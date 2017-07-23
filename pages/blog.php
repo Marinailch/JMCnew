@@ -42,7 +42,7 @@
                 //var_dump($fotos);
         ?>
         <!-- ТУТ ВЫВОДИТСЯ ОТДЕЛЬНЫЙ БЛОГ - статья -->
-        <div style="margin-top: 40px; margin-bottom: 40px; width: 100%; clear: both;">
+        <div class="leaders_content">
             <img src="../img/blog/<?= $resultBlog[0]['link_foto'] ?>"  class="equipment_article">
 
 
@@ -67,7 +67,7 @@
                  data-layout="button_count" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank"  href="https://www.facebook.com/sharer/sharer.php?u=http://jmcdonttouchgit.dev/index.php?page=blog&id=1">Поделиться</a>
             </div>
             </p>
-            <div style="text-align: justify; margin-top: 30px; display: block; overflow: hidden;">
+            <div style="">
                 <?= $resultBlog[0]['full_description'] ?>
             </div>
         </div>

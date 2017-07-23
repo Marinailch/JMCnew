@@ -34,7 +34,7 @@
 
                         <div class="form-group">
                             <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить заглавное фото
-                                статьи (не более 3МБ)</p>
+                                статьи <br><span style="color: red;">(не более 3МБ, разрешение 360х220пикселей, или пропорционально заданному размеру)</span></p>
                             <!--                                <label for="inputSuccess3">Добавить заглавное<br>фото для статьи</label>-->
                             <div class="col-sm-6">
                                 <input type="file" name="foto">
@@ -43,7 +43,7 @@
 
 
 
-                        <div class="form-group" style="margin-top: 40px;">
+                        <div class="form-group" style="margin-top: 25px;">
                             <p style="font-weight: 600; font-size: 12px; margin-left: 15px;">Добавить фото для слайдера
                                 (не более 3МБ)</p>
                             <!--                                <label for="inputSuccess3">Добавить фото<br>для слайдера</label>-->

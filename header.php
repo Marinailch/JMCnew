@@ -67,7 +67,7 @@ header('Content-Type: text/html; charset=utf-8');
                             </ul>
                         </li>
                         <li><a href="index.php?page=doctors">Врачи</a></li>
-                        <li><a href="index.php?page=blog">Блог</a></li>
+                        <li><a href="index.php?page=blog">Новости</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="index.php?page=about">О нас <b
                                         class="caret"></b></a>
                             <ul class="dropdown-menu ">
