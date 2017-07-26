@@ -139,6 +139,15 @@ class Action extends DataBase
         $directions = $this->directions;
         include_once $this->template_name;
     }
+    public function directions()
+    {
+        $title = 'Направления';
+        $header = "./page/header_adm.php";
+        $layout_name = 'layouts/directions.php';
+        $footer = './page/footer_adm.php';
+        $directions = $this->directions;
+        include_once $this->template_name;
+    }
 
     public function doctor_card($id = null)
     {
@@ -992,6 +1001,16 @@ class Action extends DataBase
         }
         return $this->redirect();
     }
+    public function saveDirectionDescrByID()
+    {
+        $id = filter_input(INPUT_POST, 'priceID');
+        $description_direction = filter_input(INPUT_POST, 'description_direction');
+        $this->directions->saveDirDescr($id, $description_direction);
+        $this->redirect('?page=directions');
+
+
+    }
+
 }
 
 

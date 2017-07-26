@@ -116,6 +116,15 @@ class Directions extends DataBase
         }
         return 'Консультация '.$title_direct;
     }
+    public function saveDirDescr($id, $descr)
+    {
+        $descr = $this->db->real_escape_string($descr);
+        $query = "UPDATE directions SET description_direction='$descr' WHERE id='$id'";
+        if($result = parent::saveDB($query)){
+            return TRUE;
+        }
+        die('Невозможно обновить описание'.'->КЛАСС:'.__CLASS__.'_В строке:'.__LINE__);
+    }
 
 
 }
