@@ -36,7 +36,7 @@
 
 </div>
 
-<div class="directions_header">
+<div class="directions_header" style="margin-top: 50px">
     <p>Администрация</p>
 </div>
 <div class="container" id="doctors">
@@ -76,7 +76,7 @@
 
 </div>
 
-<div class="directions_header">
+<div class="directions_header" style="margin-top: 50px">
     <p>Средний медицинский персонал</p>
 </div>
 <div class="container" id="doctors">

@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="col-sm-4"><img src="../img/about/about3.jpg">
-                <div class="about_item_text"><h4>Главний раввин </h4>
+                <div class="about_item_text"><h4>Главный раввин </h4>
                     <p>Начинается месяц Адар. Для еврейского народа это месяц Мазаль и Броха (успеха и благословения).
                         Сказано в Талмуде ...</p>
                     <a href="index.php?page=ravin">
