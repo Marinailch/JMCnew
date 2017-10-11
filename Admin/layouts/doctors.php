@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="modal-footer">
 
-                                    <a href="<?= $_SERVER[PHP_SELF] ?>?page=deleteDoctorCard&id=<?= $value['id'] ?>" >
+                                    <a href="/Admin/index.php?page=deleteDoctorCard&id=<?= $value['id'] ?>" >
                                         <input type="submit"  class="btn btn-danger bt_del" value="Удалить" formaction="<?= $_SERVER['PHP_SELF'] ?>?page=deleteDoctorCard&id">  </a>
                                     <input type="button" class="btn btn-default bt_del" data-dismiss="modal"  value="Закрыть">
 

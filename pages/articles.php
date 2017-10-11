@@ -3,7 +3,7 @@
 </div>
 
 <div class="container" >
-    <div style="" class="leaders_content" >
+    <div style=" margin-top: 40px; margin-bottom: 40px;">
         <img src="../img/blog/blog_img1.jpg" class="article_short_img" >
 
 

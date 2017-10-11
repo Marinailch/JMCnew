@@ -1,5 +1,5 @@
 <div class="directions_header">
-    <p>Наши новости</p>
+    <p>Блог</p>
 </div>
 <div class="container">
     <?php $getID = filter_input(INPUT_GET, 'id');
