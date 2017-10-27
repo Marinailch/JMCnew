@@ -6,12 +6,12 @@
  * Date: 03.06.2017
  * Time: 19:45
  */
-class Action extends DataBase
-{
+class Action extends DataBase {
 
     protected $template_name = "./template/main_adm2.php";
     protected $laboratory;
     protected $blog;
+    protected $meta;
     protected $doctors;
     protected $administrators;
     protected $nurses;
@@ -19,11 +19,11 @@ class Action extends DataBase
     protected $directions;
     protected $usi;
 
-    public function __construct($db)
-    {
+    public function __construct($db) {
         parent::__construct($db);
         $this->laboratory = new Laboratory($db);
         $this->blog = new Blog($db);
+        $this->meta = new Meta($db);
         $this->doctors = new Doctors($db);
         $this->administrators = new Administrators($db);
         $this->nurses = new Nurses($db);
@@ -32,8 +32,7 @@ class Action extends DataBase
         $this->usi = new FunctionalDiagnostic($db);
     }
 
-    public function redirect($id = null)
-    {
+    public function redirect($id = null) {
         if (!$id) {
             header('Location:' . $_SERVER['PHP_SELF']);
         }
@@ -45,8 +44,8 @@ class Action extends DataBase
      * БЛОК ПО ОБРАБОТКЕ ГЕТ ЗАПРОСОВ С АДМИНПАНЕЛИ САЙТА*
      * ***************************************************
      */
-    public function mainpage()
-    {
+
+    public function mainpage() {
         $title = 'Main Page';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/main_adm2.php';
@@ -54,8 +53,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function functionaldiagn()
-    {
+    public function functionaldiagn() {
         $title = 'Functional Diagnostic';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/fd.php';
@@ -65,8 +63,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function consultation()
-    {
+    public function consultation() {
         $title = 'Consultation';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/consultation.php';
@@ -76,8 +73,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function ultra()
-    {
+    public function ultra() {
         $title = 'UltraSoundInvestigation';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/uzi.php';
@@ -86,8 +82,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function laboratory()
-    {
+    public function laboratory() {
         $title = 'Laboratory';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/laboratory_diagnostic.php';
@@ -96,8 +91,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function blog()
-    {
+    public function blog() {
         $title = 'Blog';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/blog.php';
@@ -107,8 +101,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function doctors()
-    {
+    public function doctors() {
         $title = 'Doctors';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/doctors.php';
@@ -118,8 +111,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function administrators()
-    {
+    public function administrators() {
         $title = 'Administrators';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/administrators.php';
@@ -129,8 +121,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function nurses()
-    {
+    public function nurses() {
         $title = 'Nurses';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/nurses.php';
@@ -139,8 +130,8 @@ class Action extends DataBase
         $directions = $this->directions;
         include_once $this->template_name;
     }
-    public function directions()
-    {
+
+    public function directions() {
         $title = 'Направления';
         $header = "./page/header_adm.php";
         $layout_name = 'layouts/directions.php';
@@ -149,8 +140,7 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
-    public function doctor_card($id = null)
-    {
+    public function doctor_card($id = null) {
         $id = filter_input(INPUT_GET, 'id');
         $status = filter_input(INPUT_GET, 'status');
         $title = 'Doctors';
@@ -163,13 +153,37 @@ class Action extends DataBase
         include_once $this->template_name;
     }
 
+    /* Meta */
+
+    public function meta() {
+        $title = 'Meta';
+        $header = "./page/header_adm.php";
+        $layout_name = 'layouts/meta.php';
+        $footer = './page/footer_adm.php';
+        $blog = $this->meta;
+        $directions = $this->directions;
+        include_once $this->template_name;
+    }
+
+    public function saveMetaItemByID() {
+        $id = filter_input(INPUT_POST, 'priceID');
+        $title = filter_input(INPUT_POST, 'title');
+        $description = filter_input(INPUT_POST, 'description');
+        $keywords = filter_input(INPUT_POST, 'keywords');
+        if ($this->meta->saveItemByID($title, $description, $keywords, $id)) {
+            $this->redirect('?page=meta');
+        } else {
+            die('I cant change meta item' . __LINE__);
+        }
+    }
+
     /*
      * ************************************************
      * БЛОК ПО РАБОТЕ С ПРАЙСАМИ ОСНОВНЫХ КОНСУЛЬТАЦИЙ*
      * ************************************************
      */
-    public function savepriceID()
-    {
+
+    public function savepriceID() {
         $specialty = filter_input(INPUT_POST, 'specialty');
         $price_first_time = filter_input(INPUT_POST, 'price_first_time');
         $price_after = filter_input(INPUT_POST, 'price_after');
@@ -181,8 +195,7 @@ class Action extends DataBase
         }
     }
 
-    public function deletepriceID()
-    {
+    public function deletepriceID() {
         $priceID = filter_input(INPUT_POST, 'priceID');
         if ($this->price->deletePriceID($priceID)) {
             $this->redirect('?page=consultation');
@@ -191,8 +204,7 @@ class Action extends DataBase
         }
     }
 
-    public function createprice()
-    {
+    public function createprice() {
         $specialty = filter_input(INPUT_POST, 'specialty');
         $price_first_time = filter_input(INPUT_POST, 'price_first_time');
         $price_after = filter_input(INPUT_POST, 'price_after');
@@ -204,8 +216,7 @@ class Action extends DataBase
         }
     }
 
-    public function savepriceHID()
-    {
+    public function savepriceHID() {
         $specialty = filter_input(INPUT_POST, 'specialty');
         $consulting_at_home = filter_input(INPUT_POST, 'consulting_at_home');
         $priceID = filter_input(INPUT_POST, 'priceID');
@@ -216,8 +227,7 @@ class Action extends DataBase
         }
     }
 
-    public function createpriceH()
-    {
+    public function createpriceH() {
         $specialty = filter_input(INPUT_POST, 'specialty');
         $consulting_at_home = filter_input(INPUT_POST, 'consulting_at_home');
         $directions = filter_input(INPUT_POST, 'direction');
@@ -233,8 +243,8 @@ class Action extends DataBase
      * БЛОК ПО РАБОТЕ С УЗИ ПРАЙСАМИ*
      * ******************************
      */
-    public function createpriceUSI()
-    {
+
+    public function createpriceUSI() {
         $name_of_method_fd = filter_input(INPUT_POST, 'name_of_method_fd');
         $price = filter_input(INPUT_POST, 'price');
         //Статическая переменная = 2 обозначающая УЗИ по умолчанию в БД
@@ -246,8 +256,7 @@ class Action extends DataBase
         }
     }
 
-    public function deletepriceUSI()
-    {
+    public function deletepriceUSI() {
         $priceID = filter_input(INPUT_POST, 'priceID');
         if ($this->usi->deletePrice($priceID)) {
             $this->redirect('?page=ultra');
@@ -256,8 +265,7 @@ class Action extends DataBase
         }
     }
 
-    public function savepriceUSI()
-    {
+    public function savepriceUSI() {
         $name_of_method_fd = filter_input(INPUT_POST, 'name_of_method_fd');
         $price = filter_input(INPUT_POST, 'price');
         $id = filter_input(INPUT_POST, 'priceID');
@@ -273,8 +281,8 @@ class Action extends DataBase
      * БЛОК ПО РАБОТЕ С ПРАЙСАМИ ФУНКЦИОНАЛЬНОЙ ДИАГНОСТИКИ*
      * *****************************************************
      */
-    public function createFDprice()
-    {
+
+    public function createFDprice() {
         $name_of_method_fd = filter_input(INPUT_POST, 'name_of_method_fd');
         $price = filter_input(INPUT_POST, 'price');
         $name_of_fd = filter_input(INPUT_POST, 'name_of_fd');
@@ -285,8 +293,7 @@ class Action extends DataBase
         }
     }
 
-    public function deletepriceFD()
-    {
+    public function deletepriceFD() {
         $id = filter_input(INPUT_POST, 'priceID');
         if ($this->usi->deletePrice($id)) {
             $this->redirect('?page=functionaldiagn');
@@ -295,8 +302,7 @@ class Action extends DataBase
         }
     }
 
-    public function savepriceFD()
-    {
+    public function savepriceFD() {
         $name_of_method_fd = filter_input(INPUT_POST, 'name_of_method_fd');
         $price = filter_input(INPUT_POST, 'price');
         $id = filter_input(INPUT_POST, 'priceID');
@@ -308,12 +314,12 @@ class Action extends DataBase
     }
 
     /*
-    * *******************************************
-    * БЛОК ПО РАБОТЕ С ЛАБОРАТОРНОЙ ДИАГНОСТИКОЙ*
-    * *******************************************
-    */
-    public function savelab()
-    {
+     * *******************************************
+     * БЛОК ПО РАБОТЕ С ЛАБОРАТОРНОЙ ДИАГНОСТИКОЙ*
+     * *******************************************
+     */
+
+    public function savelab() {
         $name = filter_input(INPUT_POST, 'name');
         $id = filter_input(INPUT_POST, 'priceID');
         $description = filter_input(INPUT_POST, 'description');
@@ -324,8 +330,7 @@ class Action extends DataBase
         }
     }
 
-    public function createlabmethod()
-    {
+    public function createlabmethod() {
         $name = filter_input(INPUT_POST, 'name');
         $description = filter_input(INPUT_POST, 'description');
         if ($this->laboratory->createLab($name, $description)) {
@@ -335,8 +340,7 @@ class Action extends DataBase
         }
     }
 
-    public function deletelab()
-    {
+    public function deletelab() {
         $id = filter_input(INPUT_GET, 'id');
         if ($this->laboratory->deleteLabMethod($id)) {
             $this->redirect('?page=laboratory');
@@ -350,13 +354,13 @@ class Action extends DataBase
      * БЛОК ПО РАБОТЕ С ДОКТОРАМИ*
      * ***************************
      */
-    public function createDoctor()
-    {
+
+    public function createDoctor() {
         /*
-         **********************
+         * *********************
          * Проверка на пустоту*
          * ********************
-        */
+         */
         $name_of_doctor = filter_input(INPUT_POST, 'name_of_doctor');
         if ($name_of_doctor == '' || $name_of_doctor == null) {
             $this->redirect('?page=doctors');
@@ -379,7 +383,7 @@ class Action extends DataBase
         } else {
             $active = 0;
         }
-        /***********************************************
+        /*         * *********************************************
          * ПОЛУЧАЕМ ФОТО ВРАЧА ВЫБРАННОГО ПОЛЬЗОВАТЕЛЕМ*
          * И ЗАНОСИМ ЕГО В НЕОБХОДИМУЮ ДИРЕКТОРИЮ*******
          * *********************************************
@@ -397,12 +401,10 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-                        if ($this->doctors->createNewDoctor($name_of_doctor, $file_name, $expirience_of_work,
-                            $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
-                            $active)
+                        if ($this->doctors->createNewDoctor($name_of_doctor, $file_name, $expirience_of_work, $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id, $active)
                         ) {
                             $this->redirect('?page=doctors');
                         } else {
@@ -424,14 +426,13 @@ class Action extends DataBase
                 echo $message;
             }
         }
-        /************************************
+        /*         * **********************************
          * КОНЕЦ БЛОКА ПОЛУЧЕНИЯ ФОТО ВРАЧА *
          * **********************************
          */
     }
 
-    public function deleteDoctorCard()
-    {
+    public function deleteDoctorCard() {
         $id = filter_input(INPUT_GET, 'id');
         if ($this->doctors->deleteDoctor($id)) {
             $this->redirect('?page=doctors');
@@ -440,12 +441,12 @@ class Action extends DataBase
         }
     }
 
-    /************************************
+    /*     * **********************************
      * Функция по редактированию доктора*
      * **********************************
      */
-    public function saveDoctor()
-    {
+
+    public function saveDoctor() {
         $name_of_doctor = filter_input(INPUT_POST, 'name_of_doctor');
         if ($name_of_doctor == '' || $name_of_doctor == null) {
             $this->redirect('?page=doctors');
@@ -473,7 +474,7 @@ class Action extends DataBase
         }
         $default_foto = filter_input(INPUT_POST, 'fotomain');
         $id = filter_input(INPUT_POST, 'priceID');
-        /***********************************************
+        /*         * *********************************************
          * ПОЛУЧАЕМ ФОТО ВРАЧА ВЫБРАННОГО ПОЛЬЗОВАТЕЛЕМ*
          * И ЗАНОСИМ ЕГО В НЕОБХОДИМУЮ ДИРЕКТОРИЮ*******
          * *********************************************
@@ -481,9 +482,7 @@ class Action extends DataBase
         $foto = $_FILES['foto'];
         if ($foto['error'] === 4) {
             $file_name = $default_foto;
-            if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
-                $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
-                $active, $id)
+            if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work, $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id, $active, $id)
             ) {
                 $this->redirect('?page=doctors');
             } else {
@@ -499,12 +498,10 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-                        if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work,
-                            $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id,
-                            $active, $id)
+                        if ($this->doctors->saveDoctorByID($name_of_doctor, $file_name, $expirience_of_work, $specialty_of_doctor, $science_degree, $short_descr, $full_descr, $direction_id, $active, $id)
                         ) {
                             $this->redirect('?page=doctors');
                         } else {
@@ -527,7 +524,8 @@ class Action extends DataBase
             }
         }
     }
-    /************************************
+
+    /*     * **********************************
      * КОНЕЦ БЛОКА ПОЛУЧЕНИЯ ФОТО ВРАЧА *
      * **********************************
      */
@@ -536,8 +534,8 @@ class Action extends DataBase
      * БЛОК ПО РАБОТЕ С АДМИНИСТРАТОРАМИ*
      * **********************************
      */
-    public function createAdministrator()
-    {
+
+    public function createAdministrator() {
         $name = filter_input(INPUT_POST, 'name');
         if ($name == '' || $name == null) {
             $this->redirect('?page=administrators');
@@ -563,11 +561,10 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-                        if ($this->administrators->createNewAdministrator($name, $specialty, $description,
-                            $file_name)
+                        if ($this->administrators->createNewAdministrator($name, $specialty, $description, $file_name)
                         ) {
                             $this->redirect('?page=administrators');
                         } else {
@@ -591,8 +588,7 @@ class Action extends DataBase
         }
     }
 
-    public function deleteAdministrator()
-    {
+    public function deleteAdministrator() {
         $id = filter_input(INPUT_GET, 'id');
         if ($this->administrators->deleteAdministratorByID($id)) {
             $this->redirect('?page=administrators');
@@ -601,12 +597,12 @@ class Action extends DataBase
         }
     }
 
-    /*********************************************
+    /*     * *******************************************
      * Функция по изменению данных администратора*
      * *******************************************
      */
-    public function saveAdministrator()
-    {
+
+    public function saveAdministrator() {
         $name = filter_input(INPUT_POST, 'name');
         if ($name == '' || $name == null) {
             $this->redirect('?page=administrators');
@@ -639,11 +635,10 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-                        if ($this->administrators->saveAdministrator($name, $specialty, $description, $file_name,
-                            $id)
+                        if ($this->administrators->saveAdministrator($name, $specialty, $description, $file_name, $id)
                         ) {
                             $this->redirect('?page=administrators');
                         } else {
@@ -672,8 +667,8 @@ class Action extends DataBase
      * БЛОК ПО РАБОТЕ СО СРЕДНИМ МЕДИЦИНСКИМ ПЕРСОНАЛОМ *
      * **************************************************
      */
-    public function createNurse()
-    {
+
+    public function createNurse() {
         $name = filter_input(INPUT_POST, 'name');
         if ($name == '' || $name == null) {
             $this->redirect('?page=nurses');
@@ -699,7 +694,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->nurses->createNewNurse($name, $specialty, $description, $file_name)) {
@@ -725,8 +720,7 @@ class Action extends DataBase
         }
     }
 
-    public function deleteNurse()
-    {
+    public function deleteNurse() {
         $id = filter_input(INPUT_GET, 'id');
         if ($this->nurses->deleteNurseByID($id)) {
             $this->redirect('?page=nurses');
@@ -735,8 +729,7 @@ class Action extends DataBase
         }
     }
 
-    public function saveNurse()
-    {
+    public function saveNurse() {
         $name = filter_input(INPUT_POST, 'name');
         if ($name == '' || $name == null) {
             $name = 'DEFAULT';
@@ -769,7 +762,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.$_SERVER['DOCUMENT_ROOT'].'/'.'img/doctors_foto/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/doctors_foto/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->nurses->saveNurse($name, $specialty, $description, $file_name, $id)) {
@@ -804,8 +797,8 @@ class Action extends DataBase
      * ФУНКЦИЯ ДОБАВЛЕНИЯ НОВОГО ПОСТА*
      * ********************************
      */
-    public function createBlogItem()
-    {
+
+    public function createBlogItem() {
         $title = filter_input(INPUT_POST, 'title');
         if ($title == '' || $title == null) {
             $this->redirect('?page=blog');
@@ -839,11 +832,10 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/img/blog/'. $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/img/blog/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
-                        if ($result =
-                            $this->blog->createNewArticle($title, $short_description, $full_description, $created_at)
+                        if ($result = $this->blog->createNewArticle($title, $short_description, $full_description, $created_at)
                         ) {
                             $var = 'y';
                             if ($this->blog->saveMainFoto($file_name, $var, $result)) {
@@ -862,7 +854,7 @@ class Action extends DataBase
                                                     $file_base_name = implode('', $file_name_parts);
                                                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                                                     $file_name .= '.' . $file_extension;
-                                                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'img/blog/' . $file_name;
+                                                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . 'img/blog/' . $file_name;
                                                     if (move_uploaded_file($foto_slider['tmp_name'][$i], $path)) {
                                                         $this->blog->saveMainFoto($file_name, $var, $result);
                                                     }
@@ -896,13 +888,14 @@ class Action extends DataBase
             }
         }
     }
+
     /*
      * ***********************
      * ФУНКЦИЯ УДАЛЕНИЯ ПОСТА*
      * ***********************
-    */
-    public function deleteBlogItemByID()
-    {
+     */
+
+    public function deleteBlogItemByID() {
         $id = filter_input(INPUT_GET, 'id');
         if ($this->blog->deletBlogItemByID($id)) {
             $this->redirect('?page=blog');
@@ -910,13 +903,14 @@ class Action extends DataBase
             die('I cant delete Doctor' . __LINE__);
         }
     }
+
     /*
      * *****************************
      * ФУНКЦИЯ РЕДАКТИРОВАНИЯ ПОСТА*
      * *****************************
-    */
-    public function saveBlogItemByID()
-    {
+     */
+
+    public function saveBlogItemByID() {
         $id = filter_input(INPUT_POST, 'priceID');
         $default_foto = filter_input(INPUT_POST, 'fotomain');
         $title = filter_input(INPUT_POST, 'title');
@@ -943,7 +937,7 @@ class Action extends DataBase
                     $file_base_name = implode('', $file_name_parts);
                     $file_name = md5($file_base_name . rand(1, getrandmax()));
                     $file_name .= '.' . $file_extension;
-                    $path = $_SERVER['DOCUMENT_ROOT'].'/'.'/img/blog/' . $file_name;
+                    $path = $_SERVER['DOCUMENT_ROOT'] . '/' . '/img/blog/' . $file_name;
                     if (move_uploaded_file($foto['tmp_name'], $path)) {
                         //Если фото загрузилось в нужную нам директорию - тут происходят дальнейшие действия )
                         if ($this->blog->saveItemByID($title, $short_description, $full_description, $file_name, $id)) {
@@ -967,67 +961,44 @@ class Action extends DataBase
             }
         }
     }
+
     /**
-     ******************
+     * *****************
      *  АУТЕНТИФИКАЦИЯ*
      * ****************
      */
-    public function authuser(){
+    public function authuser() {
         $title = 'Authentificate';
         $header = './page/header_adm2.php';
         $layout_name = 'layouts/authentication.php';
         $footer = './page/footer_adm2.php';
         $login = User::$login;
         $password = User::$password;
-        include_once $this->template_name='./template/adminenter.php';
+        include_once $this->template_name = './template/adminenter.php';
     }
 
-    public function destroy(){
-        $_SESSION['user']=NULL;
+    public function destroy() {
+        $_SESSION['user'] = NULL;
         session_unset();
         $this->redirect();
-
     }
 
-    public function authUserByNameAndLogin()
-    {
+    public function authUserByNameAndLogin() {
         $authlogin = filter_input(INPUT_POST, 'login');
         $authpassword = filter_input(INPUT_POST, 'password');
         if ($authlogin === User::$login && $authpassword === User::$password) {
             $_SESSION['user'] = 'admin';
-        }
-        else{
+        } else {
             session_unset();
         }
         return $this->redirect();
     }
-    public function saveDirectionDescrByID()
-    {
+
+    public function saveDirectionDescrByID() {
         $id = filter_input(INPUT_POST, 'priceID');
         $description_direction = filter_input(INPUT_POST, 'description_direction');
         $this->directions->saveDirDescr($id, $description_direction);
         $this->redirect('?page=directions');
-
-
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

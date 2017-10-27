@@ -68,6 +68,7 @@
 
                         <li><a href="/Admin/index.php?page=laboratory">Лаборатория</a></li>
 <!--                        <li><a href="../index.php"><b style="color: #cdc639;">Перейти на сайт</b></a></li>-->
+                        <li><a href="/Admin/index.php?page=meta">Мета данные</a></li>
                         <li><a href="/Admin/index.php?page=destroy">Выйти из Админпанели</a></li>
                     </ul>
                 </div>

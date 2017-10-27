@@ -5,11 +5,11 @@ header('Content-Type: text/html; charset=utf-8');
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?=$page[1]?></title>
+    <title><?=$page[1]['title']?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name = "format-detection" content = "telephone=no" />
-    <meta name="description" content="Еврейский Медицинский Центр">
-    <meta name="author" content="">
+    <meta name="description" content="<?=$page[1]['description']?>">
+    <meta name="author" content="<?=$page[1]['keywords']?>">
     <meta name="keywords" content="Клиника">
 <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 <!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->

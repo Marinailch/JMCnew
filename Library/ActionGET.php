@@ -14,6 +14,7 @@ class ActionGET extends DataBase
     protected $functional_diagn;
     protected $lab_meth;
     protected $form;
+    protected $meta;
 
     public function __construct($db)
     {
@@ -21,6 +22,7 @@ class ActionGET extends DataBase
         $this->directions = new Directions($db);
         $this->doctors = new Doctors($db);
         $this->form = new Form();
+        $this->meta=new Meta($db);
     }
 
     /**
@@ -82,31 +84,31 @@ class ActionGET extends DataBase
             $id = filter_input(INPUT_GET, 'page');
         }
         if (!$id) {
-            return array('pages/main.php', 'Главная страница');
+            return array('pages/main.php', $this->meta->getMetaItemByID(1));
         } else if ($id == 'directions') {
-            return array('pages/directions.php','Направления');
+            return array('pages/directions.php',$this->meta->getMetaItemByID(2));
         } else if ($id == 'diagnostics') {
-            return array('pages/diagnostics.php', 'Диагностика');
+            return array('pages/diagnostics.php', $this->meta->getMetaItemByID(3));
         } else if ($id == 'doctors') {
-            return array('pages/doctors.php', 'Наш коллектив');
+            return array('pages/doctors.php', $this->meta->getMetaItemByID(4));
         } else if ($id == 'blog') {
-            return array('pages/blog.php', 'Блог');
+            return array('pages/blog.php', $this->meta->getMetaItemByID(5));
         } else if ($id == 'functional_diagnostic') {
-            return array('pages/functional_diagnostic.php', 'Функциональная Диагностика');
+            return array('pages/functional_diagnostic.php', $this->meta->getMetaItemByID(6));
         }else if ($id == 'laboratory_diagnostic') {
-            return array('pages/laboratory_diagnostic.php', 'Лабораторная Диагностика');
+            return array('pages/laboratory_diagnostic.php', $this->meta->getMetaItemByID(7));
         }else if ($id == 'leaders') {
-            return array('pages/leaders.php', 'Администрация');
+            return array('pages/leaders.php', $this->meta->getMetaItemByID(8));
         }else if ($id == 'ultrasound_investigation') {
-            return array('pages/ultrasound_investigation.php', 'УЗИ');
+            return array('pages/ultrasound_investigation.php', $this->meta->getMetaItemByID(9));
         }else if ($id == 'about') {
-            return array('pages/about.php', 'О нас');
+            return array('pages/about.php', $this->meta->getMetaItemByID(10));
         }else if ($id == 'ravin') {
-            return array('pages/ravin.php', 'Равин');
+            return array('pages/ravin.php', $this->meta->getMetaItemByID(11));
         }else if ($id == 'articles') {
-            return array('pages/articles.php', 'Статьи');
+            return array('pages/articles.php', $this->meta->getMetaItemByID(12));
         }else if ($id == 'equipment') {
-            return array('pages/equipment.php', 'Оборудование');
+            return array('pages/equipment.php', $this->meta->getMetaItemByID(13));
         }else if($id == 'callform'){
             //Обработка формы
             //*************************************
